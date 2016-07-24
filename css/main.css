@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  margin: 0;
+  text-align: center;
+  color: white;
+  background: black;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: gold;
+}
+a:hover {
+  color: #E1F;
+}
+p {
+  text-transform: capitalize;
+}
