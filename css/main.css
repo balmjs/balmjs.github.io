@@ -2,6 +2,7 @@ html, body {
   height: 100%;
 }
 body {
+  font: italic 16px/1.5 'Times New Roman', Arial, sans-serif;
   display: flex;
   margin: 0;
   text-align: center;
@@ -15,8 +16,12 @@ a {
   color: gold;
 }
 a:hover {
-  color: #E1F;
+  color: #e1f;
 }
 p {
   text-transform: capitalize;
+}
+.logo {
+  font-family: 'Brush Script MT', Papyrus;
+  font-size: 3em;
 }
