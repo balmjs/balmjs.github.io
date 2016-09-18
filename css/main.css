@@ -1,8 +1,13 @@
+html {
+  font-size: 62.5%;
+}
+
 html, body {
   height: 100%;
 }
+
 body {
-  font: italic 16px/1.5 'Times New Roman', Arial, sans-serif;
+  font: italic 1.6rem 'Times New Roman', Arial, sans-serif;
   display: flex;
   margin: 0;
   text-align: center;
@@ -11,17 +16,33 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 a {
   text-decoration: none;
   color: gold;
 }
+
 a:hover {
   color: #e1f;
 }
+
 p {
   text-transform: capitalize;
 }
+
 .logo {
   font-family: 'Brush Script MT', Papyrus;
-  font-size: 3em;
+  font-size: 3rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 125%;
+  }
 }
