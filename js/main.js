@@ -1,11 +1,12 @@
 (function(window) {
   var getUrl = function(type) {
-    return 'https://github.com/balmjs/balm-' + type;
+    var name = type ? ('demo-' + type) : 'balm-boilerplate';
+    return 'https://github.com/balmjs/' + name;
   };
 
   var demo = {
     'Boilerplate': {
-      url: getUrl('boilerplate')
+      url: getUrl()
     },
     'HTML': {
       url: getUrl('html')
