@@ -1,30 +1,19 @@
 (function(window) {
-  var getUrl = function(type) {
-    var name = type ? ('demo-' + type) : 'balm-boilerplate';
-    return 'https://github.com/balmjs/' + name;
+  var getUrl = function(name) {
+    return 'https://github.com/balmjs/demo-' + name;
   };
 
   var demo = {
-    'Boilerplate': {
-      url: getUrl()
-    },
-    'HTML': {
-      url: getUrl('html')
-    },
-    'Laravel': {
-      url: getUrl('laravel')
-    },
-    'Vue.js': {
-      url: getUrl('vue')
-    },
-    'TypeScript': {
-      url: getUrl('ts')
-    }
+    'Boilerplate': getUrl('boilerplate'),
+    'HTML': getUrl('html'),
+    'Laravel': getUrl('laravel'),
+    'Vue.js': getUrl('vue'),
+    'TypeScript': getUrl('ts')
   };
 
   window.showDemo = function() {
     for (var key in demo) {
-      var value = demo[key].url;
+      var value = demo[key];
       console.log(key + ': ' + value);
     }
   };
