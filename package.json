@@ -1,0 +1,13 @@
+{
+  "name": "BalmJS.github.io",
+  "author": "Elf-mousE",
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --production"
+  },
+  "devDependencies": {
+    "balm": "^0.6.1",
+    "gulp": "^3.9.1"
+  }
+}

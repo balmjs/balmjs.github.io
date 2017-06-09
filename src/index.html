@@ -80,8 +80,8 @@ balm.config = {
   },
   paths: {
     source: {
-      css: <span class="hljs-string">'styles'</span>,   <span class="hljs-comments">// CSS dir: ./app/styles</span>
-      js: <span class="hljs-string">'scripts'</span>,    <span class="hljs-comments">// JS dir: ./app/scripts</span>
+      css: <span class="hljs-string">'styles'</span>, <span class="hljs-comments">//   CSS dir: ./app/styles</span>
+      js: <span class="hljs-string">'scripts'</span>, <span class="hljs-comments">//    JS dir: ./app/scripts</span>
       img: <span class="hljs-string">'images'</span>, <span class="hljs-comments">// Image dir: ./app/images</span>
     }
   },
@@ -90,7 +90,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      main: <span class="hljs-string">'./app/scripts/main'</span> <span class="hljs-comments">// the entry script</span>
+      main: <span class="hljs-string">'./app/scripts/main'</span> <span class="hljs-comments">// The entry script</span>
     }
   },
   assets: {
@@ -130,10 +130,10 @@ balm.config = {
   },
   paths: {
     source: {
-      css: <span class="hljs-string">'styles'</span>,   <span class="hljs-comments">// CSS dir: ./app/styles</span>
-      js: <span class="hljs-string">'scripts'</span>,    <span class="hljs-comments">// JS dir: ./app/scripts</span>
+      css: <span class="hljs-string">'styles'</span>, <span class="hljs-comments">//   CSS dir: ./app/styles</span>
+      js: <span class="hljs-string">'scripts'</span>, <span class="hljs-comments">//    JS dir: ./app/scripts</span>
       img: <span class="hljs-string">'images'</span>, <span class="hljs-comments">// Image dir: ./app/images</span>
-      font: <span class="hljs-string">'fonts'</span>   <span class="hljs-comments">// Font dir: ./app/fonts</span>
+      font: <span class="hljs-string">'fonts'</span>  <span class="hljs-comments">//  Font dir: ./app/fonts</span>
     }
   },
   styles: {
@@ -142,13 +142,15 @@ balm.config = {
   },
   scripts: {
     entry: {
-      common: [
+      <span class="hljs-comments">// HTML: &lt;script src="js/vendor/mylib.js"&gt;&lt;/script&gt;</span>
+      mylib: [
         <span class="hljs-string">'your-project-vendors'</span>,
         <span class="hljs-string">'your-project-plugins'</span>
       ],
-      main: <span class="hljs-string">'./app/scripts/main'</span> <span class="hljs-comments">// the entry script</span>
-    },
-    vendors: [<span class="hljs-string">'common'</span>] <span class="hljs-comments">// HTML: &lt;script src="js/vendor/common.js"&gt;&lt;/script&gt;</span>
+      <span class="hljs-comments">// The entry script</span>
+      <span class="hljs-comments">// HTML: &lt;script src="js/main.js"&gt;&lt;/script&gt;</span>
+      main: <span class="hljs-string">'./app/scripts/main'</span>
+    }
   },
   sprites: {
     image: [<span class="hljs-string">'img-icon'</span>] <span class="hljs-comments">// Icon path: './app/images/img-icon'</span>

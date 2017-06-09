@@ -1,0 +1,41 @@
+.container {
+  max-width: 1080px;
+  margin: 40px auto;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+}
+
+pre {
+  display: none;
+}
+
+pre.active {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.tabs li {
+  font-size: 1.4rem;
+  padding: 0 20px;
+  list-style: none;
+  cursor: pointer;
+  text-align: center;
+  border-right: 1px solid white;
+}
+
+.tabs li:last-child {
+  border-right: 0;
+}
+
+.tabs li.active {
+  color: orange;
+}

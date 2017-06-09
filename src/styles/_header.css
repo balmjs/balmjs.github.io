@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  margin: 10px 0;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.logo {
+  font-family: 'Brush Script MT', Papyrus;
+  font-size: 3rem;
+}
+
+.logo a {
+  transition: all .2s;
+  text-decoration: none;
+  color: orange;
+}
+
+.logo a:hover {
+  color: #e1f;
+}
+
+header p {
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+header p::before {
+  font-style: normal;
+  margin-right: 5px;
+  content: ':';
+}
