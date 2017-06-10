@@ -1,3 +1,7 @@
+.centerdevices {
+  padding: 0 20px;
+}
+
 .centerdevices .computerwrapper .mask {
   overflow: hidden;
   width: 100%;

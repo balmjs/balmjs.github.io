@@ -1,36 +1,32 @@
 (function(window) {
-  let getUrl = name => {
-    return `https://github.com/balmjs/demo-${name}`;
+  const DEMO = {
+    boilerplate: 'Boilerplate',
+    html: 'HTML',
+    laravel: 'Laravel',
+    vue: 'Vue.js',
+    ts: 'TypeScript'
   };
-
-  let demo = {
-    'Boilerplate': getUrl('boilerplate'),
-    'HTML': getUrl('html'),
-    'Laravel': getUrl('laravel'),
-    'Vue.js': getUrl('vue'),
-    'TypeScript': getUrl('ts')
-  };
+  const ACTIVE = 'active';
 
   window.showDemo = () => {
-    for (let key in demo) {
-      let value = demo[key];
-      console.log(`${key}: ${value}`);
+    for (let key in DEMO) {
+      let label = DEMO[key];
+      console.log(`${label}: https://github.com/balmjs/demo-${key}`);
     }
   };
 
   let eventHandler = e => {
     let el = e.target;
-    if (!el.classList.contains('active')) {
+    if (!el.classList.contains(ACTIVE)) {
       let type = el.dataset.type.toLowerCase();
-      el.parentNode.querySelector('li.active').classList.remove('active');
-      el.classList.add('active');
-      el.parentNode.parentNode.querySelector('pre.active').classList.remove('active');
-      document.getElementById(`${type}-code`).classList.add('active');
+      el.parentNode.querySelector(`li.${ACTIVE}`).classList.remove(ACTIVE);
+      el.classList.add(ACTIVE);
+      el.parentNode.parentNode.querySelector(`pre.${ACTIVE}`).classList.remove(ACTIVE);
+      document.getElementById(`${type}-code`).classList.add(ACTIVE);
     }
   };
 
-  let tabs = document.querySelectorAll('.tabs');
-  tabs.forEach(tab => {
+  document.querySelectorAll('.tabs').forEach(tab => {
     tab.addEventListener('click', eventHandler);
   });
 

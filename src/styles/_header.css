@@ -3,30 +3,30 @@ header {
   margin: 10px 0;
   justify-content: center;
   align-items: baseline;
+  & p {
+    font-style: italic;
+    text-transform: capitalize;
+    &::before {
+      font-style: normal;
+      margin-right: 5px;
+      content: ':';
+    }
+  }
 }
 
 .logo {
   font-family: 'Brush Script MT', Papyrus;
   font-size: 3rem;
+  & a {
+    transition: all .2s;
+    text-decoration: none;
+    color: orange;
+    &:hover {
+      color: #e1f;
+    }
+  }
 }
 
-.logo a {
-  transition: all .2s;
-  text-decoration: none;
-  color: orange;
-}
-
-.logo a:hover {
-  color: #e1f;
-}
-
-header p {
-  font-style: italic;
-  text-transform: capitalize;
-}
-
-header p::before {
-  font-style: normal;
-  margin-right: 5px;
-  content: ':';
+aside {
+  text-align: center;
 }

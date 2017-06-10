@@ -16,14 +16,20 @@
     <h1 class="logo"><a href="//balmjs.com/" title="BalmJS">BalmJS</a></h1>
     <p>A flexible Front-End workflow</p>
   </header>
-  <section class="container">
-    <h2>☕ Installation</h2>
-    <div class="centerdevices">
-      <div class="computerwrapper">
-        <div class="computer">
-          <div class="mask">
-            <div class="editor-window cli">
-              <pre class="active" id="automatic-code"><code>
+  <aside>
+    <a href="https://github.com/balmjs/balm">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+    </a>
+  </aside>
+  <main>
+    <section class="container">
+      <h2>☕ Installation</h2>
+      <div class="centerdevices">
+        <div class="computerwrapper">
+          <div class="computer">
+            <div class="mask">
+              <div class="editor-window cli">
+                <pre class="active" id="automatic-code"><code>
 <span class="editor-prefixed">npm install -g balm-cli</span>
 <span class="editor-prefixed">balm list</span>
 <span class="editor-prefixed">balm init &lt;template-name&gt; &lt;project-name&gt;</span>
@@ -52,26 +58,26 @@
 <span class="hljs-comments"># For production</span>
 <span class="editor-prefixed">gulp --production</span>
 </code></pre>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <ul class="tabs">
-      <li class="active" data-type="automatic">Automatic</li>
-      <li data-type="manual">Manual</li>
-    </ul>
-  </section>
-  <section class="container">
-    <h2>⚙ Configuration</h2>
-    <div class="editor-window">
-      <div class="editor-menubar">
-        <span class="editor-button close"></span>
-        <span class="editor-button minimize"></span>
-        <span class="editor-button maximize"></span>
-        <span class="editor-filename">gulpfile.js</span>
-      </div>
-      <pre class="active" id="basic-code"><code class="javascript hljs">
+      <ul class="tabs">
+        <li class="active" data-type="automatic">Automatic</li>
+        <li data-type="manual">Manual</li>
+      </ul>
+    </section>
+    <section class="container">
+      <h2>⚙ Configuration</h2>
+      <div class="editor-window">
+        <div class="editor-menubar">
+          <span class="editor-button close"></span>
+          <span class="editor-button minimize"></span>
+          <span class="editor-button maximize"></span>
+          <span class="editor-filename">gulpfile.js</span>
+        </div>
+        <pre class="active" id="basic-code"><code class="javascript hljs">
 <span class="hljs-keyword">var</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
 
 balm.config = {
@@ -90,7 +96,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      main: <span class="hljs-string">'./app/scripts/main'</span> <span class="hljs-comments">// The entry script</span>
+      main: <span class="hljs-string">'./app/scripts/main.js'</span> <span class="hljs-comments">// The entry script</span>
     }
   },
   assets: {
@@ -112,7 +118,7 @@ balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span cla
 });
 
 </code></pre>
-      <pre id="advanced-code"><code class="javascript hljs">
+        <pre id="advanced-code"><code class="javascript hljs">
 <span class="hljs-keyword">var</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
 
 balm.config = {
@@ -149,7 +155,7 @@ balm.config = {
       ],
       <span class="hljs-comments">// The entry script</span>
       <span class="hljs-comments">// HTML: &lt;script src="js/main.js"&gt;&lt;/script&gt;</span>
-      main: <span class="hljs-string">'./app/scripts/main'</span>
+      main: <span class="hljs-string">'./app/scripts/main.js'</span>
     }
   },
   sprites: {
@@ -180,13 +186,14 @@ balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span cla
 });
 
 </code></pre>
-    </div>
-    <ul class="tabs">
-      <li class="active" data-type="basic">Basic</li>
-      <li data-type="advanced">Advanced</li>
-      <li><a href="https://github.com/balmjs/balm/blob/master/docs/configuration.md" rel="nofollow">More</a></li>
-    </ul>
-  </section>
+      </div>
+      <ul class="tabs">
+        <li class="active" data-type="basic">Basic</li>
+        <li data-type="advanced">Advanced</li>
+        <li><a href="https://github.com/balmjs/balm/blob/master/docs/configuration.md" rel="nofollow">More</a></li>
+      </ul>
+    </section>
+  </main>
   <footer>
     <a href="https://github.com/balmjs/balm">
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>

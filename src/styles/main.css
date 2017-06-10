@@ -1,7 +1,7 @@
-@import 'reset';
-@import 'header';
-@import 'content';
-@import 'footer';
-@import 'editor';
-@import 'device';
-@import 'responsive';
+@import '_reset.css';
+@import '_header.css';
+@import '_content.css';
+@import '_footer.css';
+@import '_editor.css';
+@import '_device.css';
+@import '_responsive.css';
