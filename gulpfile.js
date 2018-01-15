@@ -12,11 +12,22 @@ balm.config = {
     }
   },
   styles: {
-    ext: 'css'
+    ext: 'css',
+    autoprefixer: [
+      '> 1%',
+      'last 2 versions',
+      'Firefox ESR'
+    ]
   },
   scripts: {
     entry: {
       main: './src/scripts/main.js'
+    },
+    eslint: true,
+    options: {
+      compress: {
+        drop_console: false
+      }
     }
   }
 };
