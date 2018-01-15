@@ -29,7 +29,14 @@ balm.config = {
         drop_console: false
       }
     }
+  },
+  extras: {
+    includes: ['CNAME']
   }
 };
 
-balm.go();
+balm.go(function(mix){
+  if (balm.config.production) {
+    mix.copy('./docs/_book/**/*', './dist/docs');
+  }
+});
