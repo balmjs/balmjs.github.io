@@ -1,0 +1,16 @@
+{
+  "name": "balmjs.com",
+  "author": "Elf-mousE",
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "prod": "gulp --production",
+    "docs": "cd docs && gitbook install && gitbook serve",
+    "docs:deploy": "bash ./build/update-docs.sh"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "balm": "^0.15.4",
+    "gulp": "^3.9.1"
+  }
+}

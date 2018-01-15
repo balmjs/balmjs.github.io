@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+body, h1, h2, p, ul, li, pre {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 1.6rem 'Times New Roman', Arial, sans-serif;
+  color: white;
+  background: black;
+}
+
+a {
+  cursor: pointer;
+  color: white;
+}

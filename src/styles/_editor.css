@@ -1,0 +1,84 @@
+.cli {
+  height: 100%;
+  color: #85ff00;
+  background-color: #002b36;
+}
+
+.hljs-keyword {
+  color: rgba(195, 154, 78, 1);
+}
+
+.hljs-string {
+  color: rgba(130, 140, 91, 1);
+}
+
+.hljs-built_in {
+  color: rgba(112, 75, 40, 1);
+}
+
+.hljs-comments {
+  color: gray;
+}
+
+.editor-prefixed:before {
+  content: '$ ';
+}
+
+.editor-window {
+  background-color: #141414;
+}
+
+.editor-window .editor-menubar {
+  display: flex;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  background-color: #e5e4e4;
+  align-items: center;
+}
+
+.editor-window code, .editor-window code span {
+  font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+  font-size: 14pt;
+}
+
+@media (max-width: 420px) {
+  .editor-window code, .editor-window code span {
+    font-size: 13pt;
+  }
+}
+
+.editor-window pre {
+  overflow-x: auto;
+  height: 100%;
+  padding-left: 20px;
+  border-radius: 0 0 5px 5px;
+}
+
+.editor-menubar>.editor-button {
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 1px;
+}
+
+.editor-filename {
+  font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
+  font-size: 12pt;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #141414;
+}
+
+.editor-menubar .close {
+  margin-left: 10px;
+  background-color: red;
+}
+
+.editor-menubar .minimize {
+  background-color: yellow;
+}
+
+.editor-menubar .maximize {
+  background-color: green;
+}
