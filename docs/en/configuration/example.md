@@ -1,4 +1,4 @@
-🚀 A simple `gulpfile.js` example (`/path/to/project/gulpfile.js`)
+### A simple `gulpfile.js` example (`/path/to/project/gulpfile.js`)
 
 ```js
 // 1. Import balm

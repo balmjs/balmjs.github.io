@@ -2,8 +2,9 @@
 
 - [Introduction](README.md)
 - Basic
-  - [Structure](basic/structure.md)
   - [Installation](basic/installation.md)
+  - [Getting Started](basic/getting-started.md)
+  - [Structure](basic/structure.md)
   - Demo
 - [Configuration](configuration/toc.md)
   - [Example](configuration/example.md)
