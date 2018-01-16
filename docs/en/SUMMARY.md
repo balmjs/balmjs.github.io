@@ -1,4 +1,38 @@
 # Summary
 
-* [Introduction](README.md)
-
+- [Introduction](README.md)
+- Basic
+  - [Structure](basic/structure.md)
+  - [Installation](basic/installation.md)
+  - Demo
+- [Configuration](configuration/toc.md)
+  - [Example](configuration/example.md)
+  - [Project Type](configuration/project.md)
+  - Root & Path
+    - [Source Input](configuration/path.md#input)
+    - [Target Output](configuration/path.md#output)
+  - [HyperText Markup Language](configuration/html.md)
+  - [Cascading Style Sheets](configuration/styles.md)
+  - JavaScript
+    - [Entry](configuration/scripts.md#entry)
+    - [Output](configuration/scripts.md#output)
+    - [Loaders](configuration/scripts.md#loaders)
+    - [Plugins](configuration/scripts.md#plugins)
+    - [Development](configuration/scripts.md#development)
+    - [Advanced Options](configuration/scripts.md#advanced-options)
+    - [Optimization](configuration/scripts.md#optimization)
+  - [CSS Sprites](configuration/sprites.md)
+  - [Extra Files](configuration/extras.md)
+  - [Server](configuration/server.md)
+  - Publish
+    - [Zip](configuration/publish.md#zip)
+    - [Ftp](configuration/publish.md#ftp)
+    - [Assets](configuration/publish.md#assets)
+    - [Cache](configuration/publish.md#cache)
+  - [Others](configuration/others.md)
+- [API Reference]((api/toc.md))
+  - server
+  - files
+  - stylesheets
+  - scripts
+  - assets

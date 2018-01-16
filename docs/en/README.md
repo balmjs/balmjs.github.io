@@ -1,33 +1,22 @@
 # BalmJS
-> A flexible Front-End workflow for webapps
+> A flexible Front-End workflow for webapps.
 
 ## What's BalmJS?
 
 BalmJS prescribes best practices and tools to help you stay productive.
 
-## Structure
-> Returning to webapp's original nature.
+## Ecosystem
 
-```
-project
-├── .tmp         // Scaffolds out a temporary directory for development
-├── dist         // Scaffolds out the production build
-├─┬ src          // Source code in here (Create a directory in project)
-│ ├─┬ styles
-│ │ └── main.css // Required. A entry file for CSS.
-│ ├─┬ scripts
-│ │ └── main.js  // Required. A entry file for JS.
-│ ├── images
-│ ├── fonts
-│ ├── media
-│ └── index.html // Required. A entry file for HTML.
-├─┬ config       // Optional. But recommended. Refer to BalmCLI's templates.
-│ ├── balmrc.js
-│ └── publish.js
-├── .dotfile     // (.babelrc, .gitignore, etc...)
-├── gulpfile.js  // Required. A configuration file for Balm.
-├── package.json // Required.
-└── ...
-```
+Project | Status | Description
+------- | ------ | -----------
+[balm-cli](https://github.com/balmjs/balm-cli) | [![NPM version][balm-cli-image]][balm-cli-url] | BalmJS scaffolding tool
+[balm-gui](https://github.com/balmjs/balm-gui) | N/A | GUI for BalmJS
+[balm-ui-lite](https://github.com/balmjs/ui-vue-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material Design Lite + Vue
+[balm-ui](https://github.com/balmjs/ui-vue) | [![NPM version][balm-ui-image]][balm-ui-url] | Material Components + Vue
 
-> We recommend using [Balm CLI](https://github.com/balmjs/balm-cli) to scaffold out a front-end web app.
+[balm-cli-image]: https://badge.fury.io/js/balm-cli.svg
+[balm-cli-url]: https://npmjs.org/package/balm-cli
+[balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg
+[balm-ui-lite-url]: https://npmjs.org/package/balm-ui-lite
+[balm-ui-image]: https://badge.fury.io/js/balm-ui.svg
+[balm-ui-url]: https://npmjs.org/package/balm-ui
