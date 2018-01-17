@@ -3,7 +3,7 @@
   "description": "BalmJS - A flexible Front-End workflow for webapps",
   "author": "Elf-mousE",
   "gitbook": ">3.0.0",
-  "plugins": ["-fontsettings", "theme-vuejs", "github"],
+  "plugins": ["-fontsettings", "github"],
   "pluginsConfig": {
     "github": {
       "url": "https://github.com/balmjs/balm/"
