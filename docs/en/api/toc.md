@@ -25,7 +25,6 @@
 var balm = require('balm');
 
 balm.config = {
-  useDefault: false, // Don't start balm default tasks
   // Your project config
 };
 
