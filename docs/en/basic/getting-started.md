@@ -1,6 +1,6 @@
 # Getting Started
 
-### 0. The simplest structure for webapp ([Full version](structure.md))
+The simplest structure for webapp ([Full version](structure.md))
 
 ```
 project
@@ -14,6 +14,8 @@ project
 ├── gulpfile.js
 └── package.json
 ```
+
+## Webapp directory
 
 ### 1. HTML template (`/path/to/project/app/index.html`)
 
@@ -37,7 +39,24 @@ project
 </html>
 ```
 
-### 2. `.babelrc` (`/path/to/project/.babelrc`)
+### 2. A CSS entry file (`/path/to/project/app/styles/main.scss`)
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+
+### 3. A JS entry file (`/path/to/project/app/scripts/main.js`)
+
+```js
+console.log('Hello BalmJS');
+```
+
+## Project settings
+
+### 1. `.babelrc` (`/path/to/project/.babelrc`)
 
 > enable [ES2015 features](https://babeljs.io/learn-es2015/) using [Babel](https://babeljs.io/)
 
@@ -72,4 +91,4 @@ Then, edit `.babelrc`:
 }
 ```
 
-### 3. [`gulpfile.js`](../configuration/example.html) for `balm` config
+### 2. [`gulpfile.js`](../configuration/example.html) for `balm` config

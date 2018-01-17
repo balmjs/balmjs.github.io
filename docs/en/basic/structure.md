@@ -1,4 +1,4 @@
-# Structure
+# Directory Structure
 > Returning to webapp's original nature.
 
 ```

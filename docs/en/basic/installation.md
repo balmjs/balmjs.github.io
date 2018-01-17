@@ -1,6 +1,6 @@
 # Installation
 
-### 0. Requirement
+### 0. Requirements
 
 You need to set up your development environment before you can do anything.
 
@@ -15,6 +15,7 @@ $ npm install --global gulp-cli
 
 # Verify
 $ gulp -v
+# Output: CLI version 2.0.0
 ```
 
 ### 1. Installing __`balm`__
@@ -36,15 +37,15 @@ $ yarn add --dev gulp balm
 In your project directory, create a file named `gulpfile.js` in your project root with these contents:
 
 ```js
-// 1. import balm
+// 1. Import balm
 var balm = require('balm');
 
-// 2. config balm
+// 2. Config balm
 balm.config = {
-  // your project config
+  // Your project config
 };
 
-// 3. run balm
+// 3. Run balm
 balm.go();
 ```
 
@@ -55,9 +56,9 @@ Refer to [our configuration docs](../configuration/toc.md) to learn more about c
 Run the gulp command in your project directory:
 
 ```sh
-# for development
+# For development
 $ gulp
 
-# for production
+# For production
 $ gulp --production
 ```
