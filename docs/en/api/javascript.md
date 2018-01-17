@@ -42,7 +42,7 @@
 ## `mix.jsmin(input, output, renameOptions)`
 
 - Arguments
-  - `input`: `string`
+  - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
 - Usage

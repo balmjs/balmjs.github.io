@@ -5,7 +5,7 @@
 __[PostCSS](http://postcss.org/)__ to CSS
 
 - Arguments
-  - `input`: `string`
+  - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
   ```js
@@ -41,7 +41,7 @@ __[PostCSS](http://postcss.org/)__ to CSS
 __[Sass](http://sass-lang.com/)__ to CSS
 
 - Arguments
-  - `input`: `string`
+  - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
   ```js
@@ -75,7 +75,7 @@ __[Sass](http://sass-lang.com/)__ to CSS
 __[Less](http://lesscss.org/)__ to CSS
 
 - Arguments
-  - `input`: `string`
+  - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
   ```js
@@ -107,7 +107,7 @@ __[Less](http://lesscss.org/)__ to CSS
 ## `mix.cssmin(input, output, renameOptions)`
 
 - Arguments
-  - `input`: `string`
+  - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
 - Usage
