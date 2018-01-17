@@ -4,9 +4,9 @@
 
 `string`
 
-Supported CSS extensions: [css](http://postcss.org/), [scss](http://sass-lang.com/), [less](http://lesscss.org/). Defaults to `'css'`.
+Supported CSS extensions: css, [scss](http://sass-lang.com/), [less](http://lesscss.org/). Defaults to `'css'`.
 
-> Default `css` extension for `postcss`
+> Default `css` extension for [PostCSS](http://postcss.org/)
 
 🌰 For example:
 

@@ -31,9 +31,12 @@
     - [Assets](configuration/publish.md#assets)
     - [Cache](configuration/publish.md#cache)
   - [Others](configuration/others.md)
-- [API Reference]((api/toc.md))
-  - server
-  - files
-  - stylesheets
-  - scripts
-  - assets
+- [API Reference](api/toc.md)
+  - Stylesheets
+    - [css](api/stylesheets.md#mixcssinput-output)
+    - [sass](api/stylesheets.md#mixsassinput-output)
+    - [less](api/stylesheets.md#mixlessinput-output)
+    - [cssmin](api/stylesheets.md#mixcssmininput-output-renameoptions)
+  - JavaScript
+    - [js](api/javascript.md#mixjsinput-output)
+    - [jsmin](api/javascript.md#mixjsmininput-output-renameoptions)
