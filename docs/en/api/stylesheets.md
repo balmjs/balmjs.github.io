@@ -10,7 +10,7 @@ __[PostCSS](http://postcss.org/)__ to CSS
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * Input:  '/path/to/project/app/styles/single.css'
    * Output: '/path/to/project/dist/css/single.css'
@@ -20,7 +20,7 @@ __[PostCSS](http://postcss.org/)__ to CSS
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * Input:
    * '/path/to/project/app/styles/multi-a.css'
@@ -46,7 +46,7 @@ __[Sass](http://sass-lang.com/)__ to CSS
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * Input:  '/path/to/project/app/styles/single.scss'
    * Output: '/path/to/project/dist/css/single.css'
@@ -56,7 +56,7 @@ __[Sass](http://sass-lang.com/)__ to CSS
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * Input:
    * '/path/to/project/app/styles/multi-a.scss'
@@ -80,7 +80,7 @@ __[Less](http://lesscss.org/)__ to CSS
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * Input:  '/path/to/project/app/styles/single.less'
    * Output: '/path/to/project/dist/css/single.css'
@@ -90,7 +90,7 @@ __[Less](http://lesscss.org/)__ to CSS
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * Input:
    * '/path/to/project/app/styles/multi-a.less'
@@ -113,7 +113,7 @@ __[Less](http://lesscss.org/)__ to CSS
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * Input:  '/path/to/project/app/styles/single.css'
    * Output: '/path/to/project/dist/css/single.min.css'
@@ -123,7 +123,7 @@ __[Less](http://lesscss.org/)__ to CSS
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * Input:
    * '/path/to/project/app/styles/multi-a.css'

@@ -4,12 +4,11 @@
   - `mix.css(input, output)`
   - `mix.sass(input, output)`
   - `mix.less(input, output)`
-  - `mix.buildStyle()`
   - `mix.cssmin(input, output, renameOptions = {suffix: '.min'})`
 - JavaScript
   - `mix.js(input, output)`
   - `mix.jsmin(input, output, renameOptions = {suffix: '.min'})`
-- Files
+- Files & Directories
   - `mix.copy(from, to, renameOptions = {})`
   - `mix.remove(src)`
 - Cache

@@ -8,7 +8,7 @@
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * (ES6+)Input: '/path/to/project/app/scripts/single.js'
    * (ES5)Output: '/path/to/project/dist/js/main.js'
@@ -22,7 +22,7 @@
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * (ES6+)Input:
    * '/path/to/project/app/scripts/multi-a.js'
@@ -48,7 +48,7 @@
 - Usage
   ```js
   /**
-   * Single File
+   * Single file
    *
    * (ES5)Input: '/path/to/project/app/scripts/single.js'
    *     Output: '/path/to/project/dist/js/single.min.js'
@@ -58,7 +58,7 @@
 
   ```js
   /**
-   * Multiple Files
+   * Multiple files
    *
    * (ES5)Input:
    * '/path/to/project/app/scripts/multi-a.js'

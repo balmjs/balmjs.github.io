@@ -40,3 +40,6 @@
   - JavaScript
     - [js](api/javascript.md#mixjsinput-output)
     - [jsmin](api/javascript.md#mixjsmininput-output-renameoptions)
+  - Files & Directories
+    - [copy](api/files.md#copyfromtorenameoptions)
+    - [remove](api/files.md#removesrc)
