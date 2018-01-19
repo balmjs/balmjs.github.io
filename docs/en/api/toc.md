@@ -32,4 +32,4 @@ balm.go(function(mix) {
 });
 ```
 
-> `balm.config` Refer to [BalmJS Configuration](../configuration/toc.md)
+> `balm.config` refer to [BalmJS Configuration](../configuration/toc.md)

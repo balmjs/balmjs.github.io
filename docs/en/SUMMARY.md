@@ -46,6 +46,6 @@
   - [Cache](api/cache.md)
   - [Server](api/server.md)
   - Assets
-    - zip
-    - ftp
-    - publish
+    - [zip](api/assets.md#mixzipinput-output)
+    - [ftp](api/assets.md#mixftpinput)
+    - [publish](api/assets.md#mixpublishinput-output-renameoptions)

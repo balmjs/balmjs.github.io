@@ -14,7 +14,7 @@ Production to zip. Defaults to `'archive.zip'`.
 zip: 'archive.zip'
 ```
 
-Usage: see [Custom Task API](../api/zip.md)
+Usage: Refer to __Custom Task API__ - [mix.zip](../api/assets.html#mixzipinput-output)
 
 ## Ftp
 
@@ -60,7 +60,7 @@ ftp: {
 }
 ```
 
-Usage: see [Custom Task API](../api/ftp.md)
+Usage: Refer to __Custom Task API__ - [mix.ftp](../api/assets.html#mixftpinput)
 
 ## Assets
 

@@ -65,7 +65,7 @@ balm.go(function(mix) {
     mix.publish();
 
     // Publish html templates
-    // from local `${roots.target}/index.html`
+    // from local `${roots.target}/old-filename.html`
     // to remote `${assets.root}/views/new-filename.blade.php`
     mix.publish('index.html', 'views', {
       basename: 'new-filename',
