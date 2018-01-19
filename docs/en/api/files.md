@@ -70,7 +70,7 @@
   mix.copy('app/images/**/*', 'dist/img');
   ```
 
-## `remove(src)`
+## `mix.remove(src)`
 
 - Arguments
   - `src`: `string` `array`

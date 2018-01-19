@@ -12,9 +12,9 @@
   - `mix.copy(from, to, renameOptions = {})`
   - `mix.remove(src)`
 - Cache
-  - `mix.version(input, output, renameOptions = {})`
+  - `mix.version(input, output, excludes = [])`
 - Server
-  - `mix.server()`
+  - `mix.serve()`
 - Assets
   - `mix.zip(input = '', output = '')`
   - `mix.ftp(input)`
@@ -32,4 +32,4 @@ balm.go(function(mix) {
 });
 ```
 
-> Refer to [BalmJS Configuration](../configuration/toc.md)
+> `balm.config` Refer to [BalmJS Configuration](../configuration/toc.md)

@@ -41,5 +41,11 @@
     - [js](api/javascript.md#mixjsinput-output)
     - [jsmin](api/javascript.md#mixjsmininput-output-renameoptions)
   - Files & Directories
-    - [copy](api/files.md#copyfromtorenameoptions)
-    - [remove](api/files.md#removesrc)
+    - [copy](api/files.md#mixcopyfrom-to-renameoptions)
+    - [remove](api/files.md#mixremovesrc)
+  - [Cache](api/cache.md)
+  - [Server](api/server.md)
+  - Assets
+    - zip
+    - ftp
+    - publish
