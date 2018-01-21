@@ -15,6 +15,8 @@ project
 └── package.json
 ```
 
+And you can also [download the example](http://balmjs.com/balm-example.zip).
+
 ## Webapp directory
 
 ### 1. HTML template (`/path/to/project/app/index.html`)
@@ -51,7 +53,7 @@ project
 ### 3. A JS entry file (`/path/to/project/app/scripts/main.js`)
 
 ```js
-console.log('Hello BalmJS');
+document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 ```
 
 ## Project settings

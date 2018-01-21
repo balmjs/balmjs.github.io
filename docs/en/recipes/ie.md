@@ -1,0 +1,21 @@
+# For IE8 (ES3)
+
+First, run this command in your project directory:
+
+```sh
+$ npm i -D babel-preset-es2015-loose
+$ npm i -D babel-plugin-transform-es3-member-expression-literals
+$ npm i -D babel-plugin-transform-es3-property-literals
+```
+
+Then, edit `/path/to/project/.babelrc`:
+
+```json
+{
+  "presets": ["es2015-loose"],
+  "plugins": [
+    "transform-es3-member-expression-literals",
+    "transform-es3-property-literals"
+  ]
+}
+```

@@ -13,11 +13,7 @@ balm.config = {
   },
   styles: {
     ext: 'css',
-    autoprefixer: [
-      '> 1%',
-      'last 2 versions',
-      'Firefox ESR'
-    ]
+    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
   },
   scripts: {
     entry: {
@@ -32,11 +28,15 @@ balm.config = {
   },
   extras: {
     includes: ['CNAME']
-  }
+  },
+  zip: 'balm-example.zip'
 };
 
-balm.go(function(mix){
+balm.go(function(mix) {
   if (balm.config.production) {
-    mix.copy('./docs/_book/**/*', './dist/docs');
+    mix.copy('docs/_book/**/*', 'dist/docs');
+
+    mix.zip(['example/**/*', 'example/.babelrc']);
+    mix.copy('balm-example.zip', 'dist');
   }
 });

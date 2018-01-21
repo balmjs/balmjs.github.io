@@ -14,6 +14,8 @@
    * Output: '/path/to/project/archive.zip'
    */
   mix.zip();
+  // With dotfile
+  mix.zip(['dist/**/*', 'dist/.babelrc']);
   ```
 
   ```js

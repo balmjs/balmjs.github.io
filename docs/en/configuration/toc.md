@@ -18,7 +18,7 @@
 - [CSS Sprites](sprites.md)
 - [Extra Files](extras.md)
 - [Server](server.md)
-- [Publish](publish.md)
+- Publish
   - [Zip](publish.md#zip)
   - [Ftp](publish.md#ftp)
   - [Assets](publish.md#assets)

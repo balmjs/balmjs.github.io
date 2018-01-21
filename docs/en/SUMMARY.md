@@ -1,11 +1,11 @@
 # Summary
 
 - [Introduction](README.md)
-- Basic
+- [Basic](basic/toc.md)
   - [Installation](basic/installation.md)
   - [Getting Started](basic/getting-started.md)
   - [Structure](basic/structure.md)
-  - Demo
+  - [Demo](basic/demo.md)
 - [Configuration](configuration/toc.md)
   - [Example](configuration/example.md)
   - [Project Type](configuration/project.md)
@@ -49,3 +49,7 @@
     - [zip](api/assets.md#mixzipinput-output)
     - [ftp](api/assets.md#mixftpinput)
     - [publish](api/assets.md#mixpublishinput-output-renameoptions)
+- [Recipes](recipes/toc.md)
+  - [npm-run-script](recipes/run-script.md)
+  - [IE](recipes/ie.md)]
+- [FAQ](faq.md)

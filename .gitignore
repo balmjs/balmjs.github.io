@@ -5,3 +5,5 @@ dist/
 npm-debug.log
 yarn-error.log
 docs/_book
+balm-example.zip
+balm-example/

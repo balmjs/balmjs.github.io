@@ -34,12 +34,12 @@ balm.config = {
   scripts: {
     entry: {
       // HTML: <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
-      mylib: [
-        'your-project-library-1',
-        'your-project-library-2',
-        'your-project-plugin-A',
-        'your-project-plugin-B'
-      ],
+      // mylib: [
+      //   'your-project-library-1',
+      //   'your-project-library-2',
+      //   'your-project-plugin-A',
+      //   'your-project-plugin-B'
+      // ],
       // Entry
       main: './app/scripts/main.js'
     }
