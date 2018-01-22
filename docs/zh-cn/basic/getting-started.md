@@ -1,6 +1,6 @@
-# Getting Started
+# 快速上手
 
-The simplest structure for webapp ([Full version](structure.md))
+最简单的WEB应用项目结构（[完整目录结构](structure.md)）
 
 ```
 project
@@ -15,11 +15,11 @@ project
 └── package.json
 ```
 
-And you can also [download the example](http://balmjs.com/balm-example.zip).
+你也可以 [下载例子](http://balmjs.com/balm-example.zip) 来帮助学习。
 
-## Webapp directory
+## WEB应用目录
 
-### 1. HTML template (`/path/to/project/app/index.html`)
+### 1. 一个模板入口文件 (`/path/to/project/app/index.html`)
 
 ```html
 <!DOCTYPE html>
@@ -41,7 +41,7 @@ And you can also [download the example](http://balmjs.com/balm-example.zip).
 </html>
 ```
 
-### 2. A CSS entry file (`/path/to/project/app/styles/main.scss`)
+### 2. 一个样式入口文件 (`/path/to/project/app/styles/main.scss`)
 
 ```css
 * {
@@ -50,21 +50,23 @@ And you can also [download the example](http://balmjs.com/balm-example.zip).
 }
 ```
 
-### 3. A JS entry file (`/path/to/project/app/scripts/main.js`)
+### 3. 一个脚本入口文件 (`/path/to/project/app/scripts/main.js`)
 
 ```js
 document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 ```
 
-## Project settings
+## 项目配置文件
 
 ### 1. `.babelrc` (`/path/to/project/.babelrc`)
 
-> enable [ES2015 features](https://babeljs.io/learn-es2015/) using [Babel](https://babeljs.io/)
+> 使用 [Babel](https://babeljs.io/) 开启 [ES2015 特性](https://babeljs.io/learn-es2015/)
 
-In your project directory, create a file named `.babelrc` in your project root with these contents:
+在你的项目根目录下，新建一个名叫 `.babelrc` 的配置文件：
 
-- For `balm` version >= 0.7.0
+- 新版 `balm` (版本 >= 0.7.0)
+
+配置内容：
 
 ```json
 {
@@ -73,19 +75,19 @@ In your project directory, create a file named `.babelrc` in your project root w
 }
 ```
 
-- For `balm` version < 0.7.0
+- 旧版 `balm` (版本 < 0.7.0)
 
-First, run this command in your project directory:
+首先，在你的项目根目录下运行命令：
 
 ```sh
-# For ES6 compilation ability
+# 可编译ES6
 $ npm install --save-dev babel-preset-es2015
 
-# For ES7 compilation ability
+# 可编译部分ES7
 $ npm install --save-dev babel-preset-stage-0
 ```
 
-Then, edit `.babelrc`:
+然后，编辑 `.babelrc` 配置内容：
 
 ```json
 {
@@ -93,4 +95,4 @@ Then, edit `.babelrc`:
 }
 ```
 
-### 2. [`gulpfile.js`](../configuration/example.html) for `balm` config
+### 2. `balm` 配置文件 [`gulpfile.js`](../configuration/example.html)

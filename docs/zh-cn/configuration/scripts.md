@@ -1,17 +1,17 @@
-# JavaScript
+# JS配置
 
-## Entry
+## 入口
 
 ### `scripts.entry`
 
 `object`
 
-The entry point for the bundle. Defaults to `null`.
+脚本入口点。默认值为：`null`。
 
-1. `key(string): value(string)`: Bundle one entry point per HTML page.
-2. `key(string): value(array)`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
+1. `key(string): value(string)`: 每个HTML页面对应一个脚本入口文件。
+2. `key(string): value(array)`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 scripts: {
@@ -24,7 +24,7 @@ scripts: {
 }
 ```
 
-Then, your HTML templates:
+然后，你的HTML模板中就可以使用自定义提取 `lib` 和 `ui`：
 
 ```html
 <!-- Page One -->
@@ -40,21 +40,21 @@ Then, your HTML templates:
 <script src="%PUBLIC_URL%/scripts/sub-page.js"></script>
 ```
 
-## Output
+## 输出
 
 ### `scripts.filename`
 
 `string`
 
-Specifies the name of each output file on disk. You must __not__ specify an absolute path here! Defaults to `'[name]'`.
+指定磁盘上每个输出文件的名称。你__不能__在这里指定绝对路径！默认值为：`'[name]`。
 
-- Using the unique hash generated for every build:
+- 每个构建使用唯一的hash来生成：
 
 ```js
 filename: '[name].[hash]'
 ```
 
-- Using hashes based on each chunks' content:
+- 根据文件内容hash来生成：
 
 ```js
 filename: '[chunkhash]'
@@ -66,7 +66,7 @@ filename: '[chunkhash]'
 
 > New in 0.8.4
 
-The name of the exported library. Defaults to `''`.
+导出的库的名称。默认值为：`''`。
 
 ### `scripts.libraryTarget`
 
@@ -74,9 +74,9 @@ The name of the exported library. Defaults to `''`.
 
 > New in 0.8.4
 
-The type of the exported library. Defaults to `'var'`.
+导出的库的类型。默认值为：`'var'`。
 
-Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
+支持的选项: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
 
 ### `scripts.umdNamedDefine`
 
@@ -84,7 +84,7 @@ Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `
 
 > New in 0.9.0
 
-When using `libraryTarget: 'umd'`, setting:
+当使用 `libraryTarget: 'umd'` 时，设置：
 
 ```js
 umdNamedDefine: true
@@ -92,12 +92,12 @@ umdNamedDefine: true
 
 ### `scripts.chunkFilename`
 
-The filename of non-entry chunks as relative path inside the `output.path` directory. Defaults to `'(auto)'`.
+The filename of non-entry chunks as relative path inside the `output.path` directory. 默认值为：`'(auto)'`。
 
-- `[id]` is replaced by the id of the chunk. (automatic setting for development)
+- `[id]` is replaced by the id of the chunk.（开发模式默认值）
 - `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
 - `[hash]` is replaced by the hash of the compilation.
-- `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
+- `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
 
 ## Loaders
 
@@ -105,7 +105,7 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 
 `array`
 
-An array of automatically applied loaders. Defaults to `[]`.
+一系列自动应用的 loaders. 默认值为：`[]`。
 
 Each item can have these properties:
 
@@ -115,7 +115,7 @@ Each item can have these properties:
 - `loader`: A string of “!” separated loaders
 - `loaders`: An array of loaders as string
 
-__BalmJS__ default loaders:
+__BalmJS__ 默认已加载的 loaders:
 
 - [`html`](https://github.com/webpack/html-loader)
 - [`style`](https://github.com/webpack/style-loader)
@@ -127,18 +127,18 @@ __BalmJS__ default loaders:
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
-🌰 For example:
+🌰 例如：
 
-First, install some loader:
+首先，安装你需要的loader：
 
 ```sh
 $ npm i -D vue-loader
 
-# OR install with yarn
+# 或者使用yarn安装
 $ yarn add -D vue-loader
 ```
 
-Then, use it:
+然后，加载它：
 
 ```js
 scripts: {
@@ -153,16 +153,16 @@ scripts: {
 
 `array`
 
-An array of extensions that should be used to resolve modules. Defaults to `[]`.
+用来解析模块的文件扩展数组。默认值为：`[]`。
 
-__BalmJS__ default extensions:
+__BalmJS__ 默认已支持的扩展名：
 
 - `.js`
 - [`.json`](http://www.json.org/)
 - [`.jsx`](http://facebook.github.io/jsx/)
 - [`.vue`](https://vuejs.org/)
 
-🌰 For example:
+🌰 例如：
 
 ```js
 scripts: {
@@ -170,14 +170,14 @@ scripts: {
 }
 ```
 
-Before, usage:
+之前的用法：
 
 ```js
 // main.js
 import foo from 'foo.ts';
 ```
 
-Now, you can:
+现在的用法：
 
 ```js
 // main.js
@@ -188,9 +188,9 @@ import foo from 'foo';
 
 `object`
 
-Replace modules by other modules or paths. Defaults to `{}`.
+用其他模块或路径替换模块。默认值为：`{}`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 scripts: {
@@ -206,37 +206,37 @@ scripts: {
 
 > New in 0.9.1
 
-Supply a [Rule.include](https://webpack.js.org/configuration/module/#rule-include) option in `babel-loader` for some vendor scripts from `node_modules`. Defaults to `[]`.
+在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#rule-include) 选项
 
-## Plugins
+## 插件
 
 ### `scripts.plugins`
 
 `array`
 
-Add additional plugins to the compiler. Defaults to `[]`.
+添加额外的插件到编译器。默认值为：`[]`。
 
 > [List of plugins](https://webpack.js.org/plugins/)
 
-## Development
+## 开发调试
 
 ### `scripts.hot`
 
 `boolean`
 
-Hot reload. Defaults to `true`.
+开启热加载。默认值为：`true`。
 
 ### `scripts.sourceMap`
 
 `boolean`
 
-Source mapping. Defaults to `false`.
+开启源映射。默认值为：`false`。
 
 ### `scripts.target`
 
 `string`
 
-To target a specific environment. Defaults to `'web'`.
+针对特定的环境。默认值为：`'web'`。
 
 > [Target config](https://webpack.js.org/configuration/target/#string)
 
@@ -244,7 +244,7 @@ To target a specific environment. Defaults to `'web'`.
 
 `object`
 
-Capture timing information for each module. Defaults to:
+捕获每个模块的时间信息。默认值为：
 
 ```js
 {
@@ -262,9 +262,9 @@ Capture timing information for each module. Defaults to:
 
 `boolean`
 
-The pluggable linting utility for JavaScript and JSX. Defaults to `false`.
+JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 
-## Advanced Options
+## 高级配置
 
 ### `scripts.webpack`
 
@@ -272,7 +272,7 @@ The pluggable linting utility for JavaScript and JSX. Defaults to `false`.
 
 > New in 0.8.4
 
-Overwrite webpack config. Defaults to `{}`.
+重写webpack配置项。默认值为：`{}`。
 
 > [All configuration options](https://webpack.js.org/configuration/)
 
@@ -282,7 +282,7 @@ Overwrite webpack config. Defaults to `{}`.
 
 > New in 0.6.0
 
-[UglifyJS options](http://lisperator.net/uglifyjs/). Defaults to:
+[UglifyJS options](http://lisperator.net/uglifyjs/). 默认值为：
 
 ```js
 {
@@ -298,13 +298,13 @@ Overwrite webpack config. Defaults to `{}`.
 }
 ```
 
-## Optimization
+## 优化
 
 ### `scripts.vendorName`
 
 `string`
 
-AllInOne vendor filename or Custom Vendor folder name. Defaults to `'vendor'`.
+AllInOne vendor filename or Custom Vendor folder name. 默认值为：`'vendor'`。
 
 ### `scripts.extractAllVendors`
 
@@ -312,13 +312,13 @@ AllInOne vendor filename or Custom Vendor folder name. Defaults to `'vendor'`.
 
 > Named `scripts.vendor` in version < 0.12.0
 
-All vendors in one (for SPA). Defaults to `false`.
+All vendors in one (for SPA). 默认值为：`false`。
 
 ### `scripts.vendors`
 
 `array`
 
-Custom Vendor Modules. Defaults to `[]`. (automatic setting by `scripts.entry`)
+Custom Vendor Modules. 默认值为：`[]`. (automatic setting by `scripts.entry`。
 
 ### `scripts.cdn`
 
@@ -326,7 +326,7 @@ Custom Vendor Modules. Defaults to `[]`. (automatic setting by `scripts.entry`)
 
 > New in 0.9.0
 
-The same to webpack [externals](https://webpack.js.org/configuration/externals/#externals). Defaults to `null`.
+The same to webpack [externals](https://webpack.js.org/configuration/externals/#externals). 默认值为：`null`。
 
 ### `scripts.cssLoader`
 
@@ -334,7 +334,7 @@ The same to webpack [externals](https://webpack.js.org/configuration/externals/#
 
 > New in 0.12.0
 
-Use BalmJS default rules or custom rules for `css-loader`. Defaults to `true`.
+Use BalmJS default rules or custom rules for `css-loader`. 默认值为：`true`。
 
 ### `scripts.extractCss`
 
@@ -342,7 +342,7 @@ Use BalmJS default rules or custom rules for `css-loader`. Defaults to `true`.
 
 > New in 0.12.0
 
-Extract css from some bundle. Defaults to:
+Extract css from some bundle. 默认值为：
 
 ```js
 {

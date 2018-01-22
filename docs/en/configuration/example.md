@@ -45,8 +45,8 @@ balm.config = {
     }
   },
   // sprites: {
-  //   image: ['img-icon'], // Icon path: './app/images/img-icon'
-  //   svg: ['svg-icon']    //  SVG path: './app/images/svg-icon'
+  //   image: ['img-icon'], // Icon path: ['./app/images/img-icon']
+  //   svg: ['svg-icon']    //  SVG path: ['./app/images/svg-icon']
   // },
   assets: {
     root: '/path/to/your_remote_project', // Remote project root path

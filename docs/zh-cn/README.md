@@ -1,33 +1,22 @@
 # BalmJS
-> 一个灵活的Web应用程序前端工作流程。
+> 一个灵活的前端工作流方案
 
 ## 什么是 BalmJS ？
 
-BalmJS 规定了最佳实践和工具，以帮助您保持高效。
+BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效工作。
 
-## 项目结构
-> 让 webapp 返璞归真。
+## 生态系统
 
-```
-project
-├── .tmp         // 开发模式：生成的一个临时目录
-├── dist         // 生产模式：生成的一个打包目录
-├─┬ src          // 项目源代码。（在项目中创建此文件夹）
-│ ├─┬ styles
-│ │ └── main.css // 必须的。CSS样式入口文件。
-│ ├─┬ scripts
-│ │ └── main.js  // 必须的。JS脚本入口文件。
-│ ├── images
-│ ├── fonts
-│ ├── media
-│ └── index.html // 必须的。HTML模板入口文件。
-├─┬ config       // 可选的。但推荐。请参照 BalmCLI 模板。
-│ ├── balmrc.js
-│ └── publish.js
-├── .dotfile     // (.babelrc, .gitignore, 等……)
-├── gulpfile.js  // 必须的。Balm的配置文件。
-├── package.json // 必须的。
-└── ...
-```
+项目 | 状态 | 描述
+------- | ------ | -----------
+[balm-cli](https://github.com/balmjs/balm-cli) | [![NPM version][balm-cli-image]][balm-cli-url] | BalmJS 脚手架工具
+[balm-gui](https://github.com/balmjs/balm-gui) | N/A | BalmJS 可视化工具
+[balm-ui-lite](https://github.com/balmjs/ui-vue-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material UI库 (精简版) + Vue
+[balm-ui](https://github.com/balmjs/ui-vue) | [![NPM version][balm-ui-image]][balm-ui-url] | Material UI库 (完整版) + Vue
 
-> 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 来构建一个前端Web应用的脚手架程序。
+[balm-cli-image]: https://badge.fury.io/js/balm-cli.svg
+[balm-cli-url]: https://npmjs.org/package/balm-cli
+[balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg
+[balm-ui-lite-url]: https://npmjs.org/package/balm-ui-lite
+[balm-ui-image]: https://badge.fury.io/js/balm-ui.svg
+[balm-ui-url]: https://npmjs.org/package/balm-ui
