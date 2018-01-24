@@ -4,7 +4,7 @@
 
 `boolean`
 
-Decide which URL to open automatically when server starts. Defaults to `true`.
+决定在服务器启动时自动打开哪个URL。默认值为：`true`。
 
 ### `server.https`
 
@@ -12,25 +12,25 @@ Decide which URL to open automatically when server starts. Defaults to `true`.
 
 > New in 0.10.3
 
-Enable https for localhost development. Note - this is not needed for proxy option as it will be inferred from your target url. Defaults to `undefined`.
+启用https进行本地主机开发。注意 - 这是代理选项不需要的，因为它会从你的目标网址中推断出来。默认值为：`undefined`。
 
 ### `server.host`
 
 `string`
 
-Override host detection if you know the correct IP to use. Defaults to `null`.
+如果您知道使用正确的IP，则覆盖主机检测。默认值为：`null`。
 
 ### `server.port`
 
 `number`
 
-Use a specific port. Defaults to `3000`.
+使用特定的端口。默认值为：`3000`。
 
 ### `server.proxy`
 
 `string` `object` `boolean`
 
-Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to view your site. Defaults to `undefined`.
+代理一个现有的虚拟主机。Browsersync将用代理URL封装您的虚拟主机来查看您的网站。默认值为：`undefined`。
 
 ### `server.serveStatic`
 
@@ -38,9 +38,9 @@ Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to vi
 
 > New in 0.10.4
 
-Add additional directories from which static files should be served. Should only be used in `proxy` or `snippet` mode. Defaults to `[]`.
+添加应从其提供静态文件的其他目录。只能在 `proxy` 或 `snippet` 模式下使用。默认值为：`[]`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 server: {
@@ -56,20 +56,20 @@ server: {
 
 `object`
 
-Define HTTP proxies to your custom API backend. Defaults to `{}`.
+定义HTTP代理到您的自定义API后端。默认值为：`{}`。
 
 > Full list of `http-proxy-middleware` [configuration options](https://github.com/chimurai/http-proxy-middleware#options)
 
-🌰 For example:
+🌰 例如：
 
 ```js
 server: {
   host: '192.168.1.1',
   port: 8080,
-  proxyTable: { // proxy partial
-    '/api': { // context
-       target: 'http://your.project.dev', // target host
-       changeOrigin: true // needed for virtual hosted sites
+  proxyTable: { // 代理部分
+    '/api': { // 接口名称
+       target: 'http://your.project.dev', // 代理的目标域名
+       changeOrigin: true // 虚拟域名站点必备
     }
   }
 }
@@ -79,7 +79,7 @@ server: {
 
 `boolean`
 
-Support environments where dynamic hostnames are not required (ie: electron). Defaults to `false`.
+支持不需要动态主机名的环境（如：electron）。默认值为：`false`。
 
 ### `server.historyApiFallback`
 
@@ -87,7 +87,7 @@ Support environments where dynamic hostnames are not required (ie: electron). De
 
 > New in 0.6.0
 
-Using the HTML5 History API. Defaults to `false`.
+使用HTML5 History API。默认值为：`false`。
 
 ### `server.options`
 

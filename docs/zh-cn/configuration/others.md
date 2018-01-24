@@ -4,21 +4,21 @@
 
 `boolean`
 
-Use balm default tasks. Defaults to `true`.
+开启 `balm` 的默认任务。默认值为：`true`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 var balm = require('balm');
 
 balm.config = {
-  useDefault: false, // Don't start balm default tasks
-  ...                // Your project config
+  useDefault: false, // 关闭 balm 的默认任务
+  ...                // 你的项目配置项
 };
 
 balm.go(function(mix) {
-  // Use custom task API
+  // 使用 API 自定义任务
 });
 ```
 
-> Refer to [Custom Task API](../api/toc.md)
+> 请参考 [API 文档](../api/toc.md)

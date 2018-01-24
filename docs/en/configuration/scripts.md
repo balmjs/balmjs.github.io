@@ -318,7 +318,7 @@ All vendors in one (for SPA). Defaults to `false`.
 
 `array`
 
-Custom Vendor Modules. Defaults to `[]`. (automatic setting by `scripts.entry`)
+Custom Vendor Modules. Defaults to `[]`. (automatic setting by [`scripts.entry`](scripts.md#entry))
 
 ### `scripts.cdn`
 
@@ -355,3 +355,5 @@ Extract css from some bundle. Defaults to:
   }
 }
 ```
+
+⚠️ __TIPS:__ Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage.

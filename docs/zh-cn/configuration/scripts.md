@@ -304,7 +304,10 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 
 `string`
 
-AllInOne vendor filename or Custom Vendor folder name. 默认值为：`'vendor'`。
+- 提取所有第三方依赖合成一个文件的文件名（需要设置 `scripts.extractAllVendors: true`）
+- 提取部分第三方依赖合成自定义文件的文件夹名
+
+默认值为：`'vendor'`。
 
 ### `scripts.extractAllVendors`
 
@@ -312,13 +315,13 @@ AllInOne vendor filename or Custom Vendor folder name. 默认值为：`'vendor'`
 
 > Named `scripts.vendor` in version < 0.12.0
 
-All vendors in one (for SPA). 默认值为：`false`。
+开启提取所有第三方依赖的功能（仅限单页面项目）。默认值为：`false`。
 
 ### `scripts.vendors`
 
 `array`
 
-Custom Vendor Modules. 默认值为：`[]`. (automatic setting by `scripts.entry`。
+提取部分第三方依赖合成自定义文件名的列表。默认值为：`[]`。（`balm` 会根据 [`scripts.entry`](scripts.md#入口) 配置自动设置此参数）
 
 ### `scripts.cdn`
 
@@ -326,7 +329,7 @@ Custom Vendor Modules. 默认值为：`[]`. (automatic setting by `scripts.entry
 
 > New in 0.9.0
 
-The same to webpack [externals](https://webpack.js.org/configuration/externals/#externals). 默认值为：`null`。
+同 webpack 的 [externals](https://webpack.js.org/configuration/externals/#externals) 配置。默认值为：`null`。
 
 ### `scripts.cssLoader`
 
@@ -334,7 +337,7 @@ The same to webpack [externals](https://webpack.js.org/configuration/externals/#
 
 > New in 0.12.0
 
-Use BalmJS default rules or custom rules for `css-loader`. 默认值为：`true`。
+使用 BalmJS 中默认的 `css-loader` 规则，如果设为 `false`，需要在 [Loaders](scripts.md#loaders) 中自行配置 `css-loader` 规则。默认值为：`true`。
 
 ### `scripts.extractCss`
 
@@ -342,7 +345,7 @@ Use BalmJS default rules or custom rules for `css-loader`. 默认值为：`true`
 
 > New in 0.12.0
 
-Extract css from some bundle. 默认值为：
+提取脚本中的第三方样式依赖。默认值为：
 
 ```js
 {
@@ -355,3 +358,5 @@ Extract css from some bundle. 默认值为：
   }
 }
 ```
+
+⚠️ __TIPS:__ 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法。

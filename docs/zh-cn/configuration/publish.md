@@ -6,15 +6,15 @@
 
 `string`
 
-Production to zip. Defaults to `'archive.zip'`.
+Zip包名称。默认值为：`'archive.zip'`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 zip: 'archive.zip'
 ```
 
-Usage: Refer to __Custom Task API__ - [mix.zip](../api/assets.html#mixzipinput-output)
+用法：请参照 __API 文档__ - [mix.zip](../api/assets.html#mixzipinput-output)
 
 ## Ftp
 
@@ -22,33 +22,33 @@ Usage: Refer to __Custom Task API__ - [mix.zip](../api/assets.html#mixzipinput-o
 
 `string`
 
-Required. Defaults to `undefined`.
+必须的。默认值为：`undefined`。
 
 ### `ftp.port`
 
 `number`
 
-Defaults to `22`.
+默认值为：`22`。
 
 ### `ftp.user`
 
 `string`
 
-Defaults to `'anonymous'`.
+默认值为：`'anonymous'`。
 
 ### `ftp.pass`
 
 `string`
 
-Defaults to `null`.
+默认值为：`null`。
 
 ### `ftp.remotePath`
 
 `string`
 
-Defaults to `'/'`.
+默认值为：`'/'`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 ftp: {
@@ -60,7 +60,7 @@ ftp: {
 }
 ```
 
-Usage: Refer to __Custom Task API__ - [mix.ftp](../api/assets.html#mixftpinput)
+用法：请参照 __API 文档__ - [mix.ftp](../api/assets.html#mixftpinput)
 
 ## Assets
 
@@ -70,7 +70,7 @@ Usage: Refer to __Custom Task API__ - [mix.ftp](../api/assets.html#mixftpinput)
 
 > New in 0.8.0
 
-Just for HTML template. Defaults to `'%PUBLIC_URL%'`.
+HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 ### `assets.publicUrl`
 
@@ -78,25 +78,25 @@ Just for HTML template. Defaults to `'%PUBLIC_URL%'`.
 
 > New in 0.8.0
 
-Defaults to `''`.
+默认值为：`''`。
 
 ### `assets.root`
 
 `string`
 
-Remote project root simulation. Defaults to `'assets'`.
+远程项目的根目录。默认值为：`'assets'`。
 
 ### `assets.publicPath`
 
 `string`
 
-The `public` directory contains the front controller and your assets (images, JavaScript, CSS, etc.). Defaults to `'public'`.
+静态资源目录包含了前端的静态资源文件（图片，脚本，样式，等等）。默认值为：`'public'`。
 
 ### `assets.subDir`
 
 `string`
 
-Public subdirectory. Defaults to `''`.
+静态资源根目录。默认值为：`''`。
 
 ### `assets.options`
 
@@ -104,7 +104,7 @@ Public subdirectory. Defaults to `''`.
 
 > New in 0.6.0
 
-Defaults to:
+默认值为：
 
 ```js
 {
@@ -120,7 +120,7 @@ Defaults to:
 
 > New in 0.6.0
 
-Defaults to `[]`.
+默认值为：`[]`。
 
 ### `assets.includes`
 
@@ -128,9 +128,9 @@ Defaults to `[]`.
 
 > New in 0.6.1
 
-Defaults to `[]`.
+默认值为：`[]`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 assets: {
@@ -147,9 +147,9 @@ assets: {
 
 `boolean`
 
-Versioning/Cache Busting switch. Defaults to `false`.
+生成缓存文件的开关。默认值为：`false`。
 
-🌰 For example:
+🌰 例如：
 
 ```js
 cache: true
