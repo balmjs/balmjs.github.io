@@ -1,9 +1,12 @@
 # Custom Task API
 
+- Templates
+  - `mix.html()`
 - Stylesheets
   - `mix.css(input, output)`
   - `mix.sass(input, output)`
   - `mix.less(input, output)`
+  - `mix.csspath()`
   - `mix.cssmin(input, output, renameOptions = {suffix: '.min'})`
 - JavaScript
   - `mix.js(input, output)`

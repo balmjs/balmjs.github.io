@@ -104,6 +104,41 @@ __[Less](http://lesscss.org/)__ to CSS
   mix.less('app/styles/*.less', 'dist/css');
   ```
 
+## `mix.csspath()`
+
+Update `images` and `fonts` production path in css files.
+
+- Usage
+
+```js
+var balm = require('balm');
+
+balm.config = {
+  roots: {
+    source: 'app',
+    target: 'dist'
+  },
+  paths: {
+    source: {
+      img: 'images',
+      font: 'fonts'
+    },
+    target: {
+      img: 'img',
+      font: 'font'
+    }
+  },
+  // Your project more config
+};
+
+balm.go(function(mix) {
+  if (balm.config.production) {
+    mix.sass('app/styles/*.scss', 'dist/css');
+    mix.csspath();
+  }
+});
+```
+
 ## `mix.cssmin(input, output, renameOptions)`
 
 - Arguments

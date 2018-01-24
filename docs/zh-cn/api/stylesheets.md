@@ -104,6 +104,41 @@ __[Less](http://lesscss.org/)__ 转为 CSS
   mix.less('app/styles/*.less', 'dist/css');
   ```
 
+## `mix.csspath()`
+
+更新样式文件中 `images` 和 `fonts` 的生产环境路径。
+
+- 用法
+
+```js
+var balm = require('balm');
+
+balm.config = {
+  roots: {
+    source: 'app',
+    target: 'dist'
+  },
+  paths: {
+    source: {
+      img: 'images',
+      font: 'fonts'
+    },
+    target: {
+      img: 'img',
+      font: 'font'
+    }
+  },
+  // 项目的更多配置项
+};
+
+balm.go(function(mix) {
+  if (balm.config.production) {
+    mix.sass('app/styles/*.scss', 'dist/css');
+    mix.csspath();
+  }
+});
+```
+
 ## `mix.cssmin(input, output, renameOptions)`
 
 - 参数

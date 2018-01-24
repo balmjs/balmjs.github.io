@@ -32,10 +32,12 @@
     - [缓存](configuration/publish.md#cache)
   - [其他](configuration/others.md)
 - [自定义任务 API](api/toc.md)
+  - [模板](api/templates.md)
   - 样式
     - [css](api/stylesheets.md#mixcssinput-output)
     - [sass](api/stylesheets.md#mixsassinput-output)
     - [less](api/stylesheets.md#mixlessinput-output)
+    - [csspath](api/stylesheets.md#mixcsspath)
     - [cssmin](api/stylesheets.md#mixcssmininput-output-renameoptions)
   - 脚本
     - [js](api/javascript.md#mixjsinput-output)

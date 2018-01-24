@@ -32,10 +32,12 @@
     - [Cache](configuration/publish.md#cache)
   - [Others](configuration/others.md)
 - [API Reference](api/toc.md)
+  - [Templates](api/templates.md)
   - Stylesheets
     - [css](api/stylesheets.md#mixcssinput-output)
     - [sass](api/stylesheets.md#mixsassinput-output)
     - [less](api/stylesheets.md#mixlessinput-output)
+    - [csspath](api/stylesheets.md#mixcsspath)
     - [cssmin](api/stylesheets.md#mixcssmininput-output-renameoptions)
   - JavaScript
     - [js](api/javascript.md#mixjsinput-output)

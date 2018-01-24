@@ -14,11 +14,13 @@ balm.config = {
   roots: {
     source: 'app'
   },
-  // 你的项目的更多配置项
+  // 项目的更多配置项
 };
 
 balm.go(function(mix) {
-  mix.serve();
+  if (!balm.config.production) {
+    mix.serve();
+  }
 });
 ```
 

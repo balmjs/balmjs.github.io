@@ -18,7 +18,9 @@ balm.config = {
 };
 
 balm.go(function(mix) {
-  mix.serve();
+  if (!balm.config.production) {
+    mix.serve();
+  }
 });
 ```
 

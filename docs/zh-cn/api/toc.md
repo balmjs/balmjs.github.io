@@ -1,9 +1,12 @@
 # 自定义任务 API
 
+- 模板
+  - `mix.html()`
 - 样式
   - `mix.css(input, output)`
   - `mix.sass(input, output)`
   - `mix.less(input, output)`
+  - `mix.csspath()`
   - `mix.cssmin(input, output, renameOptions = {suffix: '.min'})`
 - 脚本
   - `mix.js(input, output)`
