@@ -1,6 +1,6 @@
-# For IE8 (ES3)
+# 兼容IE8 (ES3)
 
-First, run this command in your project directory:
+首先，在你的项目目录下运行命令安装依赖：
 
 ```sh
 $ npm i -D babel-preset-es2015-loose
@@ -8,7 +8,7 @@ $ npm i -D babel-plugin-transform-es3-member-expression-literals
 $ npm i -D babel-plugin-transform-es3-property-literals
 ```
 
-Then, edit `/path/to/project/.babelrc`:
+然后，编辑 `/path/to/project/.babelrc`：
 
 ```json
 {

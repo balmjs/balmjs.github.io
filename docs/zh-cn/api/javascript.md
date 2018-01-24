@@ -1,20 +1,20 @@
-# Working With JavaScript
+# 脚本API
 
 ## `mix.js(input, output)`
 
-- Arguments
+- 参数
   - `input`: `string` `object`
   - `ouput`: `string`
-- Usage
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * (ES6+)Input: '/path/to/project/app/scripts/single.js'
-   * (ES5)Output: '/path/to/project/dist/js/main.js'
+   * (ES6+)输入：'/path/to/project/app/scripts/single.js'
+   * (ES5) 输出：'/path/to/project/dist/js/main.js'
    */
   mix.js('app/scripts/single.js', 'dist/js');
-  // OR
+  // 或
   mix.js({
     main: './src/scripts/single.js'
   }, 'dist/js');
@@ -22,12 +22,12 @@
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * (ES6+)Input:
+   * (ES6+)输入：
    * '/path/to/project/app/scripts/multi-a.js'
    * '/path/to/project/app/scripts/multi-b.js'
-   * (ES5)Output:
+   * (ES5) 输出：
    * '/path/to/project/dist/js/multi-a.js'
    * '/path/to/project/dist/js/multi-b.js'
    */
@@ -41,33 +41,33 @@
 
 ## `mix.jsmin(input, output, renameOptions)`
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `ouput`: `string`
-  - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
-- Usage
+  - `renameOptions`: `object`（默认值：`{suffix: '.min'}`）
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * (ES5)Input: '/path/to/project/app/scripts/single.js'
-   *     Output: '/path/to/project/dist/js/single.min.js'
+   * (ES5)输入：'/path/to/project/app/scripts/single.js'
+   *      输出：'/path/to/project/dist/js/single.min.js'
    */
   mix.jsmin('app/scripts/single.js', 'dist/js');
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * (ES5)Input:
+   * (ES5)输入：
    * '/path/to/project/app/scripts/multi-a.js'
    * '/path/to/project/app/scripts/multi-b.js'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/js/multi-a.min.js'
    * '/path/to/project/dist/js/multi-b.min.js'
    */
   mix.jsmin(['app/scripts/multi-a.js', 'app/scripts/multi-b.js'], 'dist/js');
-  // OR
+  // 或
   mix.jsmin('app/scripts/*.js', 'dist/js');
   ```

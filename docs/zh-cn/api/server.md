@@ -2,9 +2,9 @@
 
 ## `mix.serve()`
 
-`mix.serve` can automatically monitor your files for changes, and inject your changes into the browser without requiring a manual refresh.
+`mix.serve` 可以自动监视文件的变化，并将更改注入浏览器，而无需手动刷新。
 
-- Usage
+- 用法
 
 ```js
 var balm = require('balm');
@@ -14,7 +14,7 @@ balm.config = {
   roots: {
     source: 'app'
   },
-  // Your project more config
+  // 你的项目的更多配置项
 };
 
 balm.go(function(mix) {
@@ -22,7 +22,7 @@ balm.go(function(mix) {
 });
 ```
 
-- `useDefault` must be set `false`.
-- `roots.source` is required.
+- `useDefault` 必须设置为 `false`。
+- `roots.source` 必须设置。
 
-> `balm.config` Refer to [BalmJS Configuration](../configuration/toc.md)
+> `balm.config` 请参照 [BalmJS 配置文档](../configuration/toc.md)

@@ -14,7 +14,7 @@ Zip包名称。默认值为：`'archive.zip'`。
 zip: 'archive.zip'
 ```
 
-用法：请参照 __API 文档__ - [mix.zip](../api/assets.html#mixzipinput-output)
+用法：请参照 __自定义任务 API 文档__ - [mix.zip](../api/assets.html#mixzipinput-output)
 
 ## Ftp
 
@@ -60,7 +60,7 @@ ftp: {
 }
 ```
 
-用法：请参照 __API 文档__ - [mix.ftp](../api/assets.html#mixftpinput)
+用法：请参照 __自定义任务 API 文档__ - [mix.ftp](../api/assets.html#mixftpinput)
 
 ## Assets
 

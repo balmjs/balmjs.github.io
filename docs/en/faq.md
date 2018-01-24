@@ -36,7 +36,7 @@ And, use it in `/path/to/project/app/scripts/main.js`:
 import $ from 'zeptoSrc/zepto';
 import 'zeptoSrc/event';
 
-// enjoy coding
+// Enjoy coding
 ```
 
 ### `npm@2.x.x` bug

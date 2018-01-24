@@ -2,50 +2,50 @@
 
 ## `mix.copy(from, to, renameOptions)`
 
-- Arguments
+- 参数
   - `from`: `string` `array`
   - `to`: `string`
   - `renameOptions`: `object` (Default: `{}`)
-- Usage
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * Input:  '/path/to/project/app/single.html'
-   * Output: '/path/to/project/dist/single.html'
+   * 输入：'/path/to/project/app/single.html'
+   * 输出：'/path/to/project/dist/single.html'
    */
   mix.copy('app/single.html', 'dist');
-  // OR with suffix
-  // Output: '/path/to/project/dist/single.min.html'
+  // 或带后缀参数
+  // 输出：'/path/to/project/dist/single.min.html'
   mix.copy('app/single.html', 'dist', {suffix: '.min'});
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/multi-a.html'
    * '/path/to/project/app/multi-b.html'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/multi-a.html'
    * '/path/to/project/dist/multi-b.html'
    */
   mix.copy(['src/multi-a.html', 'src/multi-b.html'], 'dist');
-  // OR
+  // 或
   mix.copy('app/*.html', 'dist');
   ```
 
   ```js
   /**
-   * Multiple files with a directory
+   * 单目录多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/images/logo.png'
    * '/path/to/project/app/images/logo-dark.png'
    * '/path/to/project/app/images/icons/icon-a.png'
    * '/path/to/project/app/images/icons/icon-b.png'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/img/logo.png'
    * '/path/to/project/dist/img/logo-dark.png'
    */
@@ -54,14 +54,14 @@
 
   ```js
   /**
-   * Multiple files with directories
+   * 多目录多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/images/logo.png'
    * '/path/to/project/app/images/logo-dark.png'
    * '/path/to/project/app/images/icons/icon-a.png'
    * '/path/to/project/app/images/icons/icon-b.png'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/img/logo.png'
    * '/path/to/project/dist/img/logo-dark.png'
    * '/path/to/project/dist/img/icons/icon-a.png'
@@ -72,20 +72,20 @@
 
 ## `mix.remove(src)`
 
-- Arguments
+- 参数
   - `src`: `string` `array`
-- Usage
+- 用法
   ```js
-  // Single file
+  // 单文件
   mix.remove('dist/single.html');
-  // Multiple files
+  // 多文件
   mix.remove(['dist/multi-a.html', 'dist/multi-b.html']);
   mix.remove('dist/*.html');
   ```
 
   ```js
-  // Single directory
+  // 单目录
   mix.remove('dist');
-  // Multiple directories
+  // 多目录
   mix.remove(['dist/css', 'dist/js']);
   ```

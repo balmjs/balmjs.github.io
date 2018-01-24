@@ -1,21 +1,21 @@
-# Custom Task API
+# 自定义任务 API
 
-- Stylesheets
+- 样式
   - `mix.css(input, output)`
   - `mix.sass(input, output)`
   - `mix.less(input, output)`
   - `mix.cssmin(input, output, renameOptions = {suffix: '.min'})`
-- JavaScript
+- 脚本
   - `mix.js(input, output)`
   - `mix.jsmin(input, output, renameOptions = {suffix: '.min'})`
-- Files & Directories
+- 文件和目录
   - `mix.copy(from, to, renameOptions = {})`
   - `mix.remove(src)`
-- Cache
+- 缓存
   - `mix.version(input, output, excludes = [])`
-- Server
+- 服务器
   - `mix.serve()`
-- Assets
+- 静态资源
   - `mix.zip(input = '', output = '')`
   - `mix.ftp(input)`
   - `mix.publish(input = '', output = '', renameOptions = {})`
@@ -24,12 +24,12 @@
 var balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置项
 };
 
 balm.go(function(mix) {
-  // Custom Task API
+  // 自定义任务 API
 });
 ```
 
-> `balm.config` refer to [BalmJS Configuration](../configuration/toc.md)
+> `balm.config` 请参照 [BalmJS 配置文档](../configuration/toc.md)

@@ -2,39 +2,39 @@
 
 ## `mix.zip(input, output)`
 
-- Arguments
-  - `input`: `string` `array` (Default: `${balm.config.target.base}/**/*`)
-  - `output`: `string` (Default: '.')
-- Usage
+- 参数
+  - `input`: `string` `array`（默认值：`${balm.config.target.base}/**/*`）
+  - `output`: `string`（默认值：'.'）
+- 用法
   ```js
   /**
-   * Default usage
+   * 默认用法
    *
-   * Input:  '/path/to/project/dist/**/*'
-   * Output: '/path/to/project/archive.zip'
+   * 输入：'/path/to/project/dist/**/*'
+   * 输出：'/path/to/project/archive.zip'
    */
   mix.zip();
-  // With dotfile
+  // 包含带点的配置文件
   mix.zip(['dist/**/*', 'dist/.babelrc']);
   ```
 
   ```js
   /**
-   * Custom usage
+   * 自定义用法
    *
-   * Input:  '/path/to/project/dist/img/**/*'
-   * Output: '/path/to/project/test/archive.zip'
+   * 输入：'/path/to/project/dist/img/**/*'
+   * 输出：'/path/to/project/test/archive.zip'
    */
   mix.zip('dist/img/**/*', 'test');
-  // Not recommended usage
+  // 不推荐的用法
   mix.zip(['dist/css/**/*', 'dist/js/**/*'], 'test');
   ```
 
 ## `mix.ftp(input)`
 
-- Arguments
+- 参数
   - `input`: `string`
-- Usage
+- 用法
   ```js
   var balm = require('balm');
 
@@ -49,30 +49,30 @@
   };
 
   balm.go(function(mix) {
-    // (local)Input:   /path/to/project/dist/archive.zip
-    // (remote)Output: /path/to/webroot/project/archive.zip
+    // (local) 输入：'/path/to/project/dist/archive.zip'
+    // (remote)输出：'/path/to/webroot/project/archive.zip'
     mix.ftp('dist/archive.zip');
   });
   ```
 
 ## `mix.publish(input, output, renameOptions)`
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `output`: `string`
-  - `renameOptions`: `object` (Default: `{}`)
-- Usage
+  - `renameOptions`: `object`（默认值：`{}`）
+- 用法
   ```js
   /**
    * Publish assets(styles,scripts,images,fonts,media)
    *
-   * (local)Input: `${roots.target}/{css,js,img,font,media}`
+   * (local)输入： `${roots.target}/{css,js,img,font,media}`
    * '/path/to/local_project/dist/css/**/*'
    * '/path/to/local_project/dist/js/**/*'
    * '/path/to/local_project/dist/img/**/*'
    * '/path/to/local_project/dist/font/**/*'
    * '/path/to/local_project/dist/media/**/*'
-   * (remote)Output: `${assets.root}/${assets.publicPath}/${assets.subDir}`
+   * (remote)输出： `${assets.root}/${assets.publicPath}/${assets.subDir}`
    * '/path/to/remote_project/public'
    */
   mix.publish();
@@ -82,10 +82,10 @@
   /**
    * Publish html templates
    *
-   * (local)Input: `${roots.target}/old-filename.html`
+   * (local)输入： `${roots.target}/old-filename.html`
    * '/path/to/local_project/dist/multi-a.html'
    * '/path/to/local_project/dist/multi-b.html'
-   * (remote)Output: `${assets.root}/views/new-filename.php`
+   * (remote)输出： `${assets.root}/views/new-filename.php`
    * '/path/to/remote_project/views/admin/new-multi-a.blade.php'
    * '/path/to/remote_project/views/user/new-multi-b.blade.php'
    */

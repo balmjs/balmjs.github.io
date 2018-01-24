@@ -1,138 +1,138 @@
-# Working With Stylesheets
+# 样式API
 
 ## `mix.css(input, output)`
 
-__[PostCSS](http://postcss.org/)__ to CSS
+__[PostCSS](http://postcss.org/)__ 转为 CSS
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `ouput`: `string`
-- Usage
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * Input:  '/path/to/project/app/styles/single.css'
-   * Output: '/path/to/project/dist/css/single.css'
+   * 输入：'/path/to/project/app/styles/single.css'
+   * 输出：'/path/to/project/dist/css/single.css'
    */
   mix.css('app/styles/single.css', 'dist/css');
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/styles/multi-a.css'
    * '/path/to/project/app/styles/multi-b.css'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/css/multi-a.css'
    * '/path/to/project/dist/css/multi-b.css'
    */
   mix.css(['app/styles/multi-a.css', 'app/styles/multi-b.css'], 'dist/css');
-  // OR
+  // 或
   mix.css('app/styles/*.css', 'dist/css');
   ```
 
-> Refer to [PostCSS options](../configuration/styles.md#stylespostcssplugins)
+> 请参照 [PostCSS options](../configuration/styles.md#stylespostcssplugins)
 
 ## `mix.sass(input, output)`
 
-__[Sass](http://sass-lang.com/)__ to CSS
+__[Sass](http://sass-lang.com/)__ 转为 CSS
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `ouput`: `string`
-- Usage
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * Input:  '/path/to/project/app/styles/single.scss'
-   * Output: '/path/to/project/dist/css/single.css'
+   * 输入：'/path/to/project/app/styles/single.scss'
+   * 输出：'/path/to/project/dist/css/single.css'
    */
   mix.sass('app/styles/single.scss', 'dist/css');
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/styles/multi-a.scss'
    * '/path/to/project/app/styles/multi-b.scss'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/css/multi-a.css'
    * '/path/to/project/dist/css/multi-b.css'
    */
   mix.sass(['app/styles/multi-a.scss', 'app/styles/multi-b.scss'], 'dist/css');
-  // OR
+  // 或
   mix.sass('app/styles/*.scss', 'dist/css');
   ```
 
 ## `mix.less(input, output)`
 
-__[Less](http://lesscss.org/)__ to CSS
+__[Less](http://lesscss.org/)__ 转为 CSS
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `ouput`: `string`
-- Usage
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * Input:  '/path/to/project/app/styles/single.less'
-   * Output: '/path/to/project/dist/css/single.css'
+   * 输入：'/path/to/project/app/styles/single.less'
+   * 输出：'/path/to/project/dist/css/single.css'
    */
   mix.less('app/styles/single.less', 'dist/css');
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/styles/multi-a.less'
    * '/path/to/project/app/styles/multi-b.less'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/css/multi-a.css'
    * '/path/to/project/dist/css/multi-b.css'
    */
   mix.sass(['app/styles/multi-a.less', 'app/styles/multi-b.less'], 'dist/css');
-  // OR
+  // 或
   mix.less('app/styles/*.less', 'dist/css');
   ```
 
 ## `mix.cssmin(input, output, renameOptions)`
 
-- Arguments
+- 参数
   - `input`: `string` `array`
   - `ouput`: `string`
-  - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
-- Usage
+  - `renameOptions`: `object`（默认值：`{suffix: '.min'}`）
+- 用法
   ```js
   /**
-   * Single file
+   * 单文件
    *
-   * Input:  '/path/to/project/app/styles/single.css'
-   * Output: '/path/to/project/dist/css/single.min.css'
+   * 输入：'/path/to/project/app/styles/single.css'
+   * 输出：'/path/to/project/dist/css/single.min.css'
    */
   mix.cssmin('app/styles/single.css', 'dist/css');
   ```
 
   ```js
   /**
-   * Multiple files
+   * 多文件
    *
-   * Input:
+   * 输入：
    * '/path/to/project/app/styles/multi-a.css'
    * '/path/to/project/app/styles/multi-b.css'
-   * Output:
+   * 输出：
    * '/path/to/project/dist/css/multi-a.min.css'
    * '/path/to/project/dist/css/multi-b.min.css'
    */
   mix.cssmin(['app/styles/multi-a.css', 'app/styles/multi-b.css'], 'dist/css');
-  // OR
+  // 或
   mix.cssmin('app/styles/*.css', 'dist/css');
   ```

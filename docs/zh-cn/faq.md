@@ -1,17 +1,17 @@
-# FAQ
+# 常见问题
 
-### How to import `zepto` modules?
+### 如何导入 `zepto` 模块？
 
-First, run this command in your project directory:
+首先，在你的项目目录下运行命令安装依赖：
 
 ```sh
 npm i -D exports-loader script-loader
 
-// OR install with yarn
+// 或使用yarn安装
 yarn add -D exports-loader script-loader
 ```
 
-Then, edit `balm` config:
+然后，编辑 `balm` 配置：
 
 ```js
 balm.config = {
@@ -30,13 +30,13 @@ balm.config = {
 };
 ```
 
-And, use it in `/path/to/project/app/scripts/main.js`:
+就下来，就可以在脚本（`/path/to/project/app/scripts/main.js`）中使用：
 
 ```js
 import $ from 'zeptoSrc/zepto';
 import 'zeptoSrc/event';
 
-// enjoy coding
+// Enjoy coding
 ```
 
 ### `npm@2.x.x` bug

@@ -1,4 +1,4 @@
 # Recipes
 
-- [npm-run-script](run-script.md)
-- [IE](ie.md)
+- [运行npm脚本](run-script.md)
+- [坑爹的IE](ie.md)

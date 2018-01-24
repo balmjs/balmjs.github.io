@@ -31,7 +31,7 @@
     - [静态资源](configuration/publish.md#assets)
     - [缓存](configuration/publish.md#cache)
   - [其他](configuration/others.md)
-- [API](api/toc.md)
+- [自定义任务 API](api/toc.md)
   - 样式
     - [css](api/stylesheets.md#mixcssinput-output)
     - [sass](api/stylesheets.md#mixsassinput-output)

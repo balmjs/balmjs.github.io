@@ -49,8 +49,8 @@
   };
 
   balm.go(function(mix) {
-    // (local)Input:   /path/to/project/dist/archive.zip
-    // (remote)Output: /path/to/webroot/project/archive.zip
+    // (local)Input:   '/path/to/project/dist/archive.zip'
+    // (remote)Output: '/path/to/webroot/project/archive.zip'
     mix.ftp('dist/archive.zip');
   });
   ```

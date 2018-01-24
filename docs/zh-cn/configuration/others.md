@@ -17,8 +17,8 @@ balm.config = {
 };
 
 balm.go(function(mix) {
-  // 使用 API 自定义任务
+  // 使用自定义任务API
 });
 ```
 
-> 请参考 [API 文档](../api/toc.md)
+> 请参考 [自定义任务 API 文档](../api/toc.md)

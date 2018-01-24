@@ -1,6 +1,6 @@
-# Optimize your command
+# 优化你的命令
 
-Edit `/path/to/project/package.json`:
+编辑 `/path/to/project/package.json`：
 
 ```json
 ...
@@ -11,7 +11,7 @@ Edit `/path/to/project/package.json`:
 ...
 ```
 
-OR
+或
 
 ```json
 ...
@@ -22,12 +22,12 @@ OR
 ...
 ```
 
-Then, you can run the command like this:
+然后，你就可以运行下面的命令了：
 
 ```sh
-# For development
+# 开发模式
 $ npm run dev
 
-# For production
+# 生产模式
 $ npm run prod
 ```
