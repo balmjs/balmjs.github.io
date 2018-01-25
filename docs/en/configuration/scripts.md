@@ -356,4 +356,4 @@ Extract css from some bundle. Defaults to:
 }
 ```
 
-⚠️ __TIPS:__ Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage.
+⚠️ __TIPS:__ Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).

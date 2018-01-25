@@ -359,4 +359,4 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 }
 ```
 
-⚠️ __TIPS:__ 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法。
+⚠️ __TIPS:__ 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](http://balmjs.com/docs/en/advanced/code-splitting.html)。

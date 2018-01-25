@@ -1,4 +1,4 @@
-# MPA
+# Multiple Page Application
 
 ## Structure
 

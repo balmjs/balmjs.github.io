@@ -1,4 +1,4 @@
-# SPA
+# Single Page Application
 
 ## Structure
 
