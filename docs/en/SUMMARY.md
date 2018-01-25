@@ -51,6 +51,10 @@
     - [zip](api/assets.md#mixzipinput-output)
     - [ftp](api/assets.md#mixftpinput)
     - [publish](api/assets.md#mixpublishinput-output-renameoptions)
+- [Advanced](advanced/toc.md)
+    - [SPA](advanced/spa.md)
+    - [MPA](advanced/mpa.md)
+    - [Code Splitting](advanced/code-splitting.md)
 - [Recipes](recipes/toc.md)
   - [npm-run-script](recipes/run-script.md)
   - [IE](recipes/ie.md)]
