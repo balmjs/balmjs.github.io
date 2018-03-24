@@ -8,8 +8,8 @@
 
 The entry point for the bundle. Defaults to `null`.
 
-1. `key(string): value(string)`: Bundle one entry point per HTML page.
-2. `key(string): value(array)`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
+1.  `key(string): value(string)`: Bundle one entry point per HTML page.
+2.  `key(string): value(array)`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
 
 🌰 For example:
 
@@ -46,18 +46,18 @@ Then, your HTML templates:
 
 `string`
 
-Specifies the name of each output file on disk. You must __not__ specify an absolute path here! Defaults to `'[name]'`.
+Specifies the name of each output file on disk. You must **not** specify an absolute path here! Defaults to `'[name]'`.
 
-- Using the unique hash generated for every build:
+* Using the unique hash generated for every build:
 
 ```js
-filename: '[name].[hash]'
+filename: '[name].[hash]';
 ```
 
-- Using hashes based on each chunks' content:
+* Using hashes based on each chunks' content:
 
 ```js
-filename: '[chunkhash]'
+filename: '[chunkhash]';
 ```
 
 ### `scripts.library`
@@ -87,17 +87,17 @@ Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `
 When using `libraryTarget: 'umd'`, setting:
 
 ```js
-umdNamedDefine: true
+umdNamedDefine: true;
 ```
 
 ### `scripts.chunkFilename`
 
 The filename of non-entry chunks as relative path inside the `output.path` directory. Defaults to `'(auto)'`.
 
-- `[id]` is replaced by the id of the chunk. (automatic setting for development)
-- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-- `[hash]` is replaced by the hash of the compilation.
-- `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
+* `[id]` is replaced by the id of the chunk. (automatic setting for development)
+* `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+* `[hash]` is replaced by the hash of the compilation.
+* `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
 
 ## Loaders
 
@@ -109,21 +109,21 @@ An array of automatically applied loaders. Defaults to `[]`.
 
 Each item can have these properties:
 
-- `test`: A condition that must be met
-- `exclude`: A condition that must not be met
-- `include`: A condition that must be met
-- `loader`: A string of “!” separated loaders
-- `loaders`: An array of loaders as string
+* `test`: A condition that must be met
+* `exclude`: A condition that must not be met
+* `include`: A condition that must be met
+* `loader`: A string of “!” separated loaders
+* `loaders`: An array of loaders as string
 
-__BalmJS__ default loaders:
+**BalmJS** default loaders:
 
-- [`html`](https://github.com/webpack/html-loader)
-- [`style`](https://github.com/webpack/style-loader)
-- [`css`](https://github.com/webpack/css-loader)
-- [`postcss`](https://github.com/postcss/postcss-loader)
-- [`babel`](https://github.com/babel/babel-loader)
-- [`url`](https://github.com/webpack/url-loader)
-- [`file`](https://github.com/webpack/file-loader)
+* [`html`](https://github.com/webpack/html-loader)
+* [`style`](https://github.com/webpack/style-loader)
+* [`css`](https://github.com/webpack/css-loader)
+* [`postcss`](https://github.com/postcss/postcss-loader)
+* [`babel`](https://github.com/babel/babel-loader)
+* [`url`](https://github.com/webpack/url-loader)
+* [`file`](https://github.com/webpack/file-loader)
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
@@ -142,10 +142,12 @@ Then, use it:
 
 ```js
 scripts: {
-  loaders: [{
-    test: /\.vue$/,
-    loader: 'vue'
-  }]
+  loaders: [
+    {
+      test: /\.vue$/,
+      loader: 'vue'
+    }
+  ];
 }
 ```
 
@@ -155,18 +157,20 @@ scripts: {
 
 An array of extensions that should be used to resolve modules. Defaults to `[]`.
 
-__BalmJS__ default extensions:
+**BalmJS** default extensions:
 
-- `.js`
-- [`.json`](http://www.json.org/)
-- [`.jsx`](http://facebook.github.io/jsx/)
-- [`.vue`](https://vuejs.org/)
+* `.wasm` (New in 0.17.0)
+* `.mjs` (New in 0.17.0)
+* `.js`
+* [`.json`](http://www.json.org/)
+* [`.jsx`](http://facebook.github.io/jsx/)
+* [`.vue`](https://vuejs.org/)
 
 🌰 For example:
 
 ```js
 scripts: {
-  extensions: ['.ts', '.tsx']
+  extensions: ['.ts', '.tsx'];
 }
 ```
 
@@ -287,18 +291,36 @@ Overwrite webpack config. Defaults to `{}`.
 ```js
 {
   compress: {
-    warnings: false,
     comparisons: false,
     drop_console: true
   },
   output: {
-    comments: false,
     ascii_only: true
   }
 }
 ```
 
 ## Optimization
+
+### `scripts.optimization`
+
+`object`
+
+> New in 0.17.0
+
+Best practices of web performance. Defaults to:
+
+```js
+{
+  chunks: 'async',
+	minSize: 30000,
+	minChunks: 1,
+	maxAsyncRequests: 5,
+	maxInitialRequests: 3,
+	name: true,
+	cacheGroups: {}
+}
+```
 
 ### `scripts.vendorName`
 
@@ -347,13 +369,8 @@ Extract css from some bundle. Defaults to:
 ```js
 {
   enabled: false,
-  use: 'css-loader',
-  fallback: 'style-loader',
-  publicPath: '',
-  pluginOptions: {
-    filename: 'css/vendor/[name].css'
-  }
+  filename: '[name].css'
 }
 ```
 
-⚠️ __TIPS:__ Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+⚠️ **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).

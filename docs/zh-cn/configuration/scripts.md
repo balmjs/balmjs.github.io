@@ -1,4 +1,4 @@
-# JS配置
+# JS 配置
 
 ## 入口
 
@@ -8,8 +8,8 @@
 
 脚本入口点。默认值为：`null`。
 
-1. `key(string): value(string)`: 每个HTML页面对应一个脚本入口文件。
-2. `key(string): value(array)`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
+1.  `key(string): value(string)`: 每个 HTML 页面对应一个脚本入口文件。
+2.  `key(string): value(array)`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
 
 🌰 例如：
 
@@ -24,7 +24,7 @@ scripts: {
 }
 ```
 
-然后，你的HTML模板中就可以使用自定义提取 `lib` 和 `ui`：
+然后，你的 HTML 模板中就可以使用自定义提取 `lib` 和 `ui`：
 
 ```html
 <!-- Page One -->
@@ -46,18 +46,18 @@ scripts: {
 
 `string`
 
-指定磁盘上每个输出文件的名称。你__不能__在这里指定绝对路径！默认值为：`'[name]`。
+指定磁盘上每个输出文件的名称。你**不能**在这里指定绝对路径！默认值为：`'[name]`。
 
-- 每个构建使用唯一的hash来生成：
+* 每个构建使用唯一的 hash 来生成：
 
 ```js
-filename: '[name].[hash]'
+filename: '[name].[hash]';
 ```
 
-- 根据文件内容hash来生成：
+* 根据文件内容 hash 来生成：
 
 ```js
-filename: '[chunkhash]'
+filename: '[chunkhash]';
 ```
 
 ### `scripts.library`
@@ -87,17 +87,17 @@ filename: '[chunkhash]'
 当使用 `libraryTarget: 'umd'` 时，设置：
 
 ```js
-umdNamedDefine: true
+umdNamedDefine: true;
 ```
 
 ### `scripts.chunkFilename`
 
 The filename of non-entry chunks as relative path inside the `output.path` directory. 默认值为：`'(auto)'`。
 
-- `[id]` is replaced by the id of the chunk.（开发模式默认值）
-- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-- `[hash]` is replaced by the hash of the compilation.
-- `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
+* `[id]` is replaced by the id of the chunk.（开发模式默认值）
+* `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+* `[hash]` is replaced by the hash of the compilation.
+* `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
 
 ## Loaders
 
@@ -109,27 +109,27 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 
 Each item can have these properties:
 
-- `test`: A condition that must be met
-- `exclude`: A condition that must not be met
-- `include`: A condition that must be met
-- `loader`: A string of “!” separated loaders
-- `loaders`: An array of loaders as string
+* `test`: A condition that must be met
+* `exclude`: A condition that must not be met
+* `include`: A condition that must be met
+* `loader`: A string of “!” separated loaders
+* `loaders`: An array of loaders as string
 
-__BalmJS__ 默认已加载的 loaders:
+**BalmJS** 默认已加载的 loaders:
 
-- [`html`](https://github.com/webpack/html-loader)
-- [`style`](https://github.com/webpack/style-loader)
-- [`css`](https://github.com/webpack/css-loader)
-- [`postcss`](https://github.com/postcss/postcss-loader)
-- [`babel`](https://github.com/babel/babel-loader)
-- [`url`](https://github.com/webpack/url-loader)
-- [`file`](https://github.com/webpack/file-loader)
+* [`html`](https://github.com/webpack/html-loader)
+* [`style`](https://github.com/webpack/style-loader)
+* [`css`](https://github.com/webpack/css-loader)
+* [`postcss`](https://github.com/postcss/postcss-loader)
+* [`babel`](https://github.com/babel/babel-loader)
+* [`url`](https://github.com/webpack/url-loader)
+* [`file`](https://github.com/webpack/file-loader)
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
 🌰 例如：
 
-首先，安装你需要的loader：
+首先，安装你需要的 loader：
 
 ```sh
 $ npm i -D vue-loader
@@ -142,10 +142,12 @@ $ yarn add -D vue-loader
 
 ```js
 scripts: {
-  loaders: [{
-    test: /\.vue$/,
-    loader: 'vue'
-  }]
+  loaders: [
+    {
+      test: /\.vue$/,
+      loader: 'vue'
+    }
+  ];
 }
 ```
 
@@ -155,18 +157,20 @@ scripts: {
 
 用来解析模块的文件扩展数组。默认值为：`[]`。
 
-__BalmJS__ 默认已支持的扩展名：
+**BalmJS** 默认已支持的扩展名：
 
-- `.js`
-- [`.json`](http://www.json.org/)
-- [`.jsx`](http://facebook.github.io/jsx/)
-- [`.vue`](https://vuejs.org/)
+* `.wasm` (New in 0.17.0)
+* `.mjs` (New in 0.17.0)
+* `.js`
+* [`.json`](http://www.json.org/)
+* [`.jsx`](http://facebook.github.io/jsx/)
+* [`.vue`](https://vuejs.org/)
 
 🌰 例如：
 
 ```js
 scripts: {
-  extensions: ['.ts', '.tsx']
+  extensions: ['.ts', '.tsx'];
 }
 ```
 
@@ -262,7 +266,7 @@ scripts: {
 
 `boolean`
 
-JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
+JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
 
 ## 高级配置
 
@@ -272,7 +276,7 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 
 > New in 0.8.4
 
-重写webpack配置项。默认值为：`{}`。
+重写 webpack 配置项。默认值为：`{}`。
 
 > [All configuration options](https://webpack.js.org/configuration/)
 
@@ -287,12 +291,10 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 ```js
 {
   compress: {
-    warnings: false,
     comparisons: false,
     drop_console: true
   },
   output: {
-    comments: false,
     ascii_only: true
   }
 }
@@ -300,12 +302,32 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 
 ## 优化
 
+### `scripts.optimization`
+
+`object`
+
+> New in 0.17.0
+
+WEB 性能的最佳实践。默认值为：
+
+```js
+{
+  chunks: 'async',
+	minSize: 30000,
+	minChunks: 1,
+	maxAsyncRequests: 5,
+	maxInitialRequests: 3,
+	name: true,
+	cacheGroups: {}
+}
+```
+
 ### `scripts.vendorName`
 
 `string`
 
-- 提取所有第三方依赖合成一个文件的文件名（需要设置 `scripts.extractAllVendors: true`）
-- 提取部分第三方依赖合成自定义文件的文件夹名
+* 提取所有第三方依赖合成一个文件的文件名（需要设置 `scripts.extractAllVendors: true`）
+* 提取部分第三方依赖合成自定义文件的文件夹名
 
 默认值为：`'vendor'`。
 
@@ -350,13 +372,8 @@ JavaScript和JSX的可插入linting实用程序。默认值为：`false`。
 ```js
 {
   enabled: false,
-  use: 'css-loader',
-  fallback: 'style-loader',
-  publicPath: '',
-  pluginOptions: {
-    filename: 'css/vendor/[name].css'
-  }
+  filename: '[name].css'
 }
 ```
 
-⚠️ __TIPS:__ 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](http://balmjs.com/docs/en/advanced/code-splitting.html)。
+⚠️ **TIPS:** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](http://balmjs.com/docs/en/advanced/code-splitting.html)。
