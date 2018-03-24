@@ -8,7 +8,7 @@
   "author": "Elf-mousE",
   "license": "ISC",
   "devDependencies": {
-    "balm": "^0.16.1",
+    "balm": "^0.17.1",
     "gulp": "^3.9.1"
   }
 }
