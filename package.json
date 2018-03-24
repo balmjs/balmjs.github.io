@@ -10,8 +10,8 @@
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "balm": "^0.15.4",
+    "babel-eslint": "^8.2.2",
+    "balm": "^0.17.1",
     "gulp": "^3.9.1"
   }
 }
