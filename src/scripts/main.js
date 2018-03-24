@@ -21,7 +21,9 @@
       let type = el.dataset.type.toLowerCase();
       el.parentNode.querySelector(`li.${ACTIVE}`).classList.remove(ACTIVE);
       el.classList.add(ACTIVE);
-      el.parentNode.parentNode.querySelector(`pre.${ACTIVE}`).classList.remove(ACTIVE);
+      el.parentNode.parentNode
+        .querySelector(`pre.${ACTIVE}`)
+        .classList.remove(ACTIVE);
       document.getElementById(`${type}-code`).classList.add(ACTIVE);
     }
   };
@@ -29,7 +31,6 @@
   document.querySelectorAll('.tabs').forEach(tab => {
     tab.addEventListener('click', eventHandler);
   });
-
 })(window);
 
 console.info('Welcome to BalmJS, please select your project demo;)');
