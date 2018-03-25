@@ -1,38 +1,16 @@
 var balm = require('balm');
+var config = require('./config/balmrc');
+require('./config/tasks');
 
-balm.config = {
-  roots: {
-    source: 'src'
-  },
-  paths: {
-    source: {
-      css: 'styles',
-      js: 'scripts',
-      img: 'images'
-    }
-  },
-  styles: {
-    ext: 'css',
-    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
-  },
-  scripts: {
-    entry: {
-      main: './src/scripts/main.js'
-    },
-    eslint: true,
-    options: {
-      compress: {
-        drop_console: false
-      }
-    }
-  },
-  extras: {
-    includes: ['CNAME']
-  },
-  zip: 'balm-example.zip'
-};
+balm.config = config;
+balm.afterTask = 'generate-service-worker';
 
 balm.go(function(mix) {
+  mix.copy(
+    'node_modules/workbox-sw/build/workbox-sw.js',
+    balm.config.production ? balm.config.roots.target : balm.config.roots.tmp
+  );
+
   if (balm.config.production) {
     mix.copy('docs/_book/**/*', 'dist/docs');
 

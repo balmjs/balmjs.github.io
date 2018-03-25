@@ -1,3 +1,5 @@
+import './MyServiceWorker';
+
 (function(window) {
   const DEMO = {
     boilerplate: 'Boilerplate',
