@@ -1,4 +1,4 @@
-import './MyServiceWorker';
+// import './MyServiceWorker';
 
 (function(window) {
   const DEMO = {
