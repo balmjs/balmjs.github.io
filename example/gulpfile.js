@@ -21,7 +21,7 @@ balm.config = {
       css: 'styles', //   CSS dir = ./app/styles
       js: 'scripts', //    JS dir = ./app/scripts
       img: 'images', // Image dir = ./app/images
-      font: 'fonts'  //  Font dir = ./app/fonts
+      font: 'fonts' //  Font dir = ./app/fonts
     }
   },
   styles: {
