@@ -52,13 +52,13 @@ server: {
 }
 ```
 
-### `server.proxyTable`
+### <del>`server.proxyTable`</del> (Deprecated in `0.18.0`)
+
+⚠️ From `0.18.0`, use `server.proxyContext` and `server.proxyOptions` instead.
 
 `object`
 
 Define HTTP proxies to your custom API backend. Defaults to `{}`.
-
-> Full list of `http-proxy-middleware` [configuration options](https://github.com/chimurai/http-proxy-middleware#options)
 
 🌰 For example:
 
@@ -81,18 +81,90 @@ server: {
 
 Support environments where dynamic hostnames are not required (ie: electron). Defaults to `false`.
 
-### `server.historyApiFallback`
-
-`boolean`
-
-> New in 0.6.0
-
-Using the HTML5 History API. Defaults to `false`.
-
 ### `server.options`
 
 `object`
 
 > New in 0.10.4
 
-[Browsersync options](https://browsersync.io/docs/options). Defaults to `{}`.
+Keep multiple browsers & devices in sync when building websites. Defaults to `{}`.
+
+> [Browsersync options](https://browsersync.io/docs/options).
+
+### `server.devOptions`
+
+`object`
+
+> New in 0.18.0
+
+A development middleware for webpack. Defaults to `{}`.
+
+> [`webpack-dev-middleware` options](https://github.com/webpack/webpack-dev-middleware#options)
+
+### `server.hotOptions`
+
+`object`
+
+> New in 0.18.0
+
+Webpack hot reloading you can attach to your own server. Defaults to `{}`.
+
+> [Webpack Hot Middleware options](https://github.com/webpack-contrib/webpack-hot-middleware#config)
+
+### `server.proxyContext`
+
+`string` `array`
+
+> New in 0.18.0
+
+Determine which requests should be proxied to the target host. Defaults to `false`. (more on [context matching](https://github.com/chimurai/http-proxy-middleware#context-matching))
+
+### `server.proxyOptions`
+
+`object`
+
+> New in 0.18.0
+
+Proxy middleware configuration. Defaults to `false`.
+
+> Full list of `http-proxy-middleware` [configuration options](https://github.com/chimurai/http-proxy-middleware#options)
+
+🌰 For example:
+
+```js
+server: {
+  proxyContext: '/api',
+  proxyOptions: {
+    target: 'http://www.example.org', // target host
+    changeOrigin: true,               // needed for virtual hosted sites
+    ws: true,                         // proxy websockets
+    pathRewrite: {
+      '^/api/old-path' : '/api/new-path',     // rewrite path
+      '^/api/remove/path' : '/path'           // remove base path
+    },
+    router: {
+      // when request.headers.host == 'dev.localhost:3000',
+      // override target 'http://www.example.org' to 'http://localhost:8000'
+      'dev.localhost:3000' : 'http://localhost:8000'
+    }
+  }
+}
+```
+
+### `server.historyOptions` (Rename in `0.18.0`)
+
+`boolean` `object`
+
+> New in 0.6.0, rename `historyApiFallback` to `historyOptions` in 0.18.0
+
+Using the HTML5 History API. Defaults to `false`.
+
+> [`connect-history-api-fallback` options](https://github.com/bripkens/connect-history-api-fallback#options)
+
+### `server.middlewares`
+
+`array`
+
+> New in 0.18.0
+
+Supply extra middlewares for Browsersync. Defaults to `[]`.

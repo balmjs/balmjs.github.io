@@ -8,12 +8,19 @@ var balm = require('balm');
 balm.config = {
   server: {
     open: true,
-    proxyTable: {
-      '/api': {
-        target: 'http://your.project.dev', // Target host
-        changeOrigin: true // Needed for virtual hosted sites
-      }
+    // NOTE: balm version >= 0.18.0
+    proxyContext: '/api',
+    proxyOptions: {
+      target: 'http://your.project.dev', // Target host
+      changeOrigin: true // Needed for virtual hosted sites
     }
+    // NOTE: balm version < 0.18.0
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://your.project.dev', // Target host
+    //     changeOrigin: true // Needed for virtual hosted sites
+    //   }
+    // }
   },
   roots: {
     source: 'app', // Source code root (Create a directory named 'app' in project)
@@ -24,7 +31,7 @@ balm.config = {
       css: 'styles', //   CSS dir = ./app/styles
       js: 'scripts', //    JS dir = ./app/scripts
       img: 'images', // Image dir = ./app/images
-      font: 'fonts'  //  Font dir = ./app/fonts
+      font: 'fonts' //  Font dir = ./app/fonts
     }
   },
   styles: {

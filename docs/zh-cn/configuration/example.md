@@ -8,12 +8,19 @@ var balm = require('balm');
 balm.config = {
   server: {
     open: true,
-    proxyTable: {
-      '/api': {
-        target: 'http://your.project.dev', // 代理的目标域名
-        changeOrigin: true // 虚拟域名站点必备
-      }
+    // NOTE: balm 版本 >= 0.18.0
+    proxyContext: '/api',
+    proxyOptions: {
+      target: 'http://your.project.dev', // 代理的目标域名
+      changeOrigin: true // 虚拟域名站点必备
     }
+    // NOTE: balm 版本 < 0.18.0
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://your.project.dev', // 代理的目标域名
+    //     changeOrigin: true // 虚拟域名站点必备
+    //   }
+    // }
   },
   roots: {
     source: 'app', // 源代码根目录（如果项目中没有此目录，请自行新建一个名叫“app”的文件夹）
@@ -24,7 +31,7 @@ balm.config = {
       css: 'styles', // 样式目录 = ./app/styles
       js: 'scripts', // 脚本目录 = ./app/scripts
       img: 'images', // 图片目录 = ./app/images
-      font: 'fonts'  // 字体目录 = ./app/fonts
+      font: 'fonts' // 字体目录 = ./app/fonts
     }
   },
   styles: {
@@ -51,7 +58,7 @@ balm.config = {
   assets: {
     root: '/path/to/your_remote_project', // 远程项目的根目录（如：PHP后端项目）
     publicPath: 'public', // 远程项目的静态资源目录：'/path/to/your_remote_project/public'
-    subDir: ''            // 远程项目的静态资源子目录：`/path/to/your_remote_project/public/${subDir}`
+    subDir: '' // 远程项目的静态资源子目录：`/path/to/your_remote_project/public/${subDir}`
   },
   cache: false
 };
