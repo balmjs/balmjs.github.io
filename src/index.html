@@ -133,11 +133,10 @@ balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span cla
 balm.config = {
   server: {
     open: true,
-    proxyTable: {
-      <span class="hljs-string">'/api'</span>: {
-        target: <span class="hljs-string">'http://your.project.dev'</span>, <span class="hljs-comments">// Target host</span>
-        changeOrigin: <span class="hljs-keyword">true</span> <span class="hljs-comments">// Needed for virtual hosted sites</span>
-      }
+    proxyContext: '/api',
+    proxyOptions: {
+      target: <span class="hljs-string">'http://your.project.dev'</span>, <span class="hljs-comments">// Target host</span>
+      changeOrigin: <span class="hljs-keyword">true</span> <span class="hljs-comments">// Needed for virtual hosted sites</span>
     }
   },
   roots: {
@@ -153,7 +152,7 @@ balm.config = {
   },
   styles: {
     ext: <span class="hljs-string">'scss'</span>, <span class="hljs-comments">// Main style extension</span>
-    autoprefixer: [<span class="hljs-string">'> 1%'</span>, <span class="hljs-string">'last 2 versions'</span>, <span class="hljs-string">'Firefox ESR'</span>]
+    autoprefixer: [<span class="hljs-string">'> 0.5%'</span>, <span class="hljs-string">'last 2 versions'</span>, <span class="hljs-string">'Firefox ESR'</span>, <span class="hljs-string">'not dead'</span>]
   },
   scripts: {
     entry: {
