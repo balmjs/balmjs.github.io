@@ -22,6 +22,8 @@ OR
 ...
 ```
 
+> `gulp --production` alias: `gulp -p`
+
 Then, you can run the command like this:
 
 ```sh
