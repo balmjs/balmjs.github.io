@@ -336,6 +336,15 @@ AllInOne vendor filename or Custom Vendor folder name. Defaults to `'vendor'`.
 
 All vendors in one (for SPA). Defaults to `false`.
 
+HTML template:
+
+```html
+<!-- All vendors in one -->
+<script src="%PUBLIC_URL%/scripts/vendor.js"></script>
+<!-- Entry -->
+<script src="%PUBLIC_URL%/scripts/main.js"></script>
+```
+
 ### `scripts.vendors`
 
 `array`
@@ -369,7 +378,7 @@ Extract css from some bundle. Defaults to:
 ```js
 {
   enabled: false,
-  filename: '[name].css'
+  prefix: ''
 }
 ```
 

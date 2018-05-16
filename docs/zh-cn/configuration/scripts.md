@@ -339,6 +339,15 @@ WEB 性能的最佳实践。默认值为：
 
 开启提取所有第三方依赖的功能（仅限单页面项目）。默认值为：`false`。
 
+HTML 模板：
+
+```html
+<!-- 提取所有第三方脚本 -->
+<script src="%PUBLIC_URL%/scripts/vendor.js"></script>
+<!-- 入口脚本 -->
+<script src="%PUBLIC_URL%/scripts/main.js"></script>
+```
+
 ### `scripts.vendors`
 
 `array`
@@ -372,7 +381,7 @@ WEB 性能的最佳实践。默认值为：
 ```js
 {
   enabled: false,
-  filename: '[name].css'
+  prefix: ''
 }
 ```
 
