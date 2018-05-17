@@ -4,7 +4,7 @@ module.exports = {
   },
   styles: {
     ext: 'css',
-    autoprefixer: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead']
+    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
   },
   scripts: {
     entry: {
