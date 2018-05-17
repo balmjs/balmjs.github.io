@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "balm": "^0.21.0",
+    "balm": "^0.21.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "gulp": "^3.9.1",
