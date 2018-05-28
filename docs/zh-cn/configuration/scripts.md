@@ -48,13 +48,13 @@ scripts: {
 
 指定磁盘上每个输出文件的名称。你**不能**在这里指定绝对路径！默认值为：`'[name]`。
 
-* 每个构建使用唯一的 hash 来生成：
+- 每个构建使用唯一的 hash 来生成：
 
 ```js
 filename: '[name].[hash]';
 ```
 
-* 根据文件内容 hash 来生成：
+- 根据文件内容 hash 来生成：
 
 ```js
 filename: '[chunkhash]';
@@ -94,10 +94,10 @@ umdNamedDefine: true;
 
 The filename of non-entry chunks as relative path inside the `output.path` directory. 默认值为：`'(auto)'`。
 
-* `[id]` is replaced by the id of the chunk.（开发模式默认值）
-* `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-* `[hash]` is replaced by the hash of the compilation.
-* `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
+- `[id]` is replaced by the id of the chunk.（开发模式默认值）
+- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+- `[hash]` is replaced by the hash of the compilation.
+- `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
 
 ## Loaders
 
@@ -109,21 +109,21 @@ The filename of non-entry chunks as relative path inside the `output.path` direc
 
 Each item can have these properties:
 
-* `test`: A condition that must be met
-* `exclude`: A condition that must not be met
-* `include`: A condition that must be met
-* `loader`: A string of “!” separated loaders
-* `loaders`: An array of loaders as string
+- `test`: A condition that must be met
+- `exclude`: A condition that must not be met
+- `include`: A condition that must be met
+- `loader`: A string of “!” separated loaders
+- `loaders`: An array of loaders as string
 
 **BalmJS** 默认已加载的 loaders:
 
-* [`html`](https://github.com/webpack/html-loader)
-* [`style`](https://github.com/webpack/style-loader)
-* [`css`](https://github.com/webpack/css-loader)
-* [`postcss`](https://github.com/postcss/postcss-loader)
-* [`babel`](https://github.com/babel/babel-loader)
-* [`url`](https://github.com/webpack/url-loader)
-* [`file`](https://github.com/webpack/file-loader)
+- [`html`](https://github.com/webpack/html-loader)
+- [`style`](https://github.com/webpack/style-loader)
+- [`css`](https://github.com/webpack/css-loader)
+- [`postcss`](https://github.com/postcss/postcss-loader)
+- [`babel`](https://github.com/babel/babel-loader)
+- [`url`](https://github.com/webpack/url-loader)
+- [`file`](https://github.com/webpack/file-loader)
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
@@ -159,12 +159,12 @@ scripts: {
 
 **BalmJS** 默认已支持的扩展名：
 
-* `.wasm` (New in 0.17.0)
-* `.mjs` (New in 0.17.0)
-* `.js`
-* [`.json`](http://www.json.org/)
-* [`.jsx`](http://facebook.github.io/jsx/)
-* [`.vue`](https://vuejs.org/)
+- `.wasm` (New in 0.17.0)
+- `.mjs` (New in 0.17.0)
+- `.js`
+- [`.json`](http://www.json.org/)
+- [`.jsx`](http://facebook.github.io/jsx/)
+- [`.vue`](https://vuejs.org/)
 
 🌰 例如：
 
@@ -326,8 +326,8 @@ WEB 性能的最佳实践。默认值为：
 
 `string`
 
-* 提取所有第三方依赖合成一个文件的文件名（需要设置 `scripts.extractAllVendors: true`）
-* 提取部分第三方依赖合成自定义文件的文件夹名
+- 提取所有第三方依赖合成一个文件的文件名（需要设置 `scripts.extractAllVendors: true`）
+- 提取部分第三方依赖合成自定义文件的文件夹名
 
 默认值为：`'vendor'`。
 
@@ -386,3 +386,11 @@ HTML 模板：
 ```
 
 ⚠️ **TIPS:** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](http://balmjs.com/docs/en/advanced/code-splitting.html)。
+
+### `scripts.base64Limit`
+
+`number`
+
+> New in 0.22.0
+
+将文件加载为 `base64` 编码的 URL。默认值为：`10000`.

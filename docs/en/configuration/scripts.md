@@ -48,13 +48,13 @@ Then, your HTML templates:
 
 Specifies the name of each output file on disk. You must **not** specify an absolute path here! Defaults to `'[name]'`.
 
-* Using the unique hash generated for every build:
+- Using the unique hash generated for every build:
 
 ```js
 filename: '[name].[hash]';
 ```
 
-* Using hashes based on each chunks' content:
+- Using hashes based on each chunks' content:
 
 ```js
 filename: '[chunkhash]';
@@ -94,10 +94,10 @@ umdNamedDefine: true;
 
 The filename of non-entry chunks as relative path inside the `output.path` directory. Defaults to `'(auto)'`.
 
-* `[id]` is replaced by the id of the chunk. (automatic setting for development)
-* `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-* `[hash]` is replaced by the hash of the compilation.
-* `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
+- `[id]` is replaced by the id of the chunk. (automatic setting for development)
+- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
+- `[hash]` is replaced by the hash of the compilation.
+- `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
 
 ## Loaders
 
@@ -109,21 +109,21 @@ An array of automatically applied loaders. Defaults to `[]`.
 
 Each item can have these properties:
 
-* `test`: A condition that must be met
-* `exclude`: A condition that must not be met
-* `include`: A condition that must be met
-* `loader`: A string of “!” separated loaders
-* `loaders`: An array of loaders as string
+- `test`: A condition that must be met
+- `exclude`: A condition that must not be met
+- `include`: A condition that must be met
+- `loader`: A string of “!” separated loaders
+- `loaders`: An array of loaders as string
 
 **BalmJS** default loaders:
 
-* [`html`](https://github.com/webpack/html-loader)
-* [`style`](https://github.com/webpack/style-loader)
-* [`css`](https://github.com/webpack/css-loader)
-* [`postcss`](https://github.com/postcss/postcss-loader)
-* [`babel`](https://github.com/babel/babel-loader)
-* [`url`](https://github.com/webpack/url-loader)
-* [`file`](https://github.com/webpack/file-loader)
+- [`html`](https://github.com/webpack/html-loader)
+- [`style`](https://github.com/webpack/style-loader)
+- [`css`](https://github.com/webpack/css-loader)
+- [`postcss`](https://github.com/postcss/postcss-loader)
+- [`babel`](https://github.com/babel/babel-loader)
+- [`url`](https://github.com/webpack/url-loader)
+- [`file`](https://github.com/webpack/file-loader)
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
@@ -159,12 +159,12 @@ An array of extensions that should be used to resolve modules. Defaults to `[]`.
 
 **BalmJS** default extensions:
 
-* `.wasm` (New in 0.17.0)
-* `.mjs` (New in 0.17.0)
-* `.js`
-* [`.json`](http://www.json.org/)
-* [`.jsx`](http://facebook.github.io/jsx/)
-* [`.vue`](https://vuejs.org/)
+- `.wasm` (New in 0.17.0)
+- `.mjs` (New in 0.17.0)
+- `.js`
+- [`.json`](http://www.json.org/)
+- [`.jsx`](http://facebook.github.io/jsx/)
+- [`.vue`](https://vuejs.org/)
 
 🌰 For example:
 
@@ -383,3 +383,11 @@ Extract css from some bundle. Defaults to:
 ```
 
 ⚠️ **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+
+### `scripts.base64Limit`
+
+`number`
+
+> New in 0.22.0
+
+Loads files as `base64` encoded URL. Defaults to: `10000`.
