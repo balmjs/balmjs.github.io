@@ -6,7 +6,7 @@
 
 如果你的机器上还没有 [Node.js® and npm](https://nodejs.org/en/download/) 环境，请先安装它们。
 
-> 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`，__来验证一下你正在运行 `node 6.x.x` 和 `npm 3.x.x` 以上的版本__。 更老的版本可能会出现错误，更新的版本则没问题。
+> 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`，**来验证一下你正在运行 `node 8.x.x` 和 `npm 5.x.x` 以上的版本**。 更老的版本可能会出现错误，更新的版本则没问题。
 
 BalmJS 工作流采用 [gulp](https://gulpjs.com/) 进行构建构成，所以你需要全局安装 `gulp-cli`。
 
@@ -18,7 +18,7 @@ $ gulp -v
 # 输出：CLI version 2.0.0
 ```
 
-### 1. 安装 __`balm`__
+### 1. 安装 **`balm`**
 
 使用 npm 安装：
 
@@ -49,7 +49,7 @@ balm.config = {
 balm.go();
 ```
 
-请参照 [我们的配置文档](../configuration/toc.md) 来学习更多 __`balm`__ 配置项。
+请参照 [我们的配置文档](../configuration/toc.md) 来学习更多 **`balm`** 配置项。
 
 ### 3. 用法
 

@@ -11,11 +11,11 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "balm": "^0.22.0",
+    "balm": "^0.23.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "gulp": "^3.9.1",
-    "prettier": "^1.13.0",
+    "prettier": "^1.13.3",
     "workbox-build": "^3.2.0",
     "workbox-sw": "^3.2.0"
   }
