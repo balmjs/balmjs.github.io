@@ -18,7 +18,7 @@ module.exports = {
     }
   },
   extras: {
-    includes: ['CNAME'],
+    includes: ['CNAME', '_config.yml'],
     excludes: ['service-worker.js']
   },
   zip: 'balm-example.zip'
