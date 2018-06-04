@@ -1,4 +1,4 @@
-// import './MyServiceWorker';
+import './my-sw';
 
 (function(window) {
   const DEMO = {
