@@ -10,6 +10,11 @@
   <link rel="icon" type="image/x-icon" href="//balmjs.com/favicon.ico">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
+  <script>
+    var HOST = 'balmjs.com';
+    if ((window.location.host === HOST) && (window.location.protocol !== 'https:'))
+      window.location.protocol = 'https';
+  </script>
 </head>
 
 <body>
