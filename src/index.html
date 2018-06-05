@@ -3,6 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    // Redirect users to https
+    var HOST = 'balmjs.com';
+    if ((window.location.host === HOST) && (window.location.protocol !== 'https:'))
+      window.location.protocol = 'https';
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2196f3">
   <title>BalmJS</title>
@@ -10,11 +16,6 @@
   <link rel="icon" type="image/x-icon" href="//balmjs.com/favicon.ico">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-  <script>
-    var HOST = 'balmjs.com';
-    if ((window.location.host === HOST) && (window.location.protocol !== 'https:'))
-      window.location.protocol = 'https';
-  </script>
 </head>
 
 <body>
