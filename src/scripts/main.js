@@ -1,4 +1,4 @@
-import './my-sw';
+// import './my-sw';
 
 (function(window) {
   const DEMO = {
