@@ -312,13 +312,15 @@ WEB 性能的最佳实践。默认值为：
 
 ```js
 {
-  chunks: 'async',
-	minSize: 30000,
-	minChunks: 1,
-	maxAsyncRequests: 5,
-	maxInitialRequests: 3,
-	name: true,
-	cacheGroups: {}
+  splitChunks: {
+    chunks: 'async',
+    minSize: 30000,
+    minChunks: 1,
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    name: true,
+    cacheGroups: {}
+  }
 }
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "balmjs.com",
-  "version": "2018.8.19",
+  "version": "2018.8.30",
   "author": "Elf-mousE",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
-    "balm": "^0.23.11",
+    "babel-eslint": "^9.0.0",
+    "balm": "^0.23.13",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "gulp": "^3.9.1",

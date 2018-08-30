@@ -312,13 +312,15 @@ Best practices of web performance. Defaults to:
 
 ```js
 {
-  chunks: 'async',
-	minSize: 30000,
-	minChunks: 1,
-	maxAsyncRequests: 5,
-	maxInitialRequests: 3,
-	name: true,
-	cacheGroups: {}
+  splitChunks: {
+    chunks: 'async',
+    minSize: 30000,
+    minChunks: 1,
+    maxAsyncRequests: 5,
+    maxInitialRequests: 3,
+    name: true,
+    cacheGroups: {}
+  }
 }
 ```
 
