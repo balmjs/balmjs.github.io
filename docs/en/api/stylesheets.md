@@ -2,12 +2,13 @@
 
 ## `mix.css(input, output)`
 
-__[PostCSS](http://postcss.org/)__ to CSS
+**[PostCSS](http://postcss.org/)** to CSS
 
 - Arguments
   - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
+
   ```js
   /**
    * Single file
@@ -38,12 +39,13 @@ __[PostCSS](http://postcss.org/)__ to CSS
 
 ## `mix.sass(input, output)`
 
-__[Sass](http://sass-lang.com/)__ to CSS
+**[Sass](http://sass-lang.com/)** to CSS
 
 - Arguments
   - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
+
   ```js
   /**
    * Single file
@@ -72,12 +74,13 @@ __[Sass](http://sass-lang.com/)__ to CSS
 
 ## `mix.less(input, output)`
 
-__[Less](http://lesscss.org/)__ to CSS
+**[Less](http://lesscss.org/)** to CSS
 
 - Arguments
   - `input`: `string` `array`
   - `ouput`: `string`
 - Usage
+
   ```js
   /**
    * Single file
@@ -127,7 +130,7 @@ balm.config = {
       img: 'img',
       font: 'font'
     }
-  },
+  }
   // Your project more config
 };
 
@@ -139,13 +142,16 @@ balm.go(function(mix) {
 });
 ```
 
-## `mix.cssmin(input, output, renameOptions)`
+## <del>`mix.cssmin(input, output, renameOptions)`</del>
+
+> Deprecated in 0.24.0
 
 - Arguments
   - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
 - Usage
+
   ```js
   /**
    * Single file

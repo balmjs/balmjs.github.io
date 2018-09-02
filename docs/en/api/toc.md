@@ -7,10 +7,10 @@
   - `mix.sass(input, output)`
   - `mix.less(input, output)`
   - `mix.csspath()`
-  - `mix.cssmin(input, output, renameOptions = {suffix: '.min'})`
+  - <del>`mix.cssmin(input, output, renameOptions = {suffix: '.min'})`</del>
 - JavaScript
   - `mix.js(input, output)`
-  - `mix.jsmin(input, output, renameOptions = {suffix: '.min'})`
+  - <del>`mix.jsmin(input, output, renameOptions = {suffix: '.min'})`</del>
 - Files & Directories
   - `mix.copy(from, to, renameOptions = {})`
   - `mix.remove(src)`

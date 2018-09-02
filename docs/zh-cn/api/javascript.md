@@ -1,4 +1,4 @@
-# 脚本API
+# 脚本 API
 
 ## `mix.js(input, output)`
 
@@ -6,6 +6,7 @@
   - `input`: `string` `object`
   - `ouput`: `string`
 - 用法
+
   ```js
   /**
    * 单文件
@@ -15,9 +16,12 @@
    */
   mix.js('app/scripts/single.js', 'dist/js');
   // 或
-  mix.js({
-    main: './src/scripts/single.js'
-  }, 'dist/js');
+  mix.js(
+    {
+      main: './src/scripts/single.js'
+    },
+    'dist/js'
+  );
   ```
 
   ```js
@@ -31,21 +35,25 @@
    * '/path/to/project/dist/js/multi-a.js'
    * '/path/to/project/dist/js/multi-b.js'
    */
-  mix.js({
-    'multi-a': './src/scripts/multi-a.js',
-    'multi-b': './src/scripts/multi-b.js'
-  }, 'dist/js');
+  mix.js(
+    {
+      'multi-a': './src/scripts/multi-a.js',
+      'multi-b': './src/scripts/multi-b.js'
+    },
+    'dist/js'
+  );
   ```
 
+## <del>`mix.jsmin(input, output, renameOptions)`</del>
 
-
-## `mix.jsmin(input, output, renameOptions)`
+> Deprecated in 0.24.0
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object`（默认值：`{suffix: '.min'}`）
 - 用法
+
   ```js
   /**
    * 单文件

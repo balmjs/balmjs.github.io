@@ -1,5 +1,7 @@
 # For IE8 (ES3)
 
+> `babel < 7.x` only.
+
 First, run this command in your project directory:
 
 ```sh

@@ -1,13 +1,14 @@
-# 样式API
+# 样式 API
 
 ## `mix.css(input, output)`
 
-__[PostCSS](http://postcss.org/)__ 转为 CSS
+**[PostCSS](http://postcss.org/)** 转为 CSS
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
 - 用法
+
   ```js
   /**
    * 单文件
@@ -38,12 +39,13 @@ __[PostCSS](http://postcss.org/)__ 转为 CSS
 
 ## `mix.sass(input, output)`
 
-__[Sass](http://sass-lang.com/)__ 转为 CSS
+**[Sass](http://sass-lang.com/)** 转为 CSS
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
 - 用法
+
   ```js
   /**
    * 单文件
@@ -72,12 +74,13 @@ __[Sass](http://sass-lang.com/)__ 转为 CSS
 
 ## `mix.less(input, output)`
 
-__[Less](http://lesscss.org/)__ 转为 CSS
+**[Less](http://lesscss.org/)** 转为 CSS
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
 - 用法
+
   ```js
   /**
    * 单文件
@@ -127,7 +130,7 @@ balm.config = {
       img: 'img',
       font: 'font'
     }
-  },
+  }
   // 项目的更多配置项
 };
 
@@ -139,13 +142,16 @@ balm.go(function(mix) {
 });
 ```
 
-## `mix.cssmin(input, output, renameOptions)`
+## <del>`mix.cssmin(input, output, renameOptions)`</del>
+
+> Deprecated in 0.24.0
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object`（默认值：`{suffix: '.min'}`）
 - 用法
+
   ```js
   /**
    * 单文件

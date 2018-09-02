@@ -1,12 +1,12 @@
 # Code Splitting
 
-> Example for [Vue](https://vuejs.org/) + [BalmUI Lite](http://mdl.balmjs.com/)
+> Example for [Vue](https://vuejs.org/) + [BalmUI](https://material.balmjs.com/)
 
 ## 1. Include full code
 
 ### 1.1 All in one script
 
-- __`/path/to/project/app/index.html`__
+- **`/path/to/project/app/index.html`**
 
 ```html
 <!DOCTYPE html>
@@ -31,13 +31,13 @@
 </html>
 ```
 
-- __`/path/to/project/app/scripts/main.js`__
+- **`/path/to/project/app/scripts/main.js`**
 
 ```js
 import Vue from 'vue';
 import App from './views/layouts/app';
-import BalmUI from 'balm-ui-lite';
-import 'balm-ui-lite/dist/balm-ui-lite.css'; // Not recommended
+import BalmUI from 'balm-ui';
+import 'balm-ui/dist/balm-ui.css'; // Not recommended
 
 Vue.use(BalmUI);
 
@@ -55,7 +55,7 @@ balm.config = {
   scripts: {
     entry: {
       lib: ['vue'],
-      ui: ['balm-ui-lite'],
+      ui: ['balm-ui'],
       main: './app/scripts/main.js'
     }
   }
@@ -64,7 +64,7 @@ balm.config = {
 
 ### 1.3 Split vendors code
 
-- __`/path/to/project/app/index.html`__
+- **`/path/to/project/app/index.html`**
 
 ```html
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ balm.config = {
   <!-- Include: vue, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: balm-ui-lite, etc... -->
+  <!-- Include: balm-ui, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
   <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -95,18 +95,18 @@ balm.config = {
 </html>
 ```
 
-- __`/path/to/project/app/styles/main.scss`__
+- **`/path/to/project/app/styles/main.scss`**
 
 ```scss
-@import 'node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss'; // Recommended
+@import 'node_modules/balm-ui/src/styles/balm-ui.scss'; // Recommended
 ```
 
-- __`/path/to/project/app/scripts/main.js`__
+- **`/path/to/project/app/scripts/main.js`**
 
 ```js
 import Vue from 'vue';
 import App from './views/layouts/app';
-import BalmUI from 'balm-ui-lite';
+import BalmUI from 'balm-ui';
 
 Vue.use(BalmUI);
 
@@ -119,7 +119,7 @@ new Vue({
 
 ### 1.4 Split css code
 
-- __`/path/to/project/app/index.html`__
+- **`/path/to/project/app/index.html`**
 
 ```html
 <!DOCTYPE html>
@@ -131,7 +131,7 @@ new Vue({
   <title>Your Webapp</title>
 
   <!-- build:css css/vendors.css -->
-  <link rel="stylesheet" href="/node_modules/balm-ui-lite/dist/balm-ui-lite.css">
+  <link rel="stylesheet" href="/node_modules/balm-ui/dist/balm-ui.css">
   <!-- endbuild -->
 
   <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
@@ -146,7 +146,7 @@ new Vue({
   <!-- Include: vue, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: balm-ui-lite, etc... -->
+  <!-- Include: balm-ui, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
   <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -155,33 +155,35 @@ new Vue({
 </html>
 ```
 
-- __`/path/to/project/app/styles/main.scss`__
+- **`/path/to/project/app/styles/main.scss`**
 
 ```scss
-// @import 'node_modules/balm-ui-lite/src/styles/balm-ui-lite.scss';
+// @import 'node_modules/balm-ui/src/styles/balm-ui.scss';
 ```
 
-## 2. Include partial code (Mobile recommended)
+## 2. Include partial code
+
+> Recommended for Mobile
 
 ### 2.1 All in one script
 
-- __`/path/to/project/app/scripts/main.js`__
+- **`/path/to/project/app/scripts/main.js`**
 
 ```js
 import Vue from 'vue';
 import App from './views/layouts/app';
 
 // Include UI scripts
-import UiButton from 'balm-ui-lite/components/button';
-import $alert from 'balm-ui-lite/plugins/alert';
+import UiButton from 'balm-ui/components/button';
+import $alert from 'balm-ui/plugins/alert';
 
 // Include UI styles (Not recommended)
-import 'balm-ui-lite/components/core.css';
-import 'balm-ui-lite/components/button.css';
-import 'balm-ui-lite/components/dialog.css';
+import 'balm-ui/components/core.css';
+import 'balm-ui/components/button.css';
+import 'balm-ui/components/dialog.css';
 
 // Use UI components
-Vue.component(UiButton.name, UiButton);
+Vue.use(UiButton);
 Vue.use($alert);
 
 new Vue({
@@ -198,10 +200,7 @@ balm.config = {
   scripts: {
     entry: {
       lib: ['vue'],
-      ui: [
-        'balm-ui-lite/components/button',
-        'balm-ui-lite/plugins/alert'
-      ],
+      ui: ['balm-ui'],
       main: './app/scripts/main.js'
     }
   }
@@ -210,7 +209,7 @@ balm.config = {
 
 ### 2.3 Split all code
 
-- __`/path/to/project/app/index.html`__
+- **`/path/to/project/app/index.html`**
 
 ```html
 <!DOCTYPE html>
@@ -222,9 +221,9 @@ balm.config = {
   <title>Your Webapp</title>
 
   <!-- build:css css/vendors.css -->
-  <link rel="stylesheet" href="/node_modules/balm-ui-lite/components/core.css">
-  <link rel="stylesheet" href="/node_modules/balm-ui-lite/components/button.css">
-  <link rel="stylesheet" href="/node_modules/balm-ui-lite/components/dialog.css">
+  <link rel="stylesheet" href="/node_modules/balm-ui/components/core.css">
+  <link rel="stylesheet" href="/node_modules/balm-ui/components/button.css">
+  <link rel="stylesheet" href="/node_modules/balm-ui/components/dialog.css">
   <!-- endbuild -->
 
   <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
@@ -239,7 +238,7 @@ balm.config = {
   <!-- Include: vue, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: balm-ui-lite, etc... -->
+  <!-- Include: balm-ui, etc... -->
   <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
   <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -248,18 +247,18 @@ balm.config = {
 </html>
 ```
 
-- __`/path/to/project/app/scripts/main.js`__
+- **`/path/to/project/app/scripts/main.js`**
 
 ```js
 import Vue from 'vue';
 import App from './views/layouts/app';
 
 // Include UI scripts
-import UiButton from 'balm-ui-lite/components/button';
-import $alert from 'balm-ui-lite/plugins/alert';
+import UiButton from 'balm-ui/components/button';
+import $alert from 'balm-ui/plugins/alert';
 
 // Use UI components
-Vue.component(UiButton.name, UiButton);
+Vue.use(UiButton);
 Vue.use($alert);
 
 new Vue({

@@ -1,4 +1,5 @@
 # Directory Structure
+
 > Returning to webapp's original nature.
 
 ```
@@ -17,7 +18,7 @@ project
 ├─┬ config       // Optional. But recommended. Refer to BalmCLI's templates.
 │ ├── balmrc.js
 │ └── publish.js
-├── .dotfile     // (.babelrc, .gitignore, etc...)
+├── .dotfile     // (e.g. .gitignore)
 ├── gulpfile.js  // Required. A configuration file for Balm.
 ├── package.json // Required.
 └── ...

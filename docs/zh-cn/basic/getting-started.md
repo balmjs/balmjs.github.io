@@ -1,6 +1,6 @@
 # 快速上手
 
-最简单的WEB应用项目结构（[完整目录结构](structure.md)）
+最简单的 WEB 应用项目结构（[完整目录结构](structure.md)）
 
 ```
 project
@@ -10,14 +10,15 @@ project
 │ ├─┬ scripts
 │ │ └── main.js
 │ └── index.html
-├── .babelrc
+├── .babelrc  (for balm@23)
+├── babel.config.js (for balm@next)
 ├── gulpfile.js
 └── package.json
 ```
 
 你也可以 [下载例子](http://balmjs.com/balm-example.zip) 来帮助学习。
 
-## WEB应用目录
+## WEB 应用目录
 
 ### 1. 一个模板入口文件 (`/path/to/project/app/index.html`)
 
@@ -58,13 +59,28 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 ## 项目配置文件
 
-### 1. `.babelrc` (`/path/to/project/.babelrc`)
+### 1. 配置 `babel`
 
-> 使用 [Babel](https://babeljs.io/) 开启 [ES2015 特性](https://babeljs.io/learn-es2015/)
+> 使用 [Babel](https://babeljs.io/) 开启 [ES2015 特性](https://babeljs.io/docs/en/learn)
+
+#### 1.1 `babel.config.js` (`/path/to/project/babel.config.js`)
+
+在你的项目根目录下，新建一个名叫 `babel.config.js` 的配置文件：
+
+- `balm` 版本 >= 0.24.0
+
+```js
+module.exports = {
+  presets: ['@babel/preset-env'],
+  plugins: ['@babel/plugin-transform-runtime']
+};
+```
+
+#### 1.2 `.babelrc` (`/path/to/project/.babelrc`)
 
 在你的项目根目录下，新建一个名叫 `.babelrc` 的配置文件：
 
-- 新版 `balm` (版本 >= 0.7.0)
+- `balm` 版本 >= 0.7.0
 
 配置内容：
 
@@ -75,7 +91,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 }
 ```
 
-- 旧版 `balm` (版本 < 0.7.0)
+- `balm` 版本 < 0.7.0
 
 首先，在你的项目根目录下运行命令：
 
@@ -95,4 +111,4 @@ $ npm install --save-dev babel-preset-stage-0
 }
 ```
 
-### 2. `balm` 配置文件 [`gulpfile.js`](../configuration/example.html)
+### 2. `balm` 配置文件 [`gulpfile.js`](../configuration/example.html) (`/path/to/project/gulpfile.js`)

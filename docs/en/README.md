@@ -1,4 +1,4 @@
-# BalmJS
+# BalmJS [![NPM version][balm-image]][balm-url]
 
 > A flexible Front-End workflow for webapps.
 
@@ -15,6 +15,8 @@ BalmJS prescribes best practices and tools to help you stay productive.
 | [balm-ui-lite](https://github.com/balmjs/ui-vue-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material Design Lite + Vue             |
 | [balm-ui](https://github.com/balmjs/ui-vue)           | [![NPM version][balm-ui-image]][balm-ui-url]           | Next Generation Material UI for Vue.js |
 
+[balm-image]: https://badge.fury.io/js/balm.svg
+[balm-url]: https://npmjs.org/package/balm
 [balm-cli-image]: https://badge.fury.io/js/balm-cli.svg
 [balm-cli-url]: https://npmjs.org/package/balm-cli
 [balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg

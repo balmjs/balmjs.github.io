@@ -1,4 +1,4 @@
-# BalmJS
+# BalmJS [![NPM version][balm-image]][balm-url]
 
 > 一个灵活的前端工作流方案
 
@@ -15,6 +15,8 @@ BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效�
 | [balm-ui-lite](https://github.com/balmjs/ui-vue-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material UI 精简版 + Vue               |
 | [balm-ui](https://github.com/balmjs/ui-vue)           | [![NPM version][balm-ui-image]][balm-ui-url]           | 为 Vue.js 量身定制的下一代 Material UI |
 
+[balm-image]: https://badge.fury.io/js/balm.svg
+[balm-url]: https://npmjs.org/package/balm
 [balm-cli-image]: https://badge.fury.io/js/balm-cli.svg
 [balm-cli-url]: https://npmjs.org/package/balm-cli
 [balm-ui-lite-image]: https://badge.fury.io/js/balm-ui-lite.svg

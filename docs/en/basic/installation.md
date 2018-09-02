@@ -23,12 +23,20 @@ $ gulp -v
 Install with npm:
 
 ```sh
+# babel 7.x
+$ npm install --save-dev gulp balm@next
+
+# babel 6.x
 $ npm install --save-dev gulp balm
 ```
 
 Install with [yarn](https://yarnpkg.com/en/docs/install):
 
 ```sh
+# babel 7.x
+$ yarn add --dev gulp balm@next
+
+# babel 6.x
 $ yarn add --dev gulp balm
 ```
 
@@ -38,7 +46,7 @@ In your project directory, create a file named `gulpfile.js` in your project roo
 
 ```js
 // 1. Import balm
-var balm = require('balm');
+let balm = require('balm');
 
 // 2. Config balm
 balm.config = {

@@ -17,7 +17,7 @@ project
 
 ### 1. HTML
 
-- __`/path/to/project/app/index.html`__
+- **`/path/to/project/app/index.html`**
 
 ```html
 <!DOCTYPE html>
@@ -43,52 +43,39 @@ project
 
 ### 2. CSS
 
-- __`/path/to/project/app/styles/main.scss`__
+- **`/path/to/project/app/styles/main.scss`**
 
 ```scss
 // 1. Configuration and helpers
-@import
-  'abstracts/variables',
-  'abstracts/functions',
-  'abstracts/mixins';
+@import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
 
 // 2. Vendors
-@import
-  'vendor/normalize';
+@import 'vendor/normalize';
 
 // 3. Base stuff
-@import
-  'base/base',
-  'base/fonts',
-  'base/typography',
-  'base/helpers';
+@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
 // 4. Layout-related sections
-@import
-  'layout/header',
-  'layout/footer';
+@import 'layout/header', 'layout/footer';
 
 // 5. Components
-@import
-  'components/button';
+@import 'components/button';
 
 // 6. Page-specific styles
-@import
-  'pages/home';
+@import 'pages/home';
 
 // 7. Themes
-@import
-  'themes/default';
+@import 'themes/default';
 ```
 
 ### 3. JS
 
-- __`/path/to/project/app/scripts/main.js`__
+- **`/path/to/project/app/scripts/main.js`**
 
 ```js
 import Vue from 'vue';
 import App from './views/layouts/app';
-import BalmUI from 'balm-ui-lite';
+import BalmUI from 'balm-ui';
 
 Vue.config.productionTip = false;
 Vue.use(BalmUI);

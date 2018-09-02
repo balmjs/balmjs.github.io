@@ -6,6 +6,7 @@
   - `input`: `string` `object`
   - `ouput`: `string`
 - Usage
+
   ```js
   /**
    * Single file
@@ -15,9 +16,12 @@
    */
   mix.js('app/scripts/single.js', 'dist/js');
   // OR
-  mix.js({
-    main: './src/scripts/single.js'
-  }, 'dist/js');
+  mix.js(
+    {
+      main: './src/scripts/single.js'
+    },
+    'dist/js'
+  );
   ```
 
   ```js
@@ -31,21 +35,25 @@
    * '/path/to/project/dist/js/multi-a.js'
    * '/path/to/project/dist/js/multi-b.js'
    */
-  mix.js({
-    'multi-a': './src/scripts/multi-a.js',
-    'multi-b': './src/scripts/multi-b.js'
-  }, 'dist/js');
+  mix.js(
+    {
+      'multi-a': './src/scripts/multi-a.js',
+      'multi-b': './src/scripts/multi-b.js'
+    },
+    'dist/js'
+  );
   ```
 
+## <del>`mix.jsmin(input, output, renameOptions)`</del>
 
-
-## `mix.jsmin(input, output, renameOptions)`
+> Deprecated in 0.24.0
 
 - Arguments
   - `input`: `string` `array`
   - `ouput`: `string`
   - `renameOptions`: `object` (Default: `{suffix: '.min'}`)
 - Usage
+
   ```js
   /**
    * Single file

@@ -1,5 +1,6 @@
 ## 项目结构
-> 让Web应用返璞归真。
+
+> 让 Web 应用返璞归真。
 
 ```
 project
@@ -17,10 +18,10 @@ project
 ├─┬ config       // 可选的。但推荐。请参照 BalmCLI 模板。
 │ ├── balmrc.js
 │ └── publish.js
-├── .dotfile     // (.babelrc, .gitignore, 等……)
+├── .dotfile     // (例如 .gitignore)
 ├── gulpfile.js  // 必须的。Balm的配置文件。
 ├── package.json // 必须的。
 └── ...
 ```
 
-> 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 脚手架工具来快速创建一个前端Web应用的骨架程序。
+> 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 脚手架工具来快速创建一个前端 Web 应用的骨架程序。

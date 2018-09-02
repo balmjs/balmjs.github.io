@@ -10,7 +10,8 @@ project
 │ ├─┬ scripts
 │ │ └── main.js
 │ └── index.html
-├── .babelrc
+├── .babelrc  (for balm@23)
+├── babel.config.js (for balm@next)
 ├── gulpfile.js
 └── package.json
 ```
@@ -58,9 +59,24 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 ## Project settings
 
-### 1. `.babelrc` (`/path/to/project/.babelrc`)
+### 1. Configure `babel`
 
-> enable [ES2015 features](https://babeljs.io/learn-es2015/) using [Babel](https://babeljs.io/)
+> enable [ES2015 features](https://babeljs.io/docs/en/learn) by using [Babel](https://babeljs.io/)
+
+#### 1.1 `babel.config.js` (`/path/to/project/babel.config.js`)
+
+In your project directory, create a file named `babel.config.js` in your project root with these contents:
+
+- For `balm` version >= 0.24.0
+
+```js
+module.exports = {
+  presets: ['@babel/preset-env'],
+  plugins: ['@babel/plugin-transform-runtime']
+};
+```
+
+#### 1.2 `.babelrc` (`/path/to/project/.babelrc`)
 
 In your project directory, create a file named `.babelrc` in your project root with these contents:
 
@@ -93,4 +109,4 @@ Then, edit `.babelrc`:
 }
 ```
 
-### 2. [`gulpfile.js`](../configuration/example.html) for `balm` config
+### 2. Configure `balm` by [`gulpfile.js`](../configuration/example.html) (`/path/to/project/gulpfile.js`)
