@@ -1,8 +1,12 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   max-width: 1080px;
   margin: 40px auto;
   &:first-child {
     margin-top: 20px;
+    overflow: hidden; /* fix device.css bug */
   }
 }
 
