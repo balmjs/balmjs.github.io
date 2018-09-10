@@ -10,8 +10,8 @@ project
 │ ├─┬ scripts
 │ │ └── main.js
 │ └── index.html
-├── .babelrc  (for balm@23)
-├── babel.config.js (for balm@next)
+├── .babelrc  (for balm@0.23)
+├── babel.config.js (for balm@0.24)
 ├── gulpfile.js
 └── package.json
 ```

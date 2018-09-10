@@ -24,20 +24,20 @@ $ gulp -v
 
 ```sh
 # babel 7.x
-$ npm install --save-dev gulp balm@next
+$ npm install --save-dev gulp balm
 
 # babel 6.x
-$ npm install --save-dev gulp balm
+$ npm install --save-dev gulp balm@0.23
 ```
 
 使用 [yarn](https://yarnpkg.com/en/docs/install) 安装：
 
 ```sh
 # babel 7.x
-$ yarn add --dev gulp balm@next
+$ yarn add --dev gulp balm
 
 # babel 6.x
-$ yarn add --dev gulp balm
+$ yarn add --dev gulp balm@0.23
 ```
 
 ### 2. 配置
