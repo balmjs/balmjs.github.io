@@ -44,13 +44,14 @@
   );
   ```
 
-## <del>`mix.jsmin(input, output, renameOptions)`</del>
+## `mix.jsmin(input, output, uglifyOptions, renameOptions)`
 
-> Deprecated in 0.24.0
+> Updated in 0.24.0
 
 - 参数
   - `input`: `string` `array`
   - `ouput`: `string`
+  - `uglifyOptions`: `object` (默认值：`{}`)
   - `renameOptions`: `object`（默认值：`{suffix: '.min'}`）
 - 用法
 
@@ -79,3 +80,5 @@
   // 或
   mix.jsmin('app/scripts/*.js', 'dist/js');
   ```
+
+> [脚本优化配置](https://github.com/mishoo/UglifyJS2#minify-options)来自于 UglifyJS API
