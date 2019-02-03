@@ -45,7 +45,6 @@ balm.config = {
   },
   // sprites: {
   //   image: ['img-icon'], // Icon path: './app/images/img-icon'
-  //   svg: ['svg-icon']    //  SVG path: './app/images/svg-icon'
   // },
   assets: {
     root: '/path/to/your_remote_project', // Remote project root path
@@ -57,7 +56,7 @@ balm.config = {
 
 // 3. Run balm
 balm.go(function(mix) {
-  if (balm.config.production) {
+  if (balm.config.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
     // to remote `${assets.root}/${assets.publicPath}/${assets.subDir}`

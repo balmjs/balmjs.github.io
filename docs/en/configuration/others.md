@@ -9,14 +9,14 @@ Use balm default tasks. Defaults to `true`.
 🌰 For example:
 
 ```js
-var balm = require('balm');
+const balm = require('balm');
 
 balm.config = {
   useDefault: false, // Don't start balm default tasks
   ...                // Your project config
 };
 
-balm.go(function(mix) {
+balm.go(mix => {
   // Use custom task API
 });
 ```

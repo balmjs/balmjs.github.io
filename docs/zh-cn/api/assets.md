@@ -1,10 +1,11 @@
 # Assets for remote
 
-## `mix.zip(input, output)`
+## `mix.zip(input, output, filename)`
 
 - 参数
   - `input`: `string` `array`（默认值：`${balm.config.target.base}/**/*`）
-  - `output`: `string`（默认值：'.'）
+  - `output`: `string`（默认值：`'.'`）
+  - `filename`: `string`（默认值：`'archive.zip'`）
 - 用法
   ```js
   /**
@@ -30,13 +31,14 @@
   mix.zip(['dist/css/**/*', 'dist/js/**/*'], 'test');
   ```
 
-## `mix.ftp(input)`
+## `mix.ftp(localFiles, options)`
 
 - 参数
-  - `input`: `string`
+  - `localFiles`: `string`
+  - `options`: `object`
 - 用法
   ```js
-  var balm = require('balm');
+  const balm = require('balm');
 
   balm.config = {
     ftp: {
@@ -44,7 +46,8 @@
       port: 22,
       user: 'root',
       pass: '123456',
-      remotePath: '/path/to/webroot/project'
+      remotePath: '/path/to/webroot/project',
+      logging: true
     }
   };
 
@@ -52,6 +55,10 @@
     // (local) 输入：'/path/to/project/dist/archive.zip'
     // (remote)输出：'/path/to/webroot/project/archive.zip'
     mix.ftp('dist/archive.zip');
+    // OR
+    mix.ftp('dist/archive.zip', {
+      // FTP options
+    });
   });
   ```
 
@@ -72,7 +79,7 @@
    * '/path/to/local_project/dist/img/**/*'
    * '/path/to/local_project/dist/font/**/*'
    * '/path/to/local_project/dist/media/**/*'
-   * (remote)输出： `${assets.root}/${assets.publicPath}/${assets.subDir}`
+   * (remote)输出： `${assets.root}/${assets.mainDir}/${assets.subDir}`
    * '/path/to/remote_project/public'
    */
   mix.publish();

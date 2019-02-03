@@ -28,7 +28,7 @@ Parse CSS and add vendor prefixes to rules by [Can I Use](http://caniuse.com/). 
 
 ```js
 styles: {
-  autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
+  autoprefixer: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead']
 }
 ```
 

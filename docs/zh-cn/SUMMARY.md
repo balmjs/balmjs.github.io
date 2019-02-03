@@ -26,7 +26,6 @@
   - [额外文件](configuration/extras.md)
   - [服务器](configuration/server.md)
   - 发布
-    - [Zip 包](configuration/publish.md#zip)
     - [文件传输](configuration/publish.md#ftp)
     - [静态资源](configuration/publish.md#assets)
     - [缓存](configuration/publish.md#cache)
@@ -51,5 +50,6 @@
     - [publish](api/assets.md#mixpublishinput-output-renameoptions)
 - [小技巧](recipes/toc.md)
   - [运行 npm 脚本](recipes/run-script.md)
+  - [安装历史版本](recipes/previous-releases.md)
   - [坑爹的 IE](recipes/ie.md)]
 - [常见问题](faq.md)

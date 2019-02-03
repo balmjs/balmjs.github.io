@@ -1,8 +1,7 @@
 {
   "name": "balmjs.com",
-  "version": "2018.9.16",
+  "version": "2019.2.3",
   "author": "Elf-mousE",
-  "private": true,
   "scripts": {
     "dev": "gulp",
     "prod": "gulp --production",
@@ -11,13 +10,14 @@
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "balm": "^0.24.2",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "gulp": "^3.9.1",
-    "prettier": "^1.14.2",
-    "workbox-build": "^3.5.0",
-    "workbox-sw": "^3.5.0"
-  }
+    "babel-eslint": "^10.0.0",
+    "balm": "^1.0.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "gulp": "^4.0.0",
+    "prettier": "^1.16.0",
+    "workbox-build": "^3.6.0",
+    "workbox-sw": "^3.6.0"
+  },
+  "private": true
 }

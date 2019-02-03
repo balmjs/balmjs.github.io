@@ -1,8 +1,8 @@
-var balm = require('balm');
-var gulp = require('gulp');
-var workboxBuild = require('workbox-build');
+const balm = require('balm');
+const gulp = require('gulp');
+const workboxBuild = require('workbox-build');
 
-var DIST_DIR = balm.config.production ? 'dist' : '.tmp';
+const DIST_DIR = balm.config.isProd ? 'dist' : '.tmp';
 
 gulp.task('generate-service-worker', () => {
   return workboxBuild
@@ -14,7 +14,7 @@ gulp.task('generate-service-worker', () => {
     })
     .then(({ warnings }) => {
       // In case there are any warnings from workbox-build, log them.
-      for (const warning of warnings) {
+      for (let warning of warnings) {
         console.warn(warning);
       }
       console.info('Service worker generation completed.');

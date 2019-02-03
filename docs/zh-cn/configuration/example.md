@@ -2,25 +2,17 @@
 
 ```js
 // 1. 导入 balm
-var balm = require('balm');
+const balm = require('balm');
 
 // 2. 配置 balm
 balm.config = {
   server: {
     open: true,
-    // NOTE: balm 版本 >= 0.18.0
     proxyContext: '/api',
     proxyOptions: {
       target: 'http://your.project.dev', // 代理的目标域名
       changeOrigin: true // 虚拟域名站点必备
     }
-    // NOTE: balm 版本 < 0.18.0
-    // proxyTable: {
-    //   '/api': {
-    //     target: 'http://your.project.dev', // 代理的目标域名
-    //     changeOrigin: true // 虚拟域名站点必备
-    //   }
-    // }
   },
   roots: {
     source: 'app', // 源代码根目录（如果项目中没有此目录，请自行新建一个名叫“app”的文件夹）
@@ -53,22 +45,21 @@ balm.config = {
   },
   // sprites: {
   //   image: ['img-icon'], // 图片雪碧图文件夹：['./app/images/img-icon']
-  //   svg: ['svg-icon']    // SVG雪碧图文件夹：['./app/images/svg-icon']
   // },
   assets: {
     root: '/path/to/your_remote_project', // 远程项目的根目录（如：PHP后端项目）
-    publicPath: 'public', // 远程项目的静态资源目录：'/path/to/your_remote_project/public'
+    mainDir: 'public', // 远程项目的静态资源目录：'/path/to/your_remote_project/public'
     subDir: '' // 远程项目的静态资源子目录：`/path/to/your_remote_project/public/${subDir}`
   },
   cache: false
 };
 
 // 3. 运行 balm
-balm.go(function(mix) {
-  if (balm.config.production) {
+balm.go(mix => {
+  if (balm.config.isProd) {
     // 发布静态资源 (styles,scripts,images,fonts,media)
     // 从本地 `${roots.target}/{css,js,img,font,media}`
-    // 到远程 `${assets.root}/${assets.publicPath}/${assets.subDir}`
+    // 到远程 `${assets.root}/${assets.mainDir}/${assets.subDir}`
     mix.publish();
 
     // 发布HTML模板

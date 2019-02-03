@@ -2,7 +2,7 @@
 
 ## Zip
 
-### `zip`
+### <del>`zip`</del> (Deprecated in `1.0.0`)
 
 `string`
 
@@ -48,6 +48,14 @@ Defaults to `null`.
 
 Defaults to `'/'`.
 
+### `ftp.logging`
+
+`boolean`
+
+> New in 1.0.0
+
+Defaults to `false`.
+
 🌰 For example:
 
 ```js
@@ -56,7 +64,8 @@ ftp: {
   port: 22,
   user: 'root',
   pass: '123456',
-  remotePath: '/path/to/webroot'
+  remotePath: '/path/to/webroot',
+  logging: true
 }
 ```
 
@@ -86,9 +95,11 @@ Defaults to `''`.
 
 Remote project root simulation. Defaults to `'assets'`.
 
-### `assets.publicPath`
+### `assets.mainDir` (Rename in `1.0.0`)
 
 `string`
+
+> Rename `publicPath` to `mainDir` in 1.0.0
 
 The `public` directory contains the front controller and your assets (images, JavaScript, CSS, etc.). Defaults to `'public'`.
 
@@ -136,7 +147,7 @@ Defaults to `[]`.
 assets: {
   publicUrl: '',
   root: '/path/to/your_remote_project',
-  publicPath: 'public',
+  mainDir: 'public',
   subDir: 'mobile'
 }
 ```

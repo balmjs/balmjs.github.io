@@ -61,11 +61,11 @@ project
 ...
 ```
 
-### `sprites.mode`
+### <del>`sprites.mode`</del> (Deprecated in `1.0.0`)
 
 Output modes: `css`, `view`, `defs`, `symbol`, `stack`. Defaults to `'css'`.
 
-### `sprites.svg`
+### <del>`sprites.svg`</del> (Deprecated in `1.0.0`)
 
 `array`
 

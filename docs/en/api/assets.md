@@ -1,10 +1,11 @@
 # Assets for remote
 
-## `mix.zip(input, output)`
+## `mix.zip(input, output, filename)`
 
 - Arguments
   - `input`: `string` `array` (Default: `${balm.config.target.base}/**/*`)
-  - `output`: `string` (Default: '.')
+  - `output`: `string` (Default: `'.'`)
+  - `filename`: `string` (Default: `'archive.zip'`)
 - Usage
   ```js
   /**
@@ -30,13 +31,14 @@
   mix.zip(['dist/css/**/*', 'dist/js/**/*'], 'test');
   ```
 
-## `mix.ftp(input)`
+## `mix.ftp(localFiles, options)`
 
 - Arguments
-  - `input`: `string`
+  - `localFiles`: `string`
+  - `options`: `object`
 - Usage
   ```js
-  var balm = require('balm');
+  const balm = require('balm');
 
   balm.config = {
     ftp: {
@@ -44,14 +46,19 @@
       port: 22,
       user: 'root',
       pass: '123456',
-      remotePath: '/path/to/webroot/project'
+      remotePath: '/path/to/webroot/project',
+      logging: true
     }
   };
 
-  balm.go(function(mix) {
+  balm.go(mix => {
     // (local)Input:   '/path/to/project/dist/archive.zip'
     // (remote)Output: '/path/to/webroot/project/archive.zip'
     mix.ftp('dist/archive.zip');
+    // OR
+    mix.ftp('dist/archive.zip', {
+      // FTP options
+    });
   });
   ```
 
@@ -72,7 +79,7 @@
    * '/path/to/local_project/dist/img/**/*'
    * '/path/to/local_project/dist/font/**/*'
    * '/path/to/local_project/dist/media/**/*'
-   * (remote)Output: `${assets.root}/${assets.publicPath}/${assets.subDir}`
+   * (remote)Output: `${assets.root}/${assets.mainDir}/${assets.subDir}`
    * '/path/to/remote_project/public'
    */
   mix.publish();

@@ -26,7 +26,6 @@
   - [Extra Files](configuration/extras.md)
   - [Server](configuration/server.md)
   - Publish
-    - [Zip](configuration/publish.md#zip)
     - [Ftp](configuration/publish.md#ftp)
     - [Assets](configuration/publish.md#assets)
     - [Cache](configuration/publish.md#cache)
@@ -55,5 +54,6 @@
   - [Code Splitting](advanced/code-splitting.md)
 - [Recipes](recipes/toc.md)
   - [npm-run-script](recipes/run-script.md)
+  - [Previous Releases](recipes/previous-releases.md)
   - [IE](recipes/ie.md)]
 - [FAQ](faq.md)

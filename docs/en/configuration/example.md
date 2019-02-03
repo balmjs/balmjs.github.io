@@ -2,25 +2,17 @@
 
 ```js
 // 1. Import balm
-var balm = require('balm');
+const balm = require('balm');
 
 // 2. Config balm
 balm.config = {
   server: {
     open: true,
-    // NOTE: balm version >= 0.18.0
     proxyContext: '/api',
     proxyOptions: {
       target: 'http://your.project.dev', // Target host
       changeOrigin: true // Needed for virtual hosted sites
     }
-    // NOTE: balm version < 0.18.0
-    // proxyTable: {
-    //   '/api': {
-    //     target: 'http://your.project.dev', // Target host
-    //     changeOrigin: true // Needed for virtual hosted sites
-    //   }
-    // }
   },
   roots: {
     source: 'app', // Source code root (Create a directory named 'app' in project)
@@ -36,7 +28,7 @@ balm.config = {
   },
   styles: {
     ext: 'scss', // Main style extension
-    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    autoprefixer: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead']
   },
   scripts: {
     entry: {
@@ -53,22 +45,21 @@ balm.config = {
   },
   // sprites: {
   //   image: ['img-icon'], // Icon path: ['./app/images/img-icon']
-  //   svg: ['svg-icon']    //  SVG path: ['./app/images/svg-icon']
   // },
   assets: {
     root: '/path/to/your_remote_project', // Remote project root path
-    publicPath: 'public', // '/path/to/your_remote_project/public'
+    mainDir: 'public', // '/path/to/your_remote_project/public'
     subDir: '' // `/path/to/your_remote_project/public/${subDir}`
   },
   cache: false
 };
 
 // 3. Run balm
-balm.go(function(mix) {
-  if (balm.config.production) {
+balm.go(mix => {
+  if (balm.config.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
-    // to remote `${assets.root}/${assets.publicPath}/${assets.subDir}`
+    // to remote `${assets.root}/${assets.mainDir}/${assets.subDir}`
     mix.publish();
 
     // Publish html templates

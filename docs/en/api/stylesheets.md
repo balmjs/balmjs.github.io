@@ -114,7 +114,7 @@ Update `images` and `fonts` production path in css files.
 - Usage
 
 ```js
-var balm = require('balm');
+const balm = require('balm');
 
 balm.config = {
   roots: {
@@ -134,8 +134,8 @@ balm.config = {
   // Your project more config
 };
 
-balm.go(function(mix) {
-  if (balm.config.production) {
+balm.go(mix => {
+  if (balm.config.isProd) {
     mix.sass('app/styles/*.scss', 'dist/css');
     mix.csspath();
   }

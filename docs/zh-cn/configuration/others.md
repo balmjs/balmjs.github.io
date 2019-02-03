@@ -9,14 +9,14 @@
 🌰 例如：
 
 ```js
-var balm = require('balm');
+const balm = require('balm');
 
 balm.config = {
   useDefault: false, // 关闭 balm 的默认任务
   ...                // 你的项目配置项
 };
 
-balm.go(function(mix) {
+balm.go(mix => {
   // 使用自定义任务API
 });
 ```

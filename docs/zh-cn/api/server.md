@@ -7,7 +7,7 @@
 - 用法
 
 ```js
-var balm = require('balm');
+const balm = require('balm');
 
 balm.config = {
   useDefault: false,
@@ -17,8 +17,8 @@ balm.config = {
   // 项目的更多配置项
 };
 
-balm.go(function(mix) {
-  if (!balm.config.production) {
+balm.go(mix => {
+  if (!balm.config.isProd) {
     mix.serve();
   }
 });

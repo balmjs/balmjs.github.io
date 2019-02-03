@@ -23,21 +23,13 @@ $ gulp -v
 使用 npm 安装：
 
 ```sh
-# babel 7.x
 $ npm install --save-dev gulp balm
-
-# babel 6.x
-$ npm install --save-dev gulp balm@0.23
 ```
 
 使用 [yarn](https://yarnpkg.com/en/docs/install) 安装：
 
 ```sh
-# babel 7.x
 $ yarn add --dev gulp balm
-
-# babel 6.x
-$ yarn add --dev gulp balm@0.23
 ```
 
 ### 2. 配置
@@ -46,7 +38,7 @@ $ yarn add --dev gulp balm@0.23
 
 ```js
 // 1. 导入 balm
-let balm = require('balm');
+const balm = require('balm');
 
 // 2. 配置 balm
 balm.config = {

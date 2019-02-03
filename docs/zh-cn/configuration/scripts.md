@@ -141,13 +141,18 @@ $ yarn add -D vue-loader
 然后，加载它：
 
 ```js
+import VueLoaderPlugin from 'vue-loader/lib/plugin';
+
+// ...
+
 scripts: {
   loaders: [
     {
       test: /\.vue$/,
       loader: 'vue-loader'
     }
-  ];
+  ],
+  plugins: [new VueLoaderPlugin()]
 }
 ```
 
@@ -199,7 +204,7 @@ import foo from 'foo';
 ```js
 scripts: {
   alias: {
-    'vue$': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js'
+    'vue$': balm.config.isProd ? 'vue/dist/vue.min.js' : 'vue/dist/vue.esm.js'
   }
 }
 ```

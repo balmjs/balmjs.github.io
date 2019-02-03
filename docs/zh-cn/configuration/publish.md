@@ -2,7 +2,7 @@
 
 ## Zip
 
-### `zip`
+### <del>`zip`</del> (`1.0.0`中已弃用)
 
 `string`
 
@@ -48,6 +48,14 @@ zip: 'archive.zip'
 
 默认值为：`'/'`。
 
+### `ftp.logging`
+
+`boolean`
+
+> New in 1.0.0
+
+默认值为：`false`。
+
 🌰 例如：
 
 ```js
@@ -56,7 +64,8 @@ ftp: {
   port: 22,
   user: 'root',
   pass: '123456',
-  remotePath: '/path/to/webroot'
+  remotePath: '/path/to/webroot',
+  logging: true
 }
 ```
 
@@ -86,9 +95,11 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 远程项目的根目录。默认值为：`'assets'`。
 
-### `assets.publicPath`
+### `assets.mainDir` (`1.0.0`中重命名)
 
 `string`
+
+> Rename `publicPath` to `mainDir` in 1.0.0
 
 静态资源目录包含了前端的静态资源文件（图片，脚本，样式，等等）。默认值为：`'public'`。
 
@@ -136,7 +147,7 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 assets: {
   publicUrl: '',
   root: '/path/to/your_remote_project',
-  publicPath: 'public',
+  mainDir: 'public',
   subDir: 'mobile'
 }
 ```
