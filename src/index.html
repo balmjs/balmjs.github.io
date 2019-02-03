@@ -87,7 +87,7 @@
           <span class="editor-filename">gulpfile.js</span>
         </div>
         <pre class="active" id="basic-code"><code class="javascript hljs">
-<span class="hljs-keyword">var</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
+<span class="hljs-keyword">const</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
 
 balm.config = {
   roots: {
@@ -109,15 +109,15 @@ balm.config = {
   },
   assets: {
     root: <span class="hljs-string">'/path/to/your_remote_project'</span>, <span class="hljs-comments">// Remote project root path</span>
-    publicPath: <span class="hljs-string">'public'</span> <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
+    mainDir: <span class="hljs-string">'public'</span> <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
   }
 };
 
-balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mix</span>)</span>{
+balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="hljs-keyword">=></span> </span>{
   <span class="hljs-keyword">if</span> (balm.config.isProd) {
     <span class="hljs-comments">// Publish assets(styles,scripts,images,fonts,media)</span>
     <span class="hljs-comments">// from local `${roots.target}/{css,js,img,font,media}`</span>
-    <span class="hljs-comments">// to remote `${assets.root}/${assets.publicPath}`</span>
+    <span class="hljs-comments">// to remote `${assets.root}/${assets.mainDir}`</span>
     mix.<span class="hljs-built_in">publish()</span>;
 
     <span class="hljs-comments">// Publish html templates</span>
@@ -129,7 +129,7 @@ balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span cla
 
 </code></pre>
         <pre id="advanced-code"><code class="javascript hljs">
-<span class="hljs-keyword">var</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
+<span class="hljs-keyword">const</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
 
 balm.config = {
   server: {
@@ -172,17 +172,17 @@ balm.config = {
   },
   assets: {
     root: <span class="hljs-string">'/path/to/your_remote_project'</span>, <span class="hljs-comments">// Remote project root path</span>
-    publicPath: <span class="hljs-string">'public'</span>, <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
+    mainDir: <span class="hljs-string">'public'</span>, <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
     subDir: <span class="hljs-string">''</span> <span class="hljs-comments">// Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`</span>
   },
   cache: <span class="hljs-keyword">true</span>
 };
 
-balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mix</span>)</span>{
+balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="hljs-keyword">=></span> </span>{
   <span class="hljs-keyword">if</span> (balm.config.isProd) {
     <span class="hljs-comments">// Publish assets(styles,scripts,images,fonts,media)</span>
     <span class="hljs-comments">// from local `${roots.target}/{css,js,img,font,media}`</span>
-    <span class="hljs-comments">// to `${assets.root}/${assets.publicPath}/${assets.subDir}`</span>
+    <span class="hljs-comments">// to `${assets.root}/${assets.mainDir}/${assets.subDir}`</span>
     mix.<span class="hljs-built_in">publish()</span>;
 
     <span class="hljs-comments">// Publish html templates</span>
