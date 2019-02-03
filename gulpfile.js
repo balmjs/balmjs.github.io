@@ -17,6 +17,8 @@ balm.go(mix => {
     mix.copy('docs/_book/**/*', 'dist/docs');
 
     mix.zip(['example/**/*', 'example/.babelrc']);
-    mix.copy('balm-example.zip', 'dist');
+    mix.copy('archive.zip', 'dist', {
+      basename: 'balm-example'
+    });
   }
 });
