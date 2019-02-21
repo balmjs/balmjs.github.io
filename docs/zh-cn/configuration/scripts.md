@@ -289,9 +289,33 @@ JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
 
 `object`
 
-> New in 0.6.0
+> New in 1.1.0
 
-[UglifyJS options](http://lisperator.net/uglifyjs/). 默认值为：
+[Terser minify options](https://github.com/terser-js/terser#minify-options). 默认值为：
+
+```js
+{
+  parse: {
+    ecma: 8
+  },
+  compress: {
+    ecma: 5,
+    warnings: false,
+    comparisons: false,
+    inline: 2
+  },
+  mangle: {
+    safari10: true
+  },
+  output: {
+    ecma: 5,
+    comments: false,
+    ascii_only: true
+  }
+}
+```
+
+[UglifyJS options](http://lisperator.net/uglifyjs/). (*Version > `0.6.0` and < `1.1.0`*) 默认值为：
 
 ```js
 {

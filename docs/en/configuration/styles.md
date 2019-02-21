@@ -81,6 +81,23 @@ __BalmJS__ default postcss plugins:
 - [postcss-cssnext](http://cssnext.io/)
 - [postcss-import](https://github.com/postcss/postcss-import)
 
+### `styles.postcssEnvOptions`
+
+`object`
+
+> New in 1.1.0
+
+[PostCSS Preset Env options](https://github.com/csstools/postcss-preset-env#options). Defaults to:
+
+```js
+{
+  stage: 0,
+  autoprefixer: {
+    flexbox: 'no-2009'
+  }
+}
+```
+
 ### `styles.postcssOptions`
 
 `object`

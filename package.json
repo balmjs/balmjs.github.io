@@ -1,6 +1,6 @@
 {
   "name": "balmjs.com",
-  "version": "2019.2.3",
+  "version": "2019.2.21",
   "author": "Elf-mousE",
   "scripts": {
     "dev": "gulp",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
-    "balm": "^1.0.0",
+    "balm": "^1.1.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.0",
     "gulp": "^4.0.0",

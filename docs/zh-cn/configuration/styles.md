@@ -73,7 +73,7 @@ styles: {
 
 > New in 0.13.0
 
-[PostCSS plugins](https://www.postcss.parts/). 默认值为：`[]`.
+[PostCSS plugins](https://www.postcss.parts/). 默认值为：`[]`。
 
 __BalmJS__ 默认已加载的PostCSS插件：
 
@@ -81,13 +81,30 @@ __BalmJS__ 默认已加载的PostCSS插件：
 - [postcss-cssnext](http://cssnext.io/)
 - [postcss-import](https://github.com/postcss/postcss-import)
 
+### `styles.postcssEnvOptions`
+
+`object`
+
+> New in 1.1.0
+
+[PostCSS Preset Env options](https://github.com/csstools/postcss-preset-env#options). 默认值为：
+
+```js
+{
+  stage: 0,
+  autoprefixer: {
+    flexbox: 'no-2009'
+  }
+}
+```
+
 ### `styles.postcssOptions`
 
 `object`
 
 > New in 0.13.0
 
-[PostCSS options](https://github.com/postcss/postcss#options). 默认值为：`{}`.
+[PostCSS options](https://github.com/postcss/postcss#options). 默认值为：`{}`。
 
 ### `styles.postcssOptions`
 

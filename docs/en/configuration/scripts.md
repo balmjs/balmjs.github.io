@@ -289,9 +289,34 @@ Overwrite webpack config. Defaults to `{}`.
 
 `object`
 
-> New in 0.6.0
+> New in 1.1.0
 
-[UglifyJS options](http://lisperator.net/uglifyjs/). Defaults to:
+
+[Terser minify options](https://github.com/terser-js/terser#minify-options). Defaults to:
+
+```js
+{
+  parse: {
+    ecma: 8
+  },
+  compress: {
+    ecma: 5,
+    warnings: false,
+    comparisons: false,
+    inline: 2
+  },
+  mangle: {
+    safari10: true
+  },
+  output: {
+    ecma: 5,
+    comments: false,
+    ascii_only: true
+  }
+}
+```
+
+[UglifyJS options](http://lisperator.net/uglifyjs/). (*Version > `0.6.0` and < `1.1.0`*) Defaults to:
 
 ```js
 {
