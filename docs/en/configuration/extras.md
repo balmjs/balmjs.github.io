@@ -10,4 +10,4 @@ Defaults to `[]`.
 
 `array`
 
-Defaults to `[]`.
+Copy extra files after build completion. Defaults to `[]`.

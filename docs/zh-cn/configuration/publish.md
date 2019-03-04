@@ -1,21 +1,5 @@
 # Publish
 
-## Zip
-
-### <del>`zip`</del> (`1.0.0`中已弃用)
-
-`string`
-
-Zip包名称。默认值为：`'archive.zip'`。
-
-🌰 例如：
-
-```js
-zip: 'archive.zip'
-```
-
-用法：请参照 __自定义任务 API 文档__ - [mix.zip](../api/assets.html#mixzipinput-output)
-
 ## Ftp
 
 ### `ftp.host`
@@ -131,7 +115,7 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 > New in 0.6.0
 
-默认值为：`[]`。
+排除缓存文件。默认值为：`[]`。
 
 ### `assets.includes`
 
@@ -139,7 +123,7 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 > New in 0.6.1
 
-默认值为：`[]`。
+缓存额外文件。默认值为：`[]`。
 
 🌰 例如：
 

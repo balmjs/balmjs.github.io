@@ -42,24 +42,6 @@ scripts: {
 
 ## 输出
 
-### `scripts.filename`
-
-`string`
-
-指定磁盘上每个输出文件的名称。你**不能**在这里指定绝对路径！默认值为：`'[name]`。
-
-- 每个构建使用唯一的 hash 来生成：
-
-```js
-filename: '[name].[hash]';
-```
-
-- 根据文件内容 hash 来生成：
-
-```js
-filename: '[chunkhash]';
-```
-
 ### `scripts.library`
 
 `string`
@@ -89,15 +71,6 @@ filename: '[chunkhash]';
 ```js
 umdNamedDefine: true;
 ```
-
-### `scripts.chunkFilename`
-
-The filename of non-entry chunks as relative path inside the `output.path` directory. 默认值为：`'(auto)'`。
-
-- `[id]` is replaced by the id of the chunk.（开发模式默认值）
-- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-- `[hash]` is replaced by the hash of the compilation.
-- `[chunkhash]` is replaced by the hash of the chunk.（生产模式默认值）
 
 ## Loaders
 
@@ -169,6 +142,8 @@ scripts: {
 - `.js`
 - [`.json`](http://www.json.org/)
 - [`.jsx`](http://facebook.github.io/jsx/)
+- [`.ts`](http://www.typescriptlang.org/) (New in 1.1.1)
+- `.tsx` (New in 1.1.1)
 - [`.vue`](https://vuejs.org/)
 
 🌰 例如：
@@ -209,14 +184,6 @@ scripts: {
 }
 ```
 
-### `scripts.include`
-
-`array`
-
-> New in 0.9.1
-
-在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#rule-include) 选项
-
 ## 插件
 
 ### `scripts.plugins`
@@ -249,6 +216,14 @@ scripts: {
 
 > [Target config](https://webpack.js.org/configuration/target/#string)
 
+### `scripts.externals` (`0.20.0`中重命名)
+
+`string` `array` `object` `function` `regex`
+
+> New in 0.9.0, rename `cdn` to `externals` in 0.20.0
+
+同 webpack 的 [externals](https://webpack.js.org/configuration/externals/#externals) 参数。默认值为：`null`。
+
 ### `scripts.stats`
 
 `object`
@@ -267,12 +242,6 @@ scripts: {
 
 > [Stats config](https://webpack.js.org/configuration/stats/)
 
-### `scripts.eslint`
-
-`boolean`
-
-JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
-
 ## 高级配置
 
 ### `scripts.webpack`
@@ -284,6 +253,20 @@ JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
 重写 webpack 配置项。默认值为：`{}`。
 
 > [All configuration options](https://webpack.js.org/configuration/)
+
+### `scripts.include`
+
+`array`
+
+> New in 0.9.1
+
+在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#rule-include) 选项
+
+### `scripts.eslint`
+
+`boolean`
+
+JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
 
 ### `scripts.options`
 
@@ -328,6 +311,14 @@ JavaScript 和 JSX 的可插入 linting 实用程序。默认值为：`false`。
   }
 }
 ```
+
+### `scripts.inject`
+
+`boolean`
+
+> New in 1.1.2
+
+支持 SSR 模式中构建脚本生成 hash。默认值为：`false`。
 
 ## 优化
 
@@ -384,14 +375,6 @@ HTML 模板：
 `array`
 
 提取部分第三方依赖合成自定义文件名的列表。默认值为：`[]`。（`balm` 会根据 [`scripts.entry`](scripts.md#入口) 配置自动设置此参数）
-
-### `scripts.cdn`
-
-`string` `array` `object` `function` `regex`
-
-> New in 0.9.0
-
-同 webpack 的 [externals](https://webpack.js.org/configuration/externals/#externals) 配置。默认值为：`null`。
 
 ### `scripts.cssLoader`
 

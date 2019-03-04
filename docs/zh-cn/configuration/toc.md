@@ -19,7 +19,6 @@
 * [额外文件](extras.md)
 * [服务器](server.md)
 * 发布
-  * [Zip 包](publish.md#zip)
   * [文件传输](publish.md#ftp)
   * [静态资源](publish.md#assets)
   * [缓存](publish.md#cache)

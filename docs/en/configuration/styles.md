@@ -77,9 +77,12 @@ Ensure file's parent directory in the include path. Defaults to `[]`.
 
 __BalmJS__ default postcss plugins:
 
-- [autoprefixer](https://github.com/postcss/autoprefixer)
-- [postcss-cssnext](http://cssnext.io/)
-- [postcss-import](https://github.com/postcss/postcss-import)
+- For PostCSS
+  - [postcss-import](https://github.com/postcss/postcss-import)
+  - [postcss-flexbugs-fixes](https://github.com/luisrudge/postcss-flexbugs-fixes)
+  - [postcss-preset-env](https://preset-env.cssdb.org/)
+- For Sass/Less
+  - [autoprefixer](https://github.com/postcss/autoprefixer)
 
 ### `styles.postcssEnvOptions`
 

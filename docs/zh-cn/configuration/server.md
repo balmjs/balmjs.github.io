@@ -52,29 +52,6 @@ server: {
 }
 ```
 
-### <del>`server.proxyTable`</del> (`0.18.0`中已弃用)
-
-⚠️ 从 `0.18.0` 起，使用 `server.proxyContext` 和 `server.proxyOptions` 代替。
-
-`object`
-
-定义 HTTP 代理到您的自定义 API 后端。默认值为：`{}`。
-
-🌰 例如：
-
-```js
-server: {
-  host: '192.168.1.1',
-  port: 8080,
-  proxyTable: { // 代理部分
-    '/api': { // 接口名称
-       target: 'http://your.project.dev', // 代理的目标域名
-       changeOrigin: true // 虚拟域名站点必备
-    }
-  }
-}
-```
-
 ### `server.localOnly`
 
 `boolean`

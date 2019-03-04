@@ -42,24 +42,6 @@ Then, your HTML templates:
 
 ## Output
 
-### `scripts.filename`
-
-`string`
-
-Specifies the name of each output file on disk. You must **not** specify an absolute path here! Defaults to `'[name]'`.
-
-- Using the unique hash generated for every build:
-
-```js
-filename: '[name].[hash]';
-```
-
-- Using hashes based on each chunks' content:
-
-```js
-filename: '[chunkhash]';
-```
-
 ### `scripts.library`
 
 `string`
@@ -89,15 +71,6 @@ When using `libraryTarget: 'umd'`, setting:
 ```js
 umdNamedDefine: true;
 ```
-
-### `scripts.chunkFilename`
-
-The filename of non-entry chunks as relative path inside the `output.path` directory. Defaults to `'(auto)'`.
-
-- `[id]` is replaced by the id of the chunk. (automatic setting for development)
-- `[name]` is replaced by the name of the chunk (or with the id when the chunk has no name).
-- `[hash]` is replaced by the hash of the compilation.
-- `[chunkhash]` is replaced by the hash of the chunk. (automatic setting for production)
 
 ## Loaders
 
@@ -169,6 +142,8 @@ An array of extensions that should be used to resolve modules. Defaults to `[]`.
 - `.js`
 - [`.json`](http://www.json.org/)
 - [`.jsx`](http://facebook.github.io/jsx/)
+- [`.ts`](http://www.typescriptlang.org/) (New in 1.1.1)
+- `.tsx` (New in 1.1.1)
 - [`.vue`](https://vuejs.org/)
 
 🌰 For example:
@@ -209,14 +184,6 @@ scripts: {
 }
 ```
 
-### `scripts.include`
-
-`array`
-
-> New in 0.9.1
-
-Supply a [Rule.include](https://webpack.js.org/configuration/module/#rule-include) option in `babel-loader` for some vendor scripts from `node_modules`. Defaults to `[]`.
-
 ## Plugins
 
 ### `scripts.plugins`
@@ -249,6 +216,14 @@ To target a specific environment. Defaults to `'web'`.
 
 > [Target config](https://webpack.js.org/configuration/target/#string)
 
+### `scripts.externals` (Rename in `0.20.0`)
+
+`string` `array` `object` `function` `regex`
+
+> New in 0.9.0, rename `cdn` to `externals` in 0.20.0
+
+The same to webpack [externals](https://webpack.js.org/configuration/externals/#externals). Defaults to `null`.
+
 ### `scripts.stats`
 
 `object`
@@ -267,12 +242,6 @@ Capture timing information for each module. Defaults to:
 
 > [Stats config](https://webpack.js.org/configuration/stats/)
 
-### `scripts.eslint`
-
-`boolean`
-
-The pluggable linting utility for JavaScript and JSX. Defaults to `false`.
-
 ## Advanced Options
 
 ### `scripts.webpack`
@@ -285,12 +254,25 @@ Overwrite webpack config. Defaults to `{}`.
 
 > [All configuration options](https://webpack.js.org/configuration/)
 
+### `scripts.include`
+
+`array`
+
+> New in 0.9.1
+
+Supply a [Rule.include](https://webpack.js.org/configuration/module/#rule-include) option in `babel-loader` for some vendor scripts from `node_modules`. Defaults to `[]`.
+
+### `scripts.eslint`
+
+`boolean`
+
+The pluggable linting utility for JavaScript and JSX. Defaults to `false`.
+
 ### `scripts.options`
 
 `object`
 
 > New in 1.1.0
-
 
 [Terser minify options](https://github.com/terser-js/terser#minify-options). Defaults to:
 
@@ -329,6 +311,14 @@ Overwrite webpack config. Defaults to `{}`.
   }
 }
 ```
+
+### `scripts.inject`
+
+`boolean`
+
+> New in 1.1.2
+
+Support the hash scripts in the SSR build. Defaults to: `false`.
 
 ## Optimization
 
@@ -382,14 +372,6 @@ HTML template:
 `array`
 
 Custom Vendor Modules. Defaults to `[]`. (automatic setting by [`scripts.entry`](scripts.md#entry))
-
-### `scripts.cdn`
-
-`string` `array` `object` `function` `regex`
-
-> New in 0.9.0
-
-The same to webpack [externals](https://webpack.js.org/configuration/externals/#externals). Defaults to `null`.
 
 ### `scripts.cssLoader`
 

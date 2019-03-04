@@ -52,29 +52,6 @@ server: {
 }
 ```
 
-### <del>`server.proxyTable`</del> (Deprecated in `0.18.0`)
-
-⚠️ From `0.18.0`, use `server.proxyContext` and `server.proxyOptions` instead.
-
-`object`
-
-Define HTTP proxies to your custom API backend. Defaults to `{}`.
-
-🌰 For example:
-
-```js
-server: {
-  host: '192.168.1.1',
-  port: 8080,
-  proxyTable: { // proxy partial
-    '/api': { // context
-       target: 'http://your.project.dev', // target host
-       changeOrigin: true // needed for virtual hosted sites
-    }
-  }
-}
-```
-
 ### `server.localOnly`
 
 `boolean`

@@ -19,7 +19,6 @@
 * [Extra Files](extras.md)
 * [Server](server.md)
 * Publish
-  * [Zip](publish.md#zip)
   * [Ftp](publish.md#ftp)
   * [Assets](publish.md#assets)
   * [Cache](publish.md#cache)

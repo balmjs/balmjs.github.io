@@ -1,6 +1,9 @@
 # Summary
 
 - [简介](README.md)
+- [升级向导](upgrade/toc.md)
+  - [从 0.24.x 升级到 1.0.0](upgrade/upgrade-1.0.md)
+  - [从 0.23.x 升级到 0.24.x](upgrade/upgrade-0.24.md)
 - [入门](basic/toc.md)
   - [安装](basic/installation.md)
   - [快速上手](basic/getting-started.md)

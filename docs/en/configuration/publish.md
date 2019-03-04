@@ -1,21 +1,5 @@
 # Publish
 
-## Zip
-
-### <del>`zip`</del> (Deprecated in `1.0.0`)
-
-`string`
-
-Production to zip. Defaults to `'archive.zip'`.
-
-🌰 For example:
-
-```js
-zip: 'archive.zip'
-```
-
-Usage: Refer to __Custom Task API__ - [mix.zip](../api/assets.html#mixzipinput-output)
-
 ## Ftp
 
 ### `ftp.host`
@@ -131,7 +115,7 @@ Defaults to:
 
 > New in 0.6.0
 
-Defaults to `[]`.
+Cache excludes. Defaults to `[]`.
 
 ### `assets.includes`
 
@@ -139,7 +123,7 @@ Defaults to `[]`.
 
 > New in 0.6.1
 
-Defaults to `[]`.
+Cache includes. Defaults to `[]`.
 
 🌰 For example:
 
