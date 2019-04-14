@@ -13,3 +13,5 @@ workbox.routing.registerRoute(
     cacheName: 'my-image-cache'
   })
 );
+
+workbox.googleAnalytics.initialize();

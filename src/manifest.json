@@ -2,7 +2,7 @@
   "name": "BalmJS",
   "short_name": "Balm",
   "description": "A flexible Front-End workflow for webapps",
-  "start_url": "/?homescreen=1",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#2196f3",
   "theme_color": "#2196f3",
