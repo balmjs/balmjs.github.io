@@ -1,11 +1,12 @@
 const balm = require('balm');
 const config = require('./config/balmrc');
-require('./config/tasks');
+// require('./config/tasks'); // NOTE: integrated to balm@1.4.0
 
 balm.config = config;
-if (balm.config.isProd) {
-  balm.afterTask = 'generate-service-worker';
-}
+// NOTE: integrated to balm@1.4.0
+// if (balm.config.isProd) {
+//   balm.afterTask = 'generate-service-worker';
+// }
 
 balm.go(mix => {
   mix.copy(
@@ -21,4 +22,6 @@ balm.go(mix => {
       basename: 'balm-example'
     });
   }
+
+  mix.injectManifest();
 });

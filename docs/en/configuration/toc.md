@@ -18,6 +18,7 @@
 * [CSS Sprites](sprites.md)
 * [Extra Files](extras.md)
 * [Server](server.md)
+* [PWA](pwa.md)
 * Publish
   * [Ftp](publish.md#ftp)
   * [Assets](publish.md#assets)

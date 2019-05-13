@@ -103,7 +103,7 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 ```js
 {
-  fileNameManifest: 'rev-manifest.json',
+  fileNameManifest: 'asset-manifest.json',
   dontRenameFile: ['.html', '.php'],
   dontUpdateReference: ['.html', '.php']
 }

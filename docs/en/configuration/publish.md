@@ -103,7 +103,7 @@ Defaults to:
 
 ```js
 {
-  fileNameManifest: 'rev-manifest.json',
+  fileNameManifest: 'asset-manifest.json',
   dontRenameFile: ['.html', '.php'],
   dontUpdateReference: ['.html', '.php']
 }

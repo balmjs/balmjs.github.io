@@ -28,6 +28,7 @@
   - [CSS Sprites](configuration/sprites.md)
   - [Extra Files](configuration/extras.md)
   - [Server](configuration/server.md)
+  - [PWA](configuration/pwa.md)
   - Publish
     - [Ftp](configuration/publish.md#ftp)
     - [Assets](configuration/publish.md#assets)
@@ -47,6 +48,7 @@
     - [remove](api/files.md#mixremovesrc)
   - [Cache](api/cache.md)
   - [Server](api/server.md)
+  - [PWA](api/pwa.md)
   - Assets
     - [zip](api/assets.md#mixzipinput-output)
     - [ftp](api/assets.md#mixftpinput)

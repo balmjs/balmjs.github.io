@@ -18,6 +18,9 @@
   - `mix.version(input, output, excludes)`
 - Server
   - `mix.serve()`
+- PWA
+  - `mix.generateSW()`
+  - `mix.injectManifest()`
 - Assets
   - `mix.zip(input, output, filename)`
   - `mix.ftp(localFiles, options)`
