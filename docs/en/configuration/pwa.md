@@ -1,5 +1,21 @@
 # PWA
 
+### `pwa.workboxSw`
+
+`string`
+
+> New in 1.4.1
+
+Set `workbox-sw.js` source. Defaults to: `'node_modules/workbox-sw/build/workbox-sw.js'`.
+
+### `pwa.enabled`
+
+`boolean`
+
+> New in 1.4.1
+
+Automatic building PWA enabled. Defaults to: `false`.
+
 ### `pwa.mode`
 
 `string`

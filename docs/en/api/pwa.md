@@ -1,5 +1,7 @@
 # PWA
 
+> Building PWA for manual
+
 ## `mix.generateSW()`
 
 `mix.generateSW` creates a service worker file for you, and writes it out to disk.
