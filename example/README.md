@@ -1,4 +1,4 @@
-# BalmJS [Getting Started](http://balmjs.com/docs/en/basic/getting-started.html)
+# BalmJS [Getting Started](https://balmjs.com/docs/en/basic/getting-started.html)
 
 1. `unzip balm-example.zip -d balm-example`
 2. `cd balm-example`
@@ -7,4 +7,4 @@
 
 Enjoy it.
 
-thx [BalmJS](http://balmjs.com/)
+thx [BalmJS](https://balmjs.com/)

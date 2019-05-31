@@ -1,6 +1,6 @@
 {
   "name": "balm-example",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "scripts": {
     "dev": "gulp",
     "prod": "gulp --production"
@@ -8,7 +8,7 @@
   "author": "Elf-mousE",
   "license": "ISC",
   "devDependencies": {
-    "balm": "^0.23.1",
-    "gulp": "^3.9.1"
+    "balm": "^1.5.0",
+    "gulp": "^4.0.2"
   }
 }

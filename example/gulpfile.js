@@ -2,7 +2,7 @@
 // 中文文档 - http://balmjs.com/docs/zh-cn/configuration/toc.html
 
 // 1. Import balm
-var balm = require('balm');
+const balm = require('balm');
 
 // 2. Config balm
 balm.config = {
@@ -28,7 +28,7 @@ balm.config = {
   },
   styles: {
     ext: 'scss', // Main style extension
-    autoprefixer: ['> 1%', 'last 2 versions', 'Firefox ESR']
+    autoprefixer: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead']
   },
   scripts: {
     entry: {
@@ -48,14 +48,14 @@ balm.config = {
   // },
   assets: {
     root: '/path/to/your_remote_project', // Remote project root path
-    publicPath: 'public', // '/path/to/your_remote_project/public'
+    mainDir: 'public', // '/path/to/your_remote_project/public'
     subDir: '' // `/path/to/your_remote_project/public/${subDir}`
   },
   cache: false
 };
 
 // 3. Run balm
-balm.go(function(mix) {
+balm.go(mix => {
   if (balm.config.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
