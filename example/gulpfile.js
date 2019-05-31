@@ -47,7 +47,7 @@ balm.config = {
   //   image: ['img-icon'], // Icon path: './app/images/img-icon'
   // },
   assets: {
-    root: '/path/to/your_remote_project', // Remote project root path
+    // root: '/path/to/your_remote_project', // Remote project root path
     mainDir: 'public', // '/path/to/your_remote_project/public'
     subDir: '' // `/path/to/your_remote_project/public/${subDir}`
   },

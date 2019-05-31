@@ -17,7 +17,7 @@ balm.go(mix => {
   if (balm.config.isProd) {
     mix.copy('docs/_book/**/*', 'dist/docs');
 
-    mix.zip(['example/**/*', 'example/.babelrc']);
+    mix.zip('example/**/*');
     mix.copy('archive.zip', 'dist', {
       basename: 'balm-example'
     });
