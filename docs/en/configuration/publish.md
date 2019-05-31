@@ -53,7 +53,7 @@ ftp: {
 }
 ```
 
-Usage: Refer to __Custom Task API__ - [mix.ftp](../api/assets.html#mixftpinput)
+Usage: Refer to **Custom Task API** - [mix.ftp](../api/assets.html#mixftpinput)
 
 ## Assets
 
@@ -93,6 +93,14 @@ The `public` directory contains the front controller and your assets (images, Ja
 
 Public subdirectory. Defaults to `''`.
 
+### `assets.buildDir`
+
+`string`
+
+> New in 1.5.0
+
+Build directory for all versioned files of the dynamic language project (e.g. PHP). Defaults to: `'build'`.
+
 ### `assets.options`
 
 `object`
@@ -103,7 +111,7 @@ Defaults to:
 
 ```js
 {
-  fileNameManifest: 'asset-manifest.json',
+  fileNameManifest: 'rev-manifest.json',
   dontRenameFile: ['.html', '.php'],
   dontUpdateReference: ['.html', '.php']
 }
@@ -147,5 +155,5 @@ Versioning/Cache Busting switch. Defaults to `false`.
 🌰 For example:
 
 ```js
-cache: true
+cache: true;
 ```

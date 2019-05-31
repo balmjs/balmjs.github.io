@@ -53,7 +53,7 @@ ftp: {
 }
 ```
 
-用法：请参照 __自定义任务 API 文档__ - [mix.ftp](../api/assets.html#mixftpinput)
+用法：请参照 **自定义任务 API 文档** - [mix.ftp](../api/assets.html#mixftpinput)
 
 ## Assets
 
@@ -63,7 +63,7 @@ ftp: {
 
 > New in 0.8.0
 
-HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
+HTML 模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 ### `assets.publicUrl`
 
@@ -93,6 +93,14 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 静态资源根目录。默认值为：`''`。
 
+### `assets.buildDir`
+
+`string`
+
+> New in 1.5.0
+
+（动态语言项目中）静态资源打包目录（例如：PHP 项目等）。默认值为：`'build'`。
+
 ### `assets.options`
 
 `object`
@@ -103,7 +111,7 @@ HTML模式中可使用。默认值为：`'%PUBLIC_URL%'`。
 
 ```js
 {
-  fileNameManifest: 'asset-manifest.json',
+  fileNameManifest: 'rev-manifest.json',
   dontRenameFile: ['.html', '.php'],
   dontUpdateReference: ['.html', '.php']
 }
@@ -147,5 +155,5 @@ assets: {
 🌰 例如：
 
 ```js
-cache: true
+cache: true;
 ```
