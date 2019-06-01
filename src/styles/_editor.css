@@ -1,6 +1,5 @@
 .cli {
   height: 100%;
-
   color: #85ff00;
   background-color: #002b36;
 }
@@ -32,12 +31,9 @@
 
 .editor-window .editor-menubar {
   display: flex;
-
   height: 50px;
-
   border-radius: 5px 5px 0 0;
   background-color: #e5e4e4;
-
   align-items: center;
 }
 
@@ -45,9 +41,11 @@
 .editor-window code span {
   font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
   font-size: 14pt;
+  line-height: inherit;
 }
 
 @media (max-width: 420px) {
+
   .editor-window code,
   .editor-window code span {
     font-size: 16px;
@@ -55,19 +53,18 @@
 }
 
 .editor-window pre {
+  line-height: inherit;
   overflow-x: auto;
-
   height: 100%;
-  padding-left: 20px;
-
+  margin: 0;
+  padding: 0 20px;
   border-radius: 0 0 5px 5px;
 }
 
-.editor-menubar > .editor-button {
+.editor-menubar>.editor-button {
   width: 10px;
   height: 10px;
   margin: 0 2px;
-
   border-radius: 50%;
   box-shadow: 0 0 10px 1px;
 }
@@ -76,15 +73,12 @@
   font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
   font-size: 12pt;
   font-weight: 600;
-
   margin-left: 10px;
-
   color: #141414;
 }
 
 .editor-menubar .close {
   margin-left: 10px;
-
   background-color: red;
 }
 

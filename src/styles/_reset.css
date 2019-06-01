@@ -1,13 +1,17 @@
-html {
-  font-size: 62.5%;
-
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
-*,
-:after,
-:before {
-  box-sizing: inherit;
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body,

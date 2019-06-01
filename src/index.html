@@ -93,112 +93,112 @@
           <span class="editor-button maximize"></span>
           <span class="editor-filename">gulpfile.js</span>
         </div>
-        <pre class="active" id="basic-code"><code class="javascript hljs">
-<span class="hljs-keyword">const</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
+        <pre class="language-javascript active" id="basic-code"><code class="language-javascript">
+<span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
 
 balm.config = {
   roots: {
-    source: <span class="hljs-string">'app'</span> <span class="hljs-comments">// Source code root (Create a directory in project)</span>
+    source: <span class="token string">'app'</span> <span class="token comment">// Source code root (Create a directory in project)</span>
   },
   paths: {
     source: {
-      css: <span class="hljs-string">'styles'</span>, <span class="hljs-comments">// CSS dir: ./app/styles</span>
-      js: <span class="hljs-string">'scripts'</span>, <span class="hljs-comments">//  JS dir: ./app/scripts</span>
+      css: <span class="token string">'styles'</span>, <span class="token comment">// CSS dir: ./app/styles</span>
+      js: <span class="token string">'scripts'</span>, <span class="token comment">//  JS dir: ./app/scripts</span>
     }
   },
   styles: {
-    ext: <span class="hljs-string">'scss'</span> <span class="hljs-comments">// Main style extension</span>
+    ext: <span class="token string">'scss'</span> <span class="token comment">// Main style extension</span>
   },
   scripts: {
     entry: {
-      main: <span class="hljs-string">'./app/scripts/main.js'</span> <span class="hljs-comments">// The entry script (Create a javascript file)</span>
+      main: <span class="token string">'./app/scripts/main.js'</span> <span class="token comment">// The entry script (Create a javascript file)</span>
     }
   },
   assets: {
-    root: <span class="hljs-string">'/path/to/your_remote_project'</span>, <span class="hljs-comments">// Remote project root path</span>
-    mainDir: <span class="hljs-string">'public'</span> <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
+    root: <span class="token string">'/path/to/your_remote_project'</span>, <span class="token comment">// Remote project root path</span>
+    mainDir: <span class="token string">'public'</span> <span class="token comment">// Remote assets dir: '/path/to/your_remote_project/public'</span>
   }
 };
 
-balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="hljs-keyword">=></span> </span>{
-  <span class="hljs-keyword">if</span> (balm.config.isProd) {
-    <span class="hljs-comments">// Publish assets(styles,scripts,images,fonts,media)</span>
-    <span class="hljs-comments">// from local `${roots.target}/{css,js,img,font,media}`</span>
-    <span class="hljs-comments">// to remote `${assets.root}/${assets.mainDir}`</span>
-    mix.<span class="hljs-built_in">publish()</span>;
+balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
+  <span class="token keyword">if</span> (balm.config.isProd) {
+    <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
+    <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
+    <span class="token comment">// to remote `${assets.root}/${assets.mainDir}`</span>
+    mix.<span class="token function-variable function">publish()</span>;
 
-    <span class="hljs-comments">// Publish html templates</span>
-    <span class="hljs-comments">// from local `${roots.target}/index.html`</span>
-    <span class="hljs-comments">// to remote `${assets.root}/public/index.html`</span>
-    mix.<span class="hljs-built_in">publish</span>(<span class="hljs-string">'index.html'</span>, <span class="hljs-string">'public'</span>);
+    <span class="token comment">// Publish html templates</span>
+    <span class="token comment">// from local `${roots.target}/index.html`</span>
+    <span class="token comment">// to remote `${assets.root}/public/index.html`</span>
+    mix.<span class="token function-variable function">publish</span>(<span class="token string">'index.html'</span>, <span class="token string">'public'</span>);
   }
 });
 
 </code></pre>
-        <pre id="advanced-code"><code class="javascript hljs">
-<span class="hljs-keyword">const</span> balm = <span class="hljs-built_in">require</span>(<span class="hljs-string">'balm'</span>);
+        <pre class="language-javascript" id="advanced-code"><code class="language-javascript">
+<span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
 
 balm.config = {
   server: {
     open: true,
     proxyContext: '/api',
     proxyOptions: {
-      target: <span class="hljs-string">'http://your.project.dev'</span>, <span class="hljs-comments">// Target host</span>
-      changeOrigin: <span class="hljs-keyword">true</span> <span class="hljs-comments">// Needed for virtual hosted sites</span>
+      target: <span class="token string">'http://your.project.dev'</span>, <span class="token comment">// Target host</span>
+      changeOrigin: <span class="token keyword">true</span> <span class="token comment">// Needed for virtual hosted sites</span>
     }
   },
   roots: {
-    source: <span class="hljs-string">'app'</span> <span class="hljs-comments">// Source code root (Create a directory in project)</span>
+    source: <span class="token string">'app'</span> <span class="token comment">// Source code root (Create a directory in project)</span>
   },
   paths: {
     source: {
-      css: <span class="hljs-string">'styles'</span>, <span class="hljs-comments">//   CSS dir: ./app/styles</span>
-      js: <span class="hljs-string">'scripts'</span>, <span class="hljs-comments">//    JS dir: ./app/scripts</span>
-      img: <span class="hljs-string">'images'</span>, <span class="hljs-comments">// Image dir: ./app/images</span>
-      font: <span class="hljs-string">'fonts'</span>  <span class="hljs-comments">//  Font dir: ./app/fonts</span>
+      css: <span class="token string">'styles'</span>, <span class="token comment">//   CSS dir: ./app/styles</span>
+      js: <span class="token string">'scripts'</span>, <span class="token comment">//    JS dir: ./app/scripts</span>
+      img: <span class="token string">'images'</span>, <span class="token comment">// Image dir: ./app/images</span>
+      font: <span class="token string">'fonts'</span>  <span class="token comment">//  Font dir: ./app/fonts</span>
     }
   },
   styles: {
-    ext: <span class="hljs-string">'scss'</span>, <span class="hljs-comments">// Main style extension</span>
-    autoprefixer: [<span class="hljs-string">'> 0.5%'</span>, <span class="hljs-string">'last 2 versions'</span>, <span class="hljs-string">'Firefox ESR'</span>, <span class="hljs-string">'not dead'</span>]
+    ext: <span class="token string">'scss'</span>, <span class="token comment">// Main style extension</span>
+    autoprefixer: [<span class="token string">'> 0.5%'</span>, <span class="token string">'last 2 versions'</span>, <span class="token string">'Firefox ESR'</span>, <span class="token string">'not dead'</span>]
   },
   scripts: {
     entry: {
-      <span class="hljs-comments">// Custom vendors</span>
-      <span class="hljs-comments">// HTML: &lt;script src="<b>%PUBLIC_URL%</b>/scripts/vendor/mylib.js"&gt;&lt;/script&gt;</span>
+      <span class="token comment">// Custom vendors</span>
+      <span class="token comment">// HTML: &lt;script src="<b>%PUBLIC_URL%</b>/scripts/vendor/mylib.js"&gt;&lt;/script&gt;</span>
       mylib: [
-        <span class="hljs-string">'your-project-vendors'</span>,
-        <span class="hljs-string">'your-project-plugins'</span>
+        <span class="token string">'your-project-vendors'</span>,
+        <span class="token string">'your-project-plugins'</span>
       ],
-      <span class="hljs-comments">// The entry script (Create a javascript file)</span>
-      main: <span class="hljs-string">'./app/scripts/main.js'</span>
+      <span class="token comment">// The entry script (Create a javascript file)</span>
+      main: <span class="token string">'./app/scripts/main.js'</span>
     }
   },
   sprites: {
-    image: [<span class="hljs-string">'img-icon'</span>] <span class="hljs-comments">// Icon path: './app/images/img-icon'</span>
+    image: [<span class="token string">'img-icon'</span>] <span class="token comment">// Icon path: './app/images/img-icon'</span>
   },
   assets: {
-    root: <span class="hljs-string">'/path/to/your_remote_project'</span>, <span class="hljs-comments">// Remote project root path</span>
-    mainDir: <span class="hljs-string">'public'</span>, <span class="hljs-comments">// Remote assets dir: '/path/to/your_remote_project/public'</span>
-    subDir: <span class="hljs-string">''</span> <span class="hljs-comments">// Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`</span>
+    root: <span class="token string">'/path/to/your_remote_project'</span>, <span class="token comment">// Remote project root path</span>
+    mainDir: <span class="token string">'public'</span>, <span class="token comment">// Remote assets dir: '/path/to/your_remote_project/public'</span>
+    subDir: <span class="token string">''</span> <span class="token comment">// Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`</span>
   },
-  cache: <span class="hljs-keyword">true</span>
+  cache: <span class="token keyword">true</span>
 };
 
-balm.<span class="hljs-built_in">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="hljs-keyword">=></span> </span>{
-  <span class="hljs-keyword">if</span> (balm.config.isProd) {
-    <span class="hljs-comments">// Publish assets(styles,scripts,images,fonts,media)</span>
-    <span class="hljs-comments">// from local `${roots.target}/{css,js,img,font,media}`</span>
-    <span class="hljs-comments">// to `${assets.root}/${assets.mainDir}/${assets.subDir}`</span>
-    mix.<span class="hljs-built_in">publish()</span>;
+balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
+  <span class="token keyword">if</span> (balm.config.isProd) {
+    <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
+    <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
+    <span class="token comment">// to `${assets.root}/${assets.mainDir}/${assets.subDir}`</span>
+    mix.<span class="token function-variable function">publish()</span>;
 
-    <span class="hljs-comments">// Publish html templates</span>
-    <span class="hljs-comments">// from local `${roots.target}/index.html`</span>
-    <span class="hljs-comments">// to remote `${assets.root}/views/new-filename.blade.php`</span>
-    mix.<span class="hljs-built_in">publish</span>(<span class="hljs-string">'index.html'</span>, <span class="hljs-string">'views'</span>, {
-      basename: <span class="hljs-string">'new-filename'</span>,
-      suffix: <span class="hljs-string">'.blade'</span>,
-      extname: <span class="hljs-string">'.php'</span>
+    <span class="token comment">// Publish html templates</span>
+    <span class="token comment">// from local `${roots.target}/index.html`</span>
+    <span class="token comment">// to remote `${assets.root}/views/new-filename.blade.php`</span>
+    mix.<span class="token function-variable function">publish</span>(<span class="token string">'index.html'</span>, <span class="token string">'views'</span>, {
+      basename: <span class="token string">'new-filename'</span>,
+      suffix: <span class="token string">'.blade'</span>,
+      extname: <span class="token string">'.php'</span>
     });
   }
 });
