@@ -16,7 +16,7 @@ styles: {
 }
 ```
 
-### `styles.autoprefixer`
+### <del>`styles.autoprefixer`</del>
 
 `array`
 
@@ -32,6 +32,19 @@ styles: {
 }
 ```
 
+⚠️ **Deprecated in 1.5.1, Use a `.browserslistrc` config file in current or parent directories instead.**
+
+🌰 For example:
+
+```config
+# Browsers that we support
+
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+```
+
 ### `styles.options`
 
 `object`
@@ -41,23 +54,13 @@ CSS optimisations. Defaults to:
 ```js
 {
   safe: true,
-  autoprefixer: false,
   discardComments: {
     removeAll: true
   }
 }
 ```
 
-🌰 For example:
-
-```js
-styles: {
-  options: {
-    safe: true,
-    autoprefixer: false
-  }
-}
-```
+[CssNano Optimisations](https://cssnano.co/guides/optimisations/)
 
 ### `styles.includePaths`
 
@@ -66,6 +69,46 @@ styles: {
 > New in 0.6.0
 
 Ensure file's parent directory in the include path. Defaults to `[]`.
+
+### `styles.sassOptions`
+
+`object`
+
+> New in 1.5.5
+
+Node.js bindings to libsass [options](https://github.com/sass/node-sass#options). Defaults to `{}`.
+
+🌰 For example:
+
+```js
+styles: {
+  ext: 'scss',
+  sassOptions: {
+    importer: require('node-sass-glob-importer')()
+  }
+}
+```
+
+### `styles.lessOptions`
+
+`object`
+
+> New in 1.5.5
+
+`gulp-less` [options](https://github.com/gulp-community/gulp-less#options). Defaults to `{}`.
+
+  🌰 For example:
+
+  ```js
+  styles: {
+    ext: 'less',
+    lessOptions: {
+      plugins: [
+        // ...
+      ]
+    }
+  }
+  ```
 
 ### `styles.postcssPlugins`
 

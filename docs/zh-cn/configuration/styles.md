@@ -16,7 +16,7 @@ styles: {
 }
 ```
 
-### `styles.autoprefixer`
+### <del>`styles.autoprefixer`</del>
 
 `array`
 
@@ -32,6 +32,17 @@ styles: {
 }
 ```
 
+⚠️ **Deprecated in 1.5.1，请使用一个 `.browserslistrc` 配置文件代替。**
+
+🌰 例如：
+
+```config
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+```
+
 ### `styles.options`
 
 `object`
@@ -41,23 +52,13 @@ CSS优化配置。默认值为：
 ```js
 {
   safe: true,
-  autoprefixer: false,
   discardComments: {
     removeAll: true
   }
 }
 ```
 
-🌰 例如：
-
-```js
-styles: {
-  options: {
-    safe: true,
-    autoprefixer: false
-  }
-}
-```
+[CssNano Optimisations](https://cssnano.co/guides/optimisations/)
 
 ### `styles.includePaths`
 
@@ -66,6 +67,46 @@ styles: {
 > New in 0.6.0
 
 确保包含路径中的文件的父目录。默认值为：`[]`。
+
+### `styles.sassOptions`
+
+`object`
+
+> New in 1.5.5
+
+[Node-sass Options](https://github.com/sass/node-sass#options)。默认值为：`{}`。
+
+🌰 例如：
+
+```js
+styles: {
+  ext: 'scss',
+  sassOptions: {
+    importer: require('node-sass-glob-importer')()
+  }
+}
+```
+
+### `styles.lessOptions`
+
+`object`
+
+> New in 1.5.5
+
+`gulp-less` [Options](https://github.com/gulp-community/gulp-less#options). Defaults to `{}`.
+
+  🌰 例如：
+
+  ```js
+  styles: {
+    ext: 'less',
+    lessOptions: {
+      plugins: [
+        // ...
+      ]
+    }
+  }
+  ```
 
 ### `styles.postcssPlugins`
 
