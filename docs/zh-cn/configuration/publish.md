@@ -2,45 +2,41 @@
 
 ## Ftp
 
-### `ftp.host`
+### `ftp.options`
 
-`string`
+`object`
 
-必须的。默认值为：`undefined`。
+> New in 1.6.0
 
-### `ftp.port`
+FTP 配置项。默认值为：
 
-`number`
-
-默认值为：`22`。
-
-### `ftp.user`
-
-`string`
-
-默认值为：`'anonymous'`。
-
-### `ftp.pass`
-
-`string`
-
-默认值为：`null`。
-
-### `ftp.remotePath`
-
-`string`
-
-默认值为：`'/'`。
-
-### `ftp.logging`
-
-`boolean`
-
-> New in 1.0.0
-
-默认值为：`false`。
+```js
+{
+  host: undefined,
+  port: 22,
+  username: 'anonymous',
+  password: null,
+  remotePath: '/',
+  logging: false
+}
+```
 
 🌰 例如：
+
+```js
+ftp: {
+  options: {
+    host: '192.168.1.1',
+    port: 22,
+    user: 'root',
+    pass: '123456',
+    remotePath: '/path/to/webroot',
+    logging: true
+  }
+}
+```
+
+⚠️ 提示：如果 `balm < 1.6.0`，请参照以下配置
 
 ```js
 ftp: {
@@ -54,6 +50,14 @@ ftp: {
 ```
 
 用法：请参照 **自定义任务 API 文档** - [mix.ftp](../api/assets.html#mixftpinput)
+
+### `ftp.watchFiles`
+
+`array`
+
+> New in 1.6.0
+
+开发模式下当被监听文件发生改动时自动上传 FTP。默认值为：`[]`。
 
 ## Assets
 

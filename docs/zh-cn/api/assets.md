@@ -42,12 +42,14 @@
 
   balm.config = {
     ftp: {
-      host: '192.168.1.1',
-      port: 22,
-      user: 'root',
-      pass: '123456',
-      remotePath: '/path/to/webroot/project',
-      logging: true
+      options: {
+        host: '192.168.1.1',
+        port: 22,
+        user: 'root',
+        pass: '123456',
+        remotePath: '/path/to/webroot/project',
+        logging: true
+      }
     }
   };
 

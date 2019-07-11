@@ -2,45 +2,41 @@
 
 ## Ftp
 
-### `ftp.host`
+### `ftp.options`
 
-`string`
+`object`
 
-Required. Defaults to `undefined`.
+> New in 1.6.0
 
-### `ftp.port`
+FTP options. Defaults to:
 
-`number`
-
-Defaults to `22`.
-
-### `ftp.user`
-
-`string`
-
-Defaults to `'anonymous'`.
-
-### `ftp.pass`
-
-`string`
-
-Defaults to `null`.
-
-### `ftp.remotePath`
-
-`string`
-
-Defaults to `'/'`.
-
-### `ftp.logging`
-
-`boolean`
-
-> New in 1.0.0
-
-Defaults to `false`.
+```js
+{
+  host: undefined, // Required
+  port: 22,
+  username: 'anonymous',
+  password: null,
+  remotePath: '/',
+  logging: false
+}
+```
 
 🌰 For example:
+
+```js
+ftp: {
+  options: {
+    host: '192.168.1.1',
+    port: 22,
+    user: 'root',
+    pass: '123456',
+    remotePath: '/path/to/webroot',
+    logging: true
+  }
+}
+```
+
+⚠️ NOTE: If `balm < 1.6.0`, please refer to the configuration
 
 ```js
 ftp: {
@@ -54,6 +50,14 @@ ftp: {
 ```
 
 Usage: Refer to **Custom Task API** - [mix.ftp](../api/assets.html#mixftpinput)
+
+### `ftp.watchFiles`
+
+`array`
+
+> New in 1.6.0
+
+Automatically upload FTP when the watching files is changed in DEV mode. Defaults to `[]`.
 
 ## Assets
 
