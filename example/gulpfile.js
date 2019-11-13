@@ -8,10 +8,12 @@ const balm = require('balm');
 balm.config = {
   server: {
     open: true,
-    proxyContext: '/api',
-    proxyOptions: {
-      target: 'http://your.project.dev', // Target host
-      changeOrigin: true // Needed for virtual hosted sites
+    proxyConfig: {
+      context: '/api',
+      options: {
+        target: 'http://your.project.dev', // Target host
+        changeOrigin: true // Needed for virtual hosted sites
+      }
     }
   },
   roots: {
@@ -27,8 +29,8 @@ balm.config = {
     }
   },
   styles: {
-    ext: 'scss', // Main style extension
-    autoprefixer: ['> 0.5%', 'last 2 versions', 'Firefox ESR', 'not dead']
+    ext: 'scss' // Main style extension
+    // sprites: ['icons'] // Icon path: './app/images/icons'
   },
   scripts: {
     entry: {
@@ -43,32 +45,35 @@ balm.config = {
       main: './app/scripts/main.js'
     }
   },
-  // sprites: {
-  //   image: ['img-icon'], // Icon path: './app/images/img-icon'
-  // },
   assets: {
     // root: '/path/to/your_remote_project', // Remote project root path
     mainDir: 'public', // '/path/to/your_remote_project/public'
-    subDir: '' // `/path/to/your_remote_project/public/${subDir}`
-  },
-  cache: false
+    subDir: '', // `/path/to/your_remote_project/public/${subDir}`
+    cache: false
+  }
 };
 
 // 3. Run balm
 balm.go(mix => {
-  if (balm.config.isProd) {
+  if (balm.config.env.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
-    // to remote `${assets.root}/${assets.publicPath}/${assets.subDir}`
+    // to remote `${assets.root}/${assets.mainDir}/${assets.subDir}`
     mix.publish();
 
     // Publish html templates
     // from local `${roots.target}/old-filename.html`
     // to remote `${assets.root}/views/new-filename.blade.php`
-    mix.publish('index.html', 'views', {
-      basename: 'new-filename',
-      suffix: '.blade',
-      extname: '.php'
-    });
+    mix.publish([
+      {
+        input: 'index.html',
+        output: 'views',
+        options: {
+          basename: 'new-filename',
+          suffix: '.blade',
+          extname: '.php'
+        }
+      }
+    ]);
   }
 });

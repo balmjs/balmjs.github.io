@@ -1,9 +1,6 @@
 module.exports = {
-  server: {
-    open: false
-  },
   styles: {
-    ext: 'css'
+    extname: 'css'
   },
   scripts: {
     entry: {

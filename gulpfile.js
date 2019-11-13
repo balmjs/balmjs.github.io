@@ -1,11 +1,13 @@
 const balm = require('balm');
-const config = require('./config/balmrc');
+const balmConfig = require('./config/balmrc');
 
-balm.config = config;
+balm.config = balmConfig;
 
 balm.go(mix => {
   // mix.copy('node_modules/prismjs/themes/prism-tomorrow.css', 'src/styles', {
-  //   basename: '_prism-tomorrow'
+  //   rename: {
+  //     basename: '_prism-tomorrow'
+  //   }
   // });
 
   mix.copy(
@@ -18,7 +20,9 @@ balm.go(mix => {
 
     mix.zip('example/**/*');
     mix.copy('archive.zip', 'dist', {
-      basename: 'balm-example'
+      rename: {
+        basename: 'balm-example'
+      }
     });
 
     mix.injectManifest();

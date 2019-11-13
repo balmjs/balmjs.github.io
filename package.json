@@ -1,6 +1,6 @@
 {
   "name": "balmjs.com",
-  "version": "2019.7.11",
+  "version": "2019.11.13",
   "author": "Elf-mousE",
   "scripts": {
     "dev": "gulp",
@@ -10,14 +10,14 @@
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "balm": "^1.6.0",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "babel-eslint": "^10.0.3",
+    "balm": "^2.0.0-rc.6",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "gulp": "^4.0.2",
-    "prettier": "^1.18.2",
-    "prismjs": "^1.16.0"
+    "prettier": "^1.19.1",
+    "prismjs": "^1.17.1"
   },
   "private": true
 }
