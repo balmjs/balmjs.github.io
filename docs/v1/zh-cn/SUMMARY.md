@@ -1,5 +1,15 @@
 # Summary
 
+- [BalmJS 文档](https://balmjs.com/docs/v1/zh-cn/)
+
+---
+
+- 版本
+  - [2.x](https://balmjs.com/docs/v2/zh-cn/)
+  - 1.x（当前版本）
+
+---
+
 - [简介](README.md)
 - [升级向导](upgrade/toc.md)
   - [从 0.24.x 升级到 1.0.0](upgrade/upgrade-1.0.md)

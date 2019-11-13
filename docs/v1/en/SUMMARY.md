@@ -1,5 +1,15 @@
 # Summary
 
+- [BalmJS Documentation](https://balmjs.com/docs/v1/en/)
+
+---
+
+- Versions
+  - [2.x](https://balmjs.com/docs/v2/en/)
+  - 1.x (Current)
+
+---
+
 - [Introduction](README.md)
 - [Upgrade](upgrade/toc.md)
   - [Upgrading To 1.0.0 From 0.24.x](upgrade/upgrade-1.0.md)

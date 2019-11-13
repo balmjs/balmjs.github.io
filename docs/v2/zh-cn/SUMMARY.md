@@ -1,11 +1,11 @@
 # Summary
 
-- [BalmJS 文档](https://balmjs.com/docs/zh-cn)
+- [BalmJS 文档](https://balmjs.com/docs/v2/zh-cn)
 
 ---
 
 - 版本
-  - 2.x (当前版本)
+  - 2.x（当前版本）
   - [1.x](https://balmjs.com/docs/v1/zh-cn)
 
 ---

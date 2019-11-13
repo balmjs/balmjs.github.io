@@ -4,6 +4,6 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-docs/_book
+_book/
 archive.zip
 balm-example/

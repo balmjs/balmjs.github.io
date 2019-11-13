@@ -1,6 +1,6 @@
 # Summary
 
-- [BalmJS Documentation](https://balmjs.com/docs/en/)
+- [BalmJS Documentation](https://balmjs.com/docs/v2/en/)
 
 ---
 
