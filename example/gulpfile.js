@@ -34,7 +34,7 @@ balm.config = {
   },
   scripts: {
     entry: {
-      // HTML: <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
+      // HTML: <script src="%PUBLIC_URL%/scripts/vendors/mylib.js"></script>
       // mylib: [
       //   'your-project-library-1',
       //   'your-project-library-2',
@@ -68,7 +68,7 @@ balm.go(mix => {
       {
         input: 'index.html',
         output: 'views',
-        options: {
+        renameOptions: {
           basename: 'new-filename',
           suffix: '.blade',
           extname: '.php'

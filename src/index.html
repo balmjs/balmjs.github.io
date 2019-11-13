@@ -107,7 +107,7 @@ balm.config = {
     }
   },
   styles: {
-    ext: <span class="token string">'scss'</span> <span class="token comment">// Main style extension</span>
+    extname: <span class="token string">'scss'</span> <span class="token comment">// Main style extension</span>
   },
   scripts: {
     entry: {
@@ -121,7 +121,7 @@ balm.config = {
 };
 
 balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
-  <span class="token keyword">if</span> (balm.config.isProd) {
+  <span class="token keyword">if</span> (balm.config.env.isProd) {
     <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
     <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
     <span class="token comment">// to remote `${assets.root}/${assets.mainDir}`</span>
@@ -141,10 +141,12 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
 balm.config = {
   server: {
     open: true,
-    proxyContext: '/api',
-    proxyOptions: {
-      target: <span class="token string">'http://your.project.dev'</span>, <span class="token comment">// Target host</span>
-      changeOrigin: <span class="token keyword">true</span> <span class="token comment">// Needed for virtual hosted sites</span>
+    proxyConfig: {
+      context: '/api',
+      options: {
+        target: <span class="token string">'http://your.project.dev'</span>, <span class="token comment">// Target host</span>
+        changeOrigin: <span class="token keyword">true</span> <span class="token comment">// Needed for virtual hosted sites</span>
+      }
     }
   },
   roots: {
@@ -159,13 +161,13 @@ balm.config = {
     }
   },
   styles: {
-    ext: <span class="token string">'scss'</span>, <span class="token comment">// Main style extension</span>
-    autoprefixer: [<span class="token string">'> 0.5%'</span>, <span class="token string">'last 2 versions'</span>, <span class="token string">'Firefox ESR'</span>, <span class="token string">'not dead'</span>]
+    extname: <span class="token string">'scss'</span>, <span class="token comment">// Main style extension</span>
+    sprites: [<span class="token string">'icons'</span>] <span class="token comment">// Icons path: './app/images/icons'</span>
   },
   scripts: {
     entry: {
       <span class="token comment">// Custom vendors</span>
-      <span class="token comment">// HTML: &lt;script src="<b>%PUBLIC_URL%</b>/scripts/vendor/mylib.js"&gt;&lt;/script&gt;</span>
+      <span class="token comment">// HTML: &lt;script src="<b>%PUBLIC_URL%</b>/scripts/vendors/mylib.js"&gt;&lt;/script&gt;</span>
       mylib: [
         <span class="token string">'your-project-vendors'</span>,
         <span class="token string">'your-project-plugins'</span>
@@ -174,19 +176,16 @@ balm.config = {
       main: <span class="token string">'./app/scripts/main.js'</span>
     }
   },
-  sprites: {
-    image: [<span class="token string">'img-icon'</span>] <span class="token comment">// Icon path: './app/images/img-icon'</span>
-  },
   assets: {
     root: <span class="token string">'/path/to/your_remote_project'</span>, <span class="token comment">// Remote project root path</span>
     mainDir: <span class="token string">'public'</span>, <span class="token comment">// Remote assets dir: '/path/to/your_remote_project/public'</span>
-    subDir: <span class="token string">''</span> <span class="token comment">// Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`</span>
-  },
-  cache: <span class="token keyword">true</span>
+    subDir: <span class="token string">''</span>, <span class="token comment">// Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`</span>
+    cache: <span class="token keyword">true</span>
+  }
 };
 
 balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
-  <span class="token keyword">if</span> (balm.config.isProd) {
+  <span class="token keyword">if</span> (balm.config.env.isProd) {
     <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
     <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
     <span class="token comment">// to `${assets.root}/${assets.mainDir}/${assets.subDir}`</span>
@@ -195,11 +194,17 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
     <span class="token comment">// Publish html templates</span>
     <span class="token comment">// from local `${roots.target}/index.html`</span>
     <span class="token comment">// to remote `${assets.root}/views/new-filename.blade.php`</span>
-    mix.<span class="token function-variable function">publish</span>(<span class="token string">'index.html'</span>, <span class="token string">'views'</span>, {
-      basename: <span class="token string">'new-filename'</span>,
-      suffix: <span class="token string">'.blade'</span>,
-      extname: <span class="token string">'.php'</span>
-    });
+    mix.<span class="token function-variable function">publish</span>([
+      {
+        input: <span class="token string">'index.html'</span>,
+        output: <span class="token string">'views'</span>,
+        renameOptions: {
+          basename: <span class="token string">'new-filename'</span>,
+          suffix: <span class="token string">'.blade'</span>,
+          extname: <span class="token string">'.php'</span>
+        }
+      }
+    ]);
   }
 });
 
