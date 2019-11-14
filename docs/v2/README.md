@@ -1,6 +1,6 @@
-# BalmJS [![NPM version][balm-image]][balm-url]
+# Prologue
 
-> A flexible Front-End workflow for webapps.
+> A flexible Front-End workflow for webapps
 
 ## What's BalmJS?
 
@@ -10,6 +10,7 @@ BalmJS prescribes best practices and tools to help you stay productive.
 
 | Project                                               | Status                                                 | Description                            |
 | ----------------------------------------------------- | ------------------------------------------------------ | -------------------------------------- |
+| [balm](https://github.com/balmjs/balm)                | [![NPM version][balm-image]][balm-url]                 | BalmJS workflow                        |
 | [balm-cli](https://github.com/balmjs/balm-cli)        | [![NPM version][balm-cli-image]][balm-cli-url]         | BalmJS scaffolding tool                |
 | [balm-gui](https://github.com/balmjs/balm-gui)        | N/A                                                    | GUI for BalmJS                         |
 | [balm-ui-lite](https://github.com/balmjs/ui-vue-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material Design Lite + Vue             |

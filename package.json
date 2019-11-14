@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "gulp",
     "prod": "gulp --production",
-    "docs:dev": "cd docs && gitbook install && gitbook serve",
-    "docs:prod": "cd docs && rm -rf _book && gitbook install && gitbook build",
+    "docs:v1:dev": "cd docs/v1 && gitbook install && gitbook serve",
+    "docs:v1:prod": "cd docs/v1 && rm -rf _book && gitbook install && gitbook build",
+    "docs:v2:dev": "vuepress dev docs/v2",
+    "docs:v2:prod": "vuepress build docs/v2",
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
@@ -17,7 +19,8 @@
     "eslint-plugin-prettier": "^3.1.1",
     "gulp": "^4.0.2",
     "prettier": "^1.19.1",
-    "prismjs": "^1.17.1"
+    "prismjs": "^1.17.1",
+    "vuepress": "^1.2.0"
   },
   "private": true
 }
