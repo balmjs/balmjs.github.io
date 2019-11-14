@@ -12,6 +12,8 @@
     "release": "bash ./build/update-docs.sh"
   },
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "@vuepress/plugin-google-analytics": "^1.2.0",
     "babel-eslint": "^10.0.3",
     "balm": "^2.0.0-rc.6",
     "eslint": "^6.6.0",

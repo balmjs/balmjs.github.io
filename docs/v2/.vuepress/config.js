@@ -38,16 +38,16 @@ module.exports = {
           },
           {
             title: 'Guide', // required
-            path: '/guide/', // optional, which should be a absolute path.
+            path: '/guide/installation', // optional, which should be a absolute path.
             collapsable: false, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
             children: [
               '/guide/installation',
               '/guide/getting-started',
+              '/guide/structure',
               {
                 title: 'Upgrade Guide',
                 path: '/guide/upgrade/',
-                collapsable: false,
                 children: [
                   '/guide/upgrade/upgrade-2.0',
                   '/guide/upgrade/upgrade-1.0',
@@ -85,7 +85,7 @@ module.exports = {
       {
         ga: '' // UA-00000000-0
       }
-    ],
-    '@vuepress/last-updated'
+    ]
+    // '@vuepress/last-updated'
   ]
 };
