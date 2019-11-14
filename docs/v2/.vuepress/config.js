@@ -28,8 +28,7 @@ module.exports = {
         nav: [
           { text: 'Guide', link: '/guide/' },
           { text: 'Configuration', link: '/config/' },
-          { text: 'API Reference', link: '/api/' },
-          { text: 'FAQ', link: '/faq/' }
+          { text: 'API Reference', link: '/api/' }
         ],
         sidebar: [
           {
@@ -38,7 +37,7 @@ module.exports = {
           },
           {
             title: 'Guide', // required
-            path: '/guide/installation', // optional, which should be a absolute path.
+            path: '/guide/', // optional, which should be a absolute path.
             collapsable: false, // optional, defaults to true
             sidebarDepth: 2, // optional, defaults to 1
             children: [
@@ -59,6 +58,21 @@ module.exports = {
           {
             title: 'Configuration',
             path: '/config/',
+            children: [
+              '/config/environment',
+              '/config/paths',
+              '/config/html',
+              '/config/styles',
+              '/config/scripts',
+              '/config/extras',
+              '/config/assets',
+              '/config/server',
+              '/config/logs'
+            ]
+          },
+          {
+            title: 'API Reference',
+            path: '/api/',
             children: []
           }
         ]
