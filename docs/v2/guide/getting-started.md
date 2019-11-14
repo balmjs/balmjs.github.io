@@ -10,6 +10,7 @@ project
 │ ├─┬ scripts
 │ │ └── main.js
 │ └── index.html
+├── .browserslistrc
 ├── babel.config.js
 ├── gulpfile.js
 └── package.json
@@ -61,7 +62,20 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 ## Project settings
 
-### 1. Configure `babel`
+### 1. Autoprefixer uses [Browserslist](https://github.com/ai/browserslist#queries)
+
+In your project directory, create a file named `.browserslistrc` in your project root with these contents:
+
+```
+# Browsers that we support
+
+> 0.5%
+last 2 versions
+Firefox ESR
+not dead
+```
+
+### 2. Configure `babel`
 
 > enable [ES2015 features](https://babeljs.io/docs/en/learn) by using [Babel](https://babeljs.io/)
 
@@ -74,7 +88,7 @@ module.exports = {
 };
 ```
 
-### 2. Configure `balm` by `gulpfile.js`
+### 3. Configure `balm` by `gulpfile.js`
 
 - A simple `gulpfile.js` example (`/path/to/project/gulpfile.js`)
 

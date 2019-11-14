@@ -18,7 +18,7 @@ project
 ├─┬ config       // Optional. But recommended. Refer to BalmCLI's templates.
 │ ├── balmrc.js
 │ └── publish.js
-├── .dotfile     // (e.g. .gitignore)
+├── .dotfile     // (e.g. .gitignore, .browserslistrc)
 ├── gulpfile.js  // Required. A configuration file for Balm.
 ├── package.json // Required.
 └── ...
