@@ -1,4 +1,6 @@
 const path = require('path');
+const getNav = require('./config/nav');
+const getSidebar = require('./config/sidebar');
 
 module.exports = {
   configureWebpack: {
@@ -25,65 +27,12 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
-        nav: [
-          { text: 'Guide', link: '/guide/' },
-          { text: 'Configuration', link: '/config/' },
-          { text: 'API Reference', link: '/api/' }
-        ],
-        sidebar: [
-          {
-            title: 'Introduction',
-            path: '/'
-          },
-          {
-            title: 'Guide', // required
-            path: '/guide/', // optional, which should be a absolute path.
-            collapsable: false, // optional, defaults to true
-            sidebarDepth: 2, // optional, defaults to 1
-            children: [
-              '/guide/installation',
-              '/guide/getting-started',
-              '/guide/structure',
-              {
-                title: 'Upgrade Guide',
-                path: '/guide/upgrade/',
-                children: [
-                  '/guide/upgrade/upgrade-2.0',
-                  '/guide/upgrade/upgrade-1.0',
-                  '/guide/upgrade/upgrade-0.24'
-                ]
-              }
-            ]
-          },
-          {
-            title: 'Configuration',
-            path: '/config/',
-            children: [
-              '/config/environment',
-              '/config/paths',
-              '/config/html',
-              '/config/styles',
-              '/config/scripts',
-              '/config/extras',
-              '/config/assets',
-              '/config/server',
-              '/config/logs'
-            ]
-          },
-          {
-            title: 'API Reference',
-            path: '/api/',
-            children: []
-          }
-        ]
+        nav: getNav('en'),
+        sidebar: getSidebar('en')
       },
       '/zh/': {
-        nav: [
-          { text: '指南', link: '/guide/' },
-          { text: '配置', link: '/config/' },
-          { text: 'API', link: '/api/' },
-          { text: 'FAQ', link: '/faq/' }
-        ]
+        nav: getNav('zh'),
+        sidebar: getSidebar('zh')
       }
     },
     // Assumes GitHub. Can also be a full GitLab url.
