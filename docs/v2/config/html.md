@@ -4,7 +4,7 @@
 
 `html.options: object`
 
-[HTMLMinifier options](https://github.com/kangax/html-minifier#options-quick-reference).
+HTML compressor/minifier. Reference [options](https://github.com/kangax/html-minifier#options-quick-reference).
 
 Defaults to:
 

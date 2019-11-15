@@ -29,7 +29,6 @@ const sidebarData = [
     title: 'config',
     path: '/config/',
     collapsable: false,
-    sidebarDepth: 2,
     children: [
       '/config/environment',
       '/config/paths',

@@ -1,18 +1,18 @@
 # Roots & Paths
 
-## roots
+## The Root Directory
 
-### `roots.source` (Input directory)
+### `roots.source`
 
 `roots.source: string = 'src'`
 
-Source code.
+(Input) Source code.
 
-### `roots.target` (Output directory)
+### `roots.target`
 
 `roots.target: string = 'dist'`
 
-Production code.
+(Output) Production code.
 
 🌰 For example:
 
@@ -25,7 +25,7 @@ balm.config = {
 };
 ```
 
-## paths
+## The App Directory
 
 ```ts
 type BalmPath {
@@ -38,9 +38,11 @@ type BalmPath {
 }
 ```
 
-### `paths.source` (Input)
+### `paths.source`
 
 `paths.source: BalmPath`
+
+(Input) Un-compiled assets.
 
 - `paths.source.base: string = ''`
 - `paths.source.css: string = 'styles'`
@@ -49,9 +51,11 @@ type BalmPath {
 - `paths.source.font: string = 'fonts'`
 - `paths.source.media: string = 'media'`
 
-### `paths.target` (Output)
+### `paths.target`
 
 `paths.target: BalmPath`
+
+(Output) Compiled assets.
 
 - `paths.target.base: string = ''`
 - `paths.target.css: string = 'css'`
