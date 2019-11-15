@@ -3,7 +3,7 @@
 ## env
 
 ```ts
-type BalmEnvObject {
+interface BalmEnvObject {
   isProd: boolean;
   isTest: boolean;
   isDev: boolean;

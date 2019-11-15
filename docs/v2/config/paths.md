@@ -28,12 +28,12 @@ balm.config = {
 ## The App Directory
 
 ```ts
-type BalmPath {
-  base: string;  // Application directory
-  css: string;   // Stylesheet directory
-  js: string;    // JavaScript directory
-  img: string;   // Image directory
-  font: string;  // Font directory
+interface BalmPath {
+  base: string; // Application directory
+  css: string; // Stylesheet directory
+  js: string; // JavaScript directory
+  img: string; // Image directory
+  font: string; // Font directory
   media: string; // Media directory
 }
 ```
