@@ -1,5 +1,9 @@
 # Stylesheets
 
+> Parse CSS and add vendor prefixes to rules by [Can I Use](https://caniuse.com/).
+>
+> Autoprefixer uses [Browserslist](https://github.com/ai/browserslist#queries).
+
 ## styles.extname
 
 `styles.extname: string = 'css'`

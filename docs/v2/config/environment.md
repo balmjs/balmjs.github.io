@@ -48,7 +48,7 @@ balm.config = {
 Set project type.
 
 - `true` for a static HTML project
-- `false` for a dynamic language project (e.g. PHP framework).
+- `false` for a dynamic language project (e.g. PHP framework)
 
 🌰 For example:
 
