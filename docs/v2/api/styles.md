@@ -52,6 +52,24 @@ interface HookOptions {
 
 Less => CSS.
 
+🌰 For example:
+
+```js
+const balm = require('balm');
+
+balm.config = {
+  // Your project config
+};
+
+balm.go(mix => {
+  mix.less('app/styles/*.less', 'dist/css', {
+    less: {
+      // Less options: overwrite `balm.config.styles.lessOptions`
+    }
+  });
+});
+```
+
 ## mix.url()
 
 `mix.url(input: string | string[], output: string)`

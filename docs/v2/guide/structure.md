@@ -19,7 +19,7 @@ project
 │ ├── balmrc.js
 │ └── publish.js
 ├── .dotfile     // (e.g. .gitignore, .browserslistrc)
-├── gulpfile.js  // Required. A configuration file for Balm.
+├── gulpfile.js  // Required. The default entry configuration file for Balm.
 ├── package.json // Required.
 └── ...
 ```

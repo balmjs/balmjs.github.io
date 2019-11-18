@@ -3,31 +3,30 @@
 - Environment
   - [`env`](environment.html#mix-env)
 - HTML
-  - [`mix.html(input, output)`](html.html#mix-html)
+  - [`mix.html(input, output)`](template.html#mix-html)
 - Stylesheets
-  - `mix.css(input, output)`
-  - `mix.sass(input, output, options?)`
-  - `mix.less(input, output, options?)`
-  - `mix.url(input, output)`
-  - `mix.sprite(input, output, spriteOptions?)`
+  - [`mix.css(input, output)`](styles.html#mix-css)
+  - [`mix.sass(input, output, options?)`](styles.html#mix-sass)
+  - [`mix.less(input, output, options?)`](styles.html#mix-less)
+  - [`mix.url(input, output)`](styles.html#mix-url)
+  - [`mix.sprite(input, output, spriteOptions?)`](styles.html#mix-sprite)
 - JavaScript
-  - `mix.js(input, output, webpackOptions?)`
-  - `mix.jsmin(input, output, options?)`
+  - [`mix.js(input, output, webpackOptions?)`](scripts.html#mix-js)
+  - [`mix.jsmin(input, output, options?)`](scripts.html#mix-jsmin)
 - Files & Directories
-  - `mix.copy(input, output, options?)`
-  - `mix.remove(paths)`
+  - [`mix.copy(input, output, options?)`](files.html#mix-copy)
+  - [`mix.remove(paths)`](files.html#mix-remove)
 - Cache
-  - `mix.version(input, output, assetsOptions?)`
+  - [`mix.version(input, output, assetsOptions?)`](cache.html#mix-version)
 - Server
   - `mix.serve(handler)`
-- Assets
+- Deployment
   - `mix.publish(input, output, renameOptions?)`
   - `mix.zip(input?, output?, filename?)`
   - `mix.ftp(localFiles, options?)`
-- PWA
+- Others
   - `mix.generateSW(pwaOptions)`
   - `mix.injectManifest(pwaOptions)`
-- Others
   - `mix.modernizr()`
 
 ```js

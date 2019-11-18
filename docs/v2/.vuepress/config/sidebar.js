@@ -49,12 +49,13 @@ const sidebarData = [
     collapsable: false,
     children: [
       '/api/environment',
-      '/api/html',
+      '/api/template',
       '/api/styles',
       '/api/scripts',
+      '/api/files',
+      '/api/cache',
       '/api/server',
-      '/api/assets',
-      '/api/pwa',
+      '/api/deployment',
       '/api/others'
     ]
   }
