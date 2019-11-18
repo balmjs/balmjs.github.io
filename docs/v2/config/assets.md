@@ -15,6 +15,7 @@ balm.config = {
   assets: {
     publicUrl: 'https://balmjs.com/'
   }
+  // Other Options...
 };
 ```
 
@@ -104,6 +105,7 @@ balm.config = {
     virtualDir: 'awesome',
     cache: true
   }
+  // Other Options...
 };
 ```
 
@@ -193,5 +195,6 @@ balm.config = {
     cache: true,
     excludes: ['dist/img/icons/*']
   }
+  // Other Options...
 };
 ```

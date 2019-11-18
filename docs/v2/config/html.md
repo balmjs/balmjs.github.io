@@ -40,5 +40,6 @@ balm.config = {
       }
     }
   }
+  // Other Options...
 };
 ```

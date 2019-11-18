@@ -29,6 +29,7 @@ balm.config = {
       subapp: './app/scripts/sub-page.js'
     }
   }
+  // Other Options...
 };
 ```
 
@@ -72,6 +73,7 @@ balm.config = {
     library: 'AwesomeLibraryName',
     libraryTarget: 'umd'
   }
+  // Other Options...
 };
 ```
 
@@ -118,6 +120,7 @@ balm.config = {
     ],
     plugins: [new VueLoaderPlugin()]
   }
+  // Other Options...
 };
 ```
 
@@ -166,6 +169,7 @@ balm.config = {
   scripts: {
     extensions: ['.vue'];
   }
+  // Other Options...
 };
 ```
 
@@ -198,6 +202,7 @@ balm.config = {
       vue$: 'vue/dist/vue.esm.js'
     }
   }
+  // Other Options...
 };
 ```
 

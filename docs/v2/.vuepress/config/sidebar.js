@@ -46,7 +46,17 @@ const sidebarData = [
   {
     title: 'api',
     path: '/api/',
-    children: []
+    collapsable: false,
+    children: [
+      '/api/environment',
+      '/api/html',
+      '/api/styles',
+      '/api/scripts',
+      '/api/server',
+      '/api/assets',
+      '/api/pwa',
+      '/api/others'
+    ]
   }
 ];
 

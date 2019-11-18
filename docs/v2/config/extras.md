@@ -13,5 +13,6 @@ balm.config = {
   extras: {
     excludes: ['.extra', 'extra.txt']
   }
+  // Other Options...
 };
 ```

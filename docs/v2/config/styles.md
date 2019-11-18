@@ -19,6 +19,7 @@ balm.config = {
   styles: {
     extname: 'scss'
   }
+  // Other Options...
 };
 ```
 
@@ -129,6 +130,7 @@ balm.config = {
   styles: {
     sprites: ['icons']
   }
+  // Other Options...
 };
 
 // Output:
@@ -154,6 +156,7 @@ balm.config = {
     sprites: ['icons'],
     spriteRetina: true
   }
+  // Other Options...
 };
 
 // Output:

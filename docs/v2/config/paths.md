@@ -22,6 +22,7 @@ balm.config = {
     source: 'app', // `/path/to/workspace/app`
     target: 'dist' // `/path/to/workspace/dist`
   }
+  // Other Options...
 };
 ```
 
@@ -82,5 +83,6 @@ balm.config = {
       font: 'font'
     }
   }
+  // Other Options...
 };
 ```

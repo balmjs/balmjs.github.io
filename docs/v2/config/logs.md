@@ -29,5 +29,6 @@ balm.config = {
   logs: {
     level: 2 // The smaller, the detailed
   }
+  // Other Options...
 };
 ```

@@ -31,6 +31,7 @@ balm.config = {
   server: {
     open: true
   }
+  // Other Options...
 };
 ```
 
@@ -65,6 +66,7 @@ balm.config = {
       }
     ]
   }
+  // Other Options...
 };
 ```
 
@@ -114,6 +116,7 @@ balm.config = {
       }
     }
   }
+  // Other Options...
 };
 ```
 
@@ -139,6 +142,7 @@ balm.config = {
       }
     ]
   }
+  // Other Options...
 };
 ```
 
