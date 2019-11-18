@@ -5,5 +5,6 @@ module.exports = {
   api: 'API',
   // sidebar
   intro: '简介',
-  upgrade: '升级向导'
+  upgrade: '升级向导',
+  advanced: 'Advanced'
 };

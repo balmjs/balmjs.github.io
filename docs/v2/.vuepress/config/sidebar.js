@@ -58,6 +58,17 @@ const sidebarData = [
       '/api/deployment',
       '/api/others'
     ]
+  },
+  {
+    title: 'advanced',
+    path: '/advanced/',
+    collapsable: false,
+    children: [
+      '/advanced/spa',
+      '/advanced/mpa',
+      '/advanced/code-splitting',
+      '/advanced/recipes'
+    ]
   }
 ];
 

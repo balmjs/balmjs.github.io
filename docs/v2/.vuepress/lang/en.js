@@ -5,5 +5,6 @@ module.exports = {
   api: 'API Reference',
   // sidebar
   intro: 'Introduction',
-  upgrade: 'Upgrade Guide'
+  upgrade: 'Upgrade Guide',
+  advanced: 'Advanced'
 };
