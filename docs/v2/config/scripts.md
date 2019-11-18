@@ -48,6 +48,8 @@ Then, your HTML templates:
 <script src="%PUBLIC_URL%/scripts/subapp.js"></script>
 ```
 
+> Tips: You can rename `vendors` with `scripts.vendorsName`.
+
 ## scripts.library
 
 `scripts.library: string | object = ''`
@@ -307,12 +309,6 @@ Webpack optimizations for manual configuration and overrides. Reference [options
 
 `scripts.splitAllVendors: boolean = false`
 
-## scripts.vendorsName
-
-`scripts.vendorsName: string = 'vendors'`
-
-(For SPA) AllInOne vendor filename or Vendors folder name.
-
 - HTML template:
 
 ```html
@@ -321,6 +317,14 @@ Webpack optimizations for manual configuration and overrides. Reference [options
 <!-- Entry -->
 <script src="%PUBLIC_URL%/scripts/main.js"></script>
 ```
+
+> Tips: You can rename `vendors` with `scripts.vendorsName`.
+
+## scripts.vendorsName
+
+`scripts.vendorsName: string = 'vendors'`
+
+(For SPA) AllInOne vendor filename or Vendors folder name.
 
 ## scripts.extractCss
 
