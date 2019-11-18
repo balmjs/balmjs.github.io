@@ -38,6 +38,8 @@ const sidebarData = [
       '/config/extras',
       '/config/assets',
       '/config/server',
+      '/config/ftp',
+      '/config/pwa',
       '/config/logs'
     ]
   },

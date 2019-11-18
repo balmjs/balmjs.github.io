@@ -6,3 +6,7 @@
 - [Stylesheets](styles.md)
 - [JavaScript](scripts.md)
 - [Assets](assets.md)
+- [Server](server.md)
+- [FTP](ftp.md)
+- [PWA](pwa.md)
+- [Logs](logs.md)

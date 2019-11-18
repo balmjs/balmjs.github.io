@@ -13,7 +13,7 @@ interface BalmEnvObject {
 
 `env: BalmEnvObject`
 
-Balm workflow environment variable.
+Balm workflow environment variable in Node.js.
 
 - `env.isDev` is `true` when running `gulp`
 - `env.isProd` is `true` when running `gulp -p` or `gulp --production`
