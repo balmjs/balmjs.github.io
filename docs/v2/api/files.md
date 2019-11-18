@@ -52,3 +52,18 @@ balm.go(mix => {
 `mix.remove(paths: string | string[])`
 
 Delete files/directories.
+
+🌰 For example:
+
+```js
+const balm = require('balm');
+
+balm.config = {
+  // Your project config
+};
+
+balm.go(mix => {
+  mix.remove('foo.txt');
+  mix.remove(['bar/a.txt', 'bar/b.txt']);
+});
+```

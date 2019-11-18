@@ -19,15 +19,15 @@
 - Cache
   - [`mix.version(input, output, assetsOptions?)`](cache.html#mix-version)
 - Server
-  - `mix.serve(handler)`
+  - [`mix.serve(handler)`](server.html#mix-serve)
 - Deployment
-  - `mix.publish(input, output, renameOptions?)`
-  - `mix.zip(input?, output?, filename?)`
-  - `mix.ftp(localFiles, options?)`
+  - [`mix.publish(input, output, renameOptions?)`](deployment.html#mix-publish)
+  - [`mix.zip(input?, output?, filename?)`](deployment.html#mix-zip)
+  - [`mix.ftp(localFiles, options?)`](deployment.html#mix-ftp)
 - Others
-  - `mix.generateSW(pwaOptions)`
-  - `mix.injectManifest(pwaOptions)`
-  - `mix.modernizr()`
+  - [`mix.generateSW(pwaOptions)`](others.html#mix-generatesw)
+  - [`mix.injectManifest(pwaOptions)`](others.html#mix-injectmanifest)
+  - [`mix.modernizr()`](others.html#mix-modernizr)
 
 ```js
 const balm = require('balm');
