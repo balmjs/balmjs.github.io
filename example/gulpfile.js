@@ -1,5 +1,5 @@
-// Documentation - http://balmjs.com/docs/en/configuration/toc.html
-// 中文文档 - http://balmjs.com/docs/zh-cn/configuration/toc.html
+// Documentation - http://balmjs.com/docs/v2/config/
+// 中文文档 - http://balmjs.com/docs/v2/zh/config/
 
 // 1. Import balm
 const balm = require('balm');
@@ -17,7 +17,7 @@ balm.config = {
     }
   },
   roots: {
-    source: 'app', // Source code root (Create a directory named 'app' in project)
+    source: 'src', // Source code root (Create a directory named 'app' in project)
     target: 'dist' // The production build
   },
   paths: {
@@ -42,7 +42,7 @@ balm.config = {
       //   'your-project-plugin-B'
       // ],
       // Entry
-      main: './app/scripts/main.js'
+      main: './src/scripts/main.js'
     }
   },
   assets: {
@@ -64,16 +64,10 @@ balm.go(mix => {
     // Publish html templates
     // from local `${roots.target}/old-filename.html`
     // to remote `${assets.root}/views/new-filename.blade.php`
-    mix.publish([
-      {
-        input: 'index.html',
-        output: 'views',
-        renameOptions: {
-          basename: 'new-filename',
-          suffix: '.blade',
-          extname: '.php'
-        }
-      }
-    ]);
+    mix.publish('index.html', 'views', {
+      basename: 'new-filename',
+      suffix: '.blade',
+      extname: '.php'
+    });
   }
 });
