@@ -8,7 +8,7 @@ Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not alr
 
 > **Verify that you are running at least node `10.13.x` and npm `5.2.x`** by running `node -v` and `npm -v` in a terminal/console window. Older versions maybe produce errors, but newer versions are fine.
 
-BalmJS workflow using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` local dependency.
+:bell: BalmJS workflow using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` local dependency.
 
 ```sh
 yarn global add gulp-cli
@@ -51,16 +51,18 @@ balm.config = {
 balm.go();
 ```
 
-Refer to [our configuration docs](../config/) to learn more about config **`balm`**.
+:page_with_curl: Refer to our [configuration docs](../config/) to learn more about config **`balm`**.
 
 ## 3. Usage
 
-Run the gulp command in your project directory:
+Run the command in your project directory:
 
 ```sh
 # For development
 gulp
 
 # For production
+gulp --production
+# OR
 gulp -p
 ```

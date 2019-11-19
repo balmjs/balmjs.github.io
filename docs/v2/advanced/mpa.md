@@ -5,20 +5,38 @@
 ```
 project
 ├─┬ src
+│ ├─┬ fonts
+│ │ ├── ...
+│ │ └── custom-regular.woff
+│ ├─┬ images
+│ │ ├── ...
+│ │ └── logo.png
 │ ├─┬ styles
 │ │ ├── ...
 │ │ ├── _main.scss
 │ │ ├── admin.scss
 │ │ └── login.scss
 │ ├─┬ scripts
+│ │ ├─┬ assets
+│ │ │ ├── ...
+│ │ │ └── avatar.png
 │ │ ├── ...
 │ │ ├── admin.js
 │ │ └── login.js
 │ ├── ...
 │ ├── admin.html
 │ └── login.html
+├── .browserslistrc
+├── babel.config.js
+├── gulpfile.js
+├── package.json
 └── ...
 ```
+
+:warning: **Tips:**
+
+- The images used in CSS are recommended to be placed in the `src/images` folder.
+- The images used in JS are recommended to be placed in the `src/scripts/assets` folder.
 
 ## 1. HTML
 
@@ -80,6 +98,8 @@ project
 
 - `/path/to/project/src/styles/_main.scss`
 
+> :warning: The dash style file will not be compiled into a css file.
+
 ```scss
 // 1. Configuration and helpers
 @import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins';
@@ -132,7 +152,6 @@ import Vue from 'vue';
 import Login from './views/layouts/login';
 import BalmUI from 'balm-ui';
 
-Vue.config.productionTip = false;
 Vue.use(BalmUI);
 
 new Vue({
@@ -149,7 +168,6 @@ import Vue from 'vue';
 import Admin from './views/layouts/admin';
 import BalmUI from 'balm-ui';
 
-Vue.config.productionTip = false;
 Vue.use(BalmUI);
 
 new Vue({

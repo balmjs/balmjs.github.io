@@ -1,6 +1,6 @@
-# Prologue
+# BalmJS
 
-> A flexible Front-End workflow for webapps
+> A flexible Front-End workflow for webapps :tada:
 
 ## What's BalmJS?
 

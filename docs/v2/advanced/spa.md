@@ -5,15 +5,33 @@
 ```
 project
 ├─┬ src
+│ ├─┬ fonts
+│ │ ├── ...
+│ │ └── custom-regular.woff
+│ ├─┬ images
+│ │ ├── ...
+│ │ └── logo.png
 │ ├─┬ styles
 │ │ ├── ...
 │ │ └── main.scss
 │ ├─┬ scripts
+│ │ ├─┬ assets
+│ │ │ ├── ...
+│ │ │ └── avatar.png
 │ │ ├── ...
 │ │ └── main.js
 │ └── index.html
+├── .browserslistrc
+├── babel.config.js
+├── gulpfile.js
+├── package.json
 └── ...
 ```
+
+:warning: **Tips:**
+
+- The images used in CSS are recommended to be placed in the `src/images` folder.
+- The images used in JS are recommended to be placed in the `src/scripts/assets` folder.
 
 ## 1. HTML
 
@@ -79,7 +97,6 @@ import Vue from 'vue';
 import App from './views/layouts/app';
 import BalmUI from 'balm-ui';
 
-Vue.config.productionTip = false;
 Vue.use(BalmUI);
 
 new Vue({

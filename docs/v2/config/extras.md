@@ -6,7 +6,7 @@
 
 Exclude additional files in the app directory for building.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {

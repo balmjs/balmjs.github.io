@@ -14,7 +14,7 @@
 
 (Output) Production code.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -65,7 +65,7 @@ interface BalmPath {
 - `paths.target.font: string = 'font'`
 - `paths.target.media: string = 'media'`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {

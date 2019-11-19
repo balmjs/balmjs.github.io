@@ -8,7 +8,7 @@
 
 `assets.publicUrl: string = ''`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -95,7 +95,7 @@ The directory for all versioned files of the dynamic language project (e.g. PHP)
 
 The prefix of the `subDir`, for non-standard dynamic language project.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -187,7 +187,7 @@ Extra cache files.
 
 Exclude cache files from balm defaults.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {

@@ -4,7 +4,7 @@
 
 `mix.version(input: string | string[], output: string, assetsOptions?: object)`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

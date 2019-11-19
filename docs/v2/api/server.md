@@ -6,7 +6,7 @@
 
 Manual start server for development. Reference [watcher](https://gulpjs.com/docs/en/api/watch#chokidar-instance).
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

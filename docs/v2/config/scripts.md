@@ -17,7 +17,7 @@ When `scripts.entry` is `BalmEntryObject`:
 1. `{ [key: string]: value: string }`: Bundle one entry point per HTML page.
 2. `{ [key: string]: value: string[] }`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -65,7 +65,7 @@ The type of the exported library.
 
 > Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -95,7 +95,7 @@ An array of [Rule](https://webpack.js.org/configuration/module/#rule) automatica
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
-🌰 For example:
+:chestnut: For example:
 
 First, install a loader:
 
@@ -162,7 +162,7 @@ An array of extensions that should be used to resolve modules.
 - `.tsx`
 - [`.vue`](https://vuejs.org/)
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -193,7 +193,7 @@ import foo from 'foo';
 
 Replace modules by other modules or paths.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -346,7 +346,7 @@ Defaults to:
 }
 ```
 
-⚠️ **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+:warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
 
 ## scripts.base64Limit
 

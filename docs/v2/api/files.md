@@ -19,7 +19,7 @@ interface HookOptions {
 
 `mix.copy(input: string | string[], output: string, options?: HookOptions)`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -53,7 +53,7 @@ balm.go(mix => {
 
 Delete files/directories.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

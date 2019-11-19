@@ -4,7 +4,7 @@
 
 `mix.html(input: string, output: string)`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

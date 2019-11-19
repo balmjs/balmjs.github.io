@@ -12,7 +12,7 @@ Compiling [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](
 
 > Supported CSS extensions: `css`, `scss`/`sass` and `less`.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -120,7 +120,7 @@ The path to use in CSS referring to sprite image location.
 
 Convert a set of images into a spritesheet and CSS variables.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 // Input:
@@ -144,7 +144,7 @@ balm.config = {
 
 Enable retina spritesheet generation.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 // Input:

@@ -34,7 +34,7 @@ interface HookOptions {
 
 Minify JS.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

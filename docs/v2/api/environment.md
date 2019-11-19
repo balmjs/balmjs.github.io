@@ -15,7 +15,7 @@ interface BalmEnvObject {
 
 The same as the `balm.config.env`.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

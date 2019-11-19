@@ -24,7 +24,7 @@ Enable https for localhost development. Note - this is not needed for proxy opti
 
 Decide which URL to open automatically when server starts.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -53,7 +53,7 @@ Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to vi
 
 Add additional directories from which static files should be served. Should only be used in `proxy` or `snippet` mode.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -101,7 +101,7 @@ interface ProxyConfig {
 
 http-proxy middleware. Reference [`context`](https://github.com/chimurai/http-proxy-middleware#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware#options).
 
-🌰 For example:
+:chestnut: For example:
 
 - Single proxy
 

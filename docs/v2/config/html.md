@@ -25,7 +25,7 @@ Defaults to:
 }
 ```
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {

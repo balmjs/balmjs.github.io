@@ -1,6 +1,6 @@
 # Getting Started
 
-The simplest structure for webapp ([Full structure](structure.md))
+:zap: The simplest structure for webapp ([Full structure](structure.md))
 
 ```
 project
@@ -20,7 +20,7 @@ And you can also [download the example](http://balmjs.com/balm-example.zip) and 
 
 ## Webapp directory
 
-### 1. HTML template
+### 1. A HTML template
 
 > `/path/to/project/src/index.html`
 
@@ -30,7 +30,7 @@ And you can also [download the example](http://balmjs.com/balm-example.zip) and 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Webapp Title</title>
+    <title>Hello BalmJS</title>
     <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
   </head>
 
@@ -45,7 +45,7 @@ And you can also [download the example](http://balmjs.com/balm-example.zip) and 
 
 > `/path/to/project/src/styles/main.scss`
 
-```css
+```scss
 * {
   margin: 0;
   padding: 0;
@@ -67,8 +67,6 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 In your project directory, create a file named `.browserslistrc` in your project root with these contents:
 
 ```
-# Browsers that we support
-
 > 0.5%
 last 2 versions
 Firefox ESR
@@ -154,9 +152,9 @@ balm.go(mix => {
     mix.publish();
 
     // Publish html templates
-    // from local `${roots.target}/old-filename.html`
+    // from local `${roots.target}/index.html`
     // to remote `${assets.root}/views/new-filename.blade.php`
-    mix.publish('old-filename.html', 'views', {
+    mix.publish('index.html', 'views', {
       basename: 'new-filename',
       suffix: '.blade',
       extname: '.php'
@@ -165,9 +163,9 @@ balm.go(mix => {
 });
 ```
 
-> Tips: If you refer to balm's standard project structure, you can develop your project with almost zero configuration.
+> Tips: If you refer to balm's standard project structure, you can develop your project with almost **zero configuration**.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

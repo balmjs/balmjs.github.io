@@ -21,7 +21,7 @@ interface HookOptions {
 
 Sass => CSS.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -52,7 +52,7 @@ interface HookOptions {
 
 Less => CSS.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -76,7 +76,7 @@ balm.go(mix => {
 
 Update images and fonts references path.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -120,7 +120,7 @@ interface SpriteOptions {
 
 CSS sprites.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

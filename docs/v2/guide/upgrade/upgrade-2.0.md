@@ -1,6 +1,6 @@
 # Upgrading To 2.0.0 From 1.x
 
-**🚀 `balm.config` Full Upgrade**
+**`balm.config` Full Upgrade** :tada:
 
 > **`bold`**: new, `normal`: changed
 

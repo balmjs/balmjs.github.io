@@ -22,7 +22,7 @@ Show log for balm tasks.
 
 Node.js - `util.inspect(object[, options])`. Reference [options](https://github.com/nodejs/node/blob/master/doc/api/util.md#utilinspectobject-options).
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {

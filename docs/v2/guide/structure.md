@@ -1,6 +1,6 @@
 # Directory Structure
 
-> Returning to webapp's original nature.
+> Returning to webapp's original nature. :100:
 
 ```
 project
@@ -24,4 +24,4 @@ project
 └── ...
 ```
 
-> We recommend using [Balm CLI](https://github.com/balmjs/balm-cli) to scaffold out a front-end web app.
+> :rocket: We recommend using [Balm CLI](https://github.com/balmjs/balm-cli) to scaffold out a front-end web app.

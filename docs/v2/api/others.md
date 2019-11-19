@@ -8,7 +8,7 @@
 
 `mix.injectManifest(pwaOptions: object)`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');

@@ -26,7 +26,7 @@ Balm workflow environment variable in Node.js.
 
 Make sure any symlinks in the project folder are resolved.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 // File: /path/to/workspace/config/balmrc.js
@@ -50,7 +50,7 @@ Set project type.
 - `true` for a static HTML project
 - `false` for a dynamic language project (e.g. PHP framework)
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 balm.config = {
@@ -65,7 +65,7 @@ balm.config = {
 
 Use balm default tasks.
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -80,4 +80,4 @@ balm.go(mix => {
 });
 ```
 
-> Refer to [Custom Task API](../api/)
+> :page_with_curl: Refer to [Custom Task API](../api/)

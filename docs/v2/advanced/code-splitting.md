@@ -41,7 +41,6 @@ import App from './views/layouts/app';
 import BalmUI from 'balm-ui';
 import 'balm-ui/dist/balm-ui.css'; // Not recommended usage
 
-Vue.config.productionTip = false;
 Vue.use(BalmUI);
 
 new Vue({
@@ -113,7 +112,6 @@ import Vue from 'vue';
 import App from './views/layouts/app';
 import BalmUI from 'balm-ui';
 
-Vue.config.productionTip = false;
 Vue.use(BalmUI);
 
 new Vue({
@@ -171,7 +169,7 @@ new Vue({
 
 ## 2. Include partial code
 
-> Recommended for Mobile
+> Recommended for Mobile :iphone:
 
 ### 2.1 All in one script
 

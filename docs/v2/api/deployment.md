@@ -22,7 +22,7 @@ interface TemplateOption {
 
 Publish assets and templates from local to remote.
 
-🌰 For example:
+:chestnut: For example:
 
 - Publish assets(styles, scripts, images, fonts, media)
   - Input: `${roots.target}/{css,js,img,font,media}/**/*`
@@ -79,7 +79,7 @@ balm.go(mix => {
 
 `mix.zip(input: string | string[] = '', output = '', filename = 'archive.zip')`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
@@ -118,7 +118,7 @@ interface HookOptions {
 
 `mix.ftp(localFiles: string, options?: HookOptions)`
 
-🌰 For example:
+:chestnut: For example:
 
 ```js
 const balm = require('balm');
