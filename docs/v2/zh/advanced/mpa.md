@@ -11,11 +11,6 @@ project
 │ ├─┬ images
 │ │ ├── ...
 │ │ └── logo.png
-│ ├─┬ styles
-│ │ ├── ...
-│ │ ├── _main.scss
-│ │ ├── admin.scss
-│ │ └── login.scss
 │ ├─┬ scripts
 │ │ ├─┬ assets
 │ │ │ ├── ...
@@ -23,6 +18,11 @@ project
 │ │ ├── ...
 │ │ ├── admin.js
 │ │ └── login.js
+│ ├─┬ styles
+│ │ ├── ...
+│ │ ├── _main.scss
+│ │ ├── admin.scss
+│ │ └── login.scss
 │ ├── ...
 │ ├── admin.html
 │ └── login.html

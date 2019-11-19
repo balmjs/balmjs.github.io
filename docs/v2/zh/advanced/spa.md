@@ -11,15 +11,15 @@ project
 │ ├─┬ images
 │ │ ├── ...
 │ │ └── logo.png
-│ ├─┬ styles
-│ │ ├── ...
-│ │ └── main.scss
 │ ├─┬ scripts
 │ │ ├─┬ assets
 │ │ │ ├── ...
 │ │ │ └── avatar.png
 │ │ ├── ...
 │ │ └── main.js
+│ ├─┬ styles
+│ │ ├── ...
+│ │ └── main.scss
 │ └── index.html
 ├── .browserslistrc
 ├── babel.config.js

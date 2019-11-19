@@ -21,7 +21,48 @@ balm.go(mix => {
 });
 ```
 
-## 2. Logs Changes
+## 2. Stylesheets & Sprites Changes
+
+### 2.1 Working With Stylesheets
+
+- config.styles.<del>ext</del> => config.styles.`extname`
+- config.styles.**`minified`**
+- config.styles.<del>includePaths</del> => config.styles.`atImportPaths`
+- config.styles.<del>postcssOptions</del>
+
+### 2.2 Working With Sprites
+
+- config.<del>sprites.basePath</del> => config.`styles.imageBasePath`
+- config.<del>sprites.image</del> => config.`styles.sprites`
+- config.<del>sprites.padding</del>
+- config.styles.**`spriteRetina`**
+- config.styles.**`spriteParams`**
+
+## 3. JavaScript Changes
+
+- config.scripts.<del>include</del> => config.scripts.`includeJsResource`
+- config.scripts.**`disableDefaultLoaders`**
+- config.scripts.<del>webpack</del> => config.scripts.`webpackOptions`
+- config.scripts.<del>extractAllVendors</del> => config.scripts.`splitAllVendors`
+- config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
+- config.scripts.<del>vendors</del>
+- config.scripts.<del>cssLoader</del>
+
+## 4. Server Changes
+
+- config.server.<del>browser</del>
+- config.server.<del>logLevel</del>
+- config.server.<del>reloadDelay</del>
+- config.server.<del>proxyContext</del>
+- config.server.<del>proxyOptions</del>
+- config.server.**`extraWatchFiles`**
+
+## 5. Assets Changes
+
+- config.assets.**`virtualDir`**
+- config.<del>cache</del> => config.`assets.cache`
+
+## 6. Logs Changes
 
 - config.<del>debug</del>
 - config.**`logs`**
@@ -36,44 +77,3 @@ balm.config = {
   }
 };
 ```
-
-## 3. Stylesheets & Sprites Changes
-
-### 3.1 Working With Stylesheets
-
-- config.styles.<del>ext</del> => config.styles.`extname`
-- config.styles.**`minified`**
-- config.styles.<del>includePaths</del> => config.styles.`atImportPaths`
-- config.styles.<del>postcssOptions</del>
-
-### 3.2 Working With Sprites
-
-- config.<del>sprites.basePath</del> => config.`styles.imageBasePath`
-- config.<del>sprites.image</del> => config.`styles.sprites`
-- config.<del>sprites.padding</del>
-- config.styles.**`spriteRetina`**
-- config.styles.**`spriteParams`**
-
-## 4. JavaScript Changes
-
-- config.scripts.<del>include</del> => config.scripts.`includeJsResource`
-- config.scripts.**`disableDefaultLoaders`**
-- config.scripts.<del>webpack</del> => config.scripts.`webpackOptions`
-- config.scripts.<del>extractAllVendors</del> => config.scripts.`splitAllVendors`
-- config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
-- config.scripts.<del>vendors</del>
-- config.scripts.<del>cssLoader</del>
-
-## 5. Server Changes
-
-- config.server.<del>browser</del>
-- config.server.<del>logLevel</del>
-- config.server.<del>reloadDelay</del>
-- config.server.<del>proxyContext</del>
-- config.server.<del>proxyOptions</del>
-- config.server.**`extraWatchFiles`**
-
-## 6. Assets Changes
-
-- config.assets.**`virtualDir`**
-- config.<del>cache</del> => config.`assets.cache`

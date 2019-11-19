@@ -21,7 +21,48 @@ balm.go(mix => {
 });
 ```
 
-## 2. 日志
+## 2. 样式和雪碧图
+
+### 2.1 样式
+
+- config.styles.<del>ext</del> => config.styles.`extname`
+- config.styles.**`minified`**
+- config.styles.<del>includePaths</del> => config.styles.`atImportPaths`
+- config.styles.<del>postcssOptions</del>
+
+### 2.2 雪碧图
+
+- config.<del>sprites.basePath</del> => config.`styles.imageBasePath`
+- config.<del>sprites.image</del> => config.`styles.sprites`
+- config.<del>sprites.padding</del>
+- config.styles.**`spriteRetina`**
+- config.styles.**`spriteParams`**
+
+## 3. 脚本
+
+- config.scripts.<del>include</del> => config.scripts.`includeJsResource`
+- config.scripts.**`disableDefaultLoaders`**
+- config.scripts.<del>webpack</del> => config.scripts.`webpackOptions`
+- config.scripts.<del>extractAllVendors</del> => config.scripts.`splitAllVendors`
+- config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
+- config.scripts.<del>vendors</del>
+- config.scripts.<del>cssLoader</del>
+
+## 4. 服务
+
+- config.server.<del>browser</del>
+- config.server.<del>logLevel</del>
+- config.server.<del>reloadDelay</del>
+- config.server.<del>proxyContext</del>
+- config.server.<del>proxyOptions</del>
+- config.server.**`extraWatchFiles`**
+
+## 5. 静态资源打包
+
+- config.assets.**`virtualDir`**
+- config.<del>cache</del> => config.`assets.cache`
+
+## 6. 日志
 
 - config.<del>debug</del>
 - config.**`logs`**
@@ -36,44 +77,3 @@ balm.config = {
   }
 };
 ```
-
-## 3. 样式和雪碧图
-
-### 3.1 样式
-
-- config.styles.<del>ext</del> => config.styles.`extname`
-- config.styles.**`minified`**
-- config.styles.<del>includePaths</del> => config.styles.`atImportPaths`
-- config.styles.<del>postcssOptions</del>
-
-### 3.2 雪碧图
-
-- config.<del>sprites.basePath</del> => config.`styles.imageBasePath`
-- config.<del>sprites.image</del> => config.`styles.sprites`
-- config.<del>sprites.padding</del>
-- config.styles.**`spriteRetina`**
-- config.styles.**`spriteParams`**
-
-## 4. 脚本
-
-- config.scripts.<del>include</del> => config.scripts.`includeJsResource`
-- config.scripts.**`disableDefaultLoaders`**
-- config.scripts.<del>webpack</del> => config.scripts.`webpackOptions`
-- config.scripts.<del>extractAllVendors</del> => config.scripts.`splitAllVendors`
-- config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
-- config.scripts.<del>vendors</del>
-- config.scripts.<del>cssLoader</del>
-
-## 5. 服务
-
-- config.server.<del>browser</del>
-- config.server.<del>logLevel</del>
-- config.server.<del>reloadDelay</del>
-- config.server.<del>proxyContext</del>
-- config.server.<del>proxyOptions</del>
-- config.server.**`extraWatchFiles`**
-
-## 6. 静态资源打包
-
-- config.assets.**`virtualDir`**
-- config.<del>cache</del> => config.`assets.cache`

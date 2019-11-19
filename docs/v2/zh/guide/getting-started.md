@@ -5,10 +5,10 @@
 ```
 project
 ├─┬ src
-│ ├─┬ styles
-│ │ └── main.css
 │ ├─┬ scripts
 │ │ └── main.js
+│ ├─┬ styles
+│ │ └── main.css
 │ └── index.html
 ├── .browserslistrc
 ├── babel.config.js

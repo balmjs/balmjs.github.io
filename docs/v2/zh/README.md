@@ -6,6 +6,18 @@
 
 BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效工作。
 
+## Features
+
+- **gulp + webpack** 构建任意前端项目
+- 自动编译 PostCSS/Sass/Less
+- CSS Autoprefixing
+- 自动生成雪碧图
+- 使用 Babel 开启 ES2015+ 特性
+- 图片优化
+- 使用 BrowserSync 内置预览服务
+- 自定义发布静态资源到远端（前端到后端）项目
+- 支持 ZIP/FTP/PWA
+
 ## 生态系统
 
 | 项目                                                  | 状态                                                   | 描述                                   |

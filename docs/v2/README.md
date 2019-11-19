@@ -6,6 +6,18 @@
 
 BalmJS prescribes best practices and tools to help you stay productive.
 
+## Features
+
+- **gulp + webpack** for _any_ Front-end projects
+- Automagically compile PostCSS/Sass/Less
+- CSS Autoprefixing
+- Automagically generation CSS sprites
+- enable ES2015+ features using Babel
+- Awesome images optimization
+- Built-in preview server with BrowserSync
+- Custom publish assets to remote (Front-end to Back-end) project
+- ZIP/FTP/PWA supported
+
 ## Ecosystem
 
 | Project                                               | Status                                                 | Description                            |
