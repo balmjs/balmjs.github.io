@@ -6,5 +6,5 @@ module.exports = {
   // sidebar
   intro: '简介',
   upgrade: '升级向导',
-  advanced: 'Advanced'
+  advanced: '进阶用法'
 };

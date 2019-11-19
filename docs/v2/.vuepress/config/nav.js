@@ -10,6 +10,11 @@ function getNav(lang = 'en') {
   return navData.map(data => {
     let item = Object.assign({}, data);
     item.text = t(item.text, lang);
+
+    if (lang !== 'en') {
+      item.link = `/${lang}${item.link}`;
+    }
+
     return item;
   });
 }

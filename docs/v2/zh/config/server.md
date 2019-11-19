@@ -1,37 +1,37 @@
-# Server
+# 服务
 
 ## server.port
 
 `server.port: number = 3000`
 
-Use a specific port.
+使用指定的端口。
 
 ## server.host
 
 `server.host: string | null = null`
 
-Override host detection if you know the correct IP to use.
+自定义域名 IP 地址。
 
 ## server.https
 
 `server.https: boolean | undefined = undefined`
 
-Enable https for localhost development. Note - this is not needed for proxy option as it will be inferred from your target url.
+启用 https 进行本地开发。注意 - 这是不需要配置代理选项，因为它会从你的目标网址中推断出来。
 
 ## server.open
 
 `server.open: string | boolean = false`
 
-Decide which URL to open automatically when server starts.
+开发模式下启动 balm 时自动打开浏览器。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
   server: {
     open: true
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -39,21 +39,21 @@ balm.config = {
 
 `server.localOnly: boolean = false`
 
-Support environments where dynamic hostnames are not required (ie: electron).
+支持不需要动态主机名的环境（如：electron）。
 
 ## server.proxy
 
 `server.proxy: string | boolean | object = false`
 
-Proxy an EXISTING vhost. Browsersync will wrap your vhost with a proxy URL to view your site.
+代理一个现有的虚拟主机。Browsersync 将用代理 URL 封装您的虚拟主机来查看您的网站。
 
 ## server.serveStatic
 
 `server.serveStatic: string[] = []`
 
-Add additional directories from which static files should be served. Should only be used in `proxy` or `snippet` mode.
+添加应从其提供静态文件的其他目录。只能在 `proxy` 或 `snippet` 模式下使用。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
@@ -66,7 +66,7 @@ balm.config = {
       }
     ]
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -74,19 +74,19 @@ balm.config = {
 
 `server.options: object = {}`
 
-Browsersync [options](https://browsersync.io/docs/options).
+Browsersync [详细配置](https://browsersync.io/docs/options)。
 
 ## server.devOptions
 
 `server.devOptions: object = {}`
 
-A development middleware for webpack. Reference [options](https://github.com/webpack/webpack-dev-middleware#options).
+用于 webpack 的开发中间件。[详细配置](https://github.com/webpack/webpack-dev-middleware#options)。
 
 ## server.hotOptions
 
 `server.hotOptions: object = {}`
 
-Webpack hot reloading you can attach to your own server. Reference [options](https://github.com/webpack-contrib/webpack-hot-middleware#config).
+用于 webpack 的热加载中间件。[详细配置](https://github.com/webpack-contrib/webpack-hot-middleware#config)。
 
 ## server.proxyConfig
 
@@ -99,11 +99,11 @@ interface ProxyConfig {
 
 `server.proxyConfig: boolean | ProxyConfig | ProxyConfig[] = false`
 
-Http-proxy middleware. Reference [`context`](https://github.com/chimurai/http-proxy-middleware#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware#options).
+Http 代理中间件。配置参数[`context`](https://github.com/chimurai/http-proxy-middleware#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware#options)。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
-- Single proxy
+- 单个代理
 
 ```js
 balm.config = {
@@ -111,16 +111,16 @@ balm.config = {
     proxyConfig: {
       context: '/api',
       options: {
-        target: 'http://example.com', // target host
-        changeOrigin: true // needed for virtual hosted sites
+        target: 'http://example.com', // 代理的目标域名
+        changeOrigin: true // 虚拟域名站点必备
       }
     }
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
-- Multiple proxies
+- 多个代理
 
 ```js
 balm.config = {
@@ -142,7 +142,7 @@ balm.config = {
       }
     ]
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -150,16 +150,16 @@ balm.config = {
 
 `server.historyOptions: boolean | object = false`
 
-Using the HTML5 History API. Reference [options](https://github.com/bripkens/connect-history-api-fallback#options).
+使用 HTML5 History API。[详细配置](https://github.com/bripkens/connect-history-api-fallback#options)。
 
 ## server.middlewares
 
 `server.middlewares: object[] = []`
 
-Supply extra middlewares for Browsersync.
+为 Browsersync 提供更多额外的中间件。
 
 ## server.extraWatchFiles
 
 `server.extraWatchFiles: string[] = []`
 
-Extra watch files for development.
+开发模式下自定义额外的文件监听。

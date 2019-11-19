@@ -1,6 +1,6 @@
-# Single Page Application
+# 单页面应用
 
-## 0. Structure
+## 0. 项目结构
 
 ```
 project
@@ -28,12 +28,12 @@ project
 └── ...
 ```
 
-:warning: **Tips:**
+:warning: **提示：**
 
-- The images used in CSS are recommended to be placed in the `src/images` folder
-- The images used in JS are recommended to be placed in the `src/scripts/assets` folder
+- CSS 中使用的图片推荐存放在 `src/images` 文件夹中管理
+- JS 中使用的图片推荐存放在 `src/scripts/assets` 文件夹中管理
 
-## 1. HTML
+## 1. 模板
 
 - `/path/to/project/src/index.html`
 
@@ -61,7 +61,7 @@ project
 </html>
 ```
 
-## 2. CSS
+## 2. 样式
 
 - `/path/to/project/src/styles/main.scss`
 
@@ -88,7 +88,7 @@ project
 @import 'themes/default';
 ```
 
-## 3. JS
+## 3. 脚本
 
 - `/path/to/project/src/scripts/main.js`
 

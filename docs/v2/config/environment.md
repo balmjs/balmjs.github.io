@@ -39,7 +39,7 @@ balm.config = {
 };
 ```
 
-> Tips: Usually no need to set.
+> **Tips:** Usually no need to set.
 
 ## inFrontend
 
@@ -63,7 +63,7 @@ balm.config = {
 
 `useDefaults: boolean = true`
 
-Use balm default tasks.
+Enable balm default tasks.
 
 :chestnut: For example:
 

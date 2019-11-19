@@ -78,18 +78,21 @@ function getChildren(data, lang) {
   if (item.title) {
     item.title = t(item.title, lang);
 
-    if (
-      item.children &&
-      item.children.length &&
-      !item.children.every(value => typeof value === 'string')
-    ) {
+    if (item.path && lang !== 'en') {
+      item.path = `/${lang}${item.path}`;
+    }
+
+    if (item.children && item.children.length) {
       let subItems = [];
 
       for (let i = 0, len = item.children.length; i < len; i++) {
-        let subItem =
-          typeof item.children[i] === 'object'
-            ? getChildren(item.children[i], lang)
-            : item.children[i];
+        let subItem = item.children[i];
+        if (typeof item.children[i] === 'object') {
+          subItem = getChildren(item.children[i], lang);
+        } else if (typeof item.children[i] === 'string' && lang !== 'en') {
+          subItem = `/${lang}${item.children[i]}`;
+        }
+
         subItems.push(subItem);
       }
 

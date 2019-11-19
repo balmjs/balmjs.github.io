@@ -1,4 +1,4 @@
-# Working With JavaScript
+# 脚本
 
 ## mix.js()
 
@@ -10,7 +10,7 @@ interface BalmEntryObject {
 
 `mix.js(input: string | string[] | BalmEntryObject, output: string, webpackOptions?: object)`
 
-Compiling JS with webpack.
+使用 webpack 编译 JS。
 
 ## mix.jsmin()
 
@@ -32,15 +32,15 @@ interface HookOptions {
 
 `mix.jsmin(input: string | string[], output: string, options?: HookOptions)`
 
-Minify JS.
+JS 压缩。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
@@ -49,10 +49,10 @@ balm.go(mix => {
 
   mix.jsmin('dist/js/main.js', 'dist/js', {
     terser: {
-      // Terser options: overwrite `balm.config.scripts.options`
+      // Terser options: 覆盖 `balm.config.scripts.options` 配置
     },
     rename: {
-      // Your rename options
+      // 自定义重命名配置
     }
   });
   // 'dist/js/main.js' => 'dist/js/main.min.js'

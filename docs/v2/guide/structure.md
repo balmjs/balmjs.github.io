@@ -7,6 +7,10 @@ project
 ├── .tmp         // Scaffolds out a temporary directory for development
 ├── dist         // Scaffolds out the production build
 ├─┬ src          // Source code in here (Create a directory in project)
+│ ├─┬ fonts
+│ │ └── ...
+│ ├─┬ images
+│ │ └── ...
 │ ├─┬ styles
 │ │ └── main.css // Required. A entry file for CSS.
 │ ├─┬ scripts

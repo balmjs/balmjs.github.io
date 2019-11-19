@@ -1,4 +1,4 @@
-# Files & Directories
+# 文件
 
 ## mix.copy()
 
@@ -19,13 +19,13 @@ interface HookOptions {
 
 `mix.copy(input: string | string[], output: string, options?: HookOptions)`
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
@@ -45,21 +45,21 @@ balm.go(mix => {
 });
 ```
 
-> Reference `gulp.src` [options](https://gulpjs.com/docs/en/api/src#options)
+> `gulp.src` [详细配置](https://gulpjs.com/docs/en/api/src#options)
 
 ## mix.remove()
 
 `mix.remove(paths: string | string[])`
 
-Delete files/directories.
+删除文件或文件夹。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {

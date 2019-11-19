@@ -115,7 +115,7 @@ balm.config = {
       css: 'styles', //   CSS dir = ./src/styles
       js: 'scripts', //    JS dir = ./src/scripts
       img: 'images', // Image dir = ./src/images
-      font: 'fonts' //  Font dir = ./src/fonts
+      font: 'fonts' //   Font dir = ./src/fonts
     }
   },
   styles: {
@@ -163,7 +163,7 @@ balm.go(mix => {
 });
 ```
 
-> Tips: If you refer to balm's standard project structure, you can develop your project with almost **zero configuration**.
+> **Tips:** If you refer to balm's standard project structure, you can develop your project with almost **zero configuration**.
 
 :chestnut: For example:
 

@@ -1,4 +1,4 @@
-# Working With Stylesheets
+# 样式
 
 ## mix.css()
 
@@ -6,7 +6,7 @@
 
 PostCSS => CSS.
 
-> PostCSS options, refer to [`balm.config.styles.options`](../config/styles.html#styles-options).
+> PostCSS 详细配置请参照 [`balm.config.styles.options`](../config/styles.html#styles-options)。
 
 ## mix.sass()
 
@@ -21,19 +21,19 @@ interface HookOptions {
 
 Sass => CSS.
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
   mix.sass('app/styles/*.scss', 'dist/css', {
     sass: {
-      // Sass options: overwrite `balm.config.styles.sassOptions`
+      // Sass options: 覆盖 `balm.config.styles.sassOptions` 配置
     }
   });
 });
@@ -52,19 +52,19 @@ interface HookOptions {
 
 Less => CSS.
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
   mix.less('app/styles/*.less', 'dist/css', {
     less: {
-      // Less options: overwrite `balm.config.styles.lessOptions`
+      // Less options: 覆盖 `balm.config.styles.lessOptions` 配置
     }
   });
 });
@@ -74,9 +74,9 @@ balm.go(mix => {
 
 `mix.url(input: string | string[], output: string)`
 
-Update images and fonts references path.
+更新样式中图片和字体的引用路径。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
@@ -92,13 +92,13 @@ balm.config = {
       font: 'font'
     }
   }
-  // Other Options...
+  // 其他配置项...
 };
 
 balm.go(mix => {
   mix.sass('app/styles/*.scss', 'dist/css');
   mix.url('dist/css/*.css', 'dist/css');
-  // Output:
+  // 输出：
   // '../images' => '../img'
   // '../fonts' => '../font'
 });
@@ -110,7 +110,7 @@ balm.go(mix => {
 interface SpriteOptions {
   extname?: string;
   imageBasePath?: string;
-  imageTarget?: string; // NOTE: overwrite `BalmJS.config.paths.target.img`
+  imageTarget?: string; // NOTE: 覆盖 `BalmJS.config.paths.target.img` 配置
   spriteRetina?: boolean;
   spriteParams?: object;
 }
@@ -118,15 +118,15 @@ interface SpriteOptions {
 
 `mix.sprite(input: string[], output: string, spriteOptions?: SpriteOptions)`
 
-CSS sprites.
+自定义雪碧图。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {

@@ -51,7 +51,7 @@ balm.config = {
 balm.go();
 ```
 
-:page_with_curl: Refer to our [configuration docs](../config/) to learn more about config **`balm`**.
+:page_with_curl: Refer to [configuration docs](../config/) to learn more about config **`balm`**.
 
 ## 3. Usage
 

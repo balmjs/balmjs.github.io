@@ -1,4 +1,4 @@
-# Javascript
+# 脚本
 
 ## scripts.entry
 
@@ -10,14 +10,14 @@ interface BalmEntryObject {
 
 `scripts.entry: string | string[] | BalmEntryObject = ''`
 
-The entry point for the bundle.
+脚本入口点。
 
-When `scripts.entry` is `BalmEntryObject`:
+当 `scripts.entry` 为 `BalmEntryObject` 对象时：
 
-1. `{ [key: string]: value: string }`: Bundle one entry point per HTML page.
-2. `{ [key: string]: value: string[] }`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
+1. `{ [key: string]: value: string }`: 每个 HTML 页面对应一个脚本入口文件。
+2. `{ [key: string]: value: string[] }`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
@@ -29,11 +29,11 @@ balm.config = {
       subapp: './app/scripts/sub-page.js'
     }
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
-Then, your HTML templates:
+然后，你的 HTML 模板中就可以使用自定义提取 `lib` 和 `ui`：
 
 ```html
 <!-- Page One -->
@@ -55,17 +55,17 @@ Then, your HTML templates:
 
 `scripts.library: string | object = ''`
 
-The name of the exported library.
+导出的库的名称。
 
 ## scripts.libraryTarget
 
 `scripts.libraryTarget: string = 'var'`
 
-The type of the exported library.
+导出的库的类型。
 
-> Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
+> 支持的选项：`var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
@@ -73,7 +73,7 @@ balm.config = {
     library: 'AwesomeLibraryName',
     libraryTarget: 'umd'
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -81,9 +81,9 @@ balm.config = {
 
 `scripts.loaders: Rule[] = []`
 
-An array of [Rule](https://webpack.js.org/configuration/module/#rule) automatically applied loaders.
+一系列自动应用的 [loaders](https://webpack.js.org/configuration/module/#rule)。
 
-**BalmJS** default loaders:
+**BalmJS** 默认已加载的 loaders:
 
 - [`html`](https://github.com/webpack-contrib/html-loader)
 - [`style`](https://github.com/webpack-contrib/style-loader)
@@ -93,11 +93,11 @@ An array of [Rule](https://webpack.js.org/configuration/module/#rule) automatica
 - [`url`](https://github.com/webpack-contrib/url-loader)
 - [`file`](https://github.com/webpack-contrib/file-loader)
 
-> [List of loaders](https://webpack.js.org/loaders/)
+> [Loaders 列表](https://webpack.js.org/loaders/)
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
-First, install a loader:
+首先，安装一个你需要的 loader（下面以 `vue-loader` 为例）：
 
 ```sh
 yarn add -D vue-loader
@@ -105,7 +105,7 @@ yarn add -D vue-loader
 npm i -D vue-loader
 ```
 
-Then, use it:
+然后，加载它：
 
 ```js
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -120,7 +120,7 @@ balm.config = {
     ],
     plugins: [new VueLoaderPlugin()]
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -128,7 +128,7 @@ balm.config = {
 
 `scripts.includeJsResource: string[] = []`
 
-Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some vendor scripts from `node_modules`.
+在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
 
 ## scripts.disableDefaultLoaders
 
@@ -143,15 +143,15 @@ interface BalmDefaultLoaders {
 
 `scripts.disableDefaultLoaders: BalmDefaultLoaders = {}`
 
-Disable **BalmJS** some default loaders.
+禁用 **BalmJS** 某些默认 loaders。
 
 ## scripts.extensions
 
 `scripts.extensions: string[] = []`
 
-An array of extensions that should be used to resolve modules.
+用来解析模块的文件扩展。
 
-**BalmJS** default extensions:
+**BalmJS** 默认已支持的扩展名：
 
 - [`.wasm`](https://webassembly.org/)
 - `.mjs`
@@ -162,25 +162,25 @@ An array of extensions that should be used to resolve modules.
 - `.tsx`
 - [`.vue`](https://vuejs.org/)
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
   scripts: {
     extensions: ['.vue'];
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
-Before, usage:
+之前的用法：
 
 ```js
 // main.js
 import foo from 'foo.vue';
 ```
 
-Now, you can:
+现在的用法：
 
 ```js
 // main.js
@@ -191,9 +191,9 @@ import foo from 'foo';
 
 `scripts.alias: object = {}`
 
-Replace modules by other modules or paths.
+自定义别名，用其他模块或路径替换模块。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 balm.config = {
@@ -202,7 +202,7 @@ balm.config = {
       vue$: 'vue/dist/vue.esm.js'
     }
   }
-  // Other Options...
+  // 其他配置项...
 };
 ```
 
@@ -210,41 +210,41 @@ balm.config = {
 
 `scripts.loaders: plugins[] = []`
 
-Add additional plugins to the compiler.
+添加额外的插件到编译器。
 
-> [List of plugins](https://webpack.js.org/plugins/)
+> [Plugins 列表](https://webpack.js.org/plugins/)
 
 ## scripts.hot
 
 `scripts.hot: boolean = true`
 
-Hot reload.
+开启热加载。
 
 ## scripts.sourceMap
 
 `scripts.sourceMap: string | boolean = false`
 
-Source mapping.
+开启源映射。
 
 ## scripts.target
 
 `scripts.target: string = 'web'`
 
-To [target](https://webpack.js.org/configuration/target/) a specific environment.
+针对[特定的环境](https://webpack.js.org/configuration/target/)来编译脚本。
 
 ## scripts.externals
 
 `scripts.externals: string | object | Function | RegExp = ''`
 
-The same to webpack [externals](https://webpack.js.org/configuration/externals/).
+同 webpack 的 [externals](https://webpack.js.org/configuration/externals/) 参数。
 
 ## scripts.stats
 
 `scripts.stats: string | object`
 
-Capture timing information for each module. Reference [options](https://webpack.js.org/configuration/stats/).
+捕获每个模块的编译信息。[详细配置](https://webpack.js.org/configuration/stats/)。
 
-Defaults to:
+默认值为：
 
 ```js
 {
@@ -260,21 +260,21 @@ Defaults to:
 
 `scripts.webpackOptions: object = {}`
 
-Full custom [webpack configuration](https://webpack.js.org/configuration/).
+完整的 [webpack 配置](https://webpack.js.org/configuration/)。
 
 ## scripts.eslint
 
 `scripts.eslint: boolean = false`
 
-The pluggable linting utility for JavaScript and JSX.
+开启 JavaScript 和 JSX 的代码规范验证。
 
 ## scripts.options
 
 `scripts.options: object`
 
-Terser [minify options](https://github.com/terser/terser#minify-options).
+JS 压缩 [详细配置](https://github.com/terser/terser#minify-options)。
 
-Defaults to:
+默认值为：
 
 ```js
 {
@@ -302,42 +302,42 @@ Defaults to:
 
 `scripts.inject: boolean = false`
 
-Support the hash scripts in the SSR build.
+支持 SSR 模式中构建脚本生成 hash。
 
 ## scripts.optimization
 
 `scripts.optimization: object = {}`
 
-Webpack optimizations for manual configuration and overrides. Reference [options](https://webpack.js.org/configuration/optimization/).
+WEB 性能优化。[详细配置](https://webpack.js.org/configuration/optimization/)。
 
 ## scripts.splitAllVendors
 
 `scripts.splitAllVendors: boolean = false`
 
-- HTML template:
+- HTML 模板：
 
 ```html
-<!-- All vendors in one -->
+<!-- 提取所有第三方脚本 -->
 <script src="%PUBLIC_URL%/scripts/vendors.js"></script>
-<!-- Entry -->
+<!-- 入口脚本 -->
 <script src="%PUBLIC_URL%/scripts/main.js"></script>
 ```
 
-> **Tips:** You can rename `vendors` with `scripts.vendorsName`.
+> **Tips:** 你可以使用使用 `scripts.vendorsName` 来重命名 `vendors`。
 
 ## scripts.vendorsName
 
 `scripts.vendorsName: string = 'vendors'`
 
-(For SPA) AllInOne vendor filename or Vendors folder name.
+提取 _所有第三方依赖_ 合成一个文件的 **文件名**，或提取 _部分第三方依赖_ 合成自定义文件的 **文件夹名**。
 
 ## scripts.extractCss
 
 `scripts.extractCss: { enabled: boolean; prefix: string; }`
 
-Extract css from some bundle.
+提取脚本中的样式。
 
-Defaults to:
+默认值为：
 
 ```js
 {
@@ -346,10 +346,10 @@ Defaults to:
 }
 ```
 
-:warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+:warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
 
 ## scripts.base64Limit
 
 `scripts.base64Limit: number = 10000`
 
-Loads files as _base64_ encoded URL.
+将文件加载为 _base64_ 编码的 URL。

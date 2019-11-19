@@ -29,7 +29,7 @@ balm.config = {
 
 Ignore the environment and force CSS compression.
 
-> Tips: Often used with [`mix.serve`](/api/serve) in development mode.
+> **Tips:** Often used with [`mix.serve`](/api/serve) in development mode.
 
 ## styles.atImportPaths
 

@@ -1,8 +1,8 @@
-# Upgrading To 0.24.x From 0.23.x
+# 从 0.23.x 升级到 0.24.x
 
 ### balm < v0.24.0
 
-- via `.babelrc`
+- 使用 `.babelrc`
 
 ```json
 {
@@ -13,7 +13,7 @@
 
 ### balm >= v0.24.0
 
-- via `babel.config.js` (Recommended)
+- 使用 `babel.config.js`（推荐使用）
 
 ```js
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
 };
 ```
 
-- OR via `.babelrc`
+- 或者使用 `.babelrc`
 
 ```json
 {
@@ -31,4 +31,4 @@ module.exports = {
 }
 ```
 
-> **Tips:** If using npm >= v5.2.0, lets run `npx babel-upgrade --write` to automatically update most dependencies.
+> **提示：** 如果使用的 npm >= v5.2.0，运行 `npx babel-upgrade --write` 可自动更新绝大多数依赖。

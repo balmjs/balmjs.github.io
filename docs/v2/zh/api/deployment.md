@@ -1,4 +1,4 @@
-# Deployment
+# 发布
 
 ## mix.publish()
 
@@ -20,19 +20,19 @@ interface TemplateOption {
 
 `mix.publish(input: string | TemplateOption[], output: string, renameOptions?: string | Function | RenameOptions)`
 
-Publish assets and templates from local to remote.
+从本地发布静态资源和模板到远程。
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
-- Publish assets(styles, scripts, images, fonts, media)
-  - Input: `${roots.target}/{css,js,img,font,media}/**/*`
-  - Output: `${assets.root}/${assets.mainDir}/${assets.subDir}`
+- 发布静态资源 (styles, scripts, images, fonts, media)
+  - 输入：`${roots.target}/{css,js,img,font,media}/**/*`
+  - 输出：`${assets.root}/${assets.mainDir}/${assets.subDir}`
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
@@ -40,26 +40,26 @@ balm.go(mix => {
 });
 ```
 
-- Publish templates
-  - Input: `${roots.target}/index.html`
-  - Output: `${assets.root}/views/new-filename.blade.php`
+- 发布模板
+  - 输入：`${roots.target}/index.html`
+  - 输出：`${assets.root}/views/new-filename.blade.php`
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
-  // For one template
+  // 单模板
   mix.publish('index.html', 'views', {
     basename: 'new-filename',
     suffix: '.blade',
     extname: '.php'
   });
 
-  // For multiple templates
+  // 多模板
   mix.publish([
     {
       input: 'index.html',
@@ -70,7 +70,7 @@ balm.go(mix => {
         extname: '.php'
       }
     }
-    // More templates
+    // 更多配置
   ]);
 });
 ```
@@ -79,22 +79,22 @@ balm.go(mix => {
 
 `mix.zip(input: string | string[] = '', output = '', filename = 'archive.zip')`
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
 
 balm.config = {
-  // Your project config
+  // 你的项目配置
 };
 
 balm.go(mix => {
-  // Default usage
-  // Input: '/path/to/project/dist/**/*'
-  // Output: '/path/to/project/archive.zip'
+  // 默认用法
+  // 输入：'/path/to/project/dist/**/*'
+  // 输出：'/path/to/project/archive.zip'
   mix.zip();
 
-  // With dotfile
+  // 附带 dotfile 的用法
   mix.zip(['dist/**/*', 'dist/.some-dotfile']);
 });
 ```
@@ -118,7 +118,7 @@ interface HookOptions {
 
 `mix.ftp(localFiles: string, options?: HookOptions)`
 
-:chestnut: For example:
+:chestnut: 举个栗子：
 
 ```js
 const balm = require('balm');
@@ -136,12 +136,12 @@ balm.config = {
 };
 
 balm.go(mix => {
-  // (local)Input:   '/path/to/project/dist/archive.zip'
-  // (remote)Output: `${ftp.options.remotePath}/archive.zip`
+  //（本地）输入：'/path/to/project/dist/archive.zip'
+  //（远程）输出：`${ftp.options.remotePath}/archive.zip`
   mix.ftp('dist/archive.zip');
   // OR
   mix.ftp('dist/archive.zip', {
-    // FTP options: overwrite `balm.config.ftp.options`
+    // FTP options: 覆盖 `balm.config.ftp.options` 配置
   });
 });
 ```
