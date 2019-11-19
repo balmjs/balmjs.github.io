@@ -6,7 +6,7 @@
 
 - Versions
   - [2.x](https://balmjs.com/docs/v2/en/)
-  - 1.x (Current)
+  - 1.x (Current, Outdated)
 
 ---
 

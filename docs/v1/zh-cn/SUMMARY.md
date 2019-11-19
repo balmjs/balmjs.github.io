@@ -5,8 +5,8 @@
 ---
 
 - 版本
-  - [2.x](https://balmjs.com/docs/v2/zh-cn/)
-  - 1.x（当前版本）
+  - [2.x](https://balmjs.com/docs/v2/zh/)
+  - 1.x（当前版本已过时）
 
 ---
 
