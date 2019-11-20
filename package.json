@@ -9,7 +9,7 @@
     "docs:v1:prod": "cd docs/v1 && rm -rf _book && gitbook install && gitbook build",
     "docs:v2:dev": "vuepress dev docs/v2",
     "docs:v2:prod": "vuepress build docs/v2",
-    "release": "bash ./build/update-docs.sh"
+    "release": "bash ./tools/update-docs.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.2.0",
