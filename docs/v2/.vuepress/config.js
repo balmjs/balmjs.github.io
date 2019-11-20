@@ -1,16 +1,9 @@
-const path = require('path');
 const moment = require('moment');
 const getNav = require('./config/nav');
 const getSidebar = require('./config/sidebar');
 
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, '..')
-      }
-    }
-  },
+  base: '/docs/v2/',
   locales: {
     // The key is the path for the locale to be nested under.
     // As a special case, the default locale can use '/' as its path.
