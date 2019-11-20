@@ -47,6 +47,7 @@ balm.go(mix => {
 - config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
 - config.scripts.<del>vendors</del>
 - config.scripts.<del>cssLoader</del>
+- config.scripts.<del>eslint</del> => config.scripts.`lint`
 
 ## 4. Server Changes
 

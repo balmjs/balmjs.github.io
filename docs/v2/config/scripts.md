@@ -262,9 +262,9 @@ Defaults to:
 
 Full custom [webpack configuration](https://webpack.js.org/configuration/).
 
-## scripts.eslint
+## scripts.lint
 
-`scripts.eslint: boolean = false`
+`scripts.lint: boolean = false`
 
 The pluggable linting utility for JavaScript and JSX.
 

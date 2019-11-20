@@ -262,9 +262,9 @@ balm.config = {
 
 完整的 [webpack 配置](https://webpack.js.org/configuration/)。
 
-## scripts.eslint
+## scripts.lint
 
-`scripts.eslint: boolean = false`
+`scripts.lint: boolean = false`
 
 开启 JavaScript 和 JSX 的代码规范验证。
 
