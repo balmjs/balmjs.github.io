@@ -1820,7 +1820,7 @@ autocomplete.js@0.36.0:
   dependencies:
     immediate "^3.2.3"
 
-autoprefixer@^9.5.1, autoprefixer@^9.6.1, autoprefixer@^9.7.1:
+autoprefixer@^9.5.1, autoprefixer@^9.6.1, autoprefixer@^9.7.2:
   version "9.7.2"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.2.tgz#26cf729fbb709323b40171a874304884dcceffed"
   integrity sha512-LCAfcdej1182uVvPOZnytbq61AhnOZ/4JelDaJGDeNwewyU1AMaNthcHsyz1NRjTmd2FkurMckLWfkHg3Z//KA==
@@ -1949,10 +1949,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-balm@^2.0.0-rc.7:
-  version "2.0.0-rc.7"
-  resolved "https://registry.yarnpkg.com/balm/-/balm-2.0.0-rc.7.tgz#9d785f53c3c649f3553ff0ee096dd2b6e2647c88"
-  integrity sha512-vYQpkXYLrCOCP7mbicM6kRHeHVnGuw9xl1mob4erOyvCSMUcSFjJXIXilPv8Nuiu51s7k8Yq7fxNuBwmLSmibw==
+balm@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/balm/-/balm-2.0.0.tgz#5afcc73f90d8cdb069e229c8edd5abef4b1b6363"
+  integrity sha512-4+Od+dZEtO2jH1B8vxepHum1F60/alYajtb6rIf2XmYBd+JjCb1Wr0YwAx8aTJSP3WT/sEGW/wcjB+rtdjtZgg==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/plugin-transform-runtime" "^7.6.2"
@@ -1960,7 +1960,7 @@ balm@^2.0.0-rc.7:
     "@babel/runtime" "^7.7.2"
     ansi-colors "^4.1.1"
     async "^3.1.0"
-    autoprefixer "^9.7.1"
+    autoprefixer "^9.7.2"
     babel-loader "^8.0.6"
     browser-sync "^2.26.7"
     connect-history-api-fallback "^1.6.0"
@@ -2628,9 +2628,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001010:
-  version "1.0.30001010"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001010.tgz#397a14034d384260453cc81994f494626d34b938"
-  integrity sha512-RA5GH9YjFNea4ZQszdWgh2SC+dpLiRAg4VDQS2b5JRI45OxmbGrYocYHTa9x0bKMQUE7uvHkNPNffUr+pCxSGw==
+  version "1.0.30001011"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001011.tgz#0d6c4549c78c4a800bb043a83ca0cbe0aee6c6e1"
+  integrity sha512-h+Eqyn/YA6o6ZTqpS86PyRmNWOs1r54EBDcd2NTwwfsXQ8re1B38SnB+p2RKF8OUsyEIjeDU8XGec1RGO/wYCg==
 
 caseless@~0.12.0:
   version "0.12.0"
