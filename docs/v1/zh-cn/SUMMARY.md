@@ -1,8 +1,6 @@
 # Summary
 
-- [BalmJS 文档](https://balmjs.com/docs/v1/zh-cn/)
-
----
+## BalmJS 文档
 
 - 版本
   - [2.x](https://balmjs.com/docs/v2/zh/)

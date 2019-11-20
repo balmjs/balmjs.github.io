@@ -1,4 +1,5 @@
 const path = require('path');
+const moment = require('moment');
 const getNav = require('./config/nav');
 const getSidebar = require('./config/sidebar');
 
@@ -46,9 +47,17 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        ga: '' // UA-00000000-0
+        ga: 'UA-138309536-1' // UA-00000000-0
+      }
+    ],
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          moment.locale(lang);
+          return moment(timestamp).fromNow();
+        }
       }
     ]
-    // '@vuepress/last-updated'
   ]
 };

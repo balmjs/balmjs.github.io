@@ -6,7 +6,7 @@ module.exports = {
     entry: {
       main: './src/scripts/main.js'
     },
-    eslint: true,
+    lint: true,
     options: {
       compress: {
         drop_console: false
@@ -16,5 +16,9 @@ module.exports = {
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']
+  },
+  assets: {
+    cache: false,
+    excludes: ['dist/img/icons/*']
   }
 };

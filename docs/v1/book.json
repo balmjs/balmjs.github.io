@@ -8,11 +8,5 @@
     "github": {
       "url": "https://github.com/balmjs/balm/"
     }
-  },
-  "links": {
-    "sharing": {
-      "facebook": false,
-      "twitter": false
-    }
   }
 }

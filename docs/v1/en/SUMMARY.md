@@ -1,11 +1,9 @@
 # Summary
 
-- [BalmJS Documentation](https://balmjs.com/docs/v1/en/)
-
----
+## BalmJS Documentation
 
 - Versions
-  - [2.x](https://balmjs.com/docs/v2/en/)
+  - [2.x](https://balmjs.com/docs/v2/)
   - 1.x (Current, Outdated)
 
 ---
