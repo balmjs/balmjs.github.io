@@ -1,5 +1,11 @@
 # Extras
 
+## extras.includes
+
+`extras.includes: string[] = []`
+
+Include additional files in the app directory for building.
+
 ## extras.excludes
 
 `extras.excludes: string[] = []`

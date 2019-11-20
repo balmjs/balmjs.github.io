@@ -14,6 +14,7 @@ module.exports = {
     }
   },
   extras: {
+    includes: ['CNAME'],
     excludes: ['service-worker.js']
   },
   assets: {
