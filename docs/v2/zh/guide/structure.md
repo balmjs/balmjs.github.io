@@ -11,7 +11,7 @@ project
 │ ├── images
 │ ├── media
 │ ├─┬ scripts
-│ │ └── main.js  // 必须的。JS脚本入口文件。
+│ │ └── index.js // 必须的。JS脚本入口文件。
 │ ├─┬ styles
 │ │ └── main.css // 必须的。CSS样式入口文件。
 │ └── index.html // 必须的。HTML模板入口文件。

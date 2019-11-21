@@ -6,7 +6,7 @@
 project
 ├─┬ src
 │ ├─┬ scripts
-│ │ └── main.js
+│ │ └── index.js
 │ ├─┬ styles
 │ │ └── main.css
 │ └── index.html
@@ -43,9 +43,9 @@ And you can also [download the example](http://balmjs.com/balm-example.zip) and 
 
 ### 2. A CSS entry file
 
-> `/path/to/project/src/styles/main.scss`
+> `/path/to/project/src/styles/main.css`
 
-```scss
+```css
 * {
   margin: 0;
   padding: 0;
@@ -54,11 +54,15 @@ And you can also [download the example](http://balmjs.com/balm-example.zip) and 
 
 ### 3. A JS entry file
 
-> `/path/to/project/src/scripts/main.js`
+> `/path/to/project/src/scripts/index.js`
 
 ```js
 document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 ```
+
+> Compiling `index.js` to `main.js` by Balm.
+>
+> Please refer to the Project settings - [3. Configure balm](#_3-configure-balm-by-gulpfile-js) below.
 
 ## Project settings
 
@@ -85,6 +89,8 @@ module.exports = {
   plugins: ['@babel/plugin-transform-runtime']
 };
 ```
+
+> Balm has the latest `@babel/preset-env` and `@babel/plugin-transform-runtime` built-in.
 
 ### 3. Configure `balm` by `gulpfile.js`
 
@@ -119,7 +125,7 @@ balm.config = {
     }
   },
   styles: {
-    extname: 'scss', // Main style extension
+    extname: 'css', // Main style extension: css,scss,less
     sprites: ['icons'] // Icons path: ['./src/images/icons']
   },
   scripts: {
@@ -132,7 +138,7 @@ balm.config = {
       //   'your-project-plugin-B'
       // ],
       // Entry
-      main: './src/scripts/main.js'
+      main: './src/scripts/index.js'
     }
   },
   assets: {

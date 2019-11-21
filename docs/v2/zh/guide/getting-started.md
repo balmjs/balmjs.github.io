@@ -6,7 +6,7 @@
 project
 ├─┬ src
 │ ├─┬ scripts
-│ │ └── main.js
+│ │ └── index.js
 │ ├─┬ styles
 │ │ └── main.css
 │ └── index.html
@@ -43,9 +43,9 @@ project
 
 ### 2. 一个样式入口文件
 
-> `/path/to/project/src/styles/main.scss`
+> `/path/to/project/src/styles/main.css`
 
-```scss
+```css
 * {
   margin: 0;
   padding: 0;
@@ -54,11 +54,15 @@ project
 
 ### 3. 一个脚本入口文件
 
-> `/path/to/project/src/scripts/main.js`
+> `/path/to/project/src/scripts/index.js`
 
 ```js
 document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 ```
+
+> 通过 Balm 将 `index.js` 编译成 `main.js`。
+>
+> 请参照下面项目配置中的 [3. `balm` 配置文件](#_3-balm-配置文件-gulpfile-js)。
 
 ## 项目配置
 
@@ -85,6 +89,8 @@ module.exports = {
   plugins: ['@babel/plugin-transform-runtime']
 };
 ```
+
+> Balm 已内置了最新的 `@babel/preset-env` 和 `@babel/plugin-transform-runtime`，无需额外安装。
 
 ### 3. `balm` 配置文件 `gulpfile.js`
 
@@ -119,7 +125,7 @@ balm.config = {
     }
   },
   styles: {
-    extname: 'scss', // 项目主样式后缀名
+    extname: 'css', // 项目主样式后缀名：css,scss,less
     sprites: ['icons'] // 雪碧图源文件：['./src/images/icons']
   },
   scripts: {
@@ -132,7 +138,7 @@ balm.config = {
       //   'your-project-plugin-B'
       // ],
       // 脚本入口文件
-      main: './src/scripts/main.js'
+      main: './src/scripts/index.js'
     }
   },
   assets: {

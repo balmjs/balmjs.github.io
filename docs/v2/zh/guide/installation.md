@@ -8,6 +8,17 @@
 
 > 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`，**来验证一下你正在运行 `node 10.13.x` 和 `npm 5.2.x` 以上的版本**。 更老的版本可能会出现错误，更新的版本则没问题。
 
+你要在 [Balm 工作空间](./structure.md) 的上下文中开发应用。
+
+创建一个新的工作空间和初始入门应用：
+
+```sh
+# /path/to/YOUR_WORKSPACE
+mkdir -p balm-project/src/{styles,scripts}
+cd balm-project
+npm init -y
+```
+
 :bell: BalmJS 工作流基于 [gulp](https://gulpjs.com/) 进行项目构建，所以你需要全局安装 `gulp-cli` 和本地安装 `gulp` 依赖包。
 
 ```sh

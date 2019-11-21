@@ -8,6 +8,17 @@ Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not alr
 
 > **Verify that you are running at least node `10.13.x` and npm `5.2.x`** by running `node -v` and `npm -v` in a terminal/console window. Older versions maybe produce errors, but newer versions are fine.
 
+You develop apps in the context of an [Balm workspace](./structure.md).
+
+To create a new workspace and initial starter app:
+
+```sh
+# /path/to/YOUR_WORKSPACE
+mkdir -p balm-project/src/{styles,scripts}
+cd balm-project
+npm init -y
+```
+
 :bell: BalmJS workflow using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` local dependency.
 
 ```sh

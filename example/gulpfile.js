@@ -29,7 +29,7 @@ balm.config = {
     }
   },
   styles: {
-    extname: 'scss' // Main style extension
+    extname: 'css' // Main style extension: css,scss,less
     // sprites: ['icons'] // Icon path: './app/images/icons'
   },
   scripts: {
@@ -42,7 +42,7 @@ balm.config = {
       //   'your-project-plugin-B'
       // ],
       // Entry
-      main: './src/scripts/main.js'
+      main: './src/scripts/index.js'
     }
   },
   assets: {
