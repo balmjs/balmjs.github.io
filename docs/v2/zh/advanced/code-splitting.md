@@ -89,10 +89,10 @@ balm.config = {
     <div id="app"><!-- Your Template --></div>
 
     <!-- Include: vue, etc... -->
-    <script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
     <!-- Include: balm-ui, etc... -->
-    <script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
   </body>
@@ -133,7 +133,7 @@ new Vue({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Your Webapp</title>
 
-    <!-- build:css css/vendors.css -->
+    <!-- build:css css/vendor.css -->
     <link rel="stylesheet" href="/node_modules/balm-ui/dist/balm-ui.css" />
     <!-- endbuild -->
 
@@ -151,10 +151,10 @@ new Vue({
     <div id="app"><!-- Your Template --></div>
 
     <!-- Include: vue, etc... -->
-    <script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
     <!-- Include: balm-ui, etc... -->
-    <script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
   </body>
@@ -225,7 +225,7 @@ balm.config = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Your Webapp</title>
 
-    <!-- build:css css/vendors.css -->
+    <!-- build:css css/vendor.css -->
     <link rel="stylesheet" href="/node_modules/balm-ui/components/core.css" />
     <link rel="stylesheet" href="/node_modules/balm-ui/components/button.css" />
     <link rel="stylesheet" href="/node_modules/balm-ui/components/dialog.css" />

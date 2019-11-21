@@ -37,19 +37,19 @@ Then, your HTML templates:
 
 ```html
 <!-- Page One -->
-<script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
-<script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 <script src="%PUBLIC_URL%/scripts/app.js"></script>
 ```
 
 ```html
 <!-- Page Two -->
-<script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
-<script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 <script src="%PUBLIC_URL%/scripts/subapp.js"></script>
 ```
 
-> Tips: You can rename `vendors` with `scripts.vendorsName`.
+> Tips: You can rename `vendor` with `scripts.vendorName`.
 
 ## scripts.library
 
@@ -310,24 +310,24 @@ Support the hash scripts in the SSR build.
 
 Webpack optimizations for manual configuration and overrides. Reference [options](https://webpack.js.org/configuration/optimization/).
 
-## scripts.splitAllVendors
+## scripts.extractAllVendors
 
-`scripts.splitAllVendors: boolean = false`
+`scripts.extractAllVendors: boolean = false`
 
 - HTML template:
 
 ```html
 <!-- All vendors in one -->
-<script src="%PUBLIC_URL%/scripts/vendors.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor.js"></script>
 <!-- Entry -->
 <script src="%PUBLIC_URL%/scripts/main.js"></script>
 ```
 
-> **Tips:** You can rename `vendors` with `scripts.vendorsName`.
+> **Tips:** You can rename `vendor` with `scripts.vendorName`.
 
-## scripts.vendorsName
+## scripts.vendorName
 
-`scripts.vendorsName: string = 'vendors'`
+`scripts.vendorName: string = 'vendor'`
 
 (For SPA) AllInOne vendor filename or Vendors folder name.
 

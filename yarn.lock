@@ -1949,10 +1949,10 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
-balm@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/balm/-/balm-2.0.1.tgz#4a026a890d045a0bd585b8be9775a5b24520ebe1"
-  integrity sha512-V9XUTqBHJgRu1+Q4/IlTIwSKW12nnKDncETvJoJz4d38wJEqjj1oLBxkSqgvowqCn7G26fivCEtWJJ72pvTX8g==
+balm@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/balm/-/balm-2.0.2.tgz#29871bc44979b67fb67a12501da221ef153675a4"
+  integrity sha512-WXsWQgsOly74z91eEdHGjUAE280DXkvhjZbiT67QbUfBWOfXeUm/i8PwGc6dRd9lZoPuXrjX844j4BHSKXue8Q==
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/plugin-transform-runtime" "^7.6.2"

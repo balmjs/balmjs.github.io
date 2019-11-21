@@ -43,8 +43,6 @@ balm.go(mix => {
 - config.scripts.<del>include</del> => config.scripts.`includeJsResource`
 - config.scripts.**`disableDefaultLoaders`**
 - config.scripts.<del>webpack</del> => config.scripts.`webpackOptions`
-- config.scripts.<del>extractAllVendors</del> => config.scripts.`splitAllVendors`
-- config.scripts.<del>vendorName</del> => config.scripts.`vendorsName`
 - config.scripts.<del>vendors</del>
 - config.scripts.<del>cssLoader</del>
 - config.scripts.<del>eslint</del> => config.scripts.`lint`

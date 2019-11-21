@@ -37,15 +37,15 @@ balm.config = {
 
 ```html
 <!-- Page One -->
-<script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
-<script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 <script src="%PUBLIC_URL%/scripts/app.js"></script>
 ```
 
 ```html
 <!-- Page Two -->
-<script src="%PUBLIC_URL%/scripts/vendors/lib.js"></script>
-<script src="%PUBLIC_URL%/scripts/vendors/ui.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 <script src="%PUBLIC_URL%/scripts/subapp.js"></script>
 ```
 
@@ -310,15 +310,15 @@ JS 压缩 [详细配置](https://github.com/terser/terser#minify-options)。
 
 WEB 性能优化。[详细配置](https://webpack.js.org/configuration/optimization/)。
 
-## scripts.splitAllVendors
+## scripts.extractAllVendors
 
-`scripts.splitAllVendors: boolean = false`
+`scripts.extractAllVendors: boolean = false`
 
 - HTML 模板：
 
 ```html
 <!-- 提取所有第三方脚本 -->
-<script src="%PUBLIC_URL%/scripts/vendors.js"></script>
+<script src="%PUBLIC_URL%/scripts/vendor.js"></script>
 <!-- 入口脚本 -->
 <script src="%PUBLIC_URL%/scripts/main.js"></script>
 ```

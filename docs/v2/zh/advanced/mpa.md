@@ -61,7 +61,7 @@ project
       </p>
     <![endif]-->
     <div id="app"><!-- Your Template --></div>
-    <script src="%PUBLIC_URL%/scripts/vendors/mylib.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
     <script src="%PUBLIC_URL%/scripts/login.js"></script>
   </body>
 </html>
@@ -88,7 +88,7 @@ project
       </p>
     <![endif]-->
     <div id="app"><!-- Your Template --></div>
-    <script src="%PUBLIC_URL%/scripts/vendors/mylib.js"></script>
+    <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
     <script src="%PUBLIC_URL%/scripts/admin.js"></script>
   </body>
 </html>

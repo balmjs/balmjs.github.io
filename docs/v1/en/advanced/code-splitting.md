@@ -11,23 +11,25 @@
 ```html
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Webapp</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Webapp</title>
-  <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-</head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div id="app"><!-- Your Template --></div>
 
-<body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <div id="app"><!-- Your Template --></div>
-
-  <script src="%PUBLIC_URL%/scripts/main.js"></script>
-</body>
-
+    <script src="%PUBLIC_URL%/scripts/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -69,29 +71,31 @@ balm.config = {
 ```html
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Webapp</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Webapp</title>
-  <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-</head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div id="app"><!-- Your Template --></div>
 
-<body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <div id="app"><!-- Your Template --></div>
+    <!-- Include: vue, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: vue, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+    <!-- Include: balm-ui, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
-  <!-- Include: balm-ui, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
-
-  <script src="%PUBLIC_URL%/scripts/main.js"></script>
-</body>
-
+    <script src="%PUBLIC_URL%/scripts/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -124,34 +128,36 @@ new Vue({
 ```html
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Webapp</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Webapp</title>
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="/node_modules/balm-ui/dist/balm-ui.css" />
+    <!-- endbuild -->
 
-  <!-- build:css css/vendors.css -->
-  <link rel="stylesheet" href="/node_modules/balm-ui/dist/balm-ui.css">
-  <!-- endbuild -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+  </head>
 
-  <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-</head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div id="app"><!-- Your Template --></div>
 
-<body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <div id="app"><!-- Your Template --></div>
+    <!-- Include: vue, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: vue, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+    <!-- Include: balm-ui, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
-  <!-- Include: balm-ui, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
-
-  <script src="%PUBLIC_URL%/scripts/main.js"></script>
-</body>
-
+    <script src="%PUBLIC_URL%/scripts/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -214,36 +220,38 @@ balm.config = {
 ```html
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Webapp</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Webapp</title>
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="/node_modules/balm-ui/components/core.css" />
+    <link rel="stylesheet" href="/node_modules/balm-ui/components/button.css" />
+    <link rel="stylesheet" href="/node_modules/balm-ui/components/dialog.css" />
+    <!-- endbuild -->
 
-  <!-- build:css css/vendors.css -->
-  <link rel="stylesheet" href="/node_modules/balm-ui/components/core.css">
-  <link rel="stylesheet" href="/node_modules/balm-ui/components/button.css">
-  <link rel="stylesheet" href="/node_modules/balm-ui/components/dialog.css">
-  <!-- endbuild -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+  </head>
 
-  <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-</head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div id="app"><!-- Your Template --></div>
 
-<body>
-  <!--[if lte IE 9]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <div id="app"><!-- Your Template --></div>
+    <!-- Include: vue, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
 
-  <!-- Include: vue, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/lib.js"></script>
+    <!-- Include: balm-ui, etc... -->
+    <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
 
-  <!-- Include: balm-ui, etc... -->
-  <script src="%PUBLIC_URL%/scripts/vendor/ui.js"></script>
-
-  <script src="%PUBLIC_URL%/scripts/main.js"></script>
-</body>
-
+    <script src="%PUBLIC_URL%/scripts/main.js"></script>
+  </body>
 </html>
 ```
 
