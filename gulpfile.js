@@ -18,6 +18,7 @@ balm.go(mix => {
   if (mix.env.isProd) {
     mix.copy('docs/v1/_book/**/*', 'dist/docs/v1');
     mix.copy('docs/v2/.vuepress/dist/**/**', 'dist/docs/v2');
+    mix.copy('docs/index.html', 'dist/docs');
 
     mix.zip('example/**/*');
     mix.copy('archive.zip', 'dist', {
