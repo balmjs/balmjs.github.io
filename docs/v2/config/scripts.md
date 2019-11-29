@@ -130,6 +130,43 @@ balm.config = {
 
 Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some vendor scripts from `node_modules`.
 
+## scripts.urlLoaderOptions
+
+`scripts.urlLoaderOptions: object = {}`
+
+> New in 2.1.0
+
+The extra options of the balm default `url-loader`.
+
+:chestnut: For example:
+
+```js
+balm.config = {
+  scripts: {
+    urlLoaderOptions: {
+      esModule: false
+    }
+  }
+  // Other Options...
+};
+```
+
+Before, usage in your vue file:
+
+```html
+<template>
+  <img :src="require('@/assets/logo.png').default" />
+</template>
+```
+
+Then, your can:
+
+```html
+<template>
+  <img :src="require('@/assets/logo.png')" />
+</template>
+```
+
 ## scripts.disableDefaultLoaders
 
 ```ts
@@ -167,7 +204,7 @@ An array of extensions that should be used to resolve modules.
 ```js
 balm.config = {
   scripts: {
-    extensions: ['.vue'];
+    extensions: ['.vue']
   }
   // Other Options...
 };
@@ -347,9 +384,3 @@ Defaults to:
 ```
 
 :warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
-
-## scripts.base64Limit
-
-`scripts.base64Limit: number = 10000`
-
-Loads files as _base64_ encoded URL.

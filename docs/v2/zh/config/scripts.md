@@ -130,6 +130,43 @@ balm.config = {
 
 在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
 
+## scripts.urlLoaderOptions
+
+`scripts.urlLoaderOptions: object = {}`
+
+> New in 2.1.0
+
+balm 默认的 `url-loader` 中额外的配置。
+
+:chestnut: 举个栗子：
+
+```js
+balm.config = {
+  scripts: {
+    urlLoaderOptions: {
+      esModule: false
+    }
+  }
+  // 其他配置项...
+};
+```
+
+vue 文件之前的用法：
+
+```html
+<template>
+  <img :src="require('@/assets/logo.png').default" />
+</template>
+```
+
+现在的用法：
+
+```html
+<template>
+  <img :src="require('@/assets/logo.png')" />
+</template>
+```
+
 ## scripts.disableDefaultLoaders
 
 ```ts
@@ -167,7 +204,7 @@ interface BalmDefaultLoaders {
 ```js
 balm.config = {
   scripts: {
-    extensions: ['.vue'];
+    extensions: ['.vue']
   }
   // 其他配置项...
 };
@@ -347,9 +384,3 @@ WEB 性能优化。[详细配置](https://webpack.js.org/configuration/optimizat
 ```
 
 :warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
-
-## scripts.base64Limit
-
-`scripts.base64Limit: number = 10000`
-
-将文件加载为 _base64_ 编码的 URL。
