@@ -1,46 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!--
+      The following 2 meta tags *must* come first in the <head>
+      to consistently ensure proper document rendering.
+      Any other head element should come *after* these tags.
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BalmJS</title>
-  <meta name="description" content="BalmJS - A flexible Front-End workflow for webapps">
-  <link rel="canonical" href="https://balmjs.com/">
-  <!-- RealFaviconGenerator - https://realfavicongenerator.net/ -->
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <meta name="theme-color" content="#2196f3">
-  <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css">
-</head>
+    <title>BalmJS</title>
 
-<body>
-  <header>
-    <h1 class="logo"><a href="//balmjs.com/" title="BalmJS">BalmJS</a></h1>
-    <p>A flexible Front-End workflow</p>
-  </header>
-  <aside>
-    <a href="//balmjs.com/docs/v2/">📃 Docs</a>
-    <a href="//ui.balmjs.com/">🎨 BalmUI</a>
-    <a href="https://github.com/balmjs/balm" aria-label="Read more about BalmJS">
-      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    </a>
-  </aside>
-  <main>
-    <section class="container">
-      <h2>️⚡ Installation</h2>
-      <div class="centerdevices">
-        <div class="computerwrapper">
-          <div class="computer">
-            <div class="mask">
-              <div class="editor-window cli">
-                <pre class="active" id="automatic-code"><code>
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#2196f3" />
+
+    <!-- Short description of the document (limit to 150 characters) -->
+    <!-- This content *may* be used as a part of search engine results. -->
+    <meta
+      name="description"
+      content="BalmJS - A flexible Front-End workflow for webapps"
+    />
+
+    <!-- Control the behavior of search engine crawling and indexing -->
+    <!-- All Search Engines -->
+    <meta name="robots" content="index,follow" />
+    <!-- Google Specific -->
+    <meta name="googlebot" content="index,follow" />
+
+    <!-- Helps prevent duplicate content issues -->
+    <link rel="canonical" href="https://balmjs.com/" />
+
+    <!-- Links to a JSON file that specifies "installation" credentials for the web applications -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.webmanifest" />
+
+    <!-- RealFaviconGenerator - https://realfavicongenerator.net/ -->
+
+    <!-- For IE 10 and below -->
+    <!-- Place favicon.ico in the root directory - no tag necessary -->
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Icon in the highest resolution we need it for -->
+    <link
+      rel="icon"
+      sizes="128x128"
+      href="%PUBLIC_URL%/images/icons/icon-128x128.png"
+    />
+
+    <!-- Launch Icon (180x180px or larger) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/images/icons/apple-touch-icon.png"
+    />
+
+    <!-- Safari Pinned Tab Icon -->
+    <link
+      rel="mask-icon"
+      href="%PUBLIC_URL%/images/icons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+
+    <!-- Points to an external stylesheet -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/main.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo"><a href="//balmjs.com/" title="BalmJS">BalmJS</a></h1>
+      <p>A flexible Front-End workflow</p>
+    </header>
+    <aside>
+      <a href="//balmjs.com/docs/v2/">📃 Docs</a>
+      <a href="//ui.balmjs.com/">🎨 BalmUI</a>
+      <a
+        href="https://github.com/balmjs/balm"
+        aria-label="Read more about BalmJS"
+      >
+        <svg
+          aria-hidden="true"
+          class="octicon octicon-mark-github"
+          height="32"
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="32"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+      </a>
+    </aside>
+    <main>
+      <section class="container">
+        <h2>️⚡ Installation</h2>
+        <div class="centerdevices">
+          <div class="computerwrapper">
+            <div class="computer">
+              <div class="mask">
+                <div class="editor-window cli">
+                  <pre class="active" id="automatic-code"><code>
 <span class="editor-prefixed">npm install --global balm-cli</span>
 <span class="hljs-comments"># See all available official templates</span>
 <span class="editor-prefixed">balm list</span>
@@ -57,7 +116,7 @@
 <span class="editor-prefixed">npm run prod</span>
 
 </code></pre>
-<pre id="manual-code"><code>
+                  <pre id="manual-code"><code>
 <span class="editor-prefixed">cd /path/to/workspace</span>
 
 <span class="editor-prefixed">mkdir my-project &amp;&amp; cd my-project</span>
@@ -74,26 +133,29 @@
 <span class="editor-prefixed">gulp --production</span>
 
 </code></pre>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <ul class="tabs">
-        <li class="active" data-type="automatic">Automatic</li>
-        <li data-type="manual">Manual</li>
-      </ul>
-    </section>
-    <section class="container">
-      <h2>⚙ Configuration</h2>
-      <div class="editor-window">
-        <div class="editor-menubar">
-          <span class="editor-button close"></span>
-          <span class="editor-button minimize"></span>
-          <span class="editor-button maximize"></span>
-          <span class="editor-filename">gulpfile.js</span>
-        </div>
-        <pre class="language-javascript active" id="basic-code"><code class="language-javascript">
+        <ul class="tabs">
+          <li class="active" data-type="automatic">Automatic</li>
+          <li data-type="manual">Manual</li>
+        </ul>
+      </section>
+      <section class="container">
+        <h2>⚙ Configuration</h2>
+        <div class="editor-window">
+          <div class="editor-menubar">
+            <span class="editor-button close"></span>
+            <span class="editor-button minimize"></span>
+            <span class="editor-button maximize"></span>
+            <span class="editor-filename">gulpfile.js</span>
+          </div>
+          <pre
+            class="language-javascript active"
+            id="basic-code"
+          ><code class="language-javascript">
 <span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
 
 balm.config = {
@@ -127,7 +189,10 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
 });
 
 </code></pre>
-        <pre class="language-javascript" id="advanced-code"><code class="language-javascript">
+          <pre
+            class="language-javascript"
+            id="advanced-code"
+          ><code class="language-javascript">
 <span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
 
 balm.config = {
@@ -201,33 +266,65 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
 });
 
 </code></pre>
-      </div>
-      <ul class="tabs">
-        <li class="active" data-type="basic">Basic</li>
-        <li data-type="advanced">Advanced</li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <a href="//balmjs.com/docs/v2/">📃 Docs</a>
-    <a href="//ui.balmjs.com/">🎨 BalmUI</a>
-    <a href="https://github.com/balmjs/balm" aria-label="Read more about BalmJS">
-      <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    </a>
-    <br><br>
-    <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a></p>
-    <p>Copyright © 2016-present, <a href="http://elf-mouse.me/" target="_blank" rel="noopener"><em>Elf-mousE</em></a></p>
-  </footer>
-  <script src="%PUBLIC_URL%/scripts/main.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138309536-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        </div>
+        <ul class="tabs">
+          <li class="active" data-type="basic">Basic</li>
+          <li data-type="advanced">Advanced</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <a href="//balmjs.com/docs/v2/">📃 Docs</a>
+      <a href="//ui.balmjs.com/">🎨 BalmUI</a>
+      <a
+        href="https://github.com/balmjs/balm"
+        aria-label="Read more about BalmJS"
+      >
+        <svg
+          aria-hidden="true"
+          class="octicon octicon-mark-github"
+          height="32"
+          version="1.1"
+          viewBox="0 0 16 16"
+          width="32"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+      </a>
+      <br /><br />
+      <p>
+        Released under the
+        <a
+          href="https://opensource.org/licenses/MIT"
+          target="_blank"
+          rel="noopener"
+          >MIT License</a
+        >
+      </p>
+      <p>
+        Copyright © 2016-present,
+        <a href="http://elf-mouse.me/" target="_blank" rel="noopener"
+          ><em>Elf-mousE</em></a
+        >
+      </p>
+    </footer>
+    <script src="%PUBLIC_URL%/scripts/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-138309536-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    gtag('config', 'UA-138309536-1');
-  </script>
-</body>
-
+      gtag('config', 'UA-138309536-1');
+    </script>
+  </body>
 </html>

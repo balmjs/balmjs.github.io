@@ -3,7 +3,7 @@ importScripts('workbox-sw.js');
 // Configure Cache Names
 workbox.core.setCacheNameDetails({
   prefix: 'balm',
-  suffix: 'v20191123',
+  suffix: 'v20191218',
   precache: 'app-cache',
   runtime: 'app-runtime'
 });
@@ -40,7 +40,7 @@ workbox.routing.registerRoute(
 
 // Cache Others
 workbox.routing.registerRoute(
-  /\.(?:ico)|manifest\.json$/,
+  /\.(?:ico|webmanifest)$/,
   new workbox.strategies.StaleWhileRevalidate()
 );
 

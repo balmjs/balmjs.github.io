@@ -18,6 +18,7 @@ module.exports = {
     excludes: ['service-worker.js']
   },
   assets: {
+    publicUrl: '/',
     cache: false,
     excludes: ['dist/img/icons/*']
   }
