@@ -21,5 +21,8 @@ module.exports = {
     publicUrl: '/',
     cache: false,
     excludes: ['dist/img/icons/*']
+  },
+  pwa: {
+    manifest: 'manifest.webmanifest'
   }
 };
