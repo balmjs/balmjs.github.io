@@ -11,13 +11,5 @@ module.exports = {
     browser: true
   },
   plugins: ['prettier'],
-  extends: ['plugin:prettier/recommended'],
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true
-      }
-    ]
-  }
+  extends: ['plugin:prettier/recommended']
 };

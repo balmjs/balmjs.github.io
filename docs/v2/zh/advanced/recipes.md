@@ -50,58 +50,23 @@ yarn run prod
 npm run prod
 ```
 
-## 生产模式脚本比较
+## IE8 兼容性
 
-> 使用 `array.includes` 简单的例子做测试
-
-- `@babel/preset-env` + (`core-js@2` | `core-js@3`)
-
-| `@babel/preset-env` Options               | Size       | ES6 |
-| ----------------------------------------- | ---------- | --- |
-| `{ "useBuiltIns": false, "corejs": 2 }`   | 1010 bytes | ×   |
-| `{ "useBuiltIns": "entry", "corejs": 2 }` | 6.43 KiB   | √   |
-| `{ "useBuiltIns": "entry", "corejs": 3 }` | 10.3 KiB   | √   |
-| `{ "useBuiltIns": "usage", "corejs": 2 }` | 6.36 KiB   | √   |
-| `{ "useBuiltIns": "usage", "corejs": 3 }` | 10.3 KiB   | √   |
-
-- `@babel/plugin-transform-runtime` + (`@babel/runtime-corejs2` | `@babel/runtime-corejs3`)
-
-| `@babel/plugin-transform-runtime` Options | Size       | ES6 |
-| ----------------------------------------- | ---------- | --- |
-| `{ "corejs": false }`                     | 1010 bytes | ×   |
-| `{ "corejs": 2 }`                         | 1010 bytes | ×   |
-| `{ "corejs": 3 }`                         | 8.78 KiB   | √   |
-
-### 最小兼容
-
-- 安装
+### 1. 安装依赖
 
 ```sh
-yarn add @babel/runtime-corejs3
+yarn add core-js @babel/runtime-corejs3
 # OR
-npm i --save @babel/runtime-corejs3
+npm i --save core-js @babel/runtime-corejs3
 ```
 
-- 配置 `babel.config.js`
+### 2. 更新 `.browserslistrc`
 
-```js
-module.exports = {
-  presets: ['@babel/preset-env'],
-  plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]]
-};
+```
+ie 8 # 追加
 ```
 
-### 最大兼容
-
-- 安装
-
-```sh
-yarn add core-js
-# OR
-npm i --save core-js
-```
-
-- 配置 `babel.config.js`
+### 3. 配置 `babel.config.js`
 
 ```js
 module.exports = {
@@ -109,11 +74,48 @@ module.exports = {
     [
       '@babel/preset-env',
       {
-        useBuiltIns: 'usage',
+        modules: 'commonjs',
+        useBuiltIns: 'entry',
         corejs: 3
       }
     ]
   ],
-  plugins: ['@babel/plugin-transform-runtime']
+  plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]]
 };
 ```
+
+### 4. 配置 `balm`
+
+```js
+balm.config = {
+  scripts: {
+    options: {
+      ie8: true // 新增
+    }
+  }
+};
+```
+
+### 5. 更新入口脚本
+
+- `main.js`
+
+```js
+import './polyfill';
+
+// Your code
+```
+
+- `polyfill.js`
+
+```js
+import 'core-js/features/object/define-property';
+import 'core-js/features/object/create';
+import 'core-js/features/object/assign';
+import 'core-js/features/array/for-each';
+import 'core-js/features/array/index-of';
+import 'core-js/features/function/bind';
+import 'core-js/features/promise';
+```
+
+> 在 IE8 中，请不要使用 (ES6) `Class` 的 `get` 和 `set` 用法。
