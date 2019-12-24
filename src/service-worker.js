@@ -3,7 +3,7 @@ importScripts('workbox-sw.js');
 // Configure Cache Names
 workbox.core.setCacheNameDetails({
   prefix: 'balm',
-  suffix: 'v20191221',
+  suffix: 'v20191224',
   precache: 'app-cache',
   runtime: 'app-runtime'
 });
@@ -14,7 +14,7 @@ workbox.precaching.precacheAndRoute([]);
 workbox.routing.registerRoute(
   /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
   new workbox.strategies.CacheFirst({
-    cacheName: 'images',
+    cacheName: 'balm-images',
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 60,
@@ -28,7 +28,7 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   /\.(?:js|css)$/,
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'static-resources'
+    cacheName: 'balm-static-resources'
   })
 );
 

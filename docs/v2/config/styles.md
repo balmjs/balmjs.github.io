@@ -35,7 +35,7 @@ Ignore the environment and force CSS compression.
 
 `styles.atImportPaths: string[] = []`
 
-An array of paths that Balm can look in to attempt to resolve your `@import` declarations.
+(**Absolute path**) An array of paths that Balm can look in to attempt to resolve your `@import` declarations.
 
 ## styles.options
 

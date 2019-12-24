@@ -35,7 +35,7 @@ balm.config = {
 
 `styles.atImportPaths: string[] = []`
 
-确保 Balm 样式中包含 `@import` 能正确解析第三方引用路径。
+（**绝对路径**）确保 Balm 样式中包含 `@import` 能正确解析第三方引用路径。
 
 ## styles.options
 

@@ -24,7 +24,7 @@ Balm workflow environment variable in Node.js.
 
 `workspace: string = process.cwd()`
 
-Make sure any symlinks in the project folder are resolved.
+(**Absolute path**) Make sure any symlinks in the project folder are resolved.
 
 :chestnut: For example:
 

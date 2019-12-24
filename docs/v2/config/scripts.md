@@ -128,7 +128,7 @@ balm.config = {
 
 `scripts.includeJsResource: string[] = []`
 
-Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some vendor scripts from `node_modules`.
+(**Absolute path**) Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some extra vendor scripts from local anywhere.
 
 ## scripts.urlLoaderOptions
 

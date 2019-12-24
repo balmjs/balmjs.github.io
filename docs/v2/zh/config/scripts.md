@@ -128,7 +128,7 @@ balm.config = {
 
 `scripts.includeJsResource: string[] = []`
 
-在 `babel-loader` 中为 `node_modules` 的某些依赖脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
+（**绝对路径**）在 `babel-loader` 中为某些需要额外依赖的脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
 
 ## scripts.urlLoaderOptions
 

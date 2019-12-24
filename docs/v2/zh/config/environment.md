@@ -24,7 +24,7 @@ Node.js 中 Balm 工作流的环境变量。
 
 `workspace: string = process.cwd()`
 
-项目根目录，确保解析项目文件夹中的所有符号链接。
+（**绝对路径**）项目根目录，确保解析项目文件夹中的所有符号链接。
 
 :chestnut: 举个栗子：
 
