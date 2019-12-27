@@ -50,7 +50,7 @@ yarn run prod
 npm run prod
 ```
 
-## IE8 兼容性
+## IE 向下兼容方案
 
 ### 1. 安装依赖
 
@@ -89,9 +89,7 @@ module.exports = {
 ```js
 balm.config = {
   scripts: {
-    options: {
-      ie8: true // 新增
-    }
+    ie8: true
   }
 };
 ```
@@ -109,13 +107,11 @@ import './polyfill';
 - `polyfill.js`
 
 ```js
-import 'core-js/features/object/define-property';
-import 'core-js/features/object/create';
-import 'core-js/features/object/assign';
-import 'core-js/features/array/for-each';
-import 'core-js/features/array/index-of';
-import 'core-js/features/function/bind';
+// For IE11 and below
 import 'core-js/features/promise';
-```
 
-> 在 IE8 中，请不要使用 (ES6) `Class` 的 `get` 和 `set` 用法。
+// For IE8 and below
+import 'core-js/features/object/create';
+import 'core-js/features/array/for-each';
+import 'core-js/features/function/bind';
+```

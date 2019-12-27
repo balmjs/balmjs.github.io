@@ -384,3 +384,15 @@ Defaults to:
 ```
 
 :warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+
+## scripts.ie8
+
+`scripts.ie8: boolean = false`
+
+> New in 2.2.0
+
+Supporting Internet Explorer 8 and below (IE6-8). [IE compatibility config](../advanced/recipes.html#ie-compatibility).
+
+> If enabled `scripts.ie8`, `scripts.hot` will be disabled.
+
+> :warning: **TIPS:** In IE8 `Object.defineProperty` can only be used on DOM objects. This is unfortunate as it's required to set getters and setters. Due to this if you plan on supporting IE8 or below then the usage of getters and setters isn't recommended.

@@ -50,7 +50,7 @@ yarn run prod
 npm run prod
 ```
 
-## IE8 compatibility
+## IE compatibility
 
 ### 1. Install the dependency used to provide the necessary runtime helpers
 
@@ -89,9 +89,7 @@ module.exports = {
 ```js
 balm.config = {
   scripts: {
-    options: {
-      ie8: true // Add it
-    }
+    ie8: true
   }
 };
 ```
@@ -109,13 +107,11 @@ import './polyfill';
 - `polyfill.js`
 
 ```js
-import 'core-js/features/object/define-property';
-import 'core-js/features/object/create';
-import 'core-js/features/object/assign';
-import 'core-js/features/array/for-each';
-import 'core-js/features/array/index-of';
-import 'core-js/features/function/bind';
+// For IE11 and below
 import 'core-js/features/promise';
-```
 
-> In IE8 `Object.defineProperty` can only be used on DOM objects. This is unfortunate as it's required to set getters and setters. Due to this if you plan on supporting IE8 or below then the usage of getters and setters isn't recommended.
+// For IE8 and below
+import 'core-js/features/object/create';
+import 'core-js/features/array/for-each';
+import 'core-js/features/function/bind';
+```

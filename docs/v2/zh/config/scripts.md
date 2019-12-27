@@ -384,3 +384,15 @@ WEB 性能优化。[详细配置](https://webpack.js.org/configuration/optimizat
 ```
 
 :warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
+
+## scripts.ie8
+
+`scripts.ie8: boolean = false`
+
+> New in 2.2.0
+
+支持低版本 IE 浏览器（IE6-8）。[IE 向下兼容性配置](../advanced/recipes.html#ie-向下兼容方案).
+
+> 如果启用了 `scripts.ie8`，`scripts.hot` 将失效。
+
+> :warning: **提示：** 在 IE8 中，请不要使用 (ES6) `Class` 的 `get` 和 `set` 用法。
