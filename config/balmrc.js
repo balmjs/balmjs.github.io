@@ -13,6 +13,11 @@ module.exports = {
       }
     }
   },
+  images: {
+    defaultPlugins: {
+      png: false
+    }
+  },
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']
@@ -25,4 +30,7 @@ module.exports = {
   pwa: {
     manifest: 'manifest.webmanifest'
   }
+  // logs: {
+  //   level: 2
+  // }
 };
