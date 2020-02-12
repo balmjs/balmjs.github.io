@@ -5,6 +5,7 @@
 - [HTML](html.md)
 - [Stylesheets](styles.md)
 - [JavaScript](scripts.md)
+- [Images](images.md)
 - [Assets](assets.md)
 - [Server](server.md)
 - [FTP](ftp.md)

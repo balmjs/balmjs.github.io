@@ -167,10 +167,10 @@ vue 文件之前的用法：
 </template>
 ```
 
-## scripts.disableDefaultLoaders
+## scripts.defaultLoaders
 
 ```ts
-interface BalmDefaultLoaders {
+interface BalmScriptsDefaultLoaders {
   html?: boolean;
   css?: boolean;
   js?: boolean;
@@ -178,9 +178,11 @@ interface BalmDefaultLoaders {
 }
 ```
 
-`scripts.disableDefaultLoaders: BalmDefaultLoaders = {}`
+`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
 
-禁用 **BalmJS** 某些默认 loaders。
+> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
+
+启用或禁用 **BalmJS** 某些默认 loaders。
 
 ## scripts.extensions
 

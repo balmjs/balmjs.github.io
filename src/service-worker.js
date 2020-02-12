@@ -3,12 +3,12 @@ importScripts('workbox-sw.js');
 // Configure Cache Names
 workbox.core.setCacheNameDetails({
   prefix: 'balm',
-  suffix: 'v20191227',
+  suffix: 'v20200212',
   precache: 'app-cache',
   runtime: 'app-runtime'
 });
 
-workbox.precaching.precacheAndRoute([]);
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
 // Caching Images
 workbox.routing.registerRoute(

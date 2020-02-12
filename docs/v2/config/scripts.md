@@ -167,10 +167,10 @@ Then, your can:
 </template>
 ```
 
-## scripts.disableDefaultLoaders
+## scripts.defaultLoaders
 
 ```ts
-interface BalmDefaultLoaders {
+interface BalmScriptsDefaultLoaders {
   html?: boolean;
   css?: boolean;
   js?: boolean;
@@ -178,9 +178,11 @@ interface BalmDefaultLoaders {
 }
 ```
 
-`scripts.disableDefaultLoaders: BalmDefaultLoaders = {}`
+`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
 
-Disable **BalmJS** some default loaders.
+> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
+
+Enable/Disable **BalmJS** some default loaders.
 
 ## scripts.extensions
 

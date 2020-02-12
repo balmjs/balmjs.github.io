@@ -5,6 +5,7 @@
 - [模板](html.md)
 - [样式](styles.md)
 - [脚本](scripts.md)
+- [图片](images.md)
 - [静态资源打包](assets.md)
 - [服务](server.md)
 - [FTP](ftp.md)
