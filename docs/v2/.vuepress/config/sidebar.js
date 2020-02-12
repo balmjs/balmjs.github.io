@@ -35,6 +35,7 @@ const sidebarData = [
       '/config/html',
       '/config/styles',
       '/config/scripts',
+      '/config/images',
       '/config/extras',
       '/config/assets',
       '/config/server',
