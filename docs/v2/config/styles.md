@@ -23,6 +23,14 @@ balm.config = {
 };
 ```
 
+## styles.dartSass
+
+`styles.dartSass: boolean = false`
+
+> New in 2.6.0
+
+[Dart Sass](https://sass-lang.com/dart-sass) support.
+
 ## styles.minified
 
 `styles.minified: boolean = false`
