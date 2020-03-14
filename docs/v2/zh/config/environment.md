@@ -8,6 +8,7 @@ interface BalmEnvObject {
   isTest: boolean;
   isDev: boolean;
   inSSR: boolean;
+  isMP: boolean; // New in 2.9.0
 }
 ```
 
@@ -19,6 +20,7 @@ Node.js 中 Balm 工作流的环境变量。
 - 运行 `gulp -p` 或 `gulp --production` 时 `env.isProd` 为 `true`
 - 运行 `gulp -t` 或 `gulp --test`时 `env.isTest` 为 `true`
 - 运行 `gulp -ssr` 或 `gulp --server`时 `env.inSSR` 为 `true`
+- 运行 `gulp -mp` 或 `gulp --miniprogram` 时 `env.isMP` 为 `true`
 
 ## workspace
 

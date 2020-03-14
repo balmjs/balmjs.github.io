@@ -50,7 +50,7 @@ yarn run prod
 npm run prod
 ```
 
-## IE 向下兼容方案
+## 向下兼容方案
 
 ### 1. 安装依赖
 
@@ -69,20 +69,23 @@ ie 8 # 追加
 ### 3. 配置 `babel.config.js`
 
 ```js
-module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        modules: 'commonjs',
+module.exports = function(api) {
+  let envOptions = api.env('production')
+    ? {
         useBuiltIns: 'entry',
-        corejs: 3
+        corejs: { version: 3, proposals: true }
       }
-    ]
-  ],
-  plugins: [['@babel/plugin-transform-runtime', { corejs: 3 }]]
+    : {};
+  let runtimeOptions = api.env('production') ? { corejs: 3 } : {};
+
+  return {
+    presets: [['@babel/preset-env', envOptions]],
+    plugins: [['@babel/plugin-transform-runtime', runtimeOptions]]
+  };
 };
 ```
+
+> `presets` options: 添加 `modules: 'commonjs'` 可兼容低版本 IE
 
 ### 4. 配置 `balm`
 

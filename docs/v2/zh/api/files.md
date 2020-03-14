@@ -67,3 +67,16 @@ balm.go(mix => {
   mix.remove(['bar/a.txt', 'bar/b.txt']);
 });
 ```
+
+## mix.replace()
+
+```ts
+interface ReplaceOptions {
+  substr?: string | RegExp;
+  replacement?: string | Function;
+}
+```
+
+`mix.replace(input: string | string[], output: string, options?: ReplaceOptions)`
+
+> New in 2.9.0

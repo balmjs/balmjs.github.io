@@ -16,6 +16,7 @@
 - Files & Directories
   - [`mix.copy(input, output, options?)`](files.html#mix-copy)
   - [`mix.remove(paths)`](files.html#mix-remove)
+  - [`mix.replace(substr, replacement)`](files.html#mix-replace)
 - Cache
   - [`mix.version(input, output, assetsOptions?)`](cache.html#mix-version)
 - Server

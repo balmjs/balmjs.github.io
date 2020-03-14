@@ -8,6 +8,7 @@ interface BalmEnvObject {
   isTest: boolean;
   isDev: boolean;
   inSSR: boolean;
+  isMP: boolean; // New in 2.9.0
 }
 ```
 
@@ -19,6 +20,7 @@ Balm workflow environment variable in Node.js.
 - `env.isProd` is `true` when running `gulp -p` or `gulp --production`
 - `env.isTest` is `true` when running `gulp -t` or `gulp --test`
 - `env.inSSR` is `true` when running `gulp -ssr` or `gulp --server`
+- `env.isMP` is `true` when running `gulp -mp` or `gulp --miniprogram`
 
 ## workspace
 

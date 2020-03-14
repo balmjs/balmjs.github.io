@@ -16,6 +16,7 @@
 - 文件
   - [`mix.copy(input, output, options?)`](files.html#mix-copy)
   - [`mix.remove(paths)`](files.html#mix-remove)
+  - [`mix.replace(substr, replacement)`](files.html#mix-replace)
 - 缓存
   - [`mix.version(input, output, assetsOptions?)`](cache.html#mix-version)
 - 服务
