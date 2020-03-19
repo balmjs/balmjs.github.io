@@ -77,6 +77,8 @@ interface ReplaceOptions {
 }
 ```
 
-`mix.replace(input: string | string[], output: string, options?: ReplaceOptions)`
+`mix.replace(input: string | string[], output: string, options: ReplaceOptions | ReplaceOptions[])`
 
 > New in 2.9.0
+>
+> Update `options: ReplaceOptions[]` in 2.10.0
