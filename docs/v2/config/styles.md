@@ -98,24 +98,6 @@ Defaults to:
 
 PostCSS [plugins](https://www.postcss.parts/).
 
-## styles.postcssLoaderOptions
-
-```ts
-interface PostcssLoaderOptions {
-  exec?: boolean;
-  parser?: string | object;
-  syntax?: string | object;
-  stringifier?: string | object;
-  config?: object;
-  plugins?: object[] | Function; // NOTE: The same to `styles.postcssPlugins`
-  sourceMap: string | boolean;
-}
-```
-
-`styles.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
-
-PostCSS loader for webpack. Reference [options](https://github.com/postcss/postcss-loader#options).
-
 ## styles.imageBasePath
 
 `styles.imageBasePath: string = '../'`

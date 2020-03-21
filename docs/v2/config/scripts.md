@@ -130,6 +130,51 @@ balm.config = {
 
 (**Absolute path**) Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some extra vendor scripts from local anywhere.
 
+## scripts.defaultLoaders
+
+```ts
+interface BalmScriptsDefaultLoaders {
+  html?: boolean;
+  css?: boolean;
+  js?: boolean;
+  url?: boolean;
+}
+```
+
+`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
+
+> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
+
+Enable/Disable **BalmJS** some default loaders.
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+The extra options of the balm default `html-loader`.
+
+## scripts.postcssLoaderOptions
+
+```ts
+interface PostcssLoaderOptions {
+  exec?: boolean;
+  parser?: string | object;
+  syntax?: string | object;
+  stringifier?: string | object;
+  config?: object;
+  plugins?: object[] | Function; // NOTE: The same to `styles.postcssPlugins`
+  sourceMap: string | boolean;
+}
+```
+
+`scripts.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
+
+> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
+
+PostCSS loader for webpack. Reference [options](https://github.com/postcss/postcss-loader#options).
+
 ## scripts.urlLoaderOptions
 
 `scripts.urlLoaderOptions: object = {}`
@@ -166,23 +211,6 @@ Then, your can:
   <img :src="require('@/assets/logo.png')" />
 </template>
 ```
-
-## scripts.defaultLoaders
-
-```ts
-interface BalmScriptsDefaultLoaders {
-  html?: boolean;
-  css?: boolean;
-  js?: boolean;
-  url?: boolean;
-}
-```
-
-`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
-
-> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
-
-Enable/Disable **BalmJS** some default loaders.
 
 ## scripts.extensions
 

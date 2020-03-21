@@ -98,24 +98,6 @@ PostCSS 环境 [详细配置](https://github.com/csstools/postcss-preset-env#opt
 
 PostCSS [插件](https://www.postcss.parts/)。
 
-## styles.postcssLoaderOptions
-
-```ts
-interface PostcssLoaderOptions {
-  exec?: boolean;
-  parser?: string | object;
-  syntax?: string | object;
-  stringifier?: string | object;
-  config?: object;
-  plugins?: object[] | Function; // NOTE: 等同于 `styles.postcssPlugins`
-  sourceMap: string | boolean;
-}
-```
-
-`styles.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
-
-PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)。
-
 ## styles.imageBasePath
 
 `styles.imageBasePath: string = '../'`

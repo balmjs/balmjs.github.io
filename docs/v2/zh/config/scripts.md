@@ -130,6 +130,51 @@ balm.config = {
 
 （**绝对路径**）在 `babel-loader` 中为某些需要额外依赖的脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
 
+## scripts.defaultLoaders
+
+```ts
+interface BalmScriptsDefaultLoaders {
+  html?: boolean;
+  css?: boolean;
+  js?: boolean;
+  url?: boolean;
+}
+```
+
+`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
+
+> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
+
+启用或禁用 **BalmJS** 某些默认 loaders。
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+balm 默认的 `html-loader` 中额外的配置。
+
+## scripts.postcssLoaderOptions
+
+```ts
+interface PostcssLoaderOptions {
+  exec?: boolean;
+  parser?: string | object;
+  syntax?: string | object;
+  stringifier?: string | object;
+  config?: object;
+  plugins?: object[] | Function; // NOTE: 等同于 `styles.postcssPlugins`
+  sourceMap: string | boolean;
+}
+```
+
+`scripts.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
+
+> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
+
+PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)。
+
 ## scripts.urlLoaderOptions
 
 `scripts.urlLoaderOptions: object = {}`
@@ -166,23 +211,6 @@ vue 文件之前的用法：
   <img :src="require('@/assets/logo.png')" />
 </template>
 ```
-
-## scripts.defaultLoaders
-
-```ts
-interface BalmScriptsDefaultLoaders {
-  html?: boolean;
-  css?: boolean;
-  js?: boolean;
-  url?: boolean;
-}
-```
-
-`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
-
-> Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
-
-启用或禁用 **BalmJS** 某些默认 loaders。
 
 ## scripts.extensions
 
