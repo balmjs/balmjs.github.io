@@ -1,5 +1,5 @@
-// Documentation - http://balmjs.com/docs/v2/config/
-// 中文文档 - http://balmjs.com/docs/v2/zh/config/
+// Documentation - https://balmjs.com/docs/v2/config/
+// 中文文档 - https://balmjs.com/docs/v2/zh/config/
 
 // 1. Import balm
 const balm = require('balm');
@@ -17,20 +17,20 @@ balm.config = {
     }
   },
   roots: {
-    source: 'src', // Source code root (Create a directory named 'app' in project)
+    source: 'src', // Source code root (Create a directory named 'src' in project)
     target: 'dist' // The production build
   },
   paths: {
     source: {
-      css: 'styles', //   CSS dir = ./app/styles
-      js: 'scripts', //    JS dir = ./app/scripts
-      img: 'images', // Image dir = ./app/images
-      font: 'fonts' //  Font dir = ./app/fonts
+      css: 'styles', //   CSS dir = ./src/styles
+      js: 'scripts', //    JS dir = ./src/scripts
+      img: 'images', // Image dir = ./src/images
+      font: 'fonts' //  Font dir = ./src/fonts
     }
   },
   styles: {
     extname: 'css' // Main style extension: css,scss,less
-    // sprites: ['icons'] // Icon path: './app/images/icons'
+    // sprites: ['icons'] // Icon path: './src/images/icons'
   },
   scripts: {
     entry: {
@@ -54,7 +54,7 @@ balm.config = {
 };
 
 // 3. Run balm
-balm.go(mix => {
+balm.go((mix) => {
   if (balm.config.env.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`

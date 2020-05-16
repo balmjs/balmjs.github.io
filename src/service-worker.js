@@ -3,7 +3,7 @@ importScripts('workbox-sw.js');
 // Configure Cache Names
 workbox.core.setCacheNameDetails({
   prefix: 'balm',
-  suffix: 'v20200321',
+  suffix: 'v20200516',
   precache: 'app-cache',
   runtime: 'app-runtime'
 });

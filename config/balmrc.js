@@ -1,14 +1,16 @@
 module.exports = {
   styles: {
-    extname: 'css'
+    extname: 'scss',
+    dartSass: true
   },
   scripts: {
-    entry: {
-      main: './src/scripts/main.js'
-    },
     lint: true,
     options: {
       compress: {
+        ecma: 5,
+        warnings: false,
+        comparisons: false,
+        inline: 2,
         drop_console: false
       }
     }
