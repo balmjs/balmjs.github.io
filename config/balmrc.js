@@ -28,7 +28,7 @@ module.exports = {
   },
   assets: {
     publicUrl: '/',
-    cache: false,
+    cache: true,
     excludes: ['dist/img/icons/*']
   },
   pwa: {
