@@ -1,3 +1,5 @@
+const { version } = require('../package.json');
+
 module.exports = {
   styles: {
     extname: 'scss',
@@ -30,7 +32,8 @@ module.exports = {
     excludes: ['dist/img/icons/*']
   },
   pwa: {
-    manifest: 'manifest.webmanifest'
+    manifest: 'manifest.webmanifest',
+    version: `v${version.replace('.', '')}`
   }
   // logs: {
   //   level: 2

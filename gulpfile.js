@@ -5,7 +5,7 @@ balm.config = balmConfig;
 
 balm.go((mix) => {
   mix.copy(
-    'node_modules/workbox-sw/build/workbox-sw.js',
+    balm.config.pwa.workboxSw,
     mix.env.isProd ? balm.config.roots.target : balm.config.roots.tmp
   );
 

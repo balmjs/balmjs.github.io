@@ -1,34 +1,48 @@
 importScripts('workbox-sw.js');
 
-// Configure Cache Names
+var PROJECT_NAME = 'balm';
+var PROJECT_VERSION = '{{ version }}'; // Version placeholder
+var CACHE_NAMES = [
+  PROJECT_NAME + '-' + 'precache' + '-' + PROJECT_VERSION,
+  PROJECT_NAME + '-' + 'runtime' + '-' + PROJECT_VERSION,
+  PROJECT_NAME + '-' + 'ga' + '-' + PROJECT_VERSION,
+  'images'
+];
+
 workbox.core.setCacheNameDetails({
-  prefix: 'balm',
-  suffix: 'v20200516-1',
-  precache: 'app-cache',
-  runtime: 'app-runtime'
+  prefix: PROJECT_NAME,
+  suffix: PROJECT_VERSION,
+  precache: 'precache',
+  runtime: 'runtime',
+  googleAnalytics: 'ga'
 });
 
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST);
 
-// Caching Images
+// Cache JavaScript and CSS
+workbox.routing.registerRoute(function (context) {
+  return (
+    context.request.destination === 'script' ||
+    context.request.destination === 'style'
+  );
+}, new workbox.strategies.StaleWhileRevalidate());
+
+// Cache Images
 workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
+  function (context) {
+    return context.request.destination === 'image';
+  },
   new workbox.strategies.CacheFirst({
-    cacheName: 'balm-images',
+    cacheName: 'images',
     plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [0, 200]
+      }),
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 60,
         maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
       })
     ]
-  })
-);
-
-// Cache CSS and JavaScript Files
-workbox.routing.registerRoute(
-  /\.(?:js|css)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'balm-static-resources'
   })
 );
 
@@ -44,5 +58,25 @@ workbox.routing.registerRoute(
   new workbox.strategies.StaleWhileRevalidate()
 );
 
-// Enable Offline Google Analytics
+// Offline Google Analytics
 workbox.googleAnalytics.initialize();
+
+// Cleanup Outdated Caches
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches
+      .keys()
+      .then(function (cacheList) {
+        return Promise.all(
+          cacheList.map(function (cacheName) {
+            if (CACHE_NAMES.indexOf(cacheName) === -1) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(function () {
+        self.clients.claim();
+      })
+  );
+});
