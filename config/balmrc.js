@@ -17,11 +17,11 @@ module.exports = {
       }
     }
   },
-  images: {
-    defaultPlugins: {
-      png: false
-    }
-  },
+  // images: {
+  //   defaultPlugins: {
+  //     png: false
+  //   }
+  // },
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']
