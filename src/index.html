@@ -70,7 +70,7 @@
       <p class="description">A flexible Front-End workflow</p>
     </header>
 
-    <aside class="top-nav">
+    <nav class="top-nav">
       <a href="//balmjs.com/docs/v2/">📃 Docs</a>
       <a href="//material.balmjs.com/" target="_blank" rel="noopener"
         >🎨 BalmUI</a
@@ -95,15 +95,15 @@
           ></path>
         </svg>
       </a>
-    </aside>
+    </nav>
 
     <main class="content">
-      <section class="container">
-        <h2 id="features">️🎉 Features</h2>
+      <section>
+        <h2>️🎉 Features</h2>
         <ul class="feature-list">
           <li>
             <strong class="gulp">gulp</strong> +
-            <strong class="webpack">webpack</strong> for any Front-end projects
+            <strong class="webpack">webpack</strong> for any webapp projects
           </li>
           <li>Automagically compile PostCSS/Sass/Less</li>
           <li>CSS Autoprefixing</li>
@@ -118,14 +118,13 @@
         </ul>
       </section>
 
-      <section class="container">
+      <section>
         <h2 id="install">️⚡ Installation</h2>
-        <div class="centerdevices">
-          <div class="computerwrapper">
-            <div class="computer">
-              <div class="mask">
-                <div class="editor-window cli">
-                  <pre class="active" id="automatic-code"><code>
+        <div class="your-device">
+          <div class="computer">
+            <div class="terminal">
+              <div class="editor-window cli">
+                <pre class="active" id="automatic-code"><code>
 <span class="editor-prefixed">npm install --global balm-cli</span>
 <span class="hljs-comments"># See all available official templates</span>
 <span class="editor-prefixed">balm list</span>
@@ -142,7 +141,7 @@
 <span class="editor-prefixed">npm run prod</span>
 
 </code></pre>
-                  <pre id="manual-code"><code>
+                <pre id="manual-code"><code>
 <span class="editor-prefixed">cd /path/to/workspace</span>
 
 <span class="editor-prefixed">mkdir my-project &amp;&amp; cd my-project</span>
@@ -159,7 +158,6 @@
 <span class="editor-prefixed">gulp --production</span>
 
 </code></pre>
-                </div>
               </div>
             </div>
           </div>
@@ -169,7 +167,7 @@
           <li data-type="manual">Manual</li>
         </ul>
       </section>
-      <section class="container">
+      <section>
         <h2 id="config">⚙ Configuration</h2>
         <div class="editor-window">
           <div class="editor-menubar">
@@ -300,7 +298,7 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
       </section>
     </main>
 
-    <aside class="bottom-nav">
+    <nav class="bottom-nav">
       <a href="//balmjs.com/docs/v2/">📃 Docs</a>
       <a href="//material.balmjs.com/" target="_blank" rel="noopener"
         >🎨 BalmUI</a
@@ -325,10 +323,9 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
           ></path>
         </svg>
       </a>
-    </aside>
+    </nav>
 
     <footer>
-      <br /><br />
       <p>
         Released under the
         <a
@@ -348,7 +345,7 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script
+    <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-138309536-1"
     ></script>
@@ -360,6 +357,6 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
       gtag('js', new Date());
 
       gtag('config', 'UA-138309536-1');
-    </script> -->
+    </script>
   </body>
 </html>

@@ -2,12 +2,14 @@
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
+  padding: 1.6rem 0;
 }
 
-.container {
+section {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 1.6rem;
   // max-width: 1080px;
   // margin: 40px auto;
   &:first-child {
@@ -52,7 +54,7 @@ pre {
 }
 
 .feature-list {
-  width: 480px;
+  max-width: 480px;
   margin: 0 auto;
   padding-left: 2em;
 }

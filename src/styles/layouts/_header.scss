@@ -2,16 +2,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  padding: 8px 0;
+  padding: 0.8rem 0;
   font-size: 1.6rem;
 
   p {
     font-style: italic;
     text-transform: capitalize;
     &::before {
-      font-style: normal;
-      margin-right: 0.4rem;
       content: ':';
+      margin-right: 0.4rem;
+      font-style: normal;
     }
   }
 }
@@ -21,24 +21,10 @@ header {
   font-size: 3rem;
 
   a {
-    transition: all 0.2s;
-    text-decoration: none;
+    transition: color 0.2s;
     color: orange;
     &:hover {
       color: #e1f;
     }
-  }
-}
-
-aside {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 320px;
-  margin: 0 auto;
-
-  a {
-    display: inline-flex;
-    font-size: 1.6rem;
   }
 }

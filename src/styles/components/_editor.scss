@@ -1,7 +1,6 @@
 .cli {
   height: 100%;
   color: #85ff00;
-  background-color: #002b36;
 }
 
 .hljs-keyword {
@@ -27,6 +26,7 @@
 .editor-window {
   border-radius: 5px 5px 0 0;
   background-color: #141414;
+  line-height: 1.2;
 }
 
 .editor-window .editor-menubar {
@@ -44,24 +44,16 @@
   line-height: inherit;
 }
 
-@media (max-width: 420px) {
-
-  .editor-window code,
-  .editor-window code span {
-    font-size: 16px;
-  }
-}
-
 .editor-window pre {
   line-height: inherit;
   overflow-x: auto;
   height: 100%;
   margin: 0;
-  padding: 0 20px;
+  padding: 0 16px;
   border-radius: 0 0 5px 5px;
 }
 
-.editor-menubar>.editor-button {
+.editor-menubar > .editor-button {
   width: 10px;
   height: 10px;
   margin: 0 2px;
@@ -88,4 +80,15 @@
 
 .editor-menubar .maximize {
   background-color: green;
+}
+
+@media (max-width: 599px) {
+  .editor-window code,
+  .editor-window code span {
+    font-size: 16px;
+  }
+
+  .editor-window pre {
+    padding: 0 8px;
+  }
 }

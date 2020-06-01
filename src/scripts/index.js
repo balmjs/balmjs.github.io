@@ -2,6 +2,7 @@ import './my-sw';
 
 (function (window) {
   const BODY = document.documentElement || document.body;
+  const INSTALL_POSITION = document.getElementById('install').offsetTop;
   const CONFIG_POSITION = document.getElementById('config').offsetTop;
 
   const DEMO = {
@@ -32,7 +33,9 @@ import './my-sw';
       document.getElementById(`${type}-code`).classList.add(ACTIVE);
 
       BODY.scrollTop =
-        type === 'basic' || type === 'advanced' ? CONFIG_POSITION : 0;
+        type === 'basic' || type === 'advanced'
+          ? CONFIG_POSITION
+          : INSTALL_POSITION;
     }
   };
 

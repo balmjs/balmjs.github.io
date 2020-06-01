@@ -26,7 +26,6 @@ pre {
 }
 
 body {
-  width: 100%;
   font: 1.4rem/1.5 'Times New Roman', Arial, sans-serif;
   background-color: black;
   color: white;
@@ -36,4 +35,8 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
+}
+
+.octicon {
+  fill: currentColor;
 }
