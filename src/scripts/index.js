@@ -15,6 +15,10 @@ import './my-sw';
   const ACTIVE = 'active';
 
   window.showDemo = () => {
+    console.info(
+      'Welcome to BalmJS, please select your interested project demo;)'
+    );
+
     for (let key in DEMO) {
       let label = DEMO[key];
       console.log(`${label}: https://github.com/balmjs/demo-${key}`);
@@ -43,7 +47,5 @@ import './my-sw';
     tab.addEventListener('click', eventHandler);
   });
 })(window);
-
-console.info('Welcome to BalmJS, please select your interested project demo;)');
 
 showDemo();
