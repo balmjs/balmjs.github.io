@@ -6,8 +6,8 @@
 
 ::before,
 ::after {
-  text-decoration: inherit; /* 1 */
-  vertical-align: inherit; /* 2 */
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
 html {
@@ -26,15 +26,14 @@ pre {
 }
 
 body {
-  font: 1.6rem 'Times New Roman', Arial, sans-serif;
-
+  width: 100%;
+  font: 1.4rem/1.5 'Times New Roman', Arial, sans-serif;
+  background-color: black;
   color: white;
-  background: black;
 }
 
 a {
-  cursor: pointer;
   text-decoration: none;
-
   color: white;
+  cursor: pointer;
 }

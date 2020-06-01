@@ -1,19 +1,27 @@
+.content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1080px;
-  margin: 40px auto;
+  // max-width: 1080px;
+  // margin: 40px auto;
   &:first-child {
-    margin-top: 20px;
-    overflow: hidden; /* fix device.css bug */
+    // margin-top: 20px;
+    // overflow: hidden; /* fix device.css bug */
   }
 }
 
 h2 {
   font-size: 1.8rem;
-  padding: 10px;
+  padding: 8px 0;
   text-align: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #eaecef;
 }
 
 pre {
@@ -41,4 +49,18 @@ pre {
       color: orange;
     }
   }
+}
+
+.feature-list {
+  width: 480px;
+  margin: 0 auto;
+  padding-left: 2em;
+}
+
+.gulp {
+  color: #cf4647;
+}
+
+.webpack {
+  color: #1a6bac;
 }
