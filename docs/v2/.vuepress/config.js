@@ -3,7 +3,7 @@ const getNav = require('./config/nav');
 const getSidebar = require('./config/sidebar');
 
 module.exports = {
-  base: '/docs/v2/',
+  base: '/docs/',
   locales: {
     // The key is the path for the locale to be nested under.
     // As a special case, the default locale can use '/' as its path.
