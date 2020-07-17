@@ -2,7 +2,6 @@
 
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
-npm run docs:v1:prod
 npm run docs:v2:prod
 npm run prod
 
