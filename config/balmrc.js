@@ -25,7 +25,7 @@ module.exports = {
   },
   pwa: {
     manifest: 'manifest.webmanifest',
-    version: `v${version.replace(/\./g, '')}-0`
+    version: `v${version.replace(/\./g, '')}-1`
   }
   // logs: {
   //   level: 2
