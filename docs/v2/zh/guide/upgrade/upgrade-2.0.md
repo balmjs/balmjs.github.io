@@ -1,4 +1,4 @@
-# 从 1.x 升级到 2.0.0
+# 从 1.x 升级到 2.0
 
 **`balm.config` 全面升级** :tada:
 
@@ -15,7 +15,7 @@
 - config.<del>useDefault</del> => config.`useDefaults`
 
 ```js
-balm.go(mix => {
+balm.go((mix) => {
   console.log(balm.config.env); // 输出：{ isProd, isTest, isDev, inSSR }
   console.log(mix.env); // 等同于 `balm.config.env`
 });

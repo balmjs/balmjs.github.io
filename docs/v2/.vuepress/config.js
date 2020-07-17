@@ -10,7 +10,7 @@ module.exports = {
     '/': {
       lang: 'English', // this will be set as the lang attribute on <html>
       title: 'BalmJS',
-      description: 'A flexible Front-End workflow for webapps'
+      description: 'A flexible Front-End workflow for any webapps'
     },
     '/zh/': {
       lang: '中文',

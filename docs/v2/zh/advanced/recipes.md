@@ -55,9 +55,11 @@ npm run prod
 ### 1. 安装依赖
 
 ```sh
-yarn add core-js @babel/runtime-corejs3
+yarn add -D @babel/runtime-corejs3
+yarn add core-js
 # OR
-npm i --save core-js @babel/runtime-corejs3
+npm i --save-dev @babel/runtime-corejs3
+npm i --save core-js
 ```
 
 ### 2. 更新 `.browserslistrc`
@@ -69,7 +71,7 @@ ie 8 # 追加
 ### 3. 配置 `babel.config.js`
 
 ```js
-module.exports = function(api) {
+module.exports = function (api) {
   let envOptions = api.env('production')
     ? {
         useBuiltIns: 'entry',

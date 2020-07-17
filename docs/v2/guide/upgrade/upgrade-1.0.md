@@ -1,4 +1,4 @@
-# Upgrading To 1.0.0 From 0.24.x
+# Upgrading To 1.0 From 0.24.x
 
 **Upgrade `balm.config`**
 

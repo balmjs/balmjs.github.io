@@ -6,7 +6,7 @@ You need to set up your development environment before you can do anything.
 
 Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not already on your machine.
 
-> **Verify that you are running at least node `10.13.x` and npm `5.2.x`** by running `node -v` and `npm -v` in a terminal/console window. Older versions maybe produce errors, but newer versions are fine.
+> **Verify that you are running at least node `12.0.0` and npm `5.2.0`** by running `node -v` and `npm -v` in a terminal/console window. Older versions maybe produce errors, but newer versions are fine.
 
 You develop apps in the context of an [Balm workspace](./structure.md).
 
@@ -36,6 +36,18 @@ $ gulp -v
 ```
 
 ## 1. Installing **`balm`**
+
+- For `balm@3`
+
+```sh
+yarn global add balm-core
+yarn add -D balm@next
+# OR
+npm install -g balm-core
+npm install -D balm@next
+```
+
+- For `balm@2`
 
 ```sh
 yarn add -D balm

@@ -18,6 +18,7 @@ const sidebarData = [
         title: 'upgrade',
         path: '/guide/upgrade/',
         children: [
+          '/guide/upgrade/upgrade-3.0',
           '/guide/upgrade/upgrade-2.0',
           '/guide/upgrade/upgrade-1.0',
           '/guide/upgrade/upgrade-0.24'
@@ -35,6 +36,8 @@ const sidebarData = [
       '/config/html',
       '/config/styles',
       '/config/scripts',
+      '/config/scripts-esbuild',
+      '/config/scripts-webpack',
       '/config/images',
       '/config/extras',
       '/config/assets',
@@ -105,7 +108,7 @@ function getChildren(data, lang) {
 }
 
 function getSidebar(lang = 'en') {
-  return sidebarData.map(data => {
+  return sidebarData.map((data) => {
     let item = getChildren(data, lang);
     return item;
   });

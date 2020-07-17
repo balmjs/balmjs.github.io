@@ -1,4 +1,4 @@
-# Upgrading To 2.0.0 From 1.x
+# Upgrading To 2.0 From 1.x
 
 **`balm.config` Full Upgrade** :tada:
 
@@ -15,7 +15,7 @@
 - config.<del>useDefault</del> => config.`useDefaults`
 
 ```js
-balm.go(mix => {
+balm.go((mix) => {
   console.log(balm.config.env); // Output: { isProd, isTest, isDev, inSSR }
   console.log(mix.env); // Be equal to `balm.config.env`
 });

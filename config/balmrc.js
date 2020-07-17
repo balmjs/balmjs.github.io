@@ -7,15 +7,7 @@ module.exports = {
   },
   scripts: {
     lint: true,
-    options: {
-      compress: {
-        ecma: 5,
-        warnings: false,
-        comparisons: false,
-        inline: 2,
-        drop_console: false
-      }
-    }
+    esbuild: true
   },
   // images: {
   //   defaultPlugins: {

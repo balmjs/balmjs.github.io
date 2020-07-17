@@ -1,3 +1,5 @@
+#!/bin/bash
+
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
 npm run docs:v1:prod
