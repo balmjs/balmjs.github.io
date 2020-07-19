@@ -1,18 +1,18 @@
 # Javascript bundler - esbuild
 
+> ⚠️ NOTE: experimental for `balm@3`, and `balm-core@next` required
+
 ## scripts.esbuild
 
-`scripts.esbuild: object | boolean = false`
+`scripts.esbuild: boolean = false`
 
-> New in 3.0.0
+Enabled an extremely fast JavaScript bundler and minifier.
 
-An extremely fast JavaScript bundler and minifier. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.
+> If enabled `scripts.esbuild`, _webpack config_ of `config.scripts` will be disabled.
 
-## scripts.entryPoints
+## scripts.entry
 
-`scripts.entryPoints: string[] = []`
-
-> New in 3.0.0
+`scripts.entry: string | string[] = ''`
 
 The shortcut for esbuild entry.
 
@@ -22,10 +22,14 @@ The shortcut for esbuild entry.
 balm.config = {
   scripts: {
     esbuild: true,
-    entryPoints: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
+    entry: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
   }
   // Other Options...
 };
 ```
 
-> If enabled `scripts.esbuild`, _webpack config_ of `config.scripts` will be disabled.
+## scripts.buildOptions
+
+`scripts.buildOptions: object = {}`
+
+Esbuild options. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.

@@ -31,9 +31,9 @@ balm.config = {
 
 支持 [Dart Sass](https://sass-lang.com/dart-sass)。
 
-## styles.minified
+## styles.minify
 
-`styles.minified: boolean = false`
+`styles.minify: boolean = false`
 
 忽略环境变量，强制执行 CSS 压缩。
 

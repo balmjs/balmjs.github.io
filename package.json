@@ -1,6 +1,6 @@
 {
   "name": "balmjs.com",
-  "version": "2020.7.17",
+  "version": "2020.7.19",
   "author": "Elf-mousE",
   "scripts": {
     "dev": "gulp",

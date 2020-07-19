@@ -1,18 +1,18 @@
 # 脚本打包 - esbuild
 
+> ⚠️ 提示：`balm@3`实验性的新特性，必须安装 `balm-core@next`
+
 ## scripts.esbuild
 
-`scripts.esbuild: object | boolean = false`
+`scripts.esbuild: boolean = false`
 
-> New in 3.0.0
+启用一个急速脚本打包工具。
 
-一个急速脚本打包工具。完整配置请参照[TS 定义](https://github.com/evanw/esbuild/blob/master/lib/types.ts)。
+> 如果启用了 `scripts.esbuild`, `config.scripts` 中的 _webpack 相关配置_ 将全部失效。
 
-## scripts.entryPoints
+## scripts.entry
 
-`scripts.entryPoints: string[] = []`
-
-> New in 3.0.0
+`scripts.entry: string | string[] = ''`
 
 esbuild 入口配置快捷方式。
 
@@ -22,10 +22,14 @@ esbuild 入口配置快捷方式。
 balm.config = {
   scripts: {
     esbuild: true,
-    entryPoints: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
+    entry: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
   }
   // 其他配置项...
 };
 ```
 
-> 如果启用了 `scripts.esbuild`, `config.scripts` 中的 _webpack 相关配置_ 将全部失效。
+## scripts.buildOptions
+
+`scripts.buildOptions: object = {}`
+
+Esbuild 配置。完整配置请参照[TS 定义](https://github.com/evanw/esbuild/blob/master/lib/types.ts)。

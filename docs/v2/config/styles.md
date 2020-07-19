@@ -31,9 +31,9 @@ balm.config = {
 
 [Dart Sass](https://sass-lang.com/dart-sass) support.
 
-## styles.minified
+## styles.minify
 
-`styles.minified: boolean = false`
+`styles.minify: boolean = false`
 
 Ignore the environment and force CSS compression.
 

@@ -16,9 +16,12 @@ npm install -D balm@next
 
 ## 2. `balm.config` Changes
 
+- config.styles.<del>minified</del> => config.styles.`minify`
 - config.scripts.<del>hot</del>
 - config.scripts.**`esbuild`**
-- config.scripts.**`entryPoints`**
+- config.scripts.**`buildOptions`**
+- config.scripts.**`useTransform`**
+- config.scripts.**`transformOptions`**
 
 > 打包工具：
 >
