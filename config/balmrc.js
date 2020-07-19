@@ -10,7 +10,7 @@ module.exports = {
     esbuild: true
   },
   // images: {
-  //   defaultPlugins: {
+  //   plugins: {
   //     png: false
   //   }
   // },
