@@ -147,6 +147,14 @@ interface BalmScriptsDefaultLoaders {
 
 Enable/Disable **BalmJS** some default loaders.
 
+## scripts.useEsModule
+
+`scripts.useEsModule: boolean = true`
+
+> New in 2.23.0
+
+Use ES modules syntax for default loaders.
+
 ## scripts.htmlLoaderOptions
 
 `scripts.htmlLoaderOptions: object = {}`
