@@ -12,11 +12,11 @@ project
 │ └── index.html
 ├── .browserslistrc
 ├── babel.config.js
-├── gulpfile.js
+├── balm.config.js
 └── package.json
 ```
 
-And you can also [download the example](http://balmjs.com/balm-example.zip) and try it.
+And you can also [download the example](https://balm.js.org/balm-example.zip) and try it.
 
 ## Webapp directory
 
@@ -62,7 +62,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 > Compiling `index.js` to `main.js` by Balm.
 >
-> Please refer to the Project settings - [3. Configure balm](#_3-configure-balm-by-gulpfile-js) below.
+> Please refer to the Project settings - [3. Configure balm](#_3-configure-balm) below.
 
 ## Project settings
 
@@ -71,10 +71,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 In your project directory, create a file named `.browserslistrc` in your project root with these contents:
 
 ```
-> 0.5%
-last 2 versions
-Firefox ESR
-not dead
+defaults
 ```
 
 ### 2. Configure `babel`
@@ -92,16 +89,30 @@ module.exports = {
 
 > Balm has the latest `@babel/preset-env` and `@babel/plugin-transform-runtime` built-in.
 
-### 3. Configure `balm` by `gulpfile.js`
+### 3. Configure `balm`
 
-- A simple `gulpfile.js` example (`/path/to/project/gulpfile.js`)
+In your project directory, create a file named `balm.config.js` in your project root with these contents:
+
+- Basic example
+
+  ```js
+  module.exports = {
+    roots: {
+      source: 'src' // Source code root (Create a directory in project)
+    },
+    styles: {
+      extname: 'css' // Main style extension: css,scss,less
+    },
+    scripts: {
+      main: './src/scripts/index.js' // The entry script (Create a javascript file)
+    }
+  };
+  ```
+
+- Advanced example
 
 ```js
-// 1. Import balm
-const balm = require('balm');
-
-// 2. Config balm
-balm.config = {
+const config = {
   server: {
     open: true,
     proxyConfig: {
@@ -113,77 +124,84 @@ balm.config = {
     }
   },
   roots: {
-    source: 'src', // Source code root (Create a directory named 'src' in project)
+    source: 'src' // Source code root (Create a directory in project)
     target: 'dist' // The production build
   },
   paths: {
     source: {
-      css: 'styles', //   CSS dir = ./src/styles
-      js: 'scripts', //    JS dir = ./src/scripts
-      img: 'images', // Image dir = ./src/images
-      font: 'fonts' //   Font dir = ./src/fonts
+      css: 'styles', //   CSS dir: ./src/styles
+      js: 'scripts', //    JS dir: ./src/scripts
+      img: 'images', // Image dir: ./src/images
+      font: 'fonts'  //  Font dir: ./src/fonts
     }
   },
   styles: {
     extname: 'css', // Main style extension: css,scss,less
-    sprites: ['icons'] // Icons path: ['./src/images/icons']
+    sprites: ['icons'] // Icons path: './src/images/icons'
   },
   scripts: {
     entry: {
+      // Custom vendors
       // HTML: <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
-      // mylib: [
-      //   'your-project-library-1',
-      //   'your-project-library-2',
-      //   'your-project-plugin-A',
-      //   'your-project-plugin-B'
-      // ],
-      // Entry
+      mylib: [
+        'your-project-vendors',
+        'your-project-plugins'
+      ],
+      // The entry script (Create a javascript file)
       main: './src/scripts/index.js'
     }
   },
   assets: {
     root: '/path/to/your_remote_project', // Remote project root path
-    mainDir: 'public', // '/path/to/your_remote_project/public'
-    subDir: '', // `/path/to/your_remote_project/public/${subDir}`
-    cache: false
+    mainDir: 'public', // Remote assets dir: '/path/to/your_remote_project/public'
+    subDir: '', // Remote assets subdir: `/path/to/your_remote_project/public/${subDir}`
+    cache: true
   }
 };
 
-// 3. Run balm
-balm.go(mix => {
+const api = (mix) => {
   if (balm.config.env.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
-    // to remote `${assets.root}/${assets.mainDir}/${assets.subDir}`
+    // to `${assets.root}/${assets.mainDir}/${assets.subDir}`
     mix.publish();
 
     // Publish html templates
     // from local `${roots.target}/index.html`
     // to remote `${assets.root}/views/new-filename.blade.php`
-    mix.publish('index.html', 'views', {
-      basename: 'new-filename',
-      suffix: '.blade',
-      extname: '.php'
-    });
+    mix.publish([
+      {
+        input: 'index.html',
+        output: 'views',
+        renameOptions: {
+          basename: 'new-filename',
+          suffix: '.blade',
+          extname: '.php'
+        }
+      }
+    ]);
   }
 });
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 > **Tips:** If you refer to balm's standard project structure, you can develop your project with almost **zero configuration**.
 
-:chestnut: For example:
+### 4. Update `package.json`
 
-```js
-const balm = require('balm');
-
-balm.config = {
-  server: {
-    // For debugging apis in development
-  },
-  assets: {
-    // For building in production
+```json
+{
+  "scripts": {
+    "dev": "balm",
+    "prod": "balm -p"
   }
-};
-
-balm.go();
+}
 ```
+
+Now, Let's enjoy! :ghost:

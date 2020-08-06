@@ -18,13 +18,7 @@ The same as the `balm.config.env`.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   console.log(mix.env); // Be equal to `balm.config.env`, Output: { isProd, isTest, isDev, inSSR }
 
   if (mix.env.isProd) {
@@ -32,5 +26,12 @@ balm.go(mix => {
   } else {
     // development
   }
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

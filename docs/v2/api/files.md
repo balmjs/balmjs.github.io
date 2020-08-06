@@ -22,13 +22,7 @@ interface HookOptions {
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.copy('app/old-filename.html', 'dist', {
     rename: {
       basename: 'new-filename',
@@ -42,7 +36,14 @@ balm.go(mix => {
       base: '.'
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 > Reference `gulp.src` [options](https://gulpjs.com/docs/en/api/src#options)
@@ -56,16 +57,17 @@ Delete files/directories.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.remove('foo.txt');
   mix.remove(['bar/a.txt', 'bar/b.txt']);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.replace()

@@ -1,6 +1,6 @@
 # Javascript bundler - esbuild
 
-> ⚠️ NOTE: experimental for `balm@3`, and `balm-core@next` required
+> ⚠️ NOTE: experimental for `balm@3`, and `balm-core` required
 
 ## scripts.esbuild
 
@@ -8,7 +8,7 @@
 
 Enabled an extremely fast JavaScript bundler and minifier.
 
-> If enabled `scripts.esbuild`, _webpack config_ of `config.scripts` will be disabled.
+> If enabled `scripts.esbuild`, _webpack configs_ of `config.scripts` will be disabled.
 
 ## scripts.entry
 
@@ -30,6 +30,34 @@ balm.config = {
 
 ## scripts.buildOptions
 
-`scripts.buildOptions: object = {}`
+`scripts.buildOptions: BuildOptions = {}`
 
 Esbuild options. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.
+
+## scripts.useTransform
+
+`scripts.useTransform: boolean = false`
+
+Transforming a file by custom build.
+
+## scripts.transformOptions
+
+`scripts.transformOptions: TransformOptions = {}`
+
+Transform options. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.
+
+:chestnut: For example:
+
+```js
+balm.config = {
+  scripts: {
+    esbuild: true,
+    entry: ['./app/scripts/react-entry.js'],
+    useTransform: true,
+    transformOptions: {
+      loader: 'jsx'
+    }
+  }
+  // Other Options...
+};
+```

@@ -13,7 +13,7 @@ balm.config = {
   // 你的项目配置
 };
 
-balm.go(mix => {
+balm.go((mix) => {
   mix.html('src/index.html', 'dist');
 });
 ```
@@ -33,7 +33,7 @@ balm.go(mix => {
     <div id="app">
       <span>Hello</span>
       <img src="%PUBLIC_URL%/images/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -56,7 +56,7 @@ balm.go(mix => {
     <div id="app">
       <span>Hello</span>
       <img src="img/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
     <script src="js/main.js"></script>

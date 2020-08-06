@@ -1,11 +1,7 @@
-// Documentation - https://balmjs.com/docs/v2/config/
-// 中文文档 - https://balmjs.com/docs/v2/zh/config/
+// Documentation - https://balmjs.com/docs/config/
+// 中文文档 - https://balmjs.com/docs/zh/config/
 
-// 1. Import balm
-const balm = require('balm');
-
-// 2. Config balm
-balm.config = {
+const config = {
   server: {
     open: true,
     proxyConfig: {
@@ -53,9 +49,8 @@ balm.config = {
   }
 };
 
-// 3. Run balm
-balm.go((mix) => {
-  if (balm.config.env.isProd) {
+const api = (mix) => {
+  if (mix.env.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
     // to remote `${assets.root}/${assets.mainDir}/${assets.subDir}`
@@ -70,4 +65,11 @@ balm.go((mix) => {
       extname: '.php'
     });
   }
-});
+};
+
+module.exports = () => {
+  return {
+    config,
+    api
+  };
+};

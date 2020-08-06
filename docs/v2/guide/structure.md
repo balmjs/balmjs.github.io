@@ -15,13 +15,10 @@ project
 │ ├─┬ styles
 │ │ └── main.css // Required. A entry file for CSS.
 │ └── index.html // Required. A entry file for HTML.
-├─┬ config       // Optional. But recommended. Refer to BalmCLI's templates.
-│ ├── balmrc.js
-│ └── publish.js
 ├── .dotfile     // (e.g. .gitignore, .browserslistrc, etc...)
 ├── babel.config.js
-├── gulpfile.js  // Required. The default entry configuration file for Balm.
-├── package.json // Required.
+├── balm.config.js  // Required. The default configuration file for Balm.
+├── package.json    // Required.
 └── ...
 ```
 

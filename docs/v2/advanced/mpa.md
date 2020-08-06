@@ -28,7 +28,7 @@ project
 │ └── login.html
 ├── .browserslistrc
 ├── babel.config.js
-├── gulpfile.js
+├── balm.config.js
 ├── package.json
 └── ...
 ```

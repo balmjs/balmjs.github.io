@@ -16,7 +16,7 @@ project
 └── package.json
 ```
 
-你也可以直接 [下载例子](http://balmjs.com/balm-example.zip) 来帮助学习。
+你也可以直接 [下载例子](https://balm.js.org/balm-example.zip) 来帮助学习。
 
 ## WEB 应用目录
 
@@ -150,7 +150,7 @@ balm.config = {
 };
 
 // 3. 运行 balm
-balm.go(mix => {
+balm.go((mix) => {
   if (balm.config.env.isProd) {
     // 发布静态资源 (styles,scripts,images,fonts,media)
     // 从本地 `${roots.target}/{css,js,img,font,media}`

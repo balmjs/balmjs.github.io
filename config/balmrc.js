@@ -1,4 +1,4 @@
-const { version } = require('../package.json');
+const pkg = require('../package.json');
 
 module.exports = {
   styles: {
@@ -9,11 +9,11 @@ module.exports = {
     lint: true,
     esbuild: true
   },
-  // images: {
-  //   plugins: {
-  //     png: false
-  //   }
-  // },
+  images: {
+    plugins: {
+      png: false
+    }
+  },
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']
@@ -25,7 +25,7 @@ module.exports = {
   },
   pwa: {
     manifest: 'manifest.webmanifest',
-    version: `v${version.replace(/\./g, '')}`
+    version: `v${pkg.version.replace(/\./g, '')}`
   }
   // logs: {
   //   level: 2

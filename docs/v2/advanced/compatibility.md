@@ -1,74 +1,27 @@
-# Recipes
+# Compatibility
 
-## Optimize your command
-
-- Edit `/path/to/project/package.json`:
-
-```json
-{
-  // ...
-  "scripts": {
-    "dev": "gulp",
-    "prod": "gulp --production"
-  }
-  // ...
-}
-```
-
-- For silent mode
-
-```json
-{
-  // ...
-  "scripts": {
-    "dev": "gulp --silent",
-    "prod": "gulp --silent --production"
-  }
-  // ...
-}
-```
-
-> `gulp --production` alias: `gulp -p`
->
-> `gulp --silent` alias: `gulp -S`
-
-Then, you can run the command like this:
-
-- For development
-
-```sh
-yarn run dev
-# OR
-npm run dev
-```
-
-- For production
-
-```sh
-yarn run prod
-# OR
-npm run prod
-```
-
-## Compatibility
-
-### 1. Install the dependency used to provide the necessary runtime helpers
+## 1. Install the dependency used to provide the necessary runtime helpers
 
 ```sh
 yarn add -D @babel/runtime-corejs3
 yarn add core-js
-# OR
+```
+
+OR
+
+```sh
 npm i --save-dev @babel/runtime-corejs3
 npm i --save core-js
 ```
 
-### 2. Upgrade `.browserslistrc`
+## 2. Upgrade `.browserslistrc`
 
 ```
+defaults
 ie 8 # add it
 ```
 
-### 3. Config `babel.config.js`
+## 3. Config `babel.config.js`
 
 ```js
 module.exports = function (api) {
@@ -89,10 +42,10 @@ module.exports = function (api) {
 
 > `presets` options: add `modules: 'commonjs'` for outdated IE
 
-### 4. Config `balm`
+## 4. Config `balm.config.js`
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     ie8: true
   }

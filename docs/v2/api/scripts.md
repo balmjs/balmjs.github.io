@@ -37,13 +37,7 @@ Minify JS.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.js('app/scripts/app.js', 'dist/js');
   // 'app/scripts/app.js' => 'dist/js/main.js'
 
@@ -56,5 +50,12 @@ balm.go(mix => {
     }
   });
   // 'dist/js/main.js' => 'dist/js/main.min.js'
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

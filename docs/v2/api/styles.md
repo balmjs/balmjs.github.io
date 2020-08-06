@@ -24,19 +24,20 @@ Sass => CSS.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.sass('app/styles/*.scss', 'dist/css', {
     sass: {
       // Sass options: overwrite `balm.config.styles.sassOptions`
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.less()
@@ -55,19 +56,20 @@ Less => CSS.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.less('app/styles/*.less', 'dist/css', {
     less: {
       // Less options: overwrite `balm.config.styles.lessOptions`
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.url()
@@ -79,9 +81,7 @@ Update images and fonts references path.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   paths: {
     source: {
       img: 'images',
@@ -95,13 +95,20 @@ balm.config = {
   // Other Options...
 };
 
-balm.go(mix => {
+const api = (mix) => {
   mix.sass('app/styles/*.scss', 'dist/css');
   mix.url('dist/css/*.css', 'dist/css');
   // Output:
   // '../images' => '../img'
   // '../fonts' => '../font'
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 ## mix.sprite()
@@ -123,13 +130,14 @@ CSS sprites.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
+const api = (mix) => {
+  mix.sprite(['icons'], 'dist/img');
 };
 
-balm.go(mix => {
-  mix.sprite(['icons'], 'dist/img');
-});
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

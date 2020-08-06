@@ -16,11 +16,11 @@ interface BalmEnvObject {
 
 Node.js 中 Balm 工作流的环境变量。
 
-- 运行 `gulp` 时 `env.isDev` 为 `true`
-- 运行 `gulp -p` 或 `gulp --production` 时 `env.isProd` 为 `true`
-- 运行 `gulp -t` 或 `gulp --test`时 `env.isTest` 为 `true`
-- 运行 `gulp -ssr` 或 `gulp --server`时 `env.inSSR` 为 `true`
-- 运行 `gulp -mp` 或 `gulp --miniprogram` 时 `env.isMP` 为 `true`
+- 运行 `balm` 时 `env.isDev` 为 `true`
+- 运行 `balm -p` 或 `balm --production` 时 `env.isProd` 为 `true`
+- 运行 `balm -t` 或 `balm --test`时 `env.isTest` 为 `true`
+- 运行 `balm -ssr` 或 `balm --server`时 `env.inSSR` 为 `true`
+- 运行 `balm -mp` 或 `balm --miniprogram` 时 `env.isMP` 为 `true`
 
 ## workspace
 
@@ -77,7 +77,7 @@ balm.config = {
   // 其他配置项...
 };
 
-balm.go(mix => {
+balm.go((mix) => {
   // 使用自定义任务API
 });
 ```

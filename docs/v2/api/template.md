@@ -7,15 +7,16 @@
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
+const api = (mix) => {
+  mix.html('src/index.html', 'dist');
 };
 
-balm.go(mix => {
-  mix.html('src/index.html', 'dist');
-});
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 - before
@@ -33,7 +34,7 @@ balm.go(mix => {
     <div id="app">
       <span>Hello</span>
       <img src="%PUBLIC_URL%/images/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -49,17 +50,17 @@ balm.go(mix => {
   <head>
     <meta charset="utf-8" />
     <title>Hello BalmJS</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
     <div id="app">
       <span>Hello</span>
-      <img src="img/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <img src="/img/logo.svg" alt="BalmJS" />
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
 ```

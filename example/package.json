@@ -1,14 +1,13 @@
 {
   "name": "balm-example",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "scripts": {
-    "dev": "gulp",
-    "prod": "gulp -p"
+    "dev": "balm",
+    "prod": "balm -p"
   },
   "author": "Elf-mousE",
   "license": "ISC",
   "devDependencies": {
-    "balm": "^2.22.0",
-    "gulp": "^4.0.2"
+    "balm": "^3.0.0-beta.13"
   }
 }

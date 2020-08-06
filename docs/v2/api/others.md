@@ -11,26 +11,28 @@
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-const workboxSw = 'node_modules/workbox-sw/build/workbox-sw.js';
-
-balm.config = {
+const config = {
   pwa: {
-    enabled: true, // NOTE: Just for production
-    workboxSw
+    enabled: true // NOTE: Just for production
   }
   // Other Options...
 };
 
-balm.go(mix => {
-  if (!balm.config.env.isProd) {
-    mix.copy(workboxSw, balm.config.roots.tmp);
-    // PWA test
-    mix.generateSW();
-    // mix.injectManifest();
-  }
-});
+module.exports = (balm) => {
+  const api = (mix) => {
+    if (!mix.env.isProd) {
+      mix.copy(workboxSw, balm.config.roots.tmp);
+      // PWA test
+      mix.generateSW();
+      // mix.injectManifest();
+    }
+  };
+
+  return {
+    config,
+    api
+  };
+};
 ```
 
 ## mix.modernizr()

@@ -1,74 +1,27 @@
-# 一些技巧
+# 向下兼容方案
 
-## 优化你的命令
-
-- 编辑 `/path/to/project/package.json`：
-
-```json
-{
-  // ...
-  "scripts": {
-    "dev": "gulp",
-    "prod": "gulp --production"
-  }
-  // ...
-}
-```
-
-- 静默模式
-
-```json
-{
-  // ...
-  "scripts": {
-    "dev": "gulp --silent",
-    "prod": "gulp --silent --production"
-  }
-  // ...
-}
-```
-
-> `gulp --production` 别名：`gulp -p`
->
-> `gulp --silent` 别名：`gulp -S`
-
-然后，你就可以运行下面的命令了：
-
-- 开发模式
-
-```sh
-yarn run dev
-# OR
-npm run dev
-```
-
-- 生产模式
-
-```sh
-yarn run prod
-# OR
-npm run prod
-```
-
-## 向下兼容方案
-
-### 1. 安装依赖
+## 1. 安装依赖
 
 ```sh
 yarn add -D @babel/runtime-corejs3
 yarn add core-js
-# OR
+```
+
+OR
+
+```sh
 npm i --save-dev @babel/runtime-corejs3
 npm i --save core-js
 ```
 
-### 2. 更新 `.browserslistrc`
+## 2. 更新 `.browserslistrc`
 
 ```
+defaults
 ie 8 # 追加
 ```
 
-### 3. 配置 `babel.config.js`
+## 3. 配置 `babel.config.js`
 
 ```js
 module.exports = function (api) {
@@ -89,17 +42,17 @@ module.exports = function (api) {
 
 > `presets` options: 添加 `modules: 'commonjs'` 可兼容低版本 IE
 
-### 4. 配置 `balm`
+## 4. 配置 `balm.config.js`
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     ie8: true
   }
 };
 ```
 
-### 5. 更新入口脚本
+## 5. 更新入口脚本
 
 - `main.js`
 

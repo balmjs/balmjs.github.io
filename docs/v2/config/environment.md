@@ -16,11 +16,11 @@ interface BalmEnvObject {
 
 Balm workflow environment variable in Node.js.
 
-- `env.isDev` is `true` when running `gulp`
-- `env.isProd` is `true` when running `gulp -p` or `gulp --production`
-- `env.isTest` is `true` when running `gulp -t` or `gulp --test`
-- `env.inSSR` is `true` when running `gulp -ssr` or `gulp --server`
-- `env.isMP` is `true` when running `gulp -mp` or `gulp --miniprogram`
+- `env.isDev` is `true` when running `balm`
+- `env.isProd` is `true` when running `balm -p` or `balm --production`
+- `env.isTest` is `true` when running `balm -t` or `balm --test`
+- `env.inSSR` is `true` when running `balm -ssr` or `balm --server`
+- `env.isMP` is `true` when running `balm -mp` or `balm --miniprogram`
 
 ## workspace
 
@@ -77,7 +77,7 @@ balm.config = {
   // Other Options...
 };
 
-balm.go(mix => {
+balm.go((mix) => {
   // Use custom task API
 });
 ```

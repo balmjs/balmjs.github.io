@@ -102,7 +102,14 @@ balm.config = {
 - `/path/to/project/src/styles/main.scss`
 
 ```scss
-@import 'node_modules/balm-ui/src/styles/balm-ui.scss'; // Recommended
+// Recommended Dart Sass
+@use 'balm-ui/dist/balm-ui.scss';
+```
+
+OR
+
+```scss
+@import 'node_modules/balm-ui/dist/balm-ui.scss';
 ```
 
 - `/path/to/project/src/scripts/main.js`

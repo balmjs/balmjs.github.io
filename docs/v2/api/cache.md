@@ -7,15 +7,16 @@
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.version('app/**/*', 'dist', {
     // Assets options: overwrite `balm.config.assets.options`
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

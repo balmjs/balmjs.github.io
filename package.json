@@ -1,29 +1,29 @@
 {
-  "name": "balmjs.com",
-  "version": "2020.7.19",
+  "name": "balm.js.org",
+  "version": "2020.8.6",
   "author": "Elf-mousE",
   "scripts": {
-    "dev": "gulp",
-    "prod": "gulp -p",
+    "dev": "balm",
+    "prod": "balm -p",
     "docs:v1:dev": "cd docs/v1 && gitbook install && gitbook serve",
     "docs:v1:prod": "cd docs/v1 && rm -rf _book && gitbook install && gitbook build",
     "docs:v2:dev": "vuepress dev docs/v2",
     "docs:v2:prod": "vuepress build docs/v2",
-    "release": "bash ./scripts/update-docs.sh"
+    "release:com": "bash ./scripts/balmjs.com.sh",
+    "release:org": "bash ./scripts/balm.js.org.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.5.2",
-    "@vuepress/plugin-google-analytics": "^1.5.2",
+    "@vuepress/plugin-back-to-top": "^1.5.3",
+    "@vuepress/plugin-google-analytics": "^1.5.3",
     "babel-eslint": "^10.1.0",
-    "balm": "^3.0.0-beta.1",
-    "eslint": "^7.4.0",
+    "balm": "^3.0.0-beta.13",
+    "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "gulp": "^4.0.2",
     "moment": "^2.27.0",
     "prettier": "^2.0.5",
     "prismjs": "^1.20.0",
-    "vuepress": "^1.5.2"
+    "vuepress": "^1.5.3"
   },
   "private": true
 }

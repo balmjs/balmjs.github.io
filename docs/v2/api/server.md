@@ -9,17 +9,15 @@ Manual start server for development. Reference [watcher](https://gulpjs.com/docs
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   useDefaults: false // Required for `mix.serve()`
   // Other Options...
 };
 
-balm.go(mix => {
+const api = (mix) => {
   mix.serve((watcher, reload) => {
     // Watch change files
-    watcher.on('change', file => {
+    watcher.on('change', (file) => {
       console.log('changed', file);
 
       const extname = file.split('.')[1];
@@ -33,5 +31,12 @@ balm.go(mix => {
       reload(); // Refresh browser
     });
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```

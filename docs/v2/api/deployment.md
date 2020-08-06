@@ -29,15 +29,16 @@ Publish assets and templates from local to remote.
   - Output: `${assets.root}/${assets.mainDir}/${assets.subDir}`
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
+const api = (mix) => {
+  mix.publish();
 };
 
-balm.go(mix => {
-  mix.publish();
-});
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 - Publish templates
@@ -45,13 +46,7 @@ balm.go(mix => {
   - Output: `${assets.root}/views/new-filename.blade.php`
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   // For one template
   mix.publish('index.html', 'views', {
     basename: 'new-filename',
@@ -72,7 +67,14 @@ balm.go(mix => {
     }
     // More templates
   ]);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.zip()
@@ -82,13 +84,7 @@ balm.go(mix => {
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
-};
-
-balm.go(mix => {
+const api = (mix) => {
   // Default usage
   // Input: '/path/to/project/dist/**/*'
   // Output: '/path/to/project/archive.zip'
@@ -96,7 +92,14 @@ balm.go(mix => {
 
   // With dotfile
   mix.zip(['dist/**/*', 'dist/.some-dotfile']);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.ftp()
@@ -121,9 +124,7 @@ interface HookOptions {
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   ftp: {
     options: {
       host: '192.168.1.1',
@@ -135,7 +136,7 @@ balm.config = {
   }
 };
 
-balm.go(mix => {
+const api = (mix) => {
   // (local)Input:   '/path/to/project/dist/archive.zip'
   // (remote)Output: `${ftp.options.remotePath}/archive.zip`
   mix.ftp('dist/archive.zip');
@@ -143,5 +144,12 @@ balm.go(mix => {
   mix.ftp('dist/archive.zip', {
     // FTP options: overwrite `balm.config.ftp.options`
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```

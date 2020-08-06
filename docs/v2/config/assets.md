@@ -1,23 +1,11 @@
 # Assets
 
-## assets.publicUrlPlaceholder
+## `%PUBLIC_URL%`
 
-`assets.publicUrlPlaceholder: string = '%PUBLIC_URL%'`
+Set public url methods:
 
-## assets.publicUrl
-
-`assets.publicUrl: string = ''`
-
-:chestnut: For example:
-
-```js
-balm.config = {
-  assets: {
-    publicUrl: 'https://balmjs.com/'
-  }
-  // Other Options...
-};
-```
+1. The `homepage` field in your `package.json`
+2. `process.env.PUBLIC_URL` in `balm.env.js`
 
 - development
 
@@ -34,7 +22,7 @@ balm.config = {
     <div id="app">
       <span>Hello</span>
       <img src="%PUBLIC_URL%/images/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
     <script src="%PUBLIC_URL%/scripts/main.js"></script>
@@ -50,17 +38,17 @@ balm.config = {
   <head>
     <meta charset="utf-8" />
     <title>Hello BalmJS</title>
-    <link rel="stylesheet" href="https://balmjs.com/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
     <div id="app">
       <span>Hello</span>
-      <img src="https://balmjs.com/img/logo.svg" alt="BalmJS" />
-      <a href="//balmjs.com/">BalmJS</a>
+      <img src="/img/logo.svg" alt="BalmJS" />
+      <a href="//balm.js.org/">BalmJS</a>
     </div>
 
-    <script src="https://balmjs.com/js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
 ```
