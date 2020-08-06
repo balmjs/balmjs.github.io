@@ -15,7 +15,7 @@ Compiling [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   styles: {
     extname: 'scss'
   }
@@ -116,7 +116,7 @@ Convert a set of images into a spritesheet and CSS variables.
 // Input:
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*.png`
 
-balm.config = {
+module.exports = {
   styles: {
     sprites: ['icons']
   }
@@ -141,7 +141,7 @@ Enable retina spritesheet generation.
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*.png`
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*@2x.png`
 
-balm.config = {
+module.exports = {
   styles: {
     sprites: ['icons'],
     spriteRetina: true

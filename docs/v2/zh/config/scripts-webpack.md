@@ -20,7 +20,7 @@ interface BalmEntryObject {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue', 'vue-router'],
@@ -68,7 +68,7 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     library: 'AwesomeLibraryName',
     libraryTarget: 'umd'
@@ -110,7 +110,7 @@ npm i -D vue-loader
 ```js
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-balm.config = {
+module.exports = {
   scripts: {
     loaders: [
       {
@@ -194,7 +194,7 @@ balm 默认的 `url-loader` 中额外的配置。
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     urlLoaderOptions: {
       esModule: false
@@ -240,7 +240,7 @@ vue 文件之前的用法：
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     extensions: ['.vue']
   }
@@ -271,7 +271,7 @@ import foo from 'foo';
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     alias: {
       vue$: 'vue/dist/vue.esm.js'

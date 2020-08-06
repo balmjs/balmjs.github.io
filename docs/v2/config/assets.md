@@ -86,7 +86,7 @@ The prefix of the `subDir`, for non-standard dynamic language project.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   assets: {
     publicUrl: '/',
     subDir: 'web',
@@ -178,7 +178,7 @@ Exclude cache files from balm defaults.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   assets: {
     cache: true,
     excludes: ['dist/img/icons/*']

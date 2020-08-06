@@ -15,7 +15,7 @@
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   styles: {
     extname: 'scss'
   }
@@ -116,7 +116,7 @@ PostCSS [插件](https://www.postcss.parts/)。
 // 输入：
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*.png`
 
-balm.config = {
+module.exports = {
   styles: {
     sprites: ['icons']
   }
@@ -141,7 +141,7 @@ balm.config = {
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*.png`
 // `/path/to/workspace/${roots.source}/${paths.source.img}/icons/*@2x.png`
 
-balm.config = {
+module.exports = {
   styles: {
     sprites: ['icons'],
     spriteRetina: true

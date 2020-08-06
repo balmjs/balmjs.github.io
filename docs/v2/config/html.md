@@ -28,7 +28,7 @@ Defaults to:
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   html: {
     options: {
       collapseWhitespace: false,

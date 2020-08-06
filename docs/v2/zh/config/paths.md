@@ -17,7 +17,7 @@
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   roots: {
     source: 'app', // `/path/to/workspace/app`
     target: 'dist' // `/path/to/workspace/dist`
@@ -68,7 +68,7 @@ interface BalmPath {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   paths: {
     source: {
       css: 'styles', // `/path/to/workspace/${roots.source}/styles`

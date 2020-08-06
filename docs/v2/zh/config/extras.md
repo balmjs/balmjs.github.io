@@ -15,7 +15,7 @@
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   extras: {
     excludes: ['.extra', 'extra.txt']
   }

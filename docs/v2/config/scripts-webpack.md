@@ -20,7 +20,7 @@ When `scripts.entry` is `BalmEntryObject`:
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue', 'vue-router'],
@@ -68,7 +68,7 @@ The type of the exported library.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     library: 'AwesomeLibraryName',
     libraryTarget: 'umd'
@@ -110,7 +110,7 @@ Then, use it:
 ```js
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-balm.config = {
+module.exports = {
   scripts: {
     loaders: [
       {
@@ -194,7 +194,7 @@ The extra options of the balm default `url-loader`.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     urlLoaderOptions: {
       esModule: false
@@ -240,7 +240,7 @@ An array of extensions that should be used to resolve modules.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     extensions: ['.vue']
   }
@@ -271,7 +271,7 @@ Replace modules by other modules or paths.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     alias: {
       vue$: 'vue/dist/vue.esm.js'

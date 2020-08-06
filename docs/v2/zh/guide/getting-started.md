@@ -12,7 +12,7 @@ project
 │ └── index.html
 ├── .browserslistrc
 ├── babel.config.js
-├── gulpfile.js
+├── balm.config.js
 └── package.json
 ```
 
@@ -71,10 +71,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 在你的项目根目录下，新建一个名叫 `.browserslistrc` 的配置文件：
 
 ```
-> 0.5%
-last 2 versions
-Firefox ESR
-not dead
+defaults
 ```
 
 ### 2. 配置 `babel`
@@ -92,16 +89,30 @@ module.exports = {
 
 > Balm 已内置了最新的 `@babel/preset-env` 和 `@babel/plugin-transform-runtime`，无需额外安装。
 
-### 3. `balm` 配置文件 `gulpfile.js`
+### 3. 配置 `balm`
 
-- 一个简单的 `gulpfile.js` 配置例子（`/path/to/project/gulpfile.js`）
+在你的项目根目录下，新建一个名叫 `balm.config.js` 的配置文件：
+
+- 基本用例
+
+  ```js
+  module.exports = {
+    roots: {
+      source: 'src' // 源代码根目录（如果项目中没有此目录，请自行新建一个名叫“src”的文件夹）
+    },
+    styles: {
+      extname: 'css' // 项目主样式后缀名：css,scss,less
+    },
+    scripts: {
+      main: './src/scripts/index.js' // 脚本入口文件
+    }
+  };
+  ```
+
+- 高级用例
 
 ```js
-// 1. 导入 balm
-const balm = require('balm');
-
-// 2. 配置 balm
-balm.config = {
+const config = {
   server: {
     open: true,
     proxyConfig: {
@@ -131,12 +142,10 @@ balm.config = {
   scripts: {
     entry: {
       // 对应模板中的HTML用法：<script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
-      // mylib: [
-      //   'your-project-library-1',
-      //   'your-project-library-2',
-      //   'your-project-plugin-A',
-      //   'your-project-plugin-B'
-      // ],
+      mylib: [
+        'your-project-vendors',
+        'your-project-plugins'
+      ],
       // 脚本入口文件
       main: './src/scripts/index.js'
     }
@@ -145,13 +154,12 @@ balm.config = {
     root: '/path/to/your_remote_project', // 远程项目的根目录（如：PHP后端项目）
     mainDir: 'public', // 远程项目的静态资源目录：'/path/to/your_remote_project/public'
     subDir: '', // 远程项目的静态资源子目录：`/path/to/your_remote_project/public/${subDir}`
-    cache: false
+    cache: true
   }
 };
 
-// 3. 运行 balm
-balm.go((mix) => {
-  if (balm.config.env.isProd) {
+const api = (mix) => {
+  if (mix.env.isProd) {
     // 发布静态资源 (styles,scripts,images,fonts,media)
     // 从本地 `${roots.target}/{css,js,img,font,media}`
     // 到远程 `${assets.root}/${assets.mainDir}/${assets.subDir}`
@@ -167,23 +175,13 @@ balm.go((mix) => {
     });
   }
 });
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 > **提示：** 如果你参照了 `balm` 的标准项目结构，就可以几乎 **零配置** 来进行项目开发。
-
-:chestnut: 举个栗子：
-
-```js
-const balm = require('balm');
-
-balm.config = {
-  server: {
-    // 开发模式 调试接口配置
-  },
-  assets: {
-    // 生产模式 打包配置
-  }
-};
-
-balm.go();
-```

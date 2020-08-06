@@ -27,7 +27,7 @@ Decide which URL to open automatically when server starts.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     open: true
   }
@@ -56,7 +56,7 @@ Add additional directories from which static files should be served. Should only
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxy: 'your.project.com',
     serveStatic: [
@@ -106,7 +106,7 @@ Http-proxy middleware. Reference [`context`](https://github.com/chimurai/http-pr
 - Single proxy
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxyConfig: {
       context: '/api',
@@ -123,7 +123,7 @@ balm.config = {
 - Multiple proxies
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxyConfig: [
       {

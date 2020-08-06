@@ -53,7 +53,7 @@ new Vue({
 ### 1.2 配置 `balm`，提取第三方库
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue'],
@@ -202,7 +202,7 @@ new Vue({
 ### 2.2 配置 `balm`，提取第三方库
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue'],

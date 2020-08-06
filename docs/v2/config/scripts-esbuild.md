@@ -19,7 +19,7 @@ The shortcut for esbuild entry.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     esbuild: true,
     entry: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
@@ -49,7 +49,7 @@ Transform options. See [the TypeScript type definitions](https://github.com/evan
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     esbuild: true,
     entry: ['./app/scripts/react-entry.js'],

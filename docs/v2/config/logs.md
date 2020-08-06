@@ -25,7 +25,7 @@ Node.js - `util.inspect(object[, options])`. Reference [options](https://github.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   logs: {
     level: 2 // The smaller, the detailed
   }

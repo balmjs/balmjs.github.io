@@ -35,7 +35,7 @@ Balm workflow environment variable in Node.js.
 const path = require('path');
 const workspace = path.resolve(__dirname, '..');
 
-balm.config = {
+module.exports = {
   workspace
   // Other Options...
 };
@@ -55,7 +55,7 @@ Set project type.
 :chestnut: For example:
 
 ```js
-balm.config = {
+module.exports = {
   inFrontend: true
   // Other Options...
 };
@@ -70,16 +70,21 @@ Enable balm default tasks.
 :chestnut: For example:
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   useDefaults: false // Don't start balm default tasks
   // Other Options...
 };
 
-balm.go((mix) => {
+const api = (mix) => {
   // Use custom task API
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 > :page_with_curl: Refer to [Custom Task API](../api/)

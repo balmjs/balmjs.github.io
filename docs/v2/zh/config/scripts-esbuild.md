@@ -19,7 +19,7 @@ esbuild 入口配置快捷方式。
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     esbuild: true,
     entry: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']

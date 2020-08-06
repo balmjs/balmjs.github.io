@@ -25,7 +25,7 @@ Node.js - `util.inspect(object[, options])`. [详细配置](https://github.com/n
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   logs: {
     level: 2 // 设置级别越小，日志越详细
   }

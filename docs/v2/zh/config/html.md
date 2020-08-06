@@ -28,7 +28,7 @@ HTML 压缩。[详细配置](https://github.com/kangax/html-minifier#options-qui
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   html: {
     options: {
       collapseWhitespace: false,

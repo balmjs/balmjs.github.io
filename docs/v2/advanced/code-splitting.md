@@ -53,7 +53,7 @@ new Vue({
 ### 1.2 Config `balm` from splitting vendors code
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue'],
@@ -209,7 +209,7 @@ new Vue({
 ### 2.2 Config `balm` from splitting vendors code
 
 ```js
-balm.config = {
+module.exports = {
   scripts: {
     entry: {
       lib: ['vue'],

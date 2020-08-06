@@ -31,15 +31,16 @@
   - [`mix.modernizr()`](others.html#mix-modernizr)
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // Your project config
+const api = (mix) => {
+  // Custom Task API
 };
 
-balm.go(mix => {
-  // Custom Task API
-});
+module.exports = (balm) => {
+  return {
+    config: {}, // Your project config
+    api
+  };
+};
 ```
 
 > `balm.config` refer to [BalmJS Configuration](../config/)

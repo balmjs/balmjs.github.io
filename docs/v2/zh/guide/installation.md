@@ -19,73 +19,55 @@ cd balm-project
 npm init -y
 ```
 
-:bell: BalmJS 工作流基于 [gulp](https://gulpjs.com/) 进行项目构建，所以你需要全局安装 `gulp-cli` 和本地安装 `gulp` 依赖包。
-
-```sh
-yarn global add gulp-cli
-yarn add -D gulp
-# OR
-npm install -g gulp-cli
-npm install -D gulp
-
-# 验证
-$ gulp -v
-# 输出：
-# CLI version: 2.2.0
-# Local version: 4.0.0
-```
+> 提示：BalmJS 工作流基于 [gulp](https://gulpjs.com/) 进行项目构建，所以你需要全局安装 `gulp-cli` 和本地安装 `gulp` 依赖包。
 
 ## 1. 安装 **`balm`**
-
-- For `balm@3`
 
 ```sh
 yarn global add balm-core
 yarn add -D balm@next
-# OR
-npm install -g balm-core
-npm install -D balm@next
 ```
 
-- For `balm@2`
+或
 
 ```sh
-yarn add -D balm
-# OR
-npm install -D balm
+npm install -g balm-core
+npm install -D balm@next
 ```
 
 > 当前我们推荐使用 [Yarn](https://yarnpkg.com/en/docs/install) 代替 npm。
 
 ## 2. 配置
 
-在你的项目根目录下，新建一个名叫 `gulpfile.js` 的配置文件：
+在你的项目根目录下，新建一个名叫 `balm.config.js` 的配置文件：
 
 ```js
-// 1. 导入 balm
-const balm = require('balm');
-
-// 2. 配置 balm
-balm.config = {
+module.exports = {
   // 你的项目配置
 };
-
-// 3. 运行
-balm.go();
 ```
 
 :page_with_curl: 请参照 [配置文档](../config/) 来学习更多 **`balm`** 配置项。
 
 ## 3. 使用
 
+编辑 `package.json`：
+
+```json
+{
+  "scripts": {
+    "dev": "balm",
+    "prod": "balm -p"
+  }
+}
+```
+
 在你的项目根目录下运行命令：
 
 ```sh
-# 开发模式
-gulp
+# For development
+npm run dev
 
-# 生产模式
-gulp --production
-# OR
-gulp -p
+# For production
+npm run prod
 ```

@@ -27,7 +27,7 @@
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     open: true
   }
@@ -56,7 +56,7 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxy: 'your.project.com',
     serveStatic: [
@@ -106,7 +106,7 @@ Http 代理中间件。配置参数[`context`](https://github.com/chimurai/http-
 - 单个代理
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxyConfig: {
       context: '/api',
@@ -123,7 +123,7 @@ balm.config = {
 - 多个代理
 
 ```js
-balm.config = {
+module.exports = {
   server: {
     proxyConfig: [
       {

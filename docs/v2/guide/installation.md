@@ -51,7 +51,7 @@ module.exports = {
 
 ## 3. Usage
 
-Edit `package.json` in your project directory:
+Edit `package.json`:
 
 ```json
 {

@@ -20,8 +20,8 @@ project
 │ └── publish.js
 ├── .dotfile     // (例如 .gitignore, .browserslistrc 等）
 ├── babel.config.js
-├── gulpfile.js  // 必须的。Balm的配置文件。
-├── package.json // 必须的。
+├── balm.config.js  // 必须的。Balm的配置文件。
+├── package.json    // 必须的。
 └── ...
 ```
 
