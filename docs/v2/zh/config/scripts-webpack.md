@@ -147,6 +147,14 @@ interface BalmScriptsDefaultLoaders {
 
 启用或禁用 **BalmJS** 某些默认 loaders。
 
+## scripts.useEsModule
+
+`scripts.useEsModule: boolean = true`
+
+> New in 2.23.0
+
+**BalmJS** 默认 loaders 使用 ES modules 语法。
+
 ## scripts.htmlLoaderOptions
 
 `scripts.htmlLoaderOptions: object = {}`
