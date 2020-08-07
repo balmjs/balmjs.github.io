@@ -9,11 +9,11 @@ module.exports = {
     lint: true,
     esbuild: true
   },
-  images: {
-    plugins: {
-      png: false
-    }
-  },
+  // images: {
+  //   plugins: {
+  //     png: false
+  //   }
+  // },
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']
