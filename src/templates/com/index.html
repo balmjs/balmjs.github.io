@@ -102,7 +102,7 @@
         <h2>️<i>🎉</i>Features</h2>
         <ul class="feature-list">
           <li>
-            <strong class="gulp">gulp</strong> +
+            Based on <strong class="gulp">gulp</strong> +
             <strong class="webpack">webpack</strong> for any webapp projects
           </li>
           <li>Automagically compile PostCSS/Sass/Less</li>
@@ -125,7 +125,7 @@
             <div class="terminal">
               <div class="editor-window cli">
                 <pre class="active" id="automatic-code"><code>
-<span class="editor-prefixed">npm install --global balm-cli</span>
+<span class="editor-prefixed">npm install --global balm-core balm-cli</span>
 <span class="hljs-comments"># See all available official templates</span>
 <span class="editor-prefixed">balm list</span>
 
@@ -142,20 +142,21 @@
 
 </code></pre>
                 <pre id="manual-code"><code>
-<span class="editor-prefixed">cd /path/to/workspace</span>
+<span class="editor-prefixed">npm install --global balm-core balm-cli</span>
 
+<span class="editor-prefixed">cd /path/to/workspace</span>
 <span class="editor-prefixed">mkdir my-project &amp;&amp; cd my-project</span>
-<span class="editor-prefixed">npm install --save-dev gulp balm</span>
-<span class="hljs-comments"># OR `yarn add --dev gulp balm`</span>
+<span class="editor-prefixed">npm install --save-dev balm@3</span>
+<span class="hljs-comments"># OR `yarn add --dev balm@3`</span>
 
 <span class="hljs-comments"># Config balm</span>
-<span class="editor-prefixed">touch gulpfile.js</span>
+<span class="editor-prefixed">touch balm.config.js</span>
 
 <span class="hljs-comments"># For development</span>
-<span class="editor-prefixed">gulp</span>
+<span class="editor-prefixed">balm</span>
 
 <span class="hljs-comments"># For production</span>
-<span class="editor-prefixed">gulp --production</span>
+<span class="editor-prefixed">balm --production</span>
 
 </code></pre>
               </div>
@@ -175,15 +176,13 @@
             <span class="editor-button close"></span>
             <span class="editor-button minimize"></span>
             <span class="editor-button maximize"></span>
-            <span class="editor-filename">gulpfile.js</span>
+            <span class="editor-filename">balm.config.js</span>
           </div>
           <pre
             class="language-javascript active"
             id="basic-code"
           ><code class="language-javascript">
-<span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
-
-balm.config = {
+<span class="token function-variable function">module</span>.<span class="token function-variable function">exports</span> = {
   roots: {
     source: <span class="token string">'src'</span> <span class="token comment">// Source code root (Create a directory in project)</span>
   },
@@ -191,36 +190,16 @@ balm.config = {
     extname: <span class="token string">'css'</span> <span class="token comment">// Main style extension: css,scss,less</span>
   },
   scripts: {
-    entry: <span class="token string">'./src/scripts/index.js'</span> <span class="token comment">// The entry script (Create a javascript file)</span>
-  },
-  assets: {
-    root: <span class="token string">'/path/to/your_remote_project'</span>, <span class="token comment">// Remote project root path</span>
-    mainDir: <span class="token string">'public'</span> <span class="token comment">// Remote assets dir: '/path/to/your_remote_project/public'</span>
+    main: <span class="token string">'./src/scripts/index.js'</span> <span class="token comment">// The entry script (Create a javascript file)</span>
   }
 };
-
-balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
-  <span class="token keyword">if</span> (balm.config.env.isProd) {
-    <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
-    <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
-    <span class="token comment">// to remote `${assets.root}/${assets.mainDir}`</span>
-    mix.<span class="token function-variable function">publish()</span>;
-
-    <span class="token comment">// Publish html templates</span>
-    <span class="token comment">// from local `${roots.target}/index.html`</span>
-    <span class="token comment">// to remote `${assets.root}/public/index.html`</span>
-    mix.<span class="token function-variable function">publish</span>(<span class="token string">'index.html'</span>, <span class="token string">'public'</span>);
-  }
-});
 
 </code></pre>
           <pre
             class="language-javascript"
             id="advanced-code"
           ><code class="language-javascript">
-<span class="token keyword">const</span> balm = <span class="token function-variable function">require</span>(<span class="token string">'balm'</span>);
-
-balm.config = {
+<span class="token keyword">const</span> config = {
   server: {
     open: true,
     proxyConfig: {
@@ -250,10 +229,7 @@ balm.config = {
     entry: {
       <span class="token comment">// Custom vendors</span>
       <span class="token comment">// HTML: &lt;script src="<b>%PUBLIC_URL%</b>/scripts/vendor/mylib.js"&gt;&lt;/script&gt;</span>
-      mylib: [
-        <span class="token string">'your-project-vendors'</span>,
-        <span class="token string">'your-project-plugins'</span>
-      ],
+      mylib: [<span class="token string">'your-project-vendors'</span>, <span class="token string">'your-project-plugins'</span>],
       <span class="token comment">// The entry script (Create a javascript file)</span>
       main: <span class="token string">'./src/scripts/index.js'</span>
     }
@@ -266,8 +242,8 @@ balm.config = {
   }
 };
 
-balm.<span class="token function-variable function">go</span>(<span class="hljs-function"><span class="hljs-params">mix</span> <span class="token keyword">=></span> </span>{
-  <span class="token keyword">if</span> (balm.config.env.isProd) {
+<span class="token keyword">const</span> api = (<span class="hljs-function"><span class="hljs-params">mix</span>) <span class="token keyword">=></span> </span>{
+  <span class="token keyword">if</span> (mix.env.isProd) {
     <span class="token comment">// Publish assets(styles,scripts,images,fonts,media)</span>
     <span class="token comment">// from local `${roots.target}/{css,js,img,font,media}`</span>
     <span class="token comment">// to `${assets.root}/${assets.mainDir}/${assets.subDir}`</span>
@@ -288,7 +264,14 @@ balm.<span class="token function-variable function">go</span>(<span class="hljs-
       }
     ]);
   }
-});
+};
+
+<span class="token function-variable function">module</span>.<span class="token function-variable function">exports</span> = (<span class="hljs-params">balm</span>) => {
+  <span class="token keyword">return</span> {
+    config,
+    api
+  };
+};
 
 </code></pre>
         </div>
