@@ -1,16 +1,18 @@
 {
   "name": "balm.js",
-  "version": "2020.8.6",
+  "version": "2020.8.7",
   "author": "Elf-mousE",
   "scripts": {
-    "dev": "balm",
-    "prod": "balm -p",
+    "com:dev": "balm --config config/com.balm.js",
+    "com:prod": "balm -p --config config/com.balm.js",
+    "org:dev": "balm --config config/org.balm.js",
+    "org:prod": "balm -p --config config/org.balm.js",
     "docs:v1:dev": "cd docs/v1 && gitbook install && gitbook serve",
     "docs:v1:prod": "cd docs/v1 && rm -rf _book && gitbook install && gitbook build",
     "docs:v2:dev": "vuepress dev docs/v2",
     "docs:v2:prod": "vuepress build docs/v2",
-    "release:com": "bash ./scripts/balmjs.com.sh",
-    "release:org": "bash ./scripts/balm.js.org.sh"
+    "release:com": "bash ./scripts/com.balm.sh",
+    "release:org": "bash ./scripts/org.balm.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.3",

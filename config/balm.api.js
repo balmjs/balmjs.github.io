@@ -1,7 +1,5 @@
-const config = require('./config/balmrc');
-
-module.exports = (balm) => {
-  const api = (mix) => {
+module.exports = (domain, balm) => {
+  return (mix) => {
     mix.copy(
       balm.config.pwa.workboxSw,
       mix.env.isProd ? balm.config.roots.target : balm.config.roots.tmp
@@ -21,11 +19,13 @@ module.exports = (balm) => {
       });
 
       mix.injectManifest();
-    }
-  };
 
-  return {
-    config,
-    api
+      // For two domains
+      mix.copy(`config/CNAME_${domain}`, 'dist', {
+        rename: {
+          basename: 'CNAME'
+        }
+      });
+    }
   };
 };
