@@ -26,6 +26,9 @@ module.exports = (domain, balm) => {
           basename: 'CNAME'
         }
       });
+
+      // Clear
+      mix.remove('dist/rev-manifest.json');
     }
   };
 };
