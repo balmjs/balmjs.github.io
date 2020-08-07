@@ -31,6 +31,7 @@ module.exports = {
 ```ts
 interface BalmPath {
   base: string; // Application directory
+  html: string; // HTML template directory (New in 3.0, `paths.source` only)
   css: string; // Stylesheet directory
   js: string; // JavaScript directory
   img: string; // Image directory
@@ -46,6 +47,7 @@ interface BalmPath {
 (Input) Un-compiled assets.
 
 - `paths.source.base: string = ''`
+- `paths.source.html: string = ''`
 - `paths.source.css: string = 'styles'`
 - `paths.source.js: string = 'scripts'`
 - `paths.source.img: string = 'images'`

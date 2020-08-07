@@ -31,6 +31,7 @@ module.exports = {
 ```ts
 interface BalmPath {
   base: string; //  应用根目录
+  html: string; //  模板目录（3.0新增，仅限`paths.source`）
   css: string; //   样式目录
   js: string; //    脚本目录
   img: string; //   图片目录
@@ -46,6 +47,7 @@ interface BalmPath {
 （输入源）未编译的源代码。
 
 - `paths.source.base: string = ''`
+- `paths.source.html: string = ''`
 - `paths.source.css: string = 'styles'`
 - `paths.source.js: string = 'scripts'`
 - `paths.source.img: string = 'images'`

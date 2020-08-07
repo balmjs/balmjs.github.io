@@ -60,6 +60,7 @@ npm install -D balm@next
 
 ## 3. `balm.config` 变化
 
+- config.paths.source.**`html`**
 - config.styles.<del>minified</del> => config.styles.`minify`
 - config.scripts.<del>hot</del>
 - config.scripts.**`esbuild`**
