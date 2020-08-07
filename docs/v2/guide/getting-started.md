@@ -96,9 +96,10 @@ In your project directory, create a file named `balm.config.js` in your project 
 - Basic example
 
   ```js
+  // Your project config
   module.exports = {
     roots: {
-      source: 'src' // Source code root (Create a directory in project)
+      source: 'src' // Source code root (Create a directory named 'src' in project)
     },
     styles: {
       extname: 'css' // Main style extension: css,scss,less
@@ -112,6 +113,7 @@ In your project directory, create a file named `balm.config.js` in your project 
 - Advanced example
 
 ```js
+// Your project config
 const config = {
   server: {
     open: true,
@@ -124,7 +126,7 @@ const config = {
     }
   },
   roots: {
-    source: 'src' // Source code root (Create a directory in project)
+    source: 'src' // Source code root (Create a directory named 'src' in project)
     target: 'dist' // The production build
   },
   paths: {
@@ -159,8 +161,9 @@ const config = {
   }
 };
 
+// Custom tasks by API
 const api = (mix) => {
-  if (balm.config.env.isProd) {
+  if (mix.env.isProd) {
     // Publish assets(styles,scripts,images,fonts,media)
     // from local `${roots.target}/{css,js,img,font,media}`
     // to `${assets.root}/${assets.mainDir}/${assets.subDir}`
@@ -183,8 +186,13 @@ const api = (mix) => {
   }
 });
 
+const beforeTask = () => {}; // Function or custom gulp task name
+const afterTask = () => {}; // Function or custom gulp task name
+
 module.exports = (balm) => {
   return {
+    beforeTask,
+    afterTask,
     config,
     api
   };

@@ -33,15 +33,15 @@ npm install -D balm@next
   OR
 
   ```js
-  const getConfig = require('./config/balmrc.js');
+  const getConfig = require('./config/balmrc.js'); // Your project config
 
   const api = (mix) => {
-    // Your recipe config
+    // Custom tasks by API
   };
 
   module.exports = (balm) => {
     return {
-      config: getConfig(balm), // Your project config
+      config: getConfig(balm),
       api
     };
   };

@@ -1,25 +1,11 @@
 # 静态资源打包
 
-## assets.publicUrlPlaceholder
+## `%PUBLIC_URL%`
 
-`assets.publicUrlPlaceholder: string = '%PUBLIC_URL%'`
+配置 Public Url 方式：
 
-HTML 模式中可使用的 `publicUrl` 占位符。
-
-## assets.publicUrl
-
-`assets.publicUrl: string = ''`
-
-:chestnut: 举个栗子：
-
-```js
-balm.config = {
-  assets: {
-    publicUrl: 'https://balmjs.com/'
-  }
-  // 其他配置项...
-};
-```
+1. 设置 `package.json` 中的 `homepage` 字段
+2. 在 `balm.env.js` 中配置 `process.env.PUBLIC_URL`
 
 - 开发模式
 
@@ -100,7 +86,7 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   assets: {
     publicUrl: '/',
     subDir: 'web',
@@ -192,7 +178,7 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   assets: {
     cache: true,
     excludes: ['dist/img/icons/*']

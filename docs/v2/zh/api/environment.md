@@ -18,13 +18,7 @@ interface BalmEnvObject {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   console.log(mix.env); // 等同于 `balm.config.env`，输出：{ isProd, isTest, isDev, inSSR }
 
   if (mix.env.isProd) {
@@ -32,5 +26,12 @@ balm.go(mix => {
   } else {
     // 开发模式
   }
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

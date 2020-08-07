@@ -1,4 +1,4 @@
-# Images
+# 图片
 
 ## images.defaultPlugins
 

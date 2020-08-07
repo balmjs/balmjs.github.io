@@ -11,26 +11,28 @@
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-const workboxSw = 'node_modules/workbox-sw/build/workbox-sw.js';
-
-balm.config = {
+const config = {
   pwa: {
-    enabled: true, // NOTE: 仅限生产模式
-    workboxSw
+    enabled: true // NOTE: 仅限生产模式
   }
   // 其他配置项...
 };
 
-balm.go(mix => {
-  if (!balm.config.env.isProd) {
-    mix.copy(workboxSw, balm.config.roots.tmp);
-    // PWA 测试
-    mix.generateSW();
-    // mix.injectManifest();
-  }
-});
+module.exports = (balm) => {
+  const api = (mix) => {
+    if (!mix.env.isProd) {
+      mix.copy(workboxSw, balm.config.roots.tmp);
+      // PWA 测试
+      mix.generateSW();
+      // mix.injectManifest();
+    }
+  };
+
+  return {
+    config,
+    api
+  };
+};
 ```
 
 ## mix.modernizr()

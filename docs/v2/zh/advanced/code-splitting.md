@@ -164,7 +164,14 @@ new Vue({
 - `/path/to/project/src/styles/main.scss`
 
 ```scss
-// @import 'node_modules/balm-ui/src/styles/balm-ui.scss';
+// Recommended Dart Sass
+@use 'balm-ui/dist/balm-ui.scss';
+```
+
+或
+
+```scss
+@import 'node_modules/balm-ui/dist/balm-ui.scss';
 ```
 
 ## 2. 引用部分代码

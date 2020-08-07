@@ -15,9 +15,6 @@ project
 │ ├─┬ styles
 │ │ └── main.css // 必须的。CSS样式入口文件。
 │ └── index.html // 必须的。HTML模板入口文件。
-├─┬ config       // 可选的。但推荐。请参照 BalmCLI 模板。
-│ ├── balmrc.js
-│ └── publish.js
 ├── .dotfile     // (例如 .gitignore, .browserslistrc 等）
 ├── babel.config.js
 ├── balm.config.js  // 必须的。Balm的配置文件。

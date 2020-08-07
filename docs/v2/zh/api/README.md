@@ -31,15 +31,16 @@
   - [`mix.modernizr()`](others.html#mix-modernizr)
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
+const api = (mix) => {
+  // 使用API自定义任务
 };
 
-balm.go(mix => {
-  // 使用自定义任务API
-});
+module.exports = (balm) => {
+  return {
+    config: {}, // Your project config
+    api
+  };
+};
 ```
 
 > `balm.config` 请参照 [BalmJS 配置文档](../config/)

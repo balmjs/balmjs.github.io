@@ -31,9 +31,9 @@ Balm workflow environment variable in Node.js.
 :chestnut: For example:
 
 ```js
-// File: /path/to/workspace/config/balmrc.js
+// File: /path/to/workspace/balm.config.js
 const path = require('path');
-const workspace = path.resolve(__dirname, '..');
+const workspace = path.resolve(__dirname);
 
 module.exports = {
   workspace
@@ -76,7 +76,7 @@ const config = {
 };
 
 const api = (mix) => {
-  // Use custom task API
+  // Custom tasks by API
 };
 
 module.exports = (balm) => {

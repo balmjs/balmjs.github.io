@@ -62,7 +62,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 > 通过 Balm 将 `index.js` 编译成 `main.js`。
 >
-> 请参照下面项目配置中的 [3. `balm` 配置文件](#_3-balm-配置文件-gulpfile-js)。
+> 请参照下面项目配置中的 [3. 配置 `balm`](#_3-配置-balm)。
 
 ## 项目配置
 
@@ -112,6 +112,7 @@ module.exports = {
 - 高级用例
 
 ```js
+// 你的项目配置
 const config = {
   server: {
     open: true,
@@ -158,6 +159,7 @@ const config = {
   }
 };
 
+// 使用API自定义任务
 const api = (mix) => {
   if (mix.env.isProd) {
     // 发布静态资源 (styles,scripts,images,fonts,media)
@@ -168,16 +170,27 @@ const api = (mix) => {
     // 发布HTML模板
     // 从本地 `${roots.target}/index.html`
     // 到远程 `${assets.root}/views/new-filename.blade.php`
-    mix.publish('index.html', 'views', {
-      basename: 'new-filename',
-      suffix: '.blade',
-      extname: '.php'
-    });
+    mix.publish([
+      {
+        input: 'index.html',
+        output: 'views',
+        renameOptions: {
+          basename: 'new-filename',
+          suffix: '.blade',
+          extname: '.php'
+        }
+      }
+    ]);
   }
 });
 
+const beforeTask = () => {}; // 方法 或 自定义gulp任务名称
+const afterTask = () => {}; // 方法 或 自定义gulp任务名称
+
 module.exports = (balm) => {
   return {
+    beforeTask,
+    afterTask,
     config,
     api
   };
@@ -185,3 +198,16 @@ module.exports = (balm) => {
 ```
 
 > **提示：** 如果你参照了 `balm` 的标准项目结构，就可以几乎 **零配置** 来进行项目开发。
+
+### 4. 更新 `package.json`
+
+```json
+{
+  "scripts": {
+    "dev": "balm",
+    "prod": "balm -p"
+  }
+}
+```
+
+现在，让我们愉快地撸代码吧！ :ghost:

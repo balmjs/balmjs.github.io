@@ -22,13 +22,7 @@ interface HookOptions {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.copy('app/old-filename.html', 'dist', {
     rename: {
       basename: 'new-filename',
@@ -42,7 +36,14 @@ balm.go(mix => {
       base: '.'
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 > `gulp.src` [详细配置](https://gulpjs.com/docs/en/api/src#options)
@@ -56,16 +57,17 @@ balm.go(mix => {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.remove('foo.txt');
   mix.remove(['bar/a.txt', 'bar/b.txt']);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.replace()

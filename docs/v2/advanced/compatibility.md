@@ -52,7 +52,7 @@ module.exports = {
 };
 ```
 
-### 5. Upgrade entry js file
+## 5. Upgrade entry js file
 
 - `main.js`
 

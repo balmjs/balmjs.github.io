@@ -32,7 +32,7 @@
 
 ```js
 const api = (mix) => {
-  // Custom Task API
+  // Custom tasks by API
 };
 
 module.exports = (balm) => {

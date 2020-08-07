@@ -29,15 +29,16 @@ interface TemplateOption {
   - 输出：`${assets.root}/${assets.mainDir}/${assets.subDir}`
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
+const api = (mix) => {
+  mix.publish();
 };
 
-balm.go(mix => {
-  mix.publish();
-});
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 - 发布模板
@@ -45,13 +46,7 @@ balm.go(mix => {
   - 输出：`${assets.root}/views/new-filename.blade.php`
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   // 单模板
   mix.publish('index.html', 'views', {
     basename: 'new-filename',
@@ -72,7 +67,14 @@ balm.go(mix => {
     }
     // 更多配置
   ]);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.zip()
@@ -82,13 +84,7 @@ balm.go(mix => {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   // 默认用法
   // 输入：'/path/to/project/dist/**/*'
   // 输出：'/path/to/project/archive.zip'
@@ -96,7 +92,14 @@ balm.go(mix => {
 
   // 附带 dotfile 的用法
   mix.zip(['dist/**/*', 'dist/.some-dotfile']);
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.ftp()
@@ -121,9 +124,7 @@ interface HookOptions {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   ftp: {
     options: {
       host: '192.168.1.1',
@@ -135,7 +136,7 @@ balm.config = {
   }
 };
 
-balm.go(mix => {
+const api = (mix) => {
   //（本地）输入：'/path/to/project/dist/archive.zip'
   //（远程）输出：`${ftp.options.remotePath}/archive.zip`
   mix.ftp('dist/archive.zip');
@@ -143,5 +144,12 @@ balm.go(mix => {
   mix.ftp('dist/archive.zip', {
     // FTP options: 覆盖 `balm.config.ftp.options` 配置
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```

@@ -31,11 +31,11 @@ Node.js 中 Balm 工作流的环境变量。
 :chestnut: 举个栗子：
 
 ```js
-// 文件：/path/to/workspace/config/balmrc.js
+// 文件：/path/to/workspace/balm.config.js
 const path = require('path');
-const workspace = path.resolve(__dirname, '..');
+const workspace = path.resolve(__dirname);
 
-balm.config = {
+module.exports = {
   workspace
   // 其他配置项...
 };
@@ -55,7 +55,7 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-balm.config = {
+module.exports = {
   inFrontend: true
   // 其他配置项...
 };
@@ -70,16 +70,21 @@ balm.config = {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   useDefaults: false // 关闭 balm 的默认任务
   // 其他配置项...
 };
 
-balm.go((mix) => {
-  // 使用自定义任务API
-});
+const api = (mix) => {
+  // 使用API自定义任务
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 > :page_with_curl: 请参考 [自定义任务 API 文档](../api/)

@@ -37,13 +37,7 @@ JS 压缩。
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.js('app/scripts/app.js', 'dist/js');
   // 'app/scripts/app.js' => 'dist/js/main.js'
 
@@ -56,5 +50,12 @@ balm.go(mix => {
     }
   });
   // 'dist/js/main.js' => 'dist/js/main.min.js'
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```

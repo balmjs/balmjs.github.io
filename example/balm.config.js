@@ -1,5 +1,5 @@
-// Documentation - https://balmjs.com/docs/config/
-// 中文文档 - https://balmjs.com/docs/zh/config/
+// Documentation - https://balm.js.org/docs/config/
+// 中文文档 - https://balm.js.org/docs/zh/config/
 
 const config = {
   server: {
@@ -32,10 +32,8 @@ const config = {
     entry: {
       // HTML: <script src="%PUBLIC_URL%/scripts/vendor/mylib.js"></script>
       // mylib: [
-      //   'your-project-library-1',
-      //   'your-project-library-2',
-      //   'your-project-plugin-A',
-      //   'your-project-plugin-B'
+      //   'your-project-vendors',
+      //   'your-project-plugins'
       // ],
       // Entry
       main: './src/scripts/index.js'
@@ -45,7 +43,7 @@ const config = {
     // root: '/path/to/your_remote_project', // Remote project root path
     mainDir: 'public', // '/path/to/your_remote_project/public'
     subDir: '', // `/path/to/your_remote_project/public/${subDir}`
-    cache: false
+    cache: true
   }
 };
 

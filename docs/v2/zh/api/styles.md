@@ -24,19 +24,20 @@ Sass => CSS.
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.sass('app/styles/*.scss', 'dist/css', {
     sass: {
       // Sass options: 覆盖 `balm.config.styles.sassOptions` 配置
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.less()
@@ -55,19 +56,20 @@ Less => CSS.
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
-};
-
-balm.go(mix => {
+const api = (mix) => {
   mix.less('app/styles/*.less', 'dist/css', {
     less: {
       // Less options: 覆盖 `balm.config.styles.lessOptions` 配置
     }
   });
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
 
 ## mix.url()
@@ -79,9 +81,7 @@ balm.go(mix => {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
+const config = {
   paths: {
     source: {
       img: 'images',
@@ -95,13 +95,20 @@ balm.config = {
   // 其他配置项...
 };
 
-balm.go(mix => {
+const api = (mix) => {
   mix.sass('app/styles/*.scss', 'dist/css');
   mix.url('dist/css/*.css', 'dist/css');
   // 输出：
   // '../images' => '../img'
   // '../fonts' => '../font'
-});
+};
+
+module.exports = (balm) => {
+  return {
+    config,
+    api
+  };
+};
 ```
 
 ## mix.sprite()
@@ -123,13 +130,14 @@ interface SpriteOptions {
 :chestnut: 举个栗子：
 
 ```js
-const balm = require('balm');
-
-balm.config = {
-  // 你的项目配置
+const api = (mix) => {
+  mix.sprite(['icons'], 'dist/img');
 };
 
-balm.go(mix => {
-  mix.sprite(['icons'], 'dist/img');
-});
+module.exports = (balm) => {
+  return {
+    config: {},
+    api
+  };
+};
 ```
