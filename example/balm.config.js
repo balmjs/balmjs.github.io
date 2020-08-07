@@ -67,7 +67,7 @@ const api = (mix) => {
 
 module.exports = () => {
   return {
-    config,
-    api
+    config
+    // api
   };
 };
