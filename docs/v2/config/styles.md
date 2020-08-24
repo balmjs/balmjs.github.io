@@ -35,6 +35,8 @@ module.exports = {
 
 `styles.minify: boolean = false`
 
+> Rename <del>`minified`</del> to `minify` in 3.0.0
+
 Ignore the environment and force CSS compression.
 
 > **Tips:** Often used with [`mix.serve`](/api/serve) in development mode.

@@ -27,7 +27,4 @@ module.exports = {
     manifest: 'manifest.webmanifest',
     version: `v${pkg.version.replace(/\./g, '')}`
   }
-  // logs: {
-  //   level: 2
-  // }
 };

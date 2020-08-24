@@ -1,6 +1,6 @@
 {
   "name": "balm.js",
-  "version": "2020.8.7",
+  "version": "2020.8.24",
   "author": "Elf-mousE",
   "scripts": {
     "com:dev": "balm --config config/com.balm.js",
@@ -15,17 +15,17 @@
     "release:org": "bash ./scripts/org.balm.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.5.3",
-    "@vuepress/plugin-google-analytics": "^1.5.3",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "@vuepress/plugin-google-analytics": "^1.5.4",
     "babel-eslint": "^10.1.0",
-    "balm": "^3.0.0-beta.13",
-    "eslint": "^7.6.0",
+    "balm": "^3.0.0-rc.1",
+    "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "moment": "^2.27.0",
     "prettier": "^2.0.5",
-    "prismjs": "^1.20.0",
-    "vuepress": "^1.5.3"
+    "prismjs": "^1.21.0",
+    "vuepress": "^1.5.4"
   },
   "private": true
 }
