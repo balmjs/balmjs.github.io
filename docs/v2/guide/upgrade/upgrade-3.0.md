@@ -8,14 +8,14 @@ Hello **`balm-core`** :tada:
 
 ```sh
 yarn global add balm-core
-yarn add -D balm@next
+yarn add -D balm
 ```
 
 OR
 
 ```sh
 npm install -g balm-core
-npm install -D balm@next
+npm install -D balm
 ```
 
 ## 2. Upgrade entry config file

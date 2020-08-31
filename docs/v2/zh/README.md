@@ -22,7 +22,7 @@ BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效�
 
 | 项目                                                   | 状态                                                   | 描述                                   |
 | ------------------------------------------------------ | ------------------------------------------------------ | -------------------------------------- |
-| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS 工作流编译核心 (`balm@3` 必需)  |
+| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS 工作流编译核心 (`balm 3.0` 必需)  |
 | **[balm](https://github.com/balmjs/balm)**             | [![NPM version][balm-image]][balm-url]                 | BalmJS 工作流运行时                    |
 | **[balm-cli](https://github.com/balmjs/balm-cli)**     | [![NPM version][balm-cli-image]][balm-cli-url]         | BalmJS 脚手架工具                      |
 | [balm-gui](https://github.com/balmjs/balm-gui)         | N/A                                                    | BalmJS 可视化工具                      |

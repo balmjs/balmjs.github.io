@@ -1,13 +1,10 @@
 {
-  "name": "balm-example",
-  "version": "3.0.0",
+  "private": true,
   "scripts": {
     "dev": "balm",
     "prod": "balm -p"
   },
-  "author": "Elf-mousE",
-  "license": "ISC",
   "devDependencies": {
-    "balm": "^3.0.0-rc.1"
+    "balm": "^3.0.0"
   }
 }

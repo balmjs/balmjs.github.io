@@ -25,14 +25,14 @@ npm init -y
 
 ```sh
 yarn global add balm-core
-yarn add -D balm@next
+yarn add -D balm
 ```
 
 或
 
 ```sh
 npm install -g balm-core
-npm install -D balm@next
+npm install -D balm
 ```
 
 > 当前我们推荐使用 [Yarn](https://yarnpkg.com/en/docs/install) 代替 npm。

@@ -25,14 +25,14 @@ npm init -y
 
 ```sh
 yarn global add balm-core
-yarn add -D balm@next
+yarn add -D balm
 ```
 
 OR
 
 ```sh
 npm install -g balm-core
-npm install -D balm@next
+npm install -D balm
 ```
 
 > We currently recommend using [Yarn](https://yarnpkg.com/en/docs/install) instead of npm.

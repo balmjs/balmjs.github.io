@@ -6,10 +6,8 @@ import './my-sw';
   const CONFIG_POSITION = document.getElementById('config').offsetTop;
 
   const DEMO = {
-    boilerplate: 'Boilerplate',
-    html: 'HTML',
+    'html5-boilerplate': 'HTML Boilerplate',
     laravel: 'Laravel',
-    vue: 'Vue.js',
     ts: 'TypeScript'
   };
   const ACTIVE = 'active';

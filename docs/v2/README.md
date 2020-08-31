@@ -22,7 +22,7 @@ BalmJS prescribes best practices and tools to help you stay productive.
 
 | Project                                                | Status                                                 | Description                                  |
 | ------------------------------------------------------ | ------------------------------------------------------ | -------------------------------------------- |
-| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS compiler core (required for `balm@3`) |
+| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS compiler core (required for `balm 3.0`) |
 | **[balm](https://github.com/balmjs/balm)**             | [![NPM version][balm-image]][balm-url]                 | BalmJS runtime core                          |
 | **[balm-cli](https://github.com/balmjs/balm-cli)**     | [![NPM version][balm-cli-image]][balm-cli-url]         | BalmJS scaffolding tool                      |
 | [balm-gui](https://github.com/balmjs/balm-gui)         | N/A                                                    | GUI for BalmJS                               |
