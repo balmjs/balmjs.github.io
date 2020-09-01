@@ -1,6 +1,6 @@
 # BalmJS
 
-> 一个灵活的前端工作流方案 :tada:
+> 一个灵活的可用于任意 WEB 项目开发的前端工作流方案 :tada:
 
 ## 什么是 BalmJS？
 
@@ -20,15 +20,15 @@ BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效�
 
 ## 生态系统
 
-| 项目                                                   | 状态                                                   | 描述                                   |
-| ------------------------------------------------------ | ------------------------------------------------------ | -------------------------------------- |
-| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS 工作流编译核心 (`balm 3.0` 必需)  |
-| **[balm](https://github.com/balmjs/balm)**             | [![NPM version][balm-image]][balm-url]                 | BalmJS 工作流运行时                    |
-| **[balm-cli](https://github.com/balmjs/balm-cli)**     | [![NPM version][balm-cli-image]][balm-cli-url]         | BalmJS 脚手架工具                      |
-| [balm-gui](https://github.com/balmjs/balm-gui)         | N/A                                                    | BalmJS 可视化工具                      |
-| [balm-ui-lite](https://github.com/balmjs/balm-ui-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material UI 精简版 + Vue               |
-| **[balm-ui](https://github.com/balmjs/balm-ui)**       | [![NPM version][balm-ui-image]][balm-ui-url]           | 为 Vue.js 量身定制的下一代 Material UI |
-| [balm-scroll](https://github.com/balmjs/balm-scroll)   | [![NPM version][balm-scroll-image]][balm-scroll-url]   | Vue.js 平滑滚动方案                    |
+| 项目                                                   | 状态                                                   | 描述                                    |
+| ------------------------------------------------------ | ------------------------------------------------------ | --------------------------------------- |
+| **[balm-core](https://github.com/balmjs/balm)**        | [![NPM version][balm-core-image]][balm-core-url]       | BalmJS 工作流编译核心 (`balm 3.0` 必需) |
+| **[balm](https://github.com/balmjs/balm)**             | [![NPM version][balm-image]][balm-url]                 | BalmJS 工作流运行时                     |
+| **[balm-cli](https://github.com/balmjs/balm-cli)**     | [![NPM version][balm-cli-image]][balm-cli-url]         | BalmJS 脚手架工具                       |
+| [balm-gui](https://github.com/balmjs/balm-gui)         | N/A                                                    | BalmJS 可视化工具                       |
+| [balm-ui-lite](https://github.com/balmjs/balm-ui-lite) | [![NPM version][balm-ui-lite-image]][balm-ui-lite-url] | Material UI 精简版 + Vue                |
+| **[balm-ui](https://github.com/balmjs/balm-ui)**       | [![NPM version][balm-ui-image]][balm-ui-url]           | 为 Vue.js 量身定制的下一代 Material UI  |
+| [balm-scroll](https://github.com/balmjs/balm-scroll)   | [![NPM version][balm-scroll-image]][balm-scroll-url]   | Vue.js 平滑滚动方案                     |
 
 [balm-core-image]: https://badge.fury.io/js/balm-core.svg
 [balm-core-url]: https://npmjs.org/package/balm-core

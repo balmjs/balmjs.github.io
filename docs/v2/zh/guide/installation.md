@@ -14,12 +14,14 @@
 
 ```sh
 # /path/to/YOUR_WORKSPACE
-mkdir -p balm-project/src/{styles,scripts}
-cd balm-project
+mkdir -p my-project/src/{styles,scripts}
+echo "Hello World" > my-project/src/index.html
+
+cd my-project
 npm init -y
 ```
 
-> 提示：BalmJS 工作流基于 [gulp](https://gulpjs.com/) 进行项目构建，所以你需要全局安装 `gulp-cli` 和本地安装 `gulp` 依赖包。
+> 提示：`balm < 3` 工作流基于 [gulp](https://gulpjs.com/) 进行项目构建，所以你需要全局安装 `gulp-cli` 和本地安装 `gulp` 依赖包。
 
 ## 1. 安装 **`balm`**
 

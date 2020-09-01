@@ -1,6 +1,6 @@
 {
   "name": "balm.js",
-  "version": "2020.8.31",
+  "version": "2020.9.1",
   "author": "Elf-mousE",
   "scripts": {
     "com:dev": "balm --config config/com.balm.js",

@@ -144,8 +144,11 @@
                 <pre id="manual-code"><code>
 <span class="editor-prefixed">npm install --global balm-core balm-cli</span>
 
-<span class="editor-prefixed">cd /path/to/workspace</span>
-<span class="editor-prefixed">mkdir my-project/src/{styles,scripts}</span>
+<span class="hljs-comments"># /path/to/YOUR_WORKSPACE</span>
+<span class="editor-prefixed">mkdir -p my-project/src/{styles,scripts}</span>
+<span class="editor-prefixed">echo "Hello World" > my-project/src/index.html</span>
+
+<span class="hljs-comments"># Installing balm</span>
 <span class="editor-prefixed">cd my-project</span>
 <span class="editor-prefixed">npm install --save-dev balm</span>
 <span class="hljs-comments"># OR `yarn add --dev balm`</span>

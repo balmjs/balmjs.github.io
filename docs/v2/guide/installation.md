@@ -14,14 +14,16 @@ To create a new workspace and initial starter app:
 
 ```sh
 # /path/to/YOUR_WORKSPACE
-mkdir -p balm-project/src/{styles,scripts}
-cd balm-project
+mkdir -p my-project/src/{styles,scripts}
+echo "Hello World" > my-project/src/index.html
+
+cd my-project
 npm init -y
 ```
 
-> NOTE: `balm < 3` using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` local dependency.
+> NOTE: `balm < 3` using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` locally dependency.
 
-## 1. Installing
+## 1. Installing `balm`
 
 ```sh
 yarn global add balm-core
