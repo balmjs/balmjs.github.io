@@ -6,9 +6,9 @@
 
 BalmJS 规范了前端的最佳实践和工具，以帮助开发者保持高效工作。
 
-## Features
+## 功能特点
 
-- 基于 **gulp + webpack** 构建任意前端项目
+- 基于 **gulp + webpack** 构建 _任意_ 前端项目
 - 自动编译 PostCSS/Sass/Less
 - CSS Autoprefixing
 - 自动生成雪碧图
