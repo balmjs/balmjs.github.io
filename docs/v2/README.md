@@ -1,22 +1,27 @@
 # BalmJS
 
-> A flexible Front-End workflow for any webapps :tada:
+> A flexible Front-End workflow for webapps
 
 ## What's BalmJS?
 
-BalmJS prescribes best practices and tools to help you stay productive.
+:tada: BalmJS prescribes best practices and tools to help you stay productive.
+
+- **Naturally**: Make web development _simple_, _natural_ and _pleasant_.
+- **Structure-Based**: _One configuration file_ can manage webapp projects with at least 90% use cases.
+- **Learn Once, Run Any Webapps**: Any front-end technology stack will be developed and built in _the same way_.
 
 ## Features
 
-- Based on **gulp + webpack** for _any_ webapp projects
+- Based on **gulp + webpack** for webapp projects
 - Automagically compile PostCSS/Sass/Less
 - CSS Autoprefixing
-- Automagically generation CSS sprites
+- Automagically generate CSS sprites
 - enable ES2015+ features using Babel
 - Awesome images optimization
 - Built-in preview server with BrowserSync
 - Custom publish assets to remote (Front-end to Back-end) project
 - ZIP/FTP/PWA supported
+- Easily define and extend your own tasks
 
 ## Ecosystem
 

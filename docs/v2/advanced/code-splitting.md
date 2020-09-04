@@ -39,7 +39,9 @@
 import Vue from 'vue';
 import App from './views/layouts/app';
 import BalmUI from 'balm-ui';
-import 'balm-ui/dist/balm-ui.css'; // Not recommended usage
+
+// Include UI styles (Not recommended usage)
+import 'balm-ui/dist/balm-ui.css';
 
 Vue.use(BalmUI);
 
@@ -54,6 +56,10 @@ new Vue({
 
 ```js
 module.exports = {
+  styles: {
+    extname: 'scss',
+    dartSass: true
+  },
   scripts: {
     entry: {
       lib: ['vue'],
@@ -103,13 +109,13 @@ module.exports = {
 
 ```scss
 // Recommended Dart Sass
-@use 'balm-ui/dist/balm-ui.scss';
+@use 'balm-ui/dist/balm-ui';
 ```
 
 OR
 
 ```scss
-@import 'node_modules/balm-ui/dist/balm-ui.scss';
+@import 'balm-ui/dist/balm-ui.scss';
 ```
 
 - `/path/to/project/src/scripts/main.js`
@@ -168,12 +174,6 @@ new Vue({
 </html>
 ```
 
-- `/path/to/project/src/styles/main.scss`
-
-```scss
-// @import 'node_modules/balm-ui/src/styles/balm-ui.scss';
-```
-
 ## 2. Include partial code
 
 > Recommended for Mobile :iphone:
@@ -192,8 +192,8 @@ import $alert from 'balm-ui/plugins/alert';
 
 // Include UI styles (Not recommended usage)
 import 'balm-ui/components/core.css';
-import 'balm-ui/components/button.css';
-import 'balm-ui/components/dialog.css';
+import 'balm-ui/components/button/button.scss';
+import 'balm-ui/components/dialog/dialog.css';
 
 // Use UI components
 Vue.use(UiButton);

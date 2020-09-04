@@ -102,19 +102,19 @@
         <h2>️<i>🎉</i>Features</h2>
         <ul class="feature-list">
           <li>
-            Based on <strong class="gulp">gulp</strong> +
-            <strong class="webpack">webpack</strong> for any webapp projects
+            <strong class="gulp">Naturally</strong>: Make web development
+            <i>simple</i>, <i>natural</i> and <i>pleasant</i>.
           </li>
-          <li>Automagically compile PostCSS/Sass/Less</li>
-          <li>CSS Autoprefixing</li>
-          <li>Automagically generation CSS sprites</li>
-          <li>enable ES2015+ features using Babel</li>
-          <li>Awesome images optimization</li>
-          <li>Built-in preview server with BrowserSync</li>
           <li>
-            Custom publish assets to remote (Front-end to Back-end) project
+            <strong class="node">Structure-Based</strong>:
+            <i>One configuration file</i> can manage webapp projects with at
+            least 90% use cases.
           </li>
-          <li>ZIP/FTP/PWA supported</li>
+          <li>
+            <strong class="webpack">Learn Once, Run Any Webapps</strong>: Any
+            front-end technology stack will be developed and built in
+            <i>the same way</i>.
+          </li>
         </ul>
       </section>
 
@@ -126,13 +126,13 @@
               <div class="editor-window cli">
                 <pre class="active" id="automatic-code"><code>
 <span class="editor-prefixed">npm install --global balm-core balm-cli</span>
+
 <span class="hljs-comments"># See all available official templates</span>
 <span class="editor-prefixed">balm list</span>
 
 <span class="editor-prefixed">balm init &lt;template-name&gt; &lt;project-name&gt;</span>
 <span class="editor-prefixed">cd &lt;project-name&gt;</span>
-<span class="editor-prefixed">npm install</span>
-<span class="hljs-comments"># OR `yarn`</span>
+<span class="editor-prefixed">npm install <span class="hljs-comments"># OR `yarn`</span></span>
 
 <span class="hljs-comments"># For development</span>
 <span class="editor-prefixed">npm run dev</span>
@@ -148,19 +148,18 @@
 <span class="editor-prefixed">mkdir -p my-project/src/{styles,scripts}</span>
 <span class="editor-prefixed">echo "Hello World" > my-project/src/index.html</span>
 
-<span class="hljs-comments"># Installing balm</span>
+<span class="hljs-comments"># Installing `balm`</span>
 <span class="editor-prefixed">cd my-project</span>
-<span class="editor-prefixed">npm install --save-dev balm</span>
-<span class="hljs-comments"># OR `yarn add --dev balm`</span>
+<span class="editor-prefixed">npm install --save-dev balm <span class="hljs-comments"># OR `yarn add --dev balm`</span></span>
 
 <span class="hljs-comments"># Config balm</span>
 <span class="editor-prefixed">touch balm.config.js</span>
 
 <span class="hljs-comments"># For development</span>
-<span class="editor-prefixed">balm</span>
+<span class="editor-prefixed">balm go</span>
 
 <span class="hljs-comments"># For production</span>
-<span class="editor-prefixed">balm --production</span>
+<span class="editor-prefixed">balm go --production</span>
 
 </code></pre>
               </div>

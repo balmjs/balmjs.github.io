@@ -1,4 +1,4 @@
-# Advanced
+# Advanced Usage
 
 - [Single Page Application](spa.md)
 - [Multiple Page Application](mpa.md)

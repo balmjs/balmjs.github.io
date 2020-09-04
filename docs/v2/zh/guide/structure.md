@@ -22,4 +22,4 @@ project
 └── ...
 ```
 
-> :rocket: 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 脚手架工具来快速创建一个前端 Web 应用的骨架程序。 :ghost:
+> :rocket: 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 脚手架工具来快速创建一个前端 Web 应用的骨架程序。

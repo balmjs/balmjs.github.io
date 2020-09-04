@@ -21,8 +21,6 @@ cd my-project
 npm init -y
 ```
 
-> NOTE: `balm < 3` using [gulp](https://gulpjs.com/) for the build process, so you need install `gulp-cli` globally and `gulp` locally dependency.
-
 ## 1. Installing `balm`
 
 ```sh

@@ -39,7 +39,9 @@
 import Vue from 'vue';
 import App from './views/layouts/app';
 import BalmUI from 'balm-ui';
-import 'balm-ui/dist/balm-ui.css'; // 不推荐的用法
+
+// 引入 UI 样式（不推荐的用法）
+import 'balm-ui/dist/balm-ui.css';
 
 Vue.use(BalmUI);
 
@@ -54,6 +56,10 @@ new Vue({
 
 ```js
 module.exports = {
+  styles: {
+    extname: 'scss',
+    dartSass: true
+  },
   scripts: {
     entry: {
       lib: ['vue'],
@@ -102,7 +108,14 @@ module.exports = {
 - `/path/to/project/src/styles/main.scss`
 
 ```scss
-@import 'node_modules/balm-ui/src/styles/balm-ui.scss'; // 推荐的用法
+// 推荐使用 Dart Sass
+@use 'balm-ui/dist/balm-ui';
+```
+
+或
+
+```scss
+@import 'balm-ui/dist/balm-ui.scss';
 ```
 
 - `/path/to/project/src/scripts/main.js`
@@ -161,19 +174,6 @@ new Vue({
 </html>
 ```
 
-- `/path/to/project/src/styles/main.scss`
-
-```scss
-// Recommended Dart Sass
-@use 'balm-ui/dist/balm-ui.scss';
-```
-
-或
-
-```scss
-@import 'node_modules/balm-ui/dist/balm-ui.scss';
-```
-
 ## 2. 引用部分代码
 
 > 推荐移动端 H5 使用 :iphone:
@@ -192,8 +192,8 @@ import $alert from 'balm-ui/plugins/alert';
 
 // 引入 UI 样式（不推荐的用法）
 import 'balm-ui/components/core.css';
-import 'balm-ui/components/button.css';
-import 'balm-ui/components/dialog.css';
+import 'balm-ui/components/button/button.css';
+import 'balm-ui/components/dialog/dialog.css';
 
 // 使用 UI 组件
 Vue.use(UiButton);
