@@ -23,3 +23,16 @@ project
 ```
 
 > :rocket: 我们推荐使用 [Balm CLI](https://github.com/balmjs/balm-cli) 脚手架工具来快速创建一个前端 Web 应用的骨架程序。
+
+`balm.config.js`: BalmJS 项目根目录默认配置入口文件
+
+- 更新 `package.json` 可以自定义配置入口文件：
+
+```json
+{
+  "scripts": {
+    "dev": "balm --config /path/to/config/balmrc.js",
+    "prod": "balm -p --config /path/to/config/balmrc.js"
+  }
+}
+```

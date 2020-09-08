@@ -1,5 +1,18 @@
 # 配置
 
+`balm.config.js`: BalmJS 项目根目录默认配置入口文件
+
+- 更新 `package.json` 可以自定义配置入口文件：
+
+```json
+{
+  "scripts": {
+    "dev": "balm --config /path/to/config/balmrc.js",
+    "prod": "balm -p --config /path/to/config/balmrc.js"
+  }
+}
+```
+
 - [环境](environment.md)
 - [目录和路径](paths.md)
 - [模板](html.md)

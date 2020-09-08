@@ -23,3 +23,16 @@ project
 ```
 
 > :rocket: We recommend using [Balm CLI](https://github.com/balmjs/balm-cli) to scaffold out a front-end web app.
+
+`balm.config.js`: The default configuration entry file in BalmJS project root
+
+- update `package.json` for custom configuration entry file:
+
+```json
+{
+  "scripts": {
+    "dev": "balm --config /path/to/config/balmrc.js",
+    "prod": "balm -p --config /path/to/config/balmrc.js"
+  }
+}
+```
