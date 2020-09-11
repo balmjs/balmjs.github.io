@@ -88,7 +88,6 @@ The prefix of the `subDir`, for non-standard dynamic language project.
 ```js
 module.exports = {
   assets: {
-    publicUrl: '/',
     subDir: 'web',
     virtualDir: 'awesome',
     cache: true

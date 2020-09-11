@@ -88,7 +88,6 @@
 ```js
 module.exports = {
   assets: {
-    publicUrl: '/',
     subDir: 'web',
     virtualDir: 'awesome',
     cache: true
