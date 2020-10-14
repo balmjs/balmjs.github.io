@@ -71,6 +71,7 @@ const sidebarData = [
       '/advanced/spa',
       '/advanced/mpa',
       '/advanced/code-splitting',
+      '/advanced/recipes',
       '/advanced/compatibility'
     ]
   }
