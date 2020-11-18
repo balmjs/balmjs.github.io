@@ -1,18 +1,26 @@
-# Javascript bundler - webpack
+# Application bundler - webpack
 
 ## scripts.entry
 
 ```ts
-interface BalmEntryObject {
-  [entryChunkName: string]: string | string[];
+interface WebpackEntry {
+  [name: string]: string | string[];
 }
+
+type WebpackEntryFunc = () =>
+  | string
+  | string[]
+  | Entry
+  | Promise<string | string[] | Entry>;
+
+type BalmEntry = string | string[] | WebpackEntry | WebpackEntryFunc;
 ```
 
-`scripts.entry: string | string[] | BalmEntryObject = ''`
+`scripts.entry: BalmEntry = ''`
 
 The entry point for the bundle.
 
-When `scripts.entry` is `BalmEntryObject`:
+When `scripts.entry` is `WebpackEntry`:
 
 1. `{ [key: string]: value: string }`: Bundle one entry point per HTML page.
 2. `{ [key: string]: value: string[] }`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
@@ -53,17 +61,34 @@ Then, your HTML templates:
 
 ## scripts.library
 
-`scripts.library: string | object = ''`
+```ts
+type Library = string | string[] | { [key: string]: string };
+```
+
+`scripts.library: Library = ''`
 
 The name of the exported library.
 
 ## scripts.libraryTarget
 
-`scripts.libraryTarget: string = 'var'`
+```ts
+type LibraryTarget =
+  | 'var'
+  | 'assign'
+  | 'this'
+  | 'window'
+  | 'global'
+  | 'commonjs'
+  | 'commonjs2'
+  | 'amd'
+  | 'umd'
+  | 'jsonp'
+  | 'system';
+```
 
-The type of the exported library.
+`scripts.libraryTarget: LibraryTarget = 'var'`
 
-> Supported options: `var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
+Configure how the library will be exposed.
 
 :chestnut: For example:
 
@@ -79,7 +104,7 @@ module.exports = {
 
 ## scripts.loaders
 
-`scripts.loaders: Rule[] = []`
+`scripts.loaders: RuleSetRule[] = []`
 
 An array of [Rule](https://webpack.js.org/configuration/module/#rule) automatically applied loaders.
 
@@ -133,7 +158,7 @@ module.exports = {
 ## scripts.defaultLoaders
 
 ```ts
-interface BalmScriptsDefaultLoaders {
+interface BalmLoaders {
   html?: boolean;
   css?: boolean;
   js?: boolean;
@@ -141,7 +166,7 @@ interface BalmScriptsDefaultLoaders {
 }
 ```
 
-`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
+`scripts.defaultLoaders: BalmLoaders = {}`
 
 > Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
 
@@ -153,35 +178,7 @@ Enable/Disable **BalmJS** some default loaders.
 
 > New in 2.23.0
 
-Use ES modules syntax for default loaders.
-
-## scripts.htmlLoaderOptions
-
-`scripts.htmlLoaderOptions: object = {}`
-
-> New in 2.11.0
-
-The extra options of the balm default `html-loader`.
-
-## scripts.postcssLoaderOptions
-
-```ts
-interface PostcssLoaderOptions {
-  exec?: boolean;
-  parser?: string | object;
-  syntax?: string | object;
-  stringifier?: string | object;
-  config?: object;
-  plugins?: object[] | Function; // NOTE: The same to `styles.postcssPlugins`
-  sourceMap: string | boolean;
-}
-```
-
-`scripts.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
-
-> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
-
-PostCSS loader for webpack. Reference [options](https://github.com/postcss/postcss-loader#options).
+Use ES modules syntax for the balm default loaders.
 
 ## scripts.urlLoaderOptions
 
@@ -219,6 +216,30 @@ Then, your can:
   <img :src="require('@/assets/logo.png')" />
 </template>
 ```
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+The extra options of the balm default `html-loader`.
+
+## scripts.postcssLoaderOptions
+
+```ts
+interface PostcssLoaderOptions {
+  exec?: boolean;
+  postcssOptions?: object | Function; // NOTE: `postcssOptions.plugins` is the same to `styles.postcssPlugins`
+  sourceMap: string | boolean;
+}
+```
+
+`scripts.postcssLoaderOptions: PostcssLoaderOptions = {}`
+
+> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
+
+PostCSS loader for webpack. Reference [options](https://github.com/postcss/postcss-loader#options).
 
 ## scripts.extensions
 
@@ -264,7 +285,11 @@ import foo from 'foo';
 
 ## scripts.alias
 
-`scripts.alias: object = {}`
+```ts
+type ResolveAlias = { [key: string]: string };
+```
+
+`scripts.alias: ResolveAlias = {}`
 
 Replace modules by other modules or paths.
 
@@ -297,9 +322,24 @@ Source mapping.
 
 ## scripts.target
 
-`scripts.target: string = 'web'`
+```ts
+type Target =
+  | 'web'
+  | 'webworker'
+  | 'node'
+  | 'async-node'
+  | 'node-webkit'
+  | 'atom'
+  | 'electron'
+  | 'electron-renderer'
+  | 'electron-preload'
+  | 'electron-main'
+  | ((compiler?: any) => void);
+```
 
-To [target](https://webpack.js.org/configuration/target/) a specific environment.
+`scripts.target: Target = 'web'`
+
+To target a specific environment.
 
 ## scripts.externals
 
@@ -309,7 +349,7 @@ The same to webpack [externals](https://webpack.js.org/configuration/externals/)
 
 ## scripts.stats
 
-`scripts.stats: string | object`
+`scripts.stats: object | string`
 
 Capture timing information for each module. Reference [options](https://webpack.js.org/configuration/stats/).
 
@@ -330,36 +370,6 @@ Defaults to:
 `scripts.webpackOptions: object = {}`
 
 Full custom [webpack configuration](https://webpack.js.org/configuration/).
-
-## scripts.options
-
-`scripts.options: object`
-
-Terser [minify options](https://github.com/terser/terser#minify-options).
-
-Defaults to:
-
-```js
-{
-  parse: {
-    ecma: 8
-  },
-  compress: {
-    ecma: 5,
-    warnings: false,
-    comparisons: false,
-    inline: 2
-  },
-  mangle: {
-    safari10: true
-  },
-  output: {
-    ecma: 5,
-    comments: false,
-    ascii_only: true
-  }
-}
-```
 
 ## scripts.inject
 

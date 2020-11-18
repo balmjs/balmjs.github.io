@@ -1,18 +1,26 @@
-# 脚本打包 - webpack
+# 应用打包 - webpack
 
 ## scripts.entry
 
 ```ts
-interface BalmEntryObject {
-  [entryChunkName: string]: string | string[];
+interface WebpackEntry {
+  [name: string]: string | string[];
 }
+
+type WebpackEntryFunc = () =>
+  | string
+  | string[]
+  | Entry
+  | Promise<string | string[] | Entry>;
+
+type BalmEntry = string | string[] | WebpackEntry | WebpackEntryFunc;
 ```
 
-`scripts.entry: string | string[] | BalmEntryObject = ''`
+`scripts.entry: BalmEntry = ''`
 
 脚本入口点。
 
-当 `scripts.entry` 为 `BalmEntryObject` 对象时：
+当 `scripts.entry` 为 `WebpackEntry` 对象时：
 
 1. `{ [key: string]: value: string }`: 每个 HTML 页面对应一个脚本入口文件。
 2. `{ [key: string]: value: string[] }`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
@@ -53,17 +61,34 @@ module.exports = {
 
 ## scripts.library
 
-`scripts.library: string | object = ''`
+```ts
+type Library = string | string[] | { [key: string]: string };
+```
+
+`scripts.library: Library = ''`
 
 导出的库的名称。
 
 ## scripts.libraryTarget
 
-`scripts.libraryTarget: string = 'var'`
+```ts
+type LibraryTarget =
+  | 'var'
+  | 'assign'
+  | 'this'
+  | 'window'
+  | 'global'
+  | 'commonjs'
+  | 'commonjs2'
+  | 'amd'
+  | 'umd'
+  | 'jsonp'
+  | 'system';
+```
+
+`scripts.libraryTarget: LibraryTarget = 'var'`
 
 导出的库的类型。
-
-> 支持的选项：`var`, `this`, `window`, `global`, `commonjs`, `commonjs2`, `amd`, `umd`.
 
 :chestnut: 举个栗子：
 
@@ -79,7 +104,7 @@ module.exports = {
 
 ## scripts.loaders
 
-`scripts.loaders: Rule[] = []`
+`scripts.loaders: RuleSetRule[] = []`
 
 一系列自动应用的 [loaders](https://webpack.js.org/configuration/module/#rule)。
 
@@ -133,7 +158,7 @@ module.exports = {
 ## scripts.defaultLoaders
 
 ```ts
-interface BalmScriptsDefaultLoaders {
+interface BalmLoaders {
   html?: boolean;
   css?: boolean;
   js?: boolean;
@@ -141,7 +166,7 @@ interface BalmScriptsDefaultLoaders {
 }
 ```
 
-`scripts.defaultLoaders: BalmScriptsDefaultLoaders = {}`
+`scripts.defaultLoaders: BalmLoaders = {}`
 
 > Rename <del>`disableDefaultLoaders`</del> to `defaultLoaders` in 2.5.0
 
@@ -154,34 +179,6 @@ interface BalmScriptsDefaultLoaders {
 > New in 2.23.0
 
 **BalmJS** 默认 loaders 使用 ES modules 语法。
-
-## scripts.htmlLoaderOptions
-
-`scripts.htmlLoaderOptions: object = {}`
-
-> New in 2.11.0
-
-balm 默认的 `html-loader` 中额外的配置。
-
-## scripts.postcssLoaderOptions
-
-```ts
-interface PostcssLoaderOptions {
-  exec?: boolean;
-  parser?: string | object;
-  syntax?: string | object;
-  stringifier?: string | object;
-  config?: object;
-  plugins?: object[] | Function; // NOTE: 等同于 `styles.postcssPlugins`
-  sourceMap: string | boolean;
-}
-```
-
-`scripts.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
-
-> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
-
-PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)。
 
 ## scripts.urlLoaderOptions
 
@@ -219,6 +216,30 @@ vue 文件之前的用法：
   <img :src="require('@/assets/logo.png')" />
 </template>
 ```
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+balm 默认的 `html-loader` 中额外的配置。
+
+## scripts.postcssLoaderOptions
+
+```ts
+interface PostcssLoaderOptions {
+  exec?: boolean;
+  postcssOptions?: object | Function; // NOTE: `postcssOptions.plugins` 等同于 `styles.postcssPlugins`
+  sourceMap: string | boolean;
+}
+```
+
+`scripts.postcssLoaderOptions: PostcssLoaderOptions = { sourceMap: false }`
+
+> Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
+
+PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)。
 
 ## scripts.extensions
 
@@ -264,7 +285,11 @@ import foo from 'foo';
 
 ## scripts.alias
 
-`scripts.alias: object = {}`
+```ts
+type ResolveAlias = { [key: string]: string };
+```
+
+`scripts.alias: ResolveAlias = {}`
 
 自定义别名，用其他模块或路径替换模块。
 
@@ -297,9 +322,24 @@ module.exports = {
 
 ## scripts.target
 
-`scripts.target: string = 'web'`
+```ts
+type Target =
+  | 'web'
+  | 'webworker'
+  | 'node'
+  | 'async-node'
+  | 'node-webkit'
+  | 'atom'
+  | 'electron'
+  | 'electron-renderer'
+  | 'electron-preload'
+  | 'electron-main'
+  | ((compiler?: any) => void);
+```
 
-针对[特定的环境](https://webpack.js.org/configuration/target/)来编译脚本。
+`scripts.target: Target = 'web'`
+
+针对特定的环境来编译脚本。
 
 ## scripts.externals
 
@@ -330,36 +370,6 @@ module.exports = {
 `scripts.webpackOptions: object = {}`
 
 完整的 [webpack 配置](https://webpack.js.org/configuration/)。
-
-## scripts.options
-
-`scripts.options: object`
-
-JS 压缩 [详细配置](https://github.com/terser/terser#minify-options)。
-
-默认值为：
-
-```js
-{
-  parse: {
-    ecma: 8
-  },
-  compress: {
-    ecma: 5,
-    warnings: false,
-    comparisons: false,
-    inline: 2
-  },
-  mangle: {
-    safari10: true
-  },
-  output: {
-    ecma: 5,
-    comments: false,
-    ascii_only: true
-  }
-}
-```
 
 ## scripts.inject
 

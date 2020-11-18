@@ -2,15 +2,33 @@
 
 ## mix.js()
 
-```ts
-interface BalmEntryObject {
-  [entryChunkName: string]: string | string[];
-}
-```
+`mix.js(input: BalmEntry, output: string, webpackOptions?: object)`
 
-`mix.js(input: string | string[] | BalmEntryObject, output: string, webpackOptions?: object)`
+⚠️ `mix.js` is deprecated in `3.9.0`, please use `mix.webpack`/`mix.rollup`/`mix.esbuild` instead.
+
+## mix.webpack()
+
+`mix.js(input: BalmEntry, output: string, options?: object)`
+
+> New in 3.9.0
 
 Compiling JS with webpack.
+
+## mix.esbuild()
+
+`mix.js(input: string | string[], output: string, options?: BuildOptions | TransformOptions)`
+
+> New in 3.9.0
+
+Compiling JS with esbuild.
+
+## mix.rollup()
+
+`mix.js(input: InputOptions, output: OutputOptions | OutputOptions[])`
+
+> New in 3.9.0
+
+Compiling JS with rollup.
 
 ## mix.jsmin()
 

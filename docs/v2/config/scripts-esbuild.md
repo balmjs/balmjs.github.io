@@ -1,14 +1,6 @@
-# Javascript bundler - esbuild
+# JavaScript bundler - esbuild
 
 > ⚠️ NOTE: experimental for `balm 3.0`, and `balm-core` required
-
-## scripts.esbuild
-
-`scripts.esbuild: boolean = false`
-
-Enabled an extremely fast JavaScript bundler and minifier.
-
-> If enabled `scripts.esbuild`, _webpack configs_ of `config.scripts` will be disabled.
 
 ## scripts.entry
 
@@ -21,7 +13,7 @@ The shortcut for esbuild entry.
 ```js
 module.exports = {
   scripts: {
-    esbuild: true,
+    bundler: 'esbuild',
     entry: ['./app/scripts/main-page.js', './app/scripts/sub-page.js']
   }
   // Other Options...
@@ -51,7 +43,7 @@ Transform options. See [the TypeScript type definitions](https://github.com/evan
 ```js
 module.exports = {
   scripts: {
-    esbuild: true,
+    bundler: 'esbuild',
     entry: ['./app/scripts/react-entry.js'],
     useTransform: true,
     transformOptions: {
