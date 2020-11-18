@@ -6,8 +6,8 @@ module.exports = {
     dartSass: true
   },
   scripts: {
-    lint: true,
-    esbuild: true
+    bundler: 'esbuild',
+    lint: true
   },
   // images: {
   //   plugins: {
