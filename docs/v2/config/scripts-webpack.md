@@ -358,10 +358,10 @@ Defaults to:
 ```js
 {
   colors: true,
-  modules: false,
-  children: false,
   chunks: false,
-  chunkModules: false
+  chunkModules: false,
+  modules: false,
+  children: false
 }
 ```
 
