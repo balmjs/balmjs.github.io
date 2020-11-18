@@ -6,28 +6,20 @@
 
 `scripts.inputOptions: InputOptions = {}`
 
-[输入配置](https://rollupjs.org/guide/en/#inputoptions-object)
+[输入配置](https://rollupjs.org/guide/en/#inputoptions-object)。
 
 ## scripts.outputOptions
 
 `scripts.outputOptions: OutputOptions = {}`
 
-[输出配置](https://rollupjs.org/guide/en/#outputoptions-object)
+[输出配置](https://rollupjs.org/guide/en/#outputoptions-object)。
 
 ## scripts.watchOptions
 
 `scripts.watchOptions: WatcherOptions = {}`
 
-[观察配置](https://rollupjs.org/guide/en/#watchoptions)
+[观察配置](https://rollupjs.org/guide/en/#watchoptions)。
 
-## scripts.nodeResolveOptions
+## Rollup 官方插件
 
-`scripts.nodeResolveOptions: object = {}`
-
-使用第三方 Node 模块。[配置](https://github.com/rollup/plugins/tree/master/packages/node-resolve#options)。
-
-## scripts.commonjsOptions
-
-`scripts.commonjsOptions: object = {}`
-
-转换 CommonJS 到 ES6。[配置](https://github.com/rollup/plugins/tree/master/packages/commonjs#options)。
+点[这里](https://github.com/rollup/plugins)。
