@@ -9,6 +9,7 @@ interface BalmEnvObject {
   isDev: boolean;
   inSSR: boolean;
   isMP: boolean; // New in 2.9.0
+  inDesktopApp: boolean; // New in 3.1.0
 }
 ```
 
@@ -16,11 +17,14 @@ interface BalmEnvObject {
 
 Node.js 中 Balm 工作流的环境变量。
 
-- 运行 `balm` 时 `env.isDev` 为 `true`
-- 运行 `balm -p` 或 `balm --production` 时 `env.isProd` 为 `true`
-- 运行 `balm -t` 或 `balm --test`时 `env.isTest` 为 `true`
-- 运行 `balm -ssr` 或 `balm --server`时 `env.inSSR` 为 `true`
-- 运行 `balm -mp` 或 `balm --miniprogram` 时 `env.isMP` 为 `true`
+- 标准环境
+  - 运行 `balm` 时 `env.isDev` 为 `true`
+  - 运行 `balm -p` 或 `balm --production` 时 `env.isProd` 为 `true`
+  - 运行 `balm -t` 或 `balm --test`时 `env.isTest` 为 `true`
+- 扩展环境
+  - 运行 `balm -ssr` 或 `balm --server`时 `env.inSSR` 为 `true`
+  - 运行 `balm -mp` 或 `balm --miniprogram` 时 `env.isMP` 为 `true`
+  - 运行 `balm -electron` 或 `balm --desktop-app` 时 `env.inDesktopApp` 为 `true`
 
 ## workspace
 

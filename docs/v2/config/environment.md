@@ -9,6 +9,7 @@ interface BalmEnvObject {
   isDev: boolean;
   inSSR: boolean;
   isMP: boolean; // New in 2.9.0
+  inDesktopApp: boolean; // New in 3.1.0
 }
 ```
 
@@ -16,11 +17,14 @@ interface BalmEnvObject {
 
 Balm workflow environment variable in Node.js.
 
-- `env.isDev` is `true` when running `balm`
-- `env.isProd` is `true` when running `balm -p` or `balm --production`
-- `env.isTest` is `true` when running `balm -t` or `balm --test`
-- `env.inSSR` is `true` when running `balm -ssr` or `balm --server`
-- `env.isMP` is `true` when running `balm -mp` or `balm --miniprogram`
+- standard
+  - `env.isDev` is `true` when running `balm`
+  - `env.isProd` is `true` when running `balm -p` or `balm --production`
+  - `env.isTest` is `true` when running `balm -t` or `balm --test`
+- plus
+  - `env.inSSR` is `true` when running `balm -ssr` or `balm --server`
+  - `env.isMP` is `true` when running `balm -mp` or `balm --miniprogram`
+  - `env.inDesktopApp` is `true` when running `balm -electron` or `balm --desktop-app`
 
 ## workspace
 
