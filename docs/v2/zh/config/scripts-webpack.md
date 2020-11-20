@@ -1,26 +1,22 @@
 # 应用打包 - webpack
 
+> ⚠️ 提示：当前版本使用 `webpack@4`，`balm-core@canary` 中已使用 `webpack@5`（相关配置请参照对应的 webpack 官方文档）
+
 ## scripts.entry
 
 ```ts
-interface WebpackEntry {
+interface EntryObject {
   [name: string]: string | string[];
 }
 
-type WebpackEntryFunc = () =>
-  | string
-  | string[]
-  | Entry
-  | Promise<string | string[] | Entry>;
-
-type BalmEntry = string | string[] | WebpackEntry | WebpackEntryFunc;
+type BalmEntry = string | string[] | EntryObject;
 ```
 
 `scripts.entry: BalmEntry = ''`
 
 脚本入口点。
 
-当 `scripts.entry` 为 `WebpackEntry` 对象时：
+当 `scripts.entry` 为 `EntryObject` 对象时：
 
 1. `{ [key: string]: value: string }`: 每个 HTML 页面对应一个脚本入口文件。
 2. `{ [key: string]: value: string[] }`:（提取第三方模块）创建一个单独的文件，由多个入口脚本之间共享的通用模块组成。
@@ -61,34 +57,15 @@ module.exports = {
 
 ## scripts.library
 
-```ts
-type Library = string | string[] | { [key: string]: string };
-```
+`scripts.library: string | object = ''`
 
-`scripts.library: Library = ''`
-
-导出的库的名称。
+导出的库的名称。详见 webpack [output.library](https://webpack.js.org/configuration/output/#outputlibrary)。
 
 ## scripts.libraryTarget
 
-```ts
-type LibraryTarget =
-  | 'var'
-  | 'assign'
-  | 'this'
-  | 'window'
-  | 'global'
-  | 'commonjs'
-  | 'commonjs2'
-  | 'amd'
-  | 'umd'
-  | 'jsonp'
-  | 'system';
-```
+`scripts.libraryTarget: string = 'var'`
 
-`scripts.libraryTarget: LibraryTarget = 'var'`
-
-导出的库的类型。
+导出的库的类型。详见 webpack [output.libraryTarget](https://webpack.js.org/configuration/output/#outputlibrarytarget)。
 
 :chestnut: 举个栗子：
 
@@ -149,12 +126,6 @@ module.exports = {
 };
 ```
 
-## scripts.includeJsResource
-
-`scripts.includeJsResource: string[] = []`
-
-（**绝对路径**）在 `babel-loader` 中为某些需要额外依赖的脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
-
 ## scripts.defaultLoaders
 
 ```ts
@@ -179,6 +150,20 @@ interface BalmLoaders {
 > New in 2.23.0
 
 **BalmJS** 默认 loaders 使用 ES modules 语法。
+
+## scripts.includeJsResource
+
+`scripts.includeJsResource: string[] = []`
+
+（**绝对路径**）在 `babel-loader` 中为某些需要额外依赖的脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
+
+## scripts.excludeUrlResource
+
+`scripts.excludeUrlResource: string[] = []`
+
+> New in 3.7.0
+
+（**绝对路径**）在 `url-loader` 中为某些图片资源提供一个 [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude) 选项。
 
 ## scripts.urlLoaderOptions
 
@@ -285,11 +270,7 @@ import foo from 'foo';
 
 ## scripts.alias
 
-```ts
-type ResolveAlias = { [key: string]: string };
-```
-
-`scripts.alias: ResolveAlias = {}`
+`scripts.alias: object = {}`
 
 自定义别名，用其他模块或路径替换模块。
 
@@ -306,9 +287,15 @@ module.exports = {
 };
 ```
 
+## scripts.optimization
+
+`scripts.optimization: object = {}`
+
+WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configuration/optimization/)。
+
 ## scripts.plugins
 
-`scripts.loaders: plugins[] = []`
+`scripts.loaders: Plugin[] = []`
 
 添加额外的插件到编译器。
 
@@ -318,40 +305,26 @@ module.exports = {
 
 `scripts.sourceMap: string | boolean = false`
 
-开启源映射。
+开启源映射。详见 webpack [devtool](https://webpack.js.org/configuration/devtool/)。
 
 ## scripts.target
 
-```ts
-type Target =
-  | 'web'
-  | 'webworker'
-  | 'node'
-  | 'async-node'
-  | 'node-webkit'
-  | 'atom'
-  | 'electron'
-  | 'electron-renderer'
-  | 'electron-preload'
-  | 'electron-main'
-  | ((compiler?: any) => void);
-```
+- 当前版本：`scripts.target: string = 'web'`
+- canary 版本：`scripts.target: string | string[] = ['web', 'es5']`
 
-`scripts.target: Target = 'web'`
-
-针对特定的环境来编译脚本。
+针对特定的环境来编译脚本。详见 webpack [target](https://webpack.js.org/configuration/target/)。
 
 ## scripts.externals
 
 `scripts.externals: string | object | Function | RegExp = ''`
 
-同 webpack 的 [externals](https://webpack.js.org/configuration/externals/) 参数。
+从打包中排除依赖项的方法。详见 webpack [externals](https://webpack.js.org/configuration/externals/)。
 
 ## scripts.stats
 
 `scripts.stats: string | object`
 
-捕获每个模块的编译信息。[详细配置](https://webpack.js.org/configuration/stats/)。
+捕获每个模块的编译信息。详见 webpack [stats](https://webpack.js.org/configuration/stats/)。
 
 默认值为：
 
@@ -369,19 +342,13 @@ type Target =
 
 `scripts.webpackOptions: object = {}`
 
-完整的 [webpack 配置](https://webpack.js.org/configuration/)。
+完整可自定义的 [webpack 配置](https://webpack.js.org/configuration/)。
 
 ## scripts.inject
 
 `scripts.inject: boolean = false`
 
 支持 SSR 模式中构建脚本生成 hash。
-
-## scripts.optimization
-
-`scripts.optimization: object = {}`
-
-WEB 性能优化。[详细配置](https://webpack.js.org/configuration/optimization/)。
 
 ## scripts.extractAllVendors
 

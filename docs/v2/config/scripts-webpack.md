@@ -1,26 +1,22 @@
 # Application bundler - webpack
 
+> ⚠️ NOTE: `webpack@4` is used by current version, and `webpack@5` is used in `balm-core@canary` (For related configuration, please refer to the corresponding webpack official documentation)
+
 ## scripts.entry
 
 ```ts
-interface WebpackEntry {
+interface EntryObject {
   [name: string]: string | string[];
 }
 
-type WebpackEntryFunc = () =>
-  | string
-  | string[]
-  | Entry
-  | Promise<string | string[] | Entry>;
-
-type BalmEntry = string | string[] | WebpackEntry | WebpackEntryFunc;
+type BalmEntry = string | string[] | EntryObject;
 ```
 
 `scripts.entry: BalmEntry = ''`
 
 The entry point for the bundle.
 
-When `scripts.entry` is `WebpackEntry`:
+When `scripts.entry` is `EntryObject`:
 
 1. `{ [key: string]: value: string }`: Bundle one entry point per HTML page.
 2. `{ [key: string]: value: string[] }`: Creates a separate file (known as a chunk), consisting of common modules shared between multiple entry points.
@@ -61,34 +57,15 @@ Then, your HTML templates:
 
 ## scripts.library
 
-```ts
-type Library = string | string[] | { [key: string]: string };
-```
+`scripts.library: string | object = ''`
 
-`scripts.library: Library = ''`
-
-The name of the exported library.
+The name of the exported library. See webpack [output.library](https://webpack.js.org/configuration/output/#outputlibrary).
 
 ## scripts.libraryTarget
 
-```ts
-type LibraryTarget =
-  | 'var'
-  | 'assign'
-  | 'this'
-  | 'window'
-  | 'global'
-  | 'commonjs'
-  | 'commonjs2'
-  | 'amd'
-  | 'umd'
-  | 'jsonp'
-  | 'system';
-```
+`scripts.libraryTarget: string = 'var'`
 
-`scripts.libraryTarget: LibraryTarget = 'var'`
-
-Configure how the library will be exposed.
+Configure how the library will be exposed. See webpack [output.libraryTarget](https://webpack.js.org/configuration/output/#outputlibrarytarget).
 
 :chestnut: For example:
 
@@ -149,12 +126,6 @@ module.exports = {
 };
 ```
 
-## scripts.includeJsResource
-
-`scripts.includeJsResource: string[] = []`
-
-(**Absolute path**) Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some extra vendor scripts from local anywhere.
-
 ## scripts.defaultLoaders
 
 ```ts
@@ -179,6 +150,20 @@ Enable/Disable **BalmJS** some default loaders.
 > New in 2.23.0
 
 Use ES modules syntax for the balm default loaders.
+
+## scripts.includeJsResource
+
+`scripts.includeJsResource: string[] = []`
+
+(**Absolute path**) Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some extra vendor scripts from local anywhere.
+
+## scripts.excludeUrlResource
+
+`scripts.excludeUrlResource: string[] = []`
+
+> New in 3.7.0
+
+(**Absolute path**) Supply a [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude) option in `url-loader` for images assets from local anywhere.
 
 ## scripts.urlLoaderOptions
 
@@ -285,11 +270,7 @@ import foo from 'foo';
 
 ## scripts.alias
 
-```ts
-type ResolveAlias = { [key: string]: string };
-```
-
-`scripts.alias: ResolveAlias = {}`
+`scripts.alias: object = {}`
 
 Replace modules by other modules or paths.
 
@@ -306,9 +287,15 @@ module.exports = {
 };
 ```
 
+## scripts.optimization
+
+`scripts.optimization: object = {}`
+
+Webpack optimizations for manual configuration and overrides. See webpack [optimization](https://webpack.js.org/configuration/optimization/).
+
 ## scripts.plugins
 
-`scripts.loaders: plugins[] = []`
+`scripts.loaders: Plugin[] = []`
 
 Add additional plugins to the compiler.
 
@@ -318,40 +305,26 @@ Add additional plugins to the compiler.
 
 `scripts.sourceMap: string | boolean = false`
 
-Source mapping.
+Source mapping. See webpack [devtool](https://webpack.js.org/configuration/devtool/).
 
 ## scripts.target
 
-```ts
-type Target =
-  | 'web'
-  | 'webworker'
-  | 'node'
-  | 'async-node'
-  | 'node-webkit'
-  | 'atom'
-  | 'electron'
-  | 'electron-renderer'
-  | 'electron-preload'
-  | 'electron-main'
-  | ((compiler?: any) => void);
-```
+- current version: `scripts.target: string = 'web'`
+- canary version: `scripts.target: string | string[] = ['web', 'es5']`
 
-`scripts.target: Target = 'web'`
-
-To target a specific environment.
+To target a specific environment. See webpack [target](https://webpack.js.org/configuration/target/).
 
 ## scripts.externals
 
 `scripts.externals: string | object | Function | RegExp = ''`
 
-The same to webpack [externals](https://webpack.js.org/configuration/externals/).
+Provides a way of excluding dependencies from the output bundles. See webpack [externals](https://webpack.js.org/configuration/externals/).
 
 ## scripts.stats
 
 `scripts.stats: object | string`
 
-Capture timing information for each module. Reference [options](https://webpack.js.org/configuration/stats/).
+Capture timing information for each module. See webpack [stats](https://webpack.js.org/configuration/stats/).
 
 Defaults to:
 
@@ -376,12 +349,6 @@ Full custom [webpack configuration](https://webpack.js.org/configuration/).
 `scripts.inject: boolean = false`
 
 Support the hash scripts in the SSR build.
-
-## scripts.optimization
-
-`scripts.optimization: object = {}`
-
-Webpack optimizations for manual configuration and overrides. Reference [options](https://webpack.js.org/configuration/optimization/).
 
 ## scripts.extractAllVendors
 

@@ -5,3 +5,4 @@
 - [Code Splitting](code-splitting.md)
 - [Recipes](recipes.md)
 - [Compatibility](compatibility.md)
+- [Troubleshooting](troubleshooting.md)

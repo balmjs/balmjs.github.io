@@ -73,7 +73,8 @@ const sidebarData = [
       '/advanced/mpa',
       '/advanced/code-splitting',
       '/advanced/recipes',
-      '/advanced/compatibility'
+      '/advanced/compatibility',
+      '/advanced/troubleshooting'
     ]
   }
 ];

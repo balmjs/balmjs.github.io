@@ -5,3 +5,4 @@
 - [代码分离](code-splitting.md)
 - [实用技巧](recipes.md)
 - [兼容性方案](compatibility.md)
+- [常见问题](troubleshooting.md)
