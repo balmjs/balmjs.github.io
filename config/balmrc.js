@@ -9,11 +9,6 @@ module.exports = {
     bundler: 'esbuild',
     lint: true
   },
-  // images: {
-  //   plugins: {
-  //     png: false
-  //   }
-  // },
   extras: {
     includes: ['CNAME'],
     excludes: ['service-worker.js']

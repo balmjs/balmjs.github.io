@@ -5,6 +5,6 @@
     "prod": "balm -p"
   },
   "devDependencies": {
-    "balm": "^3.8.0"
+    "balm": "^3.9.2"
   }
 }
