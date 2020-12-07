@@ -23,6 +23,8 @@ module.exports = {
 };
 ```
 
+> ⚠️ `Cannot find module 'node-sass'` [Solution](../advanced/troubleshooting.md)
+
 ## styles.dartSass
 
 `styles.dartSass: boolean = false`
