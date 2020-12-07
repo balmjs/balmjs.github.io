@@ -1,5 +1,6 @@
 const pkg = require('../package.json');
 
+const version = `v${pkg.version.replace(/\./g, '')}`;
 const banner =
   '/*!\n' +
   ` * BalmJS v${pkg.devDependencies.balm}\n` +
@@ -17,7 +18,7 @@ module.exports = (balm) => {
       bundler: 'esbuild',
       buildOptions: {
         define: {
-          'process.env.NODE_ENV': balm.env.isProd
+          'process.env.NODE_ENV': balm.config.env.isProd
             ? JSON.stringify('production')
             : JSON.stringify('development')
         },
@@ -35,7 +36,7 @@ module.exports = (balm) => {
     },
     pwa: {
       manifest: 'manifest.webmanifest',
-      version: `v${pkg.version.replace(/\./g, '')}`
+      version
     }
   };
 };
