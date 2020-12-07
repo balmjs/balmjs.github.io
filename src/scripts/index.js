@@ -1,5 +1,3 @@
-import './my-sw';
-
 (function (window) {
   const BODY = document.documentElement || document.body;
   const INSTALL_POSITION = document.getElementById('install').offsetTop;
@@ -47,3 +45,12 @@ import './my-sw';
 })(window);
 
 showDemo();
+
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(() => console.log('THX BalmJS - https://github.com/balmjs'))
+      .catch((error) => console.error('GG', error));
+  });
+}

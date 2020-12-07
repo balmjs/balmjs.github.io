@@ -1,9 +1,9 @@
-const config = require('./balmrc');
+const getConfig = require('./balmrc');
 const getApi = require('./balm.api');
 
 module.exports = (balm) => {
   return {
-    config: Object.assign(config, {
+    config: Object.assign(getConfig(balm), {
       paths: {
         source: {
           html: 'templates/com'
