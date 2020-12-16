@@ -1,6 +1,6 @@
 # BalmJS
 
-> A flexible Front-End workflow for webapps
+> An universal Front-End workflow for webapps
 
 ## What's BalmJS?
 
