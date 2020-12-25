@@ -12,6 +12,14 @@ type BalmBundler = 'webpack' | 'rollup' | 'esbuild';
 
 Default bundler.
 
+## scripts.minify
+
+`scripts.minify: boolean = false`
+
+> New in 3.9.4
+
+Ignore the environment and force JS compression for webpack bundler.
+
 ## scripts.minifyOptions
 
 `scripts.minifyOptions: MinifyOptions`

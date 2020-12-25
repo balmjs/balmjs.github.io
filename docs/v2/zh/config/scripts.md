@@ -12,6 +12,14 @@ type BalmBundler = 'webpack' | 'rollup' | 'esbuild';
 
 默认的打包模式。
 
+## scripts.minify
+
+`scripts.minify: boolean = false`
+
+> New in 3.9.4
+
+（webpack 模式）忽略环境变量，强制执行 JS 压缩。
+
 ## scripts.minifyOptions
 
 `scripts.minifyOptions: MinifyOptions`

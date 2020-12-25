@@ -8,15 +8,17 @@
 
 ## mix.webpack()
 
-`mix.js(input: BalmEntry, output: string, options?: object)`
+`mix.webpack(input: BalmEntry, output: string, options?: object, fn?: Function)`
 
 > New in 3.9.0
 
 Compiling JS with webpack.
 
+> `fn` parameter is new in 3.9.4
+
 ## mix.esbuild()
 
-`mix.js(input: string | string[], output: string, options?: BuildOptions | TransformOptions)`
+`mix.esbuild(input: string | string[], output: string, options?: BuildOptions | TransformOptions)`
 
 > New in 3.9.0
 
@@ -24,7 +26,7 @@ Compiling JS with esbuild.
 
 ## mix.rollup()
 
-`mix.js(input: InputOptions, output: OutputOptions | OutputOptions[])`
+`mix.rollup(input: InputOptions, output: OutputOptions | OutputOptions[])`
 
 > New in 3.9.0
 
