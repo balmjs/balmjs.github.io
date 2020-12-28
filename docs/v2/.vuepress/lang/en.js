@@ -3,6 +3,7 @@ module.exports = {
   guide: 'Guide',
   config: 'Configuration',
   api: 'API Reference',
+  ecosystem: 'Ecosystem',
   // sidebar
   intro: 'Introduction',
   upgrade: 'Upgrade Guide',
