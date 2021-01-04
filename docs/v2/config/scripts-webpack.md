@@ -2,6 +2,8 @@
 
 > ⚠️ NOTE: `webpack@4` is used by current version, and `webpack@5` is used in `balm-core@canary` (For related configuration, please refer to the corresponding webpack official documentation)
 
+> BalmJS will invoke analyzer, when you run `npm run prod --report`.
+
 ## scripts.entry
 
 ```ts
@@ -165,13 +167,21 @@ Use ES modules syntax for the balm default loaders.
 
 (**Absolute path**) Supply a [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude) option in `url-loader` for images assets from local anywhere.
 
+## scripts.babelLoaderOptions
+
+`scripts.babelLoaderOptions: object = {}`
+
+> New in 3.9.6
+
+The extra options of the balm default `babel-loader`. Reference [options](https://github.com/babel/babel-loader#options).
+
 ## scripts.urlLoaderOptions
 
 `scripts.urlLoaderOptions: object = {}`
 
 > New in 2.1.0
 
-The extra options of the balm default `url-loader`.
+The extra options of the balm default `url-loader`. Reference [options](https://github.com/webpack-contrib/url-loader#options).
 
 :chestnut: For example:
 
@@ -202,14 +212,6 @@ Then, your can:
 </template>
 ```
 
-## scripts.htmlLoaderOptions
-
-`scripts.htmlLoaderOptions: object = {}`
-
-> New in 2.11.0
-
-The extra options of the balm default `html-loader`.
-
 ## scripts.postcssLoaderOptions
 
 ```ts
@@ -225,6 +227,14 @@ interface PostcssLoaderOptions {
 > Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
 
 PostCSS loader for webpack. Reference [options](https://github.com/postcss/postcss-loader#options).
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+The extra options of the balm default `html-loader`. Reference [options](https://github.com/webpack-contrib/html-loader#options).
 
 ## scripts.extensions
 

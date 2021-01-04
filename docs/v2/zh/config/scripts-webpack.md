@@ -2,6 +2,8 @@
 
 > ⚠️ 提示：当前版本使用 `webpack@4`，`balm-core@canary` 中已使用 `webpack@5`（相关配置请参照对应的 webpack 官方文档）
 
+> 当你运行 `npm run prod --report` 时，BalmJS 会启动分析器。
+
 ## scripts.entry
 
 ```ts
@@ -165,13 +167,21 @@ interface BalmLoaders {
 
 （**绝对路径**）在 `url-loader` 中为某些图片资源提供一个 [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude) 选项。
 
+## scripts.babelLoaderOptions
+
+`scripts.babelLoaderOptions: object = {}`
+
+> New in 3.9.6
+
+balm 默认的 `babel-loader` 中额外的配置。[详细配置](https://github.com/babel/babel-loader#options)。
+
 ## scripts.urlLoaderOptions
 
 `scripts.urlLoaderOptions: object = {}`
 
 > New in 2.1.0
 
-balm 默认的 `url-loader` 中额外的配置。
+balm 默认的 `url-loader` 中额外的配置。[详细配置](https://github.com/webpack-contrib/url-loader#options)。
 
 :chestnut: 举个栗子：
 
@@ -202,14 +212,6 @@ vue 文件之前的用法：
 </template>
 ```
 
-## scripts.htmlLoaderOptions
-
-`scripts.htmlLoaderOptions: object = {}`
-
-> New in 2.11.0
-
-balm 默认的 `html-loader` 中额外的配置。
-
 ## scripts.postcssLoaderOptions
 
 ```ts
@@ -225,6 +227,14 @@ interface PostcssLoaderOptions {
 > Migrated from <del>`styles.postcssLoaderOptions`</del> in 2.11.0
 
 PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)。
+
+## scripts.htmlLoaderOptions
+
+`scripts.htmlLoaderOptions: object = {}`
+
+> New in 2.11.0
+
+balm 默认的 `html-loader` 中额外的配置。[详细配置](https://github.com/webpack-contrib/html-loader#options)。
 
 ## scripts.extensions
 
