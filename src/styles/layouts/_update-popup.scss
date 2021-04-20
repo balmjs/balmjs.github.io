@@ -1,0 +1,12 @@
+.sw-update-popup {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  padding: 1em;
+  border: 1px solid orange;
+  border-radius: 3px;
+  background: black;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 50%);
+  text-align: center;
+  z-index: 2;
+}

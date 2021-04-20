@@ -17,12 +17,15 @@ module.exports = (balm) => {
     scripts: {
       bundler: 'esbuild',
       buildOptions: {
+        bundle: true,
         define: {
           'process.env.NODE_ENV': balm.config.env.isProd
             ? JSON.stringify('production')
             : JSON.stringify('development')
         },
-        banner
+        banner: {
+          js: banner
+        }
       },
       lint: true
     },

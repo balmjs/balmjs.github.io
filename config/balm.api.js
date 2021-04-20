@@ -29,6 +29,9 @@ module.exports = (domain, balm) => {
 
       // Clear
       mix.remove('dist/rev-manifest.json');
+    } else {
+      // Test PWA for local
+      // mix.injectManifest();
     }
   };
 };
