@@ -76,6 +76,14 @@ module.exports = {
 
 Browsersync [options](https://browsersync.io/docs/options).
 
+## server.next
+
+`server.next: Function = () => {}`
+
+> New in 3.10.0
+
+Custom event handler after the server starts.
+
 ## server.devOptions
 
 `server.devOptions: object = {}`

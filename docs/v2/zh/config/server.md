@@ -76,6 +76,14 @@ module.exports = {
 
 Browsersync [详细配置](https://browsersync.io/docs/options)。
 
+## server.next
+
+`server.next: Function = () => {}`
+
+> New in 3.10.0
+
+服务启动后的自定义事件处理。
+
 ## server.devOptions
 
 `server.devOptions: object = {}`

@@ -305,7 +305,7 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 
 ## scripts.plugins
 
-`scripts.loaders: Plugin[] = []`
+`scripts.plugins: Plugin[] = []`
 
 添加额外的插件到编译器。
 

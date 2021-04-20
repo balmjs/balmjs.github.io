@@ -305,7 +305,7 @@ Webpack optimizations for manual configuration and overrides. See webpack [optim
 
 ## scripts.plugins
 
-`scripts.loaders: Plugin[] = []`
+`scripts.plugins: Plugin[] = []`
 
 Add additional plugins to the compiler.
 
