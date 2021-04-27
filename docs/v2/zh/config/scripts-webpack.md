@@ -311,6 +311,57 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 
 > [Plugins 列表](https://webpack.js.org/plugins/)
 
+## scripts.injectHtml
+
+`scripts.injectHtml: boolean = false`
+
+> New in 3.16.0
+
+自动注入脚本并生成 HTML 入口文件。（默认需要手动创建 HTML 入口文件）
+
+## scripts.htmlPluginOptions
+
+`scripts.htmlPluginOptions: object = {}`
+
+> New in 3.16.0
+
+balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https://github.com/jantimon/html-webpack-plugin/tree/4.x#options)。
+
+:chestnut: For example:
+
+- 单页面应用
+
+  ```js
+  module.exports = {
+    scripts: {
+      entry: {
+        app: './app/scripts/main.js'
+      }
+    },
+    injectHtml: true
+    // Other Options...
+  };
+  ```
+
+- 多页面应用
+
+  ```js
+  module.exports = {
+    scripts: {
+      entry: {
+        'page-1': './app/scripts/p1.js',
+        'page-2': './app/scripts/p2.js'
+      }
+    },
+    injectHtml: true,
+    htmlPluginOptions: {
+      template: './app/templates/index.html'
+      title: ['Page 1', 'Page 2']
+    }
+    // Other Options...
+  };
+  ```
+
 ## scripts.sourceMap
 
 `scripts.sourceMap: string | boolean = false`
@@ -354,12 +405,6 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 
 完整可自定义的 [webpack 配置](https://webpack.js.org/configuration/)。
 
-## scripts.inject
-
-`scripts.inject: boolean = false`
-
-支持 SSR 模式中构建脚本生成 hash。
-
 ## scripts.extractAllVendors
 
 `scripts.extractAllVendors: boolean = false`
@@ -383,20 +428,21 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 
 ## scripts.extractCss
 
-`scripts.extractCss: { enabled: boolean; prefix: string; }`
+<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
+
+`scripts.extractCss: boolean = false`
 
 提取脚本中的样式。
 
-默认值为：
-
-```js
-{
-  enabled: false,
-  prefix: ''
-}
-```
-
 :warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
+
+## scripts.useCache
+
+`scripts.useCache: boolean = false`
+
+> Rename <del>`inject`</del> to `useCache` in 3.16.0
+
+支持 SSR 模式中构建脚本生成 hash。
 
 ## scripts.ie8
 

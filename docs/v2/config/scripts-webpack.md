@@ -311,6 +311,57 @@ Add additional plugins to the compiler.
 
 > [List of plugins](https://webpack.js.org/plugins/)
 
+## scripts.injectHtml
+
+`scripts.injectHtml: boolean = false`
+
+> New in 3.16.0
+
+Auto inject scripts and generate html entry file. (By default, you need to manually create the HTML entry file.)
+
+## scripts.htmlPluginOptions
+
+`scripts.htmlPluginOptions: object = {}`
+
+> New in 3.16.0
+
+Html plugin for webpack. Reference [options](https://github.com/jantimon/html-webpack-plugin/tree/4.x#options).
+
+:chestnut: For example:
+
+- For SPA
+
+  ```js
+  module.exports = {
+    scripts: {
+      entry: {
+        app: './app/scripts/main.js'
+      }
+    },
+    injectHtml: true
+    // Other Options...
+  };
+  ```
+
+- For MPA
+
+  ```js
+  module.exports = {
+    scripts: {
+      entry: {
+        'page-1': './app/scripts/p1.js',
+        'page-2': './app/scripts/p2.js'
+      }
+    },
+    injectHtml: true,
+    htmlPluginOptions: {
+      template: './app/templates/index.html'
+      title: ['Page 1', 'Page 2']
+    }
+    // Other Options...
+  };
+  ```
+
 ## scripts.sourceMap
 
 `scripts.sourceMap: string | boolean = false`
@@ -354,12 +405,6 @@ Defaults to:
 
 Full custom [webpack configuration](https://webpack.js.org/configuration/).
 
-## scripts.inject
-
-`scripts.inject: boolean = false`
-
-Support the hash scripts in the SSR build.
-
 ## scripts.extractAllVendors
 
 `scripts.extractAllVendors: boolean = false`
@@ -383,20 +428,21 @@ Support the hash scripts in the SSR build.
 
 ## scripts.extractCss
 
-`scripts.extractCss: { enabled: boolean; prefix: string; }`
+<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
+
+`scripts.extractCss: boolean = false`
 
 Extract css from some bundle.
 
-Defaults to:
-
-```js
-{
-  enabled: false,
-  prefix: ''
-}
-```
-
 :warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
+
+## scripts.useCache
+
+`scripts.useCache: boolean = false`
+
+> Rename <del>`inject`</del> to `useCache` in 3.16.0
+
+Support the hash scripts in the SSR build.
 
 ## scripts.ie8
 
