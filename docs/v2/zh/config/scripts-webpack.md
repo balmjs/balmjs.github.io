@@ -319,6 +319,8 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 
 自动注入脚本并生成 HTML 入口文件。（默认需要手动创建 HTML 入口文件）
 
+> 提示：因为默认模版中的 `<body>` 元素内容为空，所以你需要通过 `scripts.htmlPluginOptions.template` 为一些单页面应用（如 Vue.js）设置一个自定义模版。
+
 ## scripts.htmlPluginOptions
 
 `scripts.htmlPluginOptions: object = {}`
@@ -361,6 +363,18 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
     // Other Options...
   };
   ```
+
+## scripts.extractCss
+
+<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
+
+`scripts.extractCss: boolean = false`
+
+提取脚本中的样式。（需设置 `scripts.injectHtml = true`）
+
+> 仅生产模式下有效
+
+:warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
 
 ## scripts.sourceMap
 
@@ -425,16 +439,6 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 `scripts.vendorsName: string = 'vendors'`
 
 提取 _所有第三方依赖_ 合成一个文件的 **文件名**，或提取 _部分第三方依赖_ 合成自定义文件的 **文件夹名**。
-
-## scripts.extractCss
-
-<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
-
-`scripts.extractCss: boolean = false`
-
-提取脚本中的样式。
-
-:warning: **提示：** 将样式从脚本中分离进行模块化管理更有利于项目维护和扩展，详见 BalmJS 进阶用法 - [代码分离](../advanced/code-splitting.md)。
 
 ## scripts.useCache
 

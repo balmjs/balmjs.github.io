@@ -319,6 +319,8 @@ Add additional plugins to the compiler.
 
 Auto inject scripts and generate html entry file. (By default, you need to manually create the HTML entry file.)
 
+> NOTE: Because the content of the `<body>` element of the default template is empty, so you must set a custom template by `scripts.htmlPluginOptions.template` for some SPA (e.g. Vue.js).
+
 ## scripts.htmlPluginOptions
 
 `scripts.htmlPluginOptions: object = {}`
@@ -361,6 +363,18 @@ Html plugin for webpack. Reference [options](https://github.com/jantimon/html-we
     // Other Options...
   };
   ```
+
+## scripts.extractCss
+
+<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
+
+`scripts.extractCss: boolean = false`
+
+Extract css from some bundle. (`scripts.injectHtml = true` required)
+
+> Just for production build
+
+:warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
 
 ## scripts.sourceMap
 
@@ -425,16 +439,6 @@ Full custom [webpack configuration](https://webpack.js.org/configuration/).
 `scripts.vendorName: string = 'vendor'`
 
 (For SPA) AllInOne vendor filename or Vendors folder name.
-
-## scripts.extractCss
-
-<del>`scripts.extractCss: { enabled: boolean; prefix: string; }` for `balm-core` < 3.16.0</del>
-
-`scripts.extractCss: boolean = false`
-
-Extract css from some bundle.
-
-:warning: **TIPS:** Separating styles from scripts for modular management is more conducive to project maintenance and expansion, See BalmJS advanced usage - [Code Splitting](../advanced/code-splitting.md).
 
 ## scripts.useCache
 
