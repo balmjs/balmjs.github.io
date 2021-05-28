@@ -11,8 +11,7 @@ const banner =
 module.exports = (balm) => {
   return {
     styles: {
-      extname: 'scss',
-      dartSass: true
+      extname: 'scss'
     },
     scripts: {
       bundler: 'esbuild',

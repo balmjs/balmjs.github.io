@@ -25,13 +25,13 @@ module.exports = {
 
 > ⚠️ `Cannot find module 'node-sass'` [解决方案](../advanced/troubleshooting.md)
 
-## styles.dartSass
+### <del>styles.dartSass</del>
+
+> ⚠️ 从 3.17.0+起，Sass 预编译只采用 [Dart Sass](https://sass-lang.com/dart-sass)（LibSass 已经弃用）
 
 `styles.dartSass: boolean = false`
 
 > New in 2.6.0
-
-支持 [Dart Sass](https://sass-lang.com/dart-sass)。
 
 ## styles.minify
 

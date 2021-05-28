@@ -25,13 +25,13 @@ module.exports = {
 
 > ⚠️ `Cannot find module 'node-sass'` [Solution](../advanced/troubleshooting.md)
 
-## styles.dartSass
+### <del>styles.dartSass</del>
+
+> ⚠️ Now, just use [Dart Sass](https://sass-lang.com/dart-sass) for sass preprocessing since 3.17.0+ (LibSass is deprecated)
 
 `styles.dartSass: boolean = false`
 
 > New in 2.6.0
-
-[Dart Sass](https://sass-lang.com/dart-sass) support.
 
 ## styles.minify
 
