@@ -25,7 +25,7 @@ module.exports = {
 
 > ⚠️ `Cannot find module 'node-sass'` [Solution](../advanced/troubleshooting.md)
 
-### <del>styles.dartSass</del>
+### <del>styles.dartSass</del> (Deprecated in 3.17.0)
 
 > ⚠️ Now, just use [Dart Sass](https://sass-lang.com/dart-sass) for sass preprocessing since 3.17.0+ (LibSass is deprecated)
 

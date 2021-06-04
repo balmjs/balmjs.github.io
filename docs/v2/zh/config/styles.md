@@ -25,7 +25,7 @@ module.exports = {
 
 > ⚠️ `Cannot find module 'node-sass'` [解决方案](../advanced/troubleshooting.md)
 
-### <del>styles.dartSass</del>
+### <del>styles.dartSass</del> (Deprecated in 3.17.0)
 
 > ⚠️ 从 3.17.0+起，Sass 预编译只采用 [Dart Sass](https://sass-lang.com/dart-sass)（LibSass 已经弃用）
 

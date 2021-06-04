@@ -217,7 +217,7 @@ Then, your can:
 ```ts
 interface PostcssLoaderOptions {
   exec?: boolean;
-  postcssOptions?: object | Function; // NOTE: `postcssOptions.plugins` is the same to `styles.postcssPlugins`
+  postcssOptions?: object | Function;
   sourceMap: string | boolean;
 }
 ```
@@ -440,7 +440,7 @@ Full custom [webpack configuration](https://webpack.js.org/configuration/).
 
 (For SPA) AllInOne vendor filename or Vendors folder name.
 
-## scripts.useCache
+### <del>scripts.useCache</del> (Deprecated in 3.19.0)
 
 `scripts.useCache: boolean = false`
 

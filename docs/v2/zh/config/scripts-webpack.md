@@ -217,7 +217,7 @@ vue 文件之前的用法：
 ```ts
 interface PostcssLoaderOptions {
   exec?: boolean;
-  postcssOptions?: object | Function; // NOTE: `postcssOptions.plugins` 等同于 `styles.postcssPlugins`
+  postcssOptions?: object | Function;
   sourceMap: string | boolean;
 }
 ```
@@ -440,7 +440,7 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 
 提取 _所有第三方依赖_ 合成一个文件的 **文件名**，或提取 _部分第三方依赖_ 合成自定义文件的 **文件夹名**。
 
-## scripts.useCache
+### <del>scripts.useCache</del> (Deprecated in 3.19.0)
 
 `scripts.useCache: boolean = false`
 
