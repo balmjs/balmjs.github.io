@@ -11,5 +11,5 @@ module.exports = {
     browser: true
   },
   plugins: ['prettier'],
-  extends: ['plugin:prettier/recommended']
+  extends: ['prettier']
 };

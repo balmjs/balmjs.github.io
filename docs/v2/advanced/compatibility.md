@@ -28,7 +28,7 @@ module.exports = function (api) {
   let envOptions = api.env('production')
     ? {
         useBuiltIns: 'entry',
-        corejs: { version: 3, proposals: true }
+        corejs: { version: '3' }
       }
     : {};
   let runtimeOptions = api.env('production') ? { corejs: 3 } : {};
@@ -65,11 +65,6 @@ import './polyfill';
 - `polyfill.js`
 
 ```js
-// For IE11 and below
-import 'core-js/features/promise';
-
-// For IE8 and below
-import 'core-js/features/object/create';
-import 'core-js/features/array/for-each';
-import 'core-js/features/function/bind';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 ```
