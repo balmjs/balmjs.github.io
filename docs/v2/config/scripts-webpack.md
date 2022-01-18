@@ -1,6 +1,6 @@
 # Application bundler - webpack
 
-> ⚠️ NOTE: `webpack@4` is used by current version, and `webpack@5` is used in `balm-core@canary` (For related configuration, please refer to the corresponding webpack official documentation)
+> ⚠️ NOTE: `webpack@4` is used by current version, and `webpack@5` is used in `balm-core@next` (For related configuration, please refer to the corresponding webpack official documentation)
 
 > BalmJS will invoke analyzer, when you run `npm run prod --report`.
 
@@ -385,7 +385,7 @@ Source mapping. See webpack [devtool](https://webpack.js.org/configuration/devto
 ## scripts.target
 
 - current version: `scripts.target: string = 'web'`
-- canary version: `scripts.target: string | string[] = ['web', 'es5']`
+- next version: `scripts.target: string | string[] = ['web', 'es5']`
 
 To target a specific environment. See webpack [target](https://webpack.js.org/configuration/target/).
 
