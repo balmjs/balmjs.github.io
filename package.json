@@ -15,16 +15,16 @@
     "release:org": "bash ./scripts/org.balm.sh"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-google-analytics": "^1.9.7",
-    "babel-eslint": "^10.1.0",
-    "balm": "^4.2.0",
-    "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
+    "balm": "^4.4.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "moment": "^2.29.1",
-    "prettier": "^2.5.1",
-    "prismjs": "^1.26.0",
+    "prettier": "^2.6.0",
+    "prismjs": "^1.27.0",
     "vuepress": "^1.9.7"
   },
   "private": true
