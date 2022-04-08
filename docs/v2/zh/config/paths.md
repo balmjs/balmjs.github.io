@@ -31,7 +31,7 @@ module.exports = {
 ```ts
 interface BalmPath {
   base: string; //  应用根目录
-  html: string; //  模板目录（3.0新增，仅限`paths.source`）
+  html: string; //  模板目录（balm 3+ 新增，仅限 `paths.source`）
   css: string; //   样式目录
   js: string; //    脚本目录
   img: string; //   图片目录

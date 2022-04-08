@@ -89,13 +89,13 @@ module.exports = {
 
 **BalmJS** 默认已加载的 loaders:
 
-- [`html`](https://github.com/webpack-contrib/html-loader)
+- [`babel`](https://github.com/babel/babel-loader)
 - [`style`](https://github.com/webpack-contrib/style-loader)
 - [`css`](https://github.com/webpack-contrib/css-loader)
 - [`postcss`](https://github.com/postcss/postcss-loader)
-- [`babel`](https://github.com/babel/babel-loader)
-- [`url`](https://github.com/webpack-contrib/url-loader)
-- [`file`](https://github.com/webpack-contrib/file-loader)
+- [`html`](https://github.com/webpack-contrib/html-loader)
+- [`url`](https://github.com/webpack-contrib/url-loader) (Deprecated in v4.5.0)
+- [`file`](https://github.com/webpack-contrib/file-loader) (Deprecated in v4.5.0)
 
 > [Loaders 列表](https://webpack.js.org/loaders/)
 
@@ -132,10 +132,11 @@ module.exports = {
 
 ```ts
 interface BalmLoaders {
-  html?: boolean;
-  css?: boolean;
   js?: boolean;
-  url?: boolean;
+  css?: boolean;
+  html?: boolean;
+  url?: boolean; // For v3, deprecated in v4
+  asset?: boolean; // New in v4
 }
 ```
 
@@ -159,7 +160,7 @@ interface BalmLoaders {
 
 （**绝对路径**）在 `babel-loader` 中为某些需要额外依赖的脚本提供一个 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) 选项。
 
-## scripts.excludeUrlResource
+### scripts.excludeUrlResource (Deprecated in v4.5.0)
 
 `scripts.excludeUrlResource: string[] = []`
 
@@ -175,7 +176,7 @@ interface BalmLoaders {
 
 balm 默认的 `babel-loader` 中额外的配置。[详细配置](https://github.com/babel/babel-loader#options)。
 
-## scripts.urlLoaderOptions
+### scripts.urlLoaderOptions (Deprecated in v4.5.0)
 
 `scripts.urlLoaderOptions: object = {}`
 

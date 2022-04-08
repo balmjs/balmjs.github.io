@@ -1,6 +1,6 @@
 # JavaScript bundler - esbuild
 
-> ⚠️ NOTE: experimental for `balm 3.0`, and `balm-core` required
+> ⚠️ NOTE: experimental for `balm 3+`, and `balm-core@next` required
 
 ## scripts.entry
 

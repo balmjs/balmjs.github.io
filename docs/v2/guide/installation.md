@@ -24,15 +24,25 @@ npm init -y
 ## 1. Installing `balm`
 
 ```sh
+# v3
 yarn global add balm-core
 yarn add -D balm
+
+# v4
+yarn global add balm-core@next
+yarn add -D balm@next
 ```
 
 OR
 
 ```sh
+# v3
 npm install -g balm-core
 npm install -D balm
+
+# v4
+npm install -g balm-core@next # Not supported for now (npm bug)
+npm install -D balm@next
 ```
 
 > We currently recommend using [Yarn](https://yarnpkg.com/en/docs/install) instead of npm.

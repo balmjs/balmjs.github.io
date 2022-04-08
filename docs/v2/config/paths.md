@@ -31,7 +31,7 @@ module.exports = {
 ```ts
 interface BalmPath {
   base: string; // Application directory
-  html: string; // HTML template directory (New in 3.0, `paths.source` only)
+  html: string; // HTML template directory (New in balm 3+, `paths.source` only)
   css: string; // Stylesheet directory
   js: string; // JavaScript directory
   img: string; // Image directory

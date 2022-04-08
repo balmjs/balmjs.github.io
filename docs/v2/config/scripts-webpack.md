@@ -89,13 +89,13 @@ An array of [Rule](https://webpack.js.org/configuration/module/#rule) automatica
 
 **BalmJS** default loaders:
 
-- [`html`](https://github.com/webpack-contrib/html-loader)
+- [`babel`](https://github.com/babel/babel-loader)
 - [`style`](https://github.com/webpack-contrib/style-loader)
 - [`css`](https://github.com/webpack-contrib/css-loader)
 - [`postcss`](https://github.com/postcss/postcss-loader)
-- [`babel`](https://github.com/babel/babel-loader)
-- [`url`](https://github.com/webpack-contrib/url-loader)
-- [`file`](https://github.com/webpack-contrib/file-loader)
+- [`html`](https://github.com/webpack-contrib/html-loader)
+- [`url`](https://github.com/webpack-contrib/url-loader) (Deprecated in v4.5.0)
+- [`file`](https://github.com/webpack-contrib/file-loader) (Deprecated in v4.5.0)
 
 > [List of loaders](https://webpack.js.org/loaders/)
 
@@ -132,10 +132,11 @@ module.exports = {
 
 ```ts
 interface BalmLoaders {
-  html?: boolean;
-  css?: boolean;
   js?: boolean;
-  url?: boolean;
+  css?: boolean;
+  html?: boolean;
+  url?: boolean; // For v3, deprecated in v4
+  asset?: boolean; // New in v4
 }
 ```
 
@@ -159,7 +160,7 @@ Use ES modules syntax for the balm default loaders.
 
 (**Absolute path**) Supply a [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude) option in `babel-loader` for some extra vendor scripts from local anywhere.
 
-## scripts.excludeUrlResource
+### scripts.excludeUrlResource (Deprecated in v4.5.0)
 
 `scripts.excludeUrlResource: string[] = []`
 
@@ -175,7 +176,7 @@ Use ES modules syntax for the balm default loaders.
 
 The extra options of the balm default `babel-loader`. Reference [options](https://github.com/babel/babel-loader#options).
 
-## scripts.urlLoaderOptions
+### scripts.urlLoaderOptions (Deprecated in v4.5.0)
 
 `scripts.urlLoaderOptions: object = {}`
 
