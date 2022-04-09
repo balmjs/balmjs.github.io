@@ -66,7 +66,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 ## 项目配置
 
-### 1. Autoprefixer 采用 [Browserslist](https://github.com/ai/browserslist#queries)
+### 1. Autoprefixer 采用 [Browserslist](https://github.com/browserslist/browserslist#queries)
 
 在你的项目根目录下，新建一个名叫 `.browserslistrc` 的配置文件：
 

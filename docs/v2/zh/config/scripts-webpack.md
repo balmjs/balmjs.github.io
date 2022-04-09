@@ -63,13 +63,27 @@ module.exports = {
 
 导出的库的名称。详见 webpack [output.library](https://webpack.js.org/configuration/output/#outputlibrary)。
 
-## scripts.libraryTarget
+:chestnut: (v4)举个栗子：
+
+```js
+module.exports = {
+  scripts: {
+    library: {
+      name: 'AwesomeLibraryName',
+      type: 'umd'
+    }
+  }
+  // 其他配置项...
+};
+```
+
+### scripts.libraryTarget (Deprecated in v4.0.0)
 
 `scripts.libraryTarget: string = 'var'`
 
 导出的库的类型。详见 webpack [output.libraryTarget](https://webpack.js.org/configuration/output/#outputlibrarytarget)。
 
-:chestnut: 举个栗子：
+:chestnut: (v3)举个栗子：
 
 ```js
 module.exports = {
@@ -385,8 +399,8 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 
 ## scripts.target
 
-- 当前版本：`scripts.target: string = 'web'`
-- next 版本：`scripts.target: string | string[] = ['web', 'es5']`
+- v3：`scripts.target: string = 'web'`
+- v4：`scripts.target: string | string[] = ['web', 'es5']`
 
 针对特定的环境来编译脚本。详见 webpack [target](https://webpack.js.org/configuration/target/)。
 
@@ -402,7 +416,7 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 
 捕获每个模块的编译信息。详见 webpack [stats](https://webpack.js.org/configuration/stats/)。
 
-默认值为：
+v3 默认值为：
 
 ```js
 {
@@ -411,6 +425,18 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
   chunkModules: false,
   modules: false,
   children: false
+}
+```
+
+v4 默认值为：
+
+```js
+{
+  colors: true,
+  assets: true,
+  children: false,
+  chunks: false,
+  modules: false
 }
 ```
 

@@ -14,12 +14,6 @@
 
 [Output options](https://rollupjs.org/guide/en/#outputoptions-object).
 
-## scripts.watchOptions
-
-`scripts.watchOptions: WatcherOptions = {}`
-
-[Watch options](https://rollupjs.org/guide/en/#watchoptions).
-
 ## Official rollup plugins
 
-See [here](https://github.com/rollup/plugins).
+See [here](https://github.com/rollup/plugins#plugins-found-here).

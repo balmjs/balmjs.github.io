@@ -63,13 +63,27 @@ Then, your HTML templates:
 
 The name of the exported library. See webpack [output.library](https://webpack.js.org/configuration/output/#outputlibrary).
 
-## scripts.libraryTarget
+:chestnut: For v4 example:
+
+```js
+module.exports = {
+  scripts: {
+    library: {
+      name: 'AwesomeLibraryName',
+      type: 'umd'
+    }
+  }
+  // Other Options...
+};
+```
+
+### scripts.libraryTarget (Deprecated in v4.0.0)
 
 `scripts.libraryTarget: string = 'var'`
 
 Configure how the library will be exposed. See webpack [output.libraryTarget](https://webpack.js.org/configuration/output/#outputlibrarytarget).
 
-:chestnut: For example:
+:chestnut: For v3 example:
 
 ```js
 module.exports = {
@@ -385,8 +399,8 @@ Source mapping. See webpack [devtool](https://webpack.js.org/configuration/devto
 
 ## scripts.target
 
-- current version: `scripts.target: string = 'web'`
-- next version: `scripts.target: string | string[] = ['web', 'es5']`
+- v3: `scripts.target: string = 'web'`
+- v4: `scripts.target: string | string[] = ['web', 'es5']`
 
 To target a specific environment. See webpack [target](https://webpack.js.org/configuration/target/).
 
@@ -402,7 +416,7 @@ Provides a way of excluding dependencies from the output bundles. See webpack [e
 
 Capture timing information for each module. See webpack [stats](https://webpack.js.org/configuration/stats/).
 
-Defaults to:
+v3 defaults to:
 
 ```js
 {
@@ -411,6 +425,18 @@ Defaults to:
   chunkModules: false,
   modules: false,
   children: false
+}
+```
+
+v4 defaults to:
+
+```js
+{
+  colors: true,
+  assets: true,
+  children: false,
+  chunks: false,
+  modules: false
 }
 ```
 

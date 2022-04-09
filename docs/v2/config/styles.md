@@ -2,13 +2,13 @@
 
 > Parse CSS and add vendor prefixes to rules by [Can I Use](https://caniuse.com/).
 >
-> Autoprefixer uses [Browserslist](https://github.com/ai/browserslist#queries).
+> Autoprefixer uses [Browserslist](https://github.com/browserslist/browserslist#queries).
 
 ## styles.extname
 
 `styles.extname: string = 'css'`
 
-Compiling [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](http://lesscss.org/) into CSS.
+Compiling [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](https://lesscss.org/) into CSS.
 
 > Supported CSS extensions: `css`, `scss`/`sass` and `less`.
 
@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-> ⚠️ `Cannot find module 'node-sass'` [Solution](../advanced/troubleshooting.md)
+> ⚠️ `Cannot find module 'node-sass'` [Solution](../advanced/troubleshooting.md) (Deprecated in 3.17.0)
 
 ### <del>styles.dartSass</del> (Deprecated in 3.17.0)
 
@@ -53,7 +53,7 @@ Ignore the environment and force CSS compression.
 
 `styles.options: object`
 
-Cssnano optimisations. Reference [options](https://cssnano.co/guides/optimisations/).
+Cssnano optimisations. Reference [options](https://cssnano.co/docs/what-are-optimisations/).
 
 Defaults to:
 
@@ -71,7 +71,7 @@ Defaults to:
 
 `styles.sassOptions: object = {}`
 
-LibSass [options](https://github.com/sass/node-sass#options).
+LibSass [options](https://sass-lang.com/documentation/js-api/modules#LegacyOptions).
 
 ## styles.lessOptions
 

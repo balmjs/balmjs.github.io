@@ -24,7 +24,7 @@ module.exports = {
 
 `scripts.buildOptions: BuildOptions = {}`
 
-Esbuild options. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.
+[Build options](https://esbuild.github.io/api/#build-api).
 
 ## scripts.useTransform
 
@@ -36,7 +36,7 @@ Transforming a file by custom build.
 
 `scripts.transformOptions: TransformOptions = {}`
 
-Transform options. See [the TypeScript type definitions](https://github.com/evanw/esbuild/blob/master/lib/types.ts) for the complete set of options.
+[Transform options](https://esbuild.github.io/api/#transform-api).
 
 :chestnut: For example:
 

@@ -24,7 +24,7 @@ module.exports = {
 
 `scripts.buildOptions: BuildOptions = {}`
 
-Esbuild 配置。完整配置请参照[TS 定义](https://github.com/evanw/esbuild/blob/master/lib/types.ts)。
+[Build 配置](https://esbuild.github.io/api/#build-api)。
 
 ## scripts.useTransform
 
@@ -36,7 +36,7 @@ Esbuild 配置。完整配置请参照[TS 定义](https://github.com/evanw/esbui
 
 `scripts.transformOptions: TransformOptions = {}`
 
-Transform 配置。完整配置请参照[TS 定义](https://github.com/evanw/esbuild/blob/master/lib/types.ts)。
+[Transform 配置](https://esbuild.github.io/api/#transform-api)。
 
 :chestnut: 举个栗子：
 

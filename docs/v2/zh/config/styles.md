@@ -2,13 +2,13 @@
 
 > 根据 [Can I Use](https://caniuse.com/) 规则解析 CSS 并添加兼容浏览器的前缀。
 >
-> Autoprefixer 采用 [Browserslist](https://github.com/ai/browserslist#queries)
+> Autoprefixer 采用 [Browserslist](https://github.com/browserslist/browserslist#queries)
 
 ## styles.extname
 
 `styles.extname: string = 'css'`
 
-预编译 [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](http://lesscss.org/) 生成 CSS 文件。
+预编译 [PostCSS](https://postcss.org/)/[Sass](https://sass-lang.com/)/[Less](https://lesscss.org/) 生成 CSS 文件。
 
 > 支持的样式后缀：`css`，`scss`/`sass` 和 `less`。
 
@@ -23,7 +23,7 @@ module.exports = {
 };
 ```
 
-> ⚠️ `Cannot find module 'node-sass'` [解决方案](../advanced/troubleshooting.md)
+> ⚠️ `Cannot find module 'node-sass'` [解决方案](../advanced/troubleshooting.md) (Deprecated in 3.17.0)
 
 ### <del>styles.dartSass</del> (Deprecated in 3.17.0)
 
@@ -53,7 +53,7 @@ module.exports = {
 
 `styles.options: object`
 
-CSS 压缩优化。[详细配置](https://cssnano.co/guides/optimisations/)。
+CSS 压缩优化。[详细配置](https://cssnano.co/docs/what-are-optimisations/)。
 
 默认值为：
 
@@ -71,7 +71,7 @@ CSS 压缩优化。[详细配置](https://cssnano.co/guides/optimisations/)。
 
 `styles.sassOptions: object = {}`
 
-Sass 预编译 [详细配置](https://github.com/sass/node-sass#options)。
+Sass 预编译 [详细配置](https://sass-lang.com/documentation/js-api/modules#LegacyOptions)。
 
 ## styles.lessOptions
 

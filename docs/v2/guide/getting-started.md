@@ -66,7 +66,7 @@ document.getElementById('app').innerHTML = '<h1>Hello BalmJS</h1>';
 
 ## Project settings
 
-### 1. Autoprefixer uses [Browserslist](https://github.com/ai/browserslist#queries)
+### 1. Autoprefixer uses [Browserslist](https://github.com/browserslist/browserslist#queries)
 
 In your project directory, create a file named `.browserslistrc` in your project root with these contents:
 
