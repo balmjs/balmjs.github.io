@@ -251,6 +251,22 @@ PostCSS loader [详细配置](https://github.com/postcss/postcss-loader#options)
 
 balm 默认的 `html-loader` 中额外的配置。[详细配置](https://github.com/webpack-contrib/html-loader#options)。
 
+## scripts.imageAssetType
+
+`scripts.imageAssetType: 'asset' | 'asset/source' | 'asset/resource' | 'asset/inline' = 'asset'`
+
+> New in 4.7.0
+
+资源模块类型。
+
+## scripts.imageInlineSizeLimit
+
+`scripts.imageInlineSizeLimit: number = 8096`
+
+> New in 4.7.0
+
+如果一个模块源码大小小于 _maxSize_，那么模块会被作为一个 Base64 编码的字符串注入到包中， 否则模块文件会被生成到输出的目标目录中。
+
 ## scripts.extensions
 
 `scripts.extensions: string[] = []`
@@ -325,6 +341,14 @@ WEB 性能优化。详见 webpack [optimization](https://webpack.js.org/configur
 添加额外的插件到编译器。
 
 > [Plugins 列表](https://webpack.js.org/plugins/)
+
+## scripts.nodeEnv
+
+`scripts.nodeEnv: object = {}`
+
+> New in 4.7.0
+
+为 `process.env` 定义环境变量。
 
 ## scripts.injectHtml
 

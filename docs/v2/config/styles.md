@@ -49,6 +49,14 @@ Ignore the environment and force CSS compression.
 
 (**Absolute path**) An array of paths that Balm can look in to attempt to resolve your `@import` declarations.
 
+## styles.entry
+
+`styles.entry: string | string[] = ''`
+
+> New in 3.24.0 and 4.7.0
+
+The entry point (filename) for the styles.
+
 ## styles.options
 
 `styles.options: object`

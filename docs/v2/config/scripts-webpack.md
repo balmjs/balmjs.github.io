@@ -251,6 +251,22 @@ PostCSS loader for webpack. Reference [options](https://github.com/postcss/postc
 
 The extra options of the balm default `html-loader`. Reference [options](https://github.com/webpack-contrib/html-loader#options).
 
+## scripts.imageAssetType
+
+`scripts.imageAssetType: 'asset' | 'asset/source' | 'asset/resource' | 'asset/inline' = 'asset'`
+
+> New in 4.7.0
+
+Asset module type.
+
+## scripts.imageInlineSizeLimit
+
+`scripts.imageInlineSizeLimit: number = 8096`
+
+> New in 4.7.0
+
+If a module source size is less than _maxSize_ then module will be injected into the bundle as a Base64-encoded string, otherwise module file will be emitted into the output directory.
+
 ## scripts.extensions
 
 `scripts.extensions: string[] = []`
@@ -325,6 +341,14 @@ Webpack optimizations for manual configuration and overrides. See webpack [optim
 Add additional plugins to the compiler.
 
 > [List of plugins](https://webpack.js.org/plugins/)
+
+## scripts.nodeEnv
+
+`scripts.nodeEnv: object = {}`
+
+> New in 4.7.0
+
+Define the environment variables for `process.env`.
 
 ## scripts.injectHtml
 

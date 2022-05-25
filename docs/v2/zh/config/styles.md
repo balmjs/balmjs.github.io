@@ -49,6 +49,14 @@ module.exports = {
 
 （**绝对路径**）确保 Balm 样式中包含 `@import` 能正确解析第三方引用路径。
 
+## styles.entry
+
+`styles.entry: string | string[] = ''`
+
+> New in 3.24.0 and 4.7.0
+
+样式入口点（文件名）。
+
 ## styles.options
 
 `styles.options: object`
