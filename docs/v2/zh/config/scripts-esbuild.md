@@ -1,7 +1,5 @@
 # 脚本打包 - esbuild
 
-> ⚠️ 提示：`balm 3+` 实验性的新特性，必须安装 `balm-core@next`
-
 ## scripts.entry
 
 `scripts.entry: string | string[] = ''`

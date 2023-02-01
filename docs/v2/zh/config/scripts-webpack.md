@@ -1,6 +1,6 @@
 # 应用打包 - webpack
 
-> ⚠️ 提示：当前版本使用 `webpack@4`，`balm-core@next` 中已使用 `webpack@5`（相关配置请参照对应的 webpack 官方文档）
+> ⚠️ 提示：当前版本使用 `webpack@5`，`balm-core@legacy` 中已使用 `webpack@4`（相关配置请参照对应的 webpack 官方文档）
 
 > 当你运行 `npm run prod --report` 时，BalmJS 会启动分析器。
 
@@ -423,8 +423,8 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 
 ## scripts.target
 
-- v3：`scripts.target: string = 'web'`
 - v4：`scripts.target: string | string[] = ['web', 'es5']`
+- v3：`scripts.target: string = 'web'`
 
 针对特定的环境来编译脚本。详见 webpack [target](https://webpack.js.org/configuration/target/)。
 
@@ -440,18 +440,6 @@ balm 默认的 `html-webpack-plugin` 中额外的配置。[详细配置](https:/
 
 捕获每个模块的编译信息。详见 webpack [stats](https://webpack.js.org/configuration/stats/)。
 
-v3 默认值为：
-
-```js
-{
-  colors: true,
-  chunks: false,
-  chunkModules: false,
-  modules: false,
-  children: false
-}
-```
-
 v4 默认值为：
 
 ```js
@@ -461,6 +449,18 @@ v4 默认值为：
   children: false,
   chunks: false,
   modules: false
+}
+```
+
+v3 默认值为：
+
+```js
+{
+  colors: true,
+  chunks: false,
+  chunkModules: false,
+  modules: false,
+  children: false
 }
 ```
 

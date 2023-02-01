@@ -1,6 +1,6 @@
 # Application bundler - webpack
 
-> ⚠️ NOTE: `webpack@4` is used by current version, and `webpack@5` is used in `balm-core@next` (For related configuration, please refer to the corresponding webpack official documentation)
+> ⚠️ NOTE: `webpack@5` is used by current version, and `webpack@4` is used in `balm-core@legacy` (For related configuration, please refer to the corresponding webpack official documentation)
 
 > BalmJS will invoke analyzer, when you run `npm run prod --report`.
 
@@ -423,8 +423,8 @@ Source mapping. See webpack [devtool](https://webpack.js.org/configuration/devto
 
 ## scripts.target
 
-- v3: `scripts.target: string = 'web'`
 - v4: `scripts.target: string | string[] = ['web', 'es5']`
+- v3: `scripts.target: string = 'web'`
 
 To target a specific environment. See webpack [target](https://webpack.js.org/configuration/target/).
 
@@ -440,18 +440,6 @@ Provides a way of excluding dependencies from the output bundles. See webpack [e
 
 Capture timing information for each module. See webpack [stats](https://webpack.js.org/configuration/stats/).
 
-v3 defaults to:
-
-```js
-{
-  colors: true,
-  chunks: false,
-  chunkModules: false,
-  modules: false,
-  children: false
-}
-```
-
 v4 defaults to:
 
 ```js
@@ -461,6 +449,18 @@ v4 defaults to:
   children: false,
   chunks: false,
   modules: false
+}
+```
+
+v3 defaults to:
+
+```js
+{
+  colors: true,
+  chunks: false,
+  chunkModules: false,
+  modules: false,
+  children: false
 }
 ```
 

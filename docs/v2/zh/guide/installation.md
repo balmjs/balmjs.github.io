@@ -6,7 +6,7 @@
 
 如果你的机器上还没有 [Node.js® and npm](https://nodejs.org/en/download/) 环境，请先安装它们。
 
-> 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`，**来验证一下你正在运行 `node 10.13.0` 和 `npm 5.2.0` 以上的版本**。 更老的版本可能会出现错误，更新的版本则没问题。
+> 请先在终端/控制台窗口中运行命令 `node -v` 和 `npm -v`，**来验证一下你正在运行 `node 14.18.0` 和 `npm 6.14.15` 以上的版本**。 更老的版本可能会出现错误，更新的版本则没问题。
 
 你要在 [Balm 工作空间](./structure.md) 的上下文中开发应用。
 
@@ -25,27 +25,27 @@ npm init -y
 
 ```sh
 # v3
-yarn global add balm-core
-yarn add -D balm
+npm install -g balm-core
+npm install -D balm
 
 # v4
-yarn global add balm-core@next
-yarn add -D balm@next
+npm install -g balm-core@legacy
+npm install -D balm@legacy
 ```
 
 或
 
 ```sh
 # v3
-npm install -g balm-core
-npm install -D balm
+yarn global add balm-core
+yarn add -D balm
 
 # v4
-npm install -g balm-core@next # Not supported for now (npm bug)
-npm install -D balm@next
+yarn global add balm-core@legacy
+yarn add -D balm@legacy
 ```
 
-> 当前我们推荐使用 [Yarn](https://yarnpkg.com/en/docs/install) 代替 npm。
+> 当前我们推荐使用 [Yarn](https://classic.yarnpkg.com/en/docs/install) 代替 npm。
 
 ## 2. 配置
 

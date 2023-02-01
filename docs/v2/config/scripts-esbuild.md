@@ -1,7 +1,5 @@
 # JavaScript bundler - esbuild
 
-> ⚠️ NOTE: experimental for `balm 3+`, and `balm-core@next` required
-
 ## scripts.entry
 
 `scripts.entry: string | string[] = ''`
