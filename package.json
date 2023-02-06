@@ -1,6 +1,6 @@
 {
   "name": "balm.js",
-  "version": "2023.2.1",
+  "version": "2023.2.6",
   "author": "Elf-mousE",
   "scripts": {
     "com:dev": "balm --config config/com.balm.js",
@@ -18,7 +18,7 @@
     "@babel/eslint-parser": "^7.19.0",
     "@vuepress/plugin-back-to-top": "^1.9.8",
     "@vuepress/plugin-google-analytics": "^1.9.8",
-    "balm": "^4.15.0",
+    "balm": "^4.16.2",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^4.0.0",
