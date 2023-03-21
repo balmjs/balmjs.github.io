@@ -1,10 +1,10 @@
-function setBalmCore(useSource = false) {
-  const BALM_ROOT = '/Users/elf-mouse/www/balmjs/balm-next';
-  const BALM_CORE_SOURCE = `${BALM_ROOT}/packages/balm-core`;
-  const BALM_CORE =
-    '/Users/elf-mouse/.config/yarn/global/node_modules/balm-core';
-
-  process.env.BALM_CORE = useSource ? BALM_CORE_SOURCE : BALM_CORE;
-}
-
-// setBalmCore();
+process.env.BALM_GIT_FLOW_MAIN = 'dev';
+process.env.BALM_GIT_FLOW_RELEASE = 'release';
+process.env.BALM_GIT_FLOW_RELEASES = ['main', 'js-org'];
+process.env.BALM_GIT_FLOW_SCRIPTS = ['release:com', 'release:org'];
+process.env.BALM_GIT_FLOW_BUILD_DIR = 'dist';
+process.env.BALM_GIT_FLOW_REPOSITORIES = [
+  '',
+  'git@github.com:balmjs/balm.js.org.git'
+];
+process.env.BALM_GIT_FLOW_SITE = 'gh-pages';
