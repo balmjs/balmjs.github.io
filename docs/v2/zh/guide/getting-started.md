@@ -25,7 +25,7 @@ project
 > `/path/to/project/src/index.html`
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -116,12 +116,10 @@ module.exports = {
 const config = {
   server: {
     open: true,
-    proxyConfig: {
-      context: '/api',
-      options: {
-        target: 'http://your.project.dev', // 代理的目标域名
-        changeOrigin: true // 虚拟域名站点必备
-      }
+    proxyOptions: {
+      target: 'http://your.project.dev', // 代理的目标域名
+      changeOrigin: true, // 虚拟域名站点必备
+      pathFilter: '/api'
     }
   },
   roots: {

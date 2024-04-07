@@ -4,12 +4,10 @@
 const config = {
   server: {
     open: true,
-    proxyConfig: {
-      context: '/api',
-      options: {
-        target: 'http://your.project.dev', // Target host
-        changeOrigin: true // Needed for virtual hosted sites
-      }
+    proxyOptions: {
+      target: 'http://your.project.dev', // Target host
+      changeOrigin: true, // Needed for virtual hosted sites
+      pathFilter: '/api'
     }
   },
   roots: {

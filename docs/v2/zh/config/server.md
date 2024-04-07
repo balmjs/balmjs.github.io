@@ -96,7 +96,7 @@ Browsersync [详细配置](https://browsersync.io/docs/options)。
 
 用于 webpack 的热加载中间件。[详细配置](https://github.com/webpack-contrib/webpack-hot-middleware#config)。
 
-## server.proxyConfig
+### <del>server.proxyConfig</del> (Deprecated in 4.29.0, use `server.proxyOptions` instead)
 
 ```ts
 interface ProxyConfig {
@@ -107,7 +107,7 @@ interface ProxyConfig {
 
 `server.proxyConfig: boolean | ProxyConfig | ProxyConfig[] = false`
 
-Http 代理中间件。配置参数[`context`](https://github.com/chimurai/http-proxy-middleware#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware#options)。
+Http 代理中间件。配置参数[`context`](https://github.com/chimurai/http-proxy-middleware/tree/2.x#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware/tree/2.x#options)。
 
 :chestnut: 举个栗子：
 
@@ -147,6 +147,53 @@ module.exports = {
           target: 'http://example2.com',
           changeOrigin: true
         }
+      }
+    ]
+  }
+  // 其他配置项...
+};
+```
+
+## server.proxyOptions
+
+`server.proxyOptions: boolean | ProxyOptions | ProxyOptions[] = false`
+
+> New in 4.29.0
+
+Http 代理中间件。详细配置请参照 [http-proxy options](https://github.com/http-party/node-http-proxy#options) 和 [http-proxy-middleware options](https://github.com/chimurai/http-proxy-middleware/tree/master#options)的一些额外配置。
+
+:chestnut: 举个栗子：
+
+- 单个代理
+
+```js
+module.exports = {
+  server: {
+    proxyOptions: {
+      target: 'http://example.com', // 代理的目标域名
+      changeOrigin: true, // 虚拟域名站点必备
+      pathFilter: '/api'
+    }
+  }
+  // 其他配置项...
+};
+```
+
+- 多个代理
+
+```js
+module.exports = {
+  server: {
+    proxyOptions: [
+      {
+        target: 'http://example.com',
+        changeOrigin: true,
+        pathFilter: '/api'
+      },
+      {
+        target: 'http://example2.com',
+        changeOrigin: true,
+        pathFilter: ['/api2', '/api3']
       }
     ]
   }

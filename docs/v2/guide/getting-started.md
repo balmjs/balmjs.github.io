@@ -25,7 +25,7 @@ And you can also [download the example](https://balm.js.org/balm-example.zip) an
 > `/path/to/project/src/index.html`
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -117,12 +117,10 @@ In your project directory, create a file named `balm.config.js` in your project 
 const config = {
   server: {
     open: true,
-    proxyConfig: {
-      context: '/api',
-      options: {
-        target: 'http://your.project.dev', // Target host
-        changeOrigin: true // Needed for virtual hosted sites
-      }
+    proxyOptions: {
+      target: 'http://your.project.dev', // Target host
+      changeOrigin: true, // Needed for virtual hosted sites
+      pathFilter: '/api'
     }
   },
   roots: {

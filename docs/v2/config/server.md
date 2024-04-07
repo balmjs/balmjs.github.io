@@ -96,7 +96,7 @@ A development middleware for webpack. Reference [options](https://github.com/web
 
 Webpack hot reloading you can attach to your own server. Reference [options](https://github.com/webpack-contrib/webpack-hot-middleware#config).
 
-## server.proxyConfig
+### <del>server.proxyConfig</del> (Deprecated in 4.29.0, use `server.proxyOptions` instead)
 
 ```ts
 interface ProxyConfig {
@@ -107,7 +107,7 @@ interface ProxyConfig {
 
 `server.proxyConfig: boolean | ProxyConfig | ProxyConfig[] = false`
 
-Http-proxy middleware. Reference [`context`](https://github.com/chimurai/http-proxy-middleware#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware#options).
+Http-proxy middleware. Reference [`context`](https://github.com/chimurai/http-proxy-middleware/tree/2.x#context-matching) & [`options`](https://github.com/chimurai/http-proxy-middleware/tree/2.x#options).
 
 :chestnut: For example:
 
@@ -147,6 +147,53 @@ module.exports = {
           target: 'http://example2.com',
           changeOrigin: true
         }
+      }
+    ]
+  }
+  // Other Options...
+};
+```
+
+## server.proxyOptions
+
+`server.proxyOptions: boolean | ProxyOptions | ProxyOptions[] = false`
+
+> New in 4.29.0
+
+Http-proxy middleware. Reference [http-proxy options](https://github.com/http-party/node-http-proxy#options) and some extra [http-proxy-middleware options](https://github.com/chimurai/http-proxy-middleware/tree/master#options).
+
+:chestnut: For example:
+
+- Single proxy
+
+```js
+module.exports = {
+  server: {
+    proxyOptions: {
+      target: 'http://example.com', // target host
+      changeOrigin: true, // needed for virtual hosted sites
+      pathFilter: '/api'
+    }
+  }
+  // Other Options...
+};
+```
+
+- Multiple proxies
+
+```js
+module.exports = {
+  server: {
+    proxyOptions: [
+      {
+        target: 'http://example.com',
+        changeOrigin: true,
+        pathFilter: '/api'
+      },
+      {
+        target: 'http://example2.com',
+        changeOrigin: true,
+        pathFilter: ['/api2', '/api3']
       }
     ]
   }

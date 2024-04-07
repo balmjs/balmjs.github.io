@@ -213,12 +213,10 @@
 <span class="token keyword">const</span> config = {
   server: {
     open: true,
-    proxyConfig: {
-      context: '/api',
-      options: {
-        target: <span class="token string">'http://your.project.dev'</span>, <span class="token comment">// Target host</span>
-        changeOrigin: <span class="token keyword">true</span> <span class="token comment">// Needed for virtual hosted sites</span>
-      }
+    proxyOptions: {
+      target: <span class="token string">'http://your.project.dev'</span>, <span class="token comment">// Target host</span>
+      changeOrigin: <span class="token keyword">true</span>, <span class="token comment">// Needed for virtual hosted sites</span>
+      pathFilter: '/api'
     }
   },
   roots: {

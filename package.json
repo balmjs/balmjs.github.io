@@ -1,6 +1,6 @@
 {
   "name": "balm.js",
-  "version": "2024.2.28",
+  "version": "2024.4.7",
   "author": "Elf-mousE",
   "scripts": {
     "com:dev": "balm --config config/com.balm.js",
@@ -15,11 +15,11 @@
     "release:org": "bash ./scripts/org.balm.sh"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.23.0",
+    "@babel/eslint-parser": "^7.24.0",
     "@vuepress/plugin-back-to-top": "^1.9.10",
     "@vuepress/plugin-google-analytics": "^1.9.10",
-    "balm": "^4.27.1",
-    "eslint": "^8.0.0",
+    "balm": "^4.29.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "moment": "^2.30.1",
