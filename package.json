@@ -1,6 +1,6 @@
 {
   "name": "balm.js",
-  "version": "2025.8.22",
+  "version": "2026.9.21",
   "author": "Elf-mousE",
   "scripts": {
     "com:dev": "balm --config config/com.balm.js",
@@ -11,24 +11,22 @@
     "docs:v1:prod": "cd docs/v1 && rm -rf _book && gitbook install && gitbook build",
     "docs:v2:dev": "vuepress dev docs/v2",
     "docs:v2:prod": "vuepress build docs/v2",
+    "lint": "eslint src config",
     "release:com": "bash ./scripts/com.balm.sh",
     "release:org": "bash ./scripts/org.balm.sh"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.24.0",
+    "@babel/eslint-parser": "^7.26.8",
     "@vuepress/plugin-back-to-top": "^1.9.10",
     "@vuepress/plugin-google-analytics": "^1.9.10",
-    "balm": "^4.29.0",
+    "balm": "^6.0.0-alpha.2",
     "eslint": "^9.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "moment": "^2.30.1",
-    "prettier": "^3.2.5",
-    "prismjs": "^1.29.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.2.3",
+    "moment": "^2.31.0",
+    "prettier": "^3.5.3",
+    "prismjs": "^1.30.0",
     "vuepress": "^1.9.10"
-  },
-  "resolutions": {
-    "webpack-hot-middleware": "2.25.0"
   },
   "private": true
 }

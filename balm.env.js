@@ -12,7 +12,7 @@ process.env.BALM_GIT_FLOW_SITE = 'gh-pages';
 const useYarn = false;
 
 function setBalmCore(useSource = false) {
-  const BALM_ROOT = '/Users/elf-mouse/www/balmjs/balm';
+  const BALM_ROOT = '/Users/elf-mouse/www/balmjs/balm-next';
   const BALM_CORE_SOURCE = `${BALM_ROOT}/packages/balm-core`;
   const BALM_CORE = useYarn
     ? '/Users/elf-mouse/.config/yarn/global/node_modules/balm-core'

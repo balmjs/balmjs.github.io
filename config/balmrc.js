@@ -10,6 +10,14 @@ const banner =
 
 module.exports = (balm) => {
   return {
+    server: {
+      serveStatic: [
+        {
+          route: '/docs',
+          dir: 'docs/v2/.vuepress/dist'
+        }
+      ]
+    },
     styles: {
       extname: 'scss'
     },
