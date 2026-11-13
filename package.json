@@ -19,7 +19,7 @@
     "@babel/eslint-parser": "^7.26.8",
     "@vuepress/plugin-back-to-top": "^1.9.10",
     "@vuepress/plugin-google-analytics": "^1.9.10",
-    "balm": "^6.0.0-alpha.2",
+    "balm": "^6.0.0-alpha.3",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.2.3",
